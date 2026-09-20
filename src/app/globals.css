@@ -1,0 +1,172 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-deep: #5A3218;
+  --color-brand-earth: #7A4824;
+  --color-brand-amber: #A56B3A;
+  --color-brand-sand: #D5B58C;
+  --color-brand-cream: #F7F1E7;
+  --color-brand-ivory: #FFFDF8;
+  --color-brand-olive: #66704A;
+  --color-brand-gold: #C7A77C;
+  --color-brand-primary: #5A3218;
+  --color-brand-secondary: #7A4824;
+  --color-brand-dark: #3B2110;
+  --color-brand-text: #2E2117;
+  --color-brand-border: rgba(90, 50, 24, 0.16);
+
+  --font-serif: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
+  --font-sans: var(--font-manrope), 'Manrope', system-ui, sans-serif;
+}
+
+:root {
+  --background: #FFFDF8;
+  --foreground: #2E2117;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
+  color: #2E2117;
+  background-color: #FBF8F2;
+}
+
+body {
+  background-color: #FBF8F2;
+  color: #2E2117;
+  overflow-x: hidden;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Sophisticated Editorial Typography */
+.font-display {
+  font-family: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
+  font-feature-settings: "liga" 1, "kern" 1;
+}
+
+.text-editorial-hero {
+  font-family: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(2.75rem, 6.2vw, 6.5rem);
+  line-height: 0.96;
+  letter-spacing: -0.02em;
+}
+
+.text-editorial-section {
+  font-family: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(2.25rem, 4.5vw, 4.75rem);
+  line-height: 1.02;
+  letter-spacing: -0.015em;
+}
+
+.text-editorial-heading {
+  font-family: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.75rem, 3.2vw, 3.25rem);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+}
+
+.text-editorial-subheading {
+  font-family: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.25rem, 1.8vw, 1.85rem);
+  line-height: 1.25;
+}
+
+/* Hairline Editorial Borders */
+.border-editorial {
+  border-color: rgba(112, 66, 31, 0.18);
+}
+
+.border-editorial-t {
+  border-top: 1px solid rgba(112, 66, 31, 0.18);
+}
+
+.border-editorial-b {
+  border-bottom: 1px solid rgba(112, 66, 31, 0.18);
+}
+
+.border-editorial-l {
+  border-left: 1px solid rgba(112, 66, 31, 0.18);
+}
+
+.border-editorial-r {
+  border-right: 1px solid rgba(112, 66, 31, 0.18);
+}
+
+/* Luxury Editorial Glass & Backdrop Surfaces */
+.surface-ivory {
+  background-color: #FBF8F2;
+}
+
+.surface-cream {
+  background-color: #F4EBDD;
+}
+
+.surface-beige {
+  background-color: #E8D7C0;
+}
+
+.glass-nav-light {
+  background: rgba(251, 248, 242, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(112, 66, 31, 0.15);
+}
+
+/* Custom refined scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FBF8F2;
+}
+::-webkit-scrollbar-thumb {
+  background: #C7A77C;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #70421F;
+}
+
+/* Selection color */
+::selection {
+  background: #70421F;
+  color: #FBF8F2;
+}
+
+/* Subtle Organic Paper Grain / Soil Micro-Texture */
+.bg-grain-texture {
+  background-image: radial-gradient(rgba(112, 66, 31, 0.05) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+.bg-agricultural-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(112, 66, 31, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(112, 66, 31, 0.035) 1px, transparent 1px);
+}
+
+/* Smooth Floating Animations */
+@keyframes peanutFloatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+}
+
+.animate-peanut-float {
+  animation: peanutFloatSlow 6s ease-in-out infinite;
+}
+
+/* Subtle Peanut Shadow */
+.peanut-drop-shadow {
+  filter: drop-shadow(0 20px 30px rgba(112, 66, 31, 0.22));
+}
+
+.peanut-deep-shadow {
+  filter: drop-shadow(0 30px 45px rgba(59, 33, 16, 0.35));
+}
