@@ -376,7 +376,7 @@ export default function Scene09PeanutMacroZoom() {
               <span>ACT 08 • 400X OPTICAL DISSECTION</span>
             </div>
             <span className="hidden md:inline-block text-[10px] font-mono text-[#E8D8C1]/60 tracking-wider">
-              BALAJI BOTANICAL ARCHITECTURE • SPECIMEN BE-2026
+              PRADEEP TRADING BOTANICAL ARCHITECTURE • SPECIMEN PT-2026
             </span>
           </div>
 

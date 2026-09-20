@@ -39,8 +39,8 @@ export interface CompanyInfo {
 }
 
 export const COMPANY_INFO: CompanyInfo = {
-  name: "Balaji Exports",
-  shortName: "Balaji Exports",
+  name: "Pradeep Trading Company",
+  shortName: "Pradeep Trading",
   tagline: "INDIA'S BENCHMARK GROUNDNUT & PEANUT EXPORTER",
   supportingLine:
     "65+ years of Indian farming heritage combined with 4 MT/hour double-sortex processing to supply premium peanuts across 35+ global destinations.",
@@ -63,8 +63,8 @@ export const COMPANY_INFO: CompanyInfo = {
     primaryPhone: "+918450016454",
     formattedPhone: "+91-8450016454",
     whatsappNumber: "+918450016454",
-    email: "info@balajiexports.in",
-    exportEmail: "export@balajiexports.in",
+    email: "info@pradeeptrading.in",
+    exportEmail: "export@pradeeptrading.in",
   },
   positioningPillars: [
     {

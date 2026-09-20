@@ -187,10 +187,10 @@ export default function ProductMonogramClimax() {
             ref={monogramPRef}
             className="absolute font-serif text-[18vw] xl:text-[14vw] font-bold text-[#70421F]/20 opacity-0 pointer-events-none select-none will-change-transform leading-none"
           >
-            B
+            P
           </div>
 
-          {/* Authentic Brand Name: BALAJI */}
+          {/* Authentic Brand Name: PRADEEP */}
           <div
             ref={brandNameRef}
             className="absolute text-center space-y-3 opacity-0 will-change-transform px-6 max-w-2xl"
@@ -199,10 +199,10 @@ export default function ProductMonogramClimax() {
               Built on Trust • Defined by Quality
             </span>
             <h2 className="font-serif font-light text-5xl sm:text-7xl lg:text-8xl text-[#2E2117] tracking-tight uppercase leading-[0.96]">
-              BALAJI
+              PRADEEP
             </h2>
             <p className="font-serif italic text-xl sm:text-2xl text-[#70421F]">
-              Exports
+              Trading Company
             </p>
           </div>
 

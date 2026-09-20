@@ -179,7 +179,7 @@ export default function ContactPage() {
 
                 <div className="pt-2 border-t border-[#5A3218]/10">
                   <a
-                    href={`https://wa.me/${COMPANY_INFO.contact.whatsappNumber}?text=Hello%20Balaji%20Exports,%20I%20would%20like%20to%20request%20a%20B2B%20quotation%20for%20peanuts.`}
+                    href={`https://wa.me/${COMPANY_INFO.contact.whatsappNumber}?text=Hello%20Pradeep%20Trading%20Company,%20I%20would%20like%20to%20request%20a%20B2B%20quotation%20for%20peanuts.`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#1eb857] text-white font-sans font-medium text-sm transition-colors shadow-sm"
@@ -201,7 +201,7 @@ export default function ContactPage() {
                     <Factory className="w-5 h-5 text-[#5A3218] shrink-0 mt-1" />
                     <div>
                       <div className="font-serif text-lg font-semibold text-[#2E2117]">
-                        Balaji Exports Processing Terminal
+                        Pradeep Trading Company Processing Terminal
                       </div>
                       <p className="text-xs font-sans text-[#2E2117]/80 leading-relaxed mt-0.5">
                         {COMPANY_INFO.location.fullAddress}
@@ -233,7 +233,7 @@ export default function ContactPage() {
               <div className="p-6 rounded-2xl bg-[#5A3218] text-[#FFFDF8] space-y-3">
                 <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#D5B58C]">
                   <ShieldCheck className="w-4 h-4 text-[#D5B58C]" />
-                  <span>The Balaji Assurance</span>
+                  <span>The Pradeep Trading Assurance</span>
                 </div>
                 <p className="text-xs font-sans font-light leading-relaxed text-[#FFFDF8]/90">
                   Every international shipment includes accredited laboratory HPLC certificates for aflatoxin,
@@ -497,7 +497,7 @@ export default function ContactPage() {
               <div className="relative h-64 w-full">
                 <Image
                   src="/images/sortex-machine.webp"
-                  alt="Balaji Exports Bhonti Processing Facility"
+                  alt="Pradeep Trading Company Bhonti Processing Facility"
                   fill
                   className="object-cover"
                 />

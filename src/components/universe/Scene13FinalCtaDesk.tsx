@@ -82,7 +82,7 @@ export default function Scene13FinalCtaDesk() {
         <div className="flex flex-col sm:flex-row gap-4">
           <a
             href={`https://wa.me/${COMPANY_INFO.contact.whatsappNumber.replace(/[^0-9]/g, "")}?text=${encodeURIComponent(
-              "Hello Balaji Exports, I am inquiring about container export pricing for peanuts."
+              "Hello Pradeep Trading Company, I am inquiring about container export pricing for peanuts."
             )}`}
             target="_blank"
             rel="noopener noreferrer"
@@ -327,7 +327,7 @@ export default function Scene13FinalCtaDesk() {
 
       {/* Bottom Copyright */}
       <div className="relative z-20 w-full max-w-7xl mx-auto pt-8 border-t border-[#C7A77C]/20 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] font-mono text-[#E8D8C1]/60 uppercase">
-        <div>© {new Date().getFullYear()} BALAJI EXPORTS. ALL RIGHTS RESERVED.</div>
+        <div>© {new Date().getFullYear()} PRADEEP TRADING COMPANY. ALL RIGHTS RESERVED.</div>
         <div>APEDA REGISTERED • IEC NO. 1106001712 • FSSAI CERTIFIED</div>
       </div>
     </section>

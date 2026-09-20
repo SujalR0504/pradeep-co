@@ -17,11 +17,11 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row md:items-center justify-between pb-10 border-b border-[#5A3218]/15 gap-6">
           <Link href="/" className="inline-flex items-center gap-3 group">
             <div className="w-10 h-10 rounded-xl bg-[#5A3218] flex items-center justify-center text-[#FFFDF8] font-serif font-bold text-xl shadow-sm">
-              B
+              P
             </div>
             <div>
               <span className="font-serif text-2xl font-bold tracking-tight text-[#5A3218] block leading-none">
-                BALAJI EXPORTS
+                PRADEEP TRADING COMPANY
               </span>
               <span className="text-[10px] font-mono tracking-[0.2em] text-[#7A4824] uppercase mt-1 block">
                 PREMIER GROUNDNUT &amp; PEANUT EXPORTER • INDIA
@@ -41,7 +41,7 @@ export default function Footer() {
           {/* Col 1: About Company */}
           <div className="col-span-2 md:col-span-1 space-y-3">
             <span className="text-[10px] font-mono uppercase tracking-widest text-[#7A4824] font-bold block">
-              ABOUT BALAJI EXPORTS
+              ABOUT PRADEEP TRADING COMPANY
             </span>
             <p className="text-xs text-[#2E2117]/80 leading-relaxed">
               65+ years of agricultural farming expertise and a 4 MT/hour double-sortex processing facility in
@@ -193,7 +193,7 @@ export default function Footer() {
         {/* Bottom Bar: Copyright & Compliance */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] font-mono text-[#7A4824] gap-4">
           <div>
-            &copy; {new Date().getFullYear()} Balaji Exports. All rights reserved.
+            &copy; {new Date().getFullYear()} Pradeep Trading Company. All rights reserved.
           </div>
 
           <div className="flex items-center gap-4">
@@ -215,7 +215,7 @@ export default function Footer() {
           <div className="w-5 h-8 relative">
             <Image
               src="/images/single-kernel-cutout.png"
-              alt="Balaji Exports Groundnut Kernel"
+              alt="Pradeep Trading Company Groundnut Kernel"
               fill
               className="object-contain"
             />

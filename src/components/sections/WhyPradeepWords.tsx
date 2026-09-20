@@ -64,14 +64,14 @@ export default function WhyPradeepWords() {
 
   return (
     <section
-      id="why-balaji-exports"
+      id="why-pradeep-trading"
       className="relative w-full py-28 lg:py-36 bg-[#F4EBDD] text-[#2E2117] overflow-hidden border-t border-[rgba(112,66,31,0.18)]"
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         {/* Section Header */}
         <div className="max-w-3xl mb-16 space-y-3">
           <span className="text-[10px] font-mono uppercase tracking-[0.24em] text-[#70421F] font-semibold block">
-            Why Balaji Exports
+            Why Pradeep Trading Company
           </span>
           <h2 className="font-serif font-normal text-3xl sm:text-5xl text-[#2E2117]">
             OUR CORE FOUNDATION

@@ -32,7 +32,7 @@ export default function ProductsPage() {
           <div className="max-w-3xl space-y-4">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#5A3218]/10 border border-[#5A3218]/20 text-xs font-mono tracking-widest text-[#5A3218] uppercase">
               <Package className="w-3.5 h-3.5 text-[#5A3218]" />
-              <span>BALAJI EXPORTS • COMMODITY EXPORT CATALOG</span>
+              <span>PRADEEP TRADING COMPANY • COMMODITY EXPORT CATALOG</span>
             </div>
 
             <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl font-normal leading-[1.02] text-[#2E2117]">

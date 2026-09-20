@@ -3,7 +3,7 @@ import { PRODUCTS } from "@/data/products";
 import { BLOG_POSTS } from "@/data/blogs";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://balajiexports.in";
+  const baseUrl = "https://pradeeptrading.in";
 
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: baseUrl, lastModified: new Date(), changeFrequency: "daily", priority: 1.0 },

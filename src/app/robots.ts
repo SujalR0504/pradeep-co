@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://balajiexports.in/sitemap.xml",
+    sitemap: "https://pradeeptrading.in/sitemap.xml",
   };
 }

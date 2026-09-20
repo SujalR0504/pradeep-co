@@ -176,7 +176,7 @@ export default function HealthBenefitsPage() {
       {/* Universal Reusable Contact CTA */}
       <ContactCtaSection
         title="SOURCE HIGH-OLEIC PEANUTS FOR YOUR NUTRITIONAL BRAND"
-        subtitle="Contact Balaji Exports for laboratory analysis certificates, technical specs, and bulk export consignments."
+        subtitle="Contact Pradeep Trading Company for laboratory analysis certificates, technical specs, and bulk export consignments."
       />
     </div>
   );

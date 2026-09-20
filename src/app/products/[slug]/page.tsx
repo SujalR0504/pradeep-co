@@ -30,13 +30,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const canonicalSlug = SLUG_ALIASES[slug] || slug;
   const product = PRODUCTS.find((p) => p.slug === canonicalSlug);
-  if (!product) return { title: "Product Not Found | Balaji Exports" };
+  if (!product) return { title: "Product Not Found | Pradeep Trading Company" };
 
   return {
-    title: `${product.name} | Balaji Exports`,
+    title: `${product.name} | Pradeep Trading Company`,
     description: product.shortDescription,
     openGraph: {
-      title: `${product.name} | Export Specifications • Balaji Exports`,
+      title: `${product.name} | Export Specifications • Pradeep Trading Company`,
       description: product.shortDescription,
       images: [
         {

@@ -28,15 +28,16 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://balajiexports.in"),
+  metadataBase: new URL("https://pradeeptrading.in"),
   title: {
-    default: "Balaji Exports | Benchmark Groundnut & Peanut Exporter India",
-    template: "%s | Balaji Exports",
+    default: "Pradeep Trading Company | Benchmark Groundnut & Peanut Exporter India",
+    template: "%s | Pradeep Trading Company",
   },
   description:
-    "Balaji Exports connects premium agricultural commodities from India with 35+ global markets. 65+ years farming heritage, 4 MT/hour double-sortex processing in Shivpuri, MP.",
+    "Pradeep Trading Company connects premium agricultural commodities from India with 35+ global markets. 65+ years farming heritage, 4 MT/hour double-sortex processing in Shivpuri, MP.",
   keywords: [
-    "Balaji Exports",
+    "Pradeep Trading Company",
+    "Pradeep Trading",
     "Groundnut Exporter India",
     "Peanut Exporter India",
     "Bold Peanuts 38/42 40/50",
@@ -48,15 +49,15 @@ export const metadata: Metadata = {
     "Agro Export India",
     "Blanched Peanuts",
   ],
-  authors: [{ name: "Balaji Exports" }],
-  creator: "Balaji Exports",
-  publisher: "Balaji Exports",
+  authors: [{ name: "Pradeep Trading Company" }],
+  creator: "Pradeep Trading Company",
+  publisher: "Pradeep Trading Company",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://balajiexports.in",
-    siteName: "Balaji Exports",
-    title: "Balaji Exports | Benchmark Groundnut & Peanut Exporter India",
+    url: "https://pradeeptrading.in",
+    siteName: "Pradeep Trading Company",
+    title: "Pradeep Trading Company | Benchmark Groundnut & Peanut Exporter India",
     description:
       "65+ years of Indian farming heritage combined with 4 MT/hour double-sortex processing to supply premium peanuts across 35+ global destinations.",
     images: [
@@ -64,13 +65,13 @@ export const metadata: Metadata = {
         url: "/images/hero-field.webp",
         width: 1200,
         height: 630,
-        alt: "Balaji Exports - From Indian Soil, To The World",
+        alt: "Pradeep Trading Company - From Indian Soil, To The World",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Balaji Exports | Benchmark Groundnut & Peanut Exporter India",
+    title: "Pradeep Trading Company | Benchmark Groundnut & Peanut Exporter India",
     description:
       "65+ years of Indian farming heritage combined with 4 MT/hour double-sortex processing to supply premium peanuts across 35+ global destinations.",
     images: ["/images/hero-field.webp"],

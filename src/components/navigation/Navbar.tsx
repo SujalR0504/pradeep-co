@@ -112,15 +112,15 @@ export default function Navbar() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex items-center justify-between">
-          {/* Logo on Left: Balaji Exports */}
+          {/* Logo on Left: Pradeep Trading Company */}
           <Link href="/" className="inline-flex items-center gap-3 group">
             <div className="flex items-center gap-2.5">
               <div className="w-9 h-9 rounded-xl bg-[#5A3218] flex items-center justify-center text-[#FFFDF8] font-serif font-bold text-lg shadow-sm group-hover:bg-[#7A4824] transition-colors">
-                B
+                P
               </div>
               <div className="flex flex-col">
                 <span className="font-serif text-lg sm:text-xl font-bold tracking-tight text-[#5A3218] leading-none group-hover:text-[#7A4824] transition-colors">
-                  BALAJI EXPORTS
+                  PRADEEP TRADING CO.
                 </span>
                 <span className="text-[9px] font-mono tracking-[0.2em] text-[#7A4824] uppercase mt-0.5">
                   GROUNDNUTS &amp; PEANUTS • INDIA
@@ -245,7 +245,7 @@ export default function Navbar() {
         <div className="fixed inset-0 z-40 bg-[#FFFDF8] text-[#2E2117] flex flex-col justify-between p-8 pt-24 xl:hidden overflow-y-auto">
           <div className="max-w-md w-full mx-auto space-y-6">
             <div className="text-[11px] font-mono uppercase tracking-[0.25em] text-[#7A4824] font-bold">
-              BALAJI EXPORTS NAVIGATION
+              PRADEEP TRADING NAVIGATION
             </div>
 
             <ul className="space-y-4">

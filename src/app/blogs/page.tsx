@@ -46,7 +46,7 @@ export default function BlogsPage() {
           <div className="max-w-3xl space-y-4">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#5A3218]/10 border border-[#5A3218]/20 text-xs font-mono tracking-widest text-[#5A3218] uppercase">
               <BookOpen className="w-3.5 h-3.5 text-[#5A3218]" />
-              <span>INDUSTRY JOURNAL • BALAJI EXPORTS INSIGHTS</span>
+              <span>INDUSTRY JOURNAL • PRADEEP TRADING COMPANY INSIGHTS</span>
             </div>
 
             <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl font-normal leading-[1.02] text-[#2E2117]">
@@ -58,7 +58,7 @@ export default function BlogsPage() {
 
             <p className="text-base sm:text-lg font-sans text-[#2E2117]/80 font-light leading-relaxed">
               In-depth research, APMC mandi trends, optical sorting technology, and maritime cold-chain
-              protocols authored by Balaji Exports&apos; on-ground procurement agronomists and food-safety specialists.
+              protocols authored by Pradeep Trading Company&apos;s on-ground procurement agronomists and food-safety specialists.
             </p>
           </div>
         </div>
@@ -260,7 +260,7 @@ export default function BlogsPage() {
               className="flex-1 px-4 py-3 rounded-xl bg-[#FFFDF8] border border-[#5A3218]/20 text-sm font-sans placeholder-[#2E2117]/40 focus:outline-none focus:border-[#5A3218]"
             />
             <button
-              onClick={() => alert("Thank you for subscribing to Balaji Exports Market Intelligence.")}
+              onClick={() => alert("Thank you for subscribing to Pradeep Trading Company Market Intelligence.")}
               className="px-6 py-3 rounded-xl bg-[#5A3218] hover:bg-[#7A4824] text-[#FFFDF8] text-sm font-sans font-medium transition-colors shrink-0"
             >
               Subscribe
@@ -355,7 +355,7 @@ export default function BlogsPage() {
               {/* Conclusion */}
               <div className="pt-4 border-t border-[#5A3218]/15">
                 <h4 className="font-mono text-xs uppercase tracking-widest text-[#7A4824] mb-2 font-semibold">
-                  BALAJI EXPORTS COMMENTARY
+                  PRADEEP TRADING COMPANY COMMENTARY
                 </h4>
                 <p className="text-sm sm:text-base font-sans text-[#2E2117]/80 font-light leading-relaxed">
                   {activeModalPost.content.conclusion}

@@ -54,12 +54,12 @@ export default function HomePage() {
       {/* ABOUT & 65+ YEARS ORIGIN HERITAGE SECTION */}
       <EditorialAboutSection />
 
-      {/* WHY BALAJI EXPORTS: CORE QUALITY & DIRECT SOURCING PILLARS */}
+      {/* WHY PRADEEP TRADING COMPANY: CORE QUALITY & DIRECT SOURCING PILLARS */}
       <WhyPradeepWords />
 
       {/* UNIVERSAL REUSABLE CONTACT CTA */}
       <ContactCtaSection
-        title="EXPEDITE YOUR COMMODITY SHIPMENT WITH BALAJI EXPORTS"
+        title="EXPEDITE YOUR COMMODITY SHIPMENT WITH PRADEEP TRADING COMPANY"
         subtitle="Prompt container stuffing at Mundra Port, double-sortex certification, and tailored B2B export pricing."
       />
 

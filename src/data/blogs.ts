@@ -32,7 +32,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "A comprehensive analysis of Kharif & Rabi harvest patterns across Madhya Pradesh and Gujarat, pricing benchmarks at Shivpuri APMC, and burgeoning demand from Southeast Asia and European confectionery hubs.",
     heroImage: "/images/india-farm-aerial.jpg",
     author: {
-      name: "Balaji Exports Agronomy Desk",
+      name: "Pradeep Trading Agronomy Desk",
       role: "Procurement & Mandi Intelligence",
     },
     highlights: [
@@ -50,7 +50,7 @@ export const BLOG_POSTS: BlogPost[] = [
         },
         {
           heading: "APMC Quality Pricing & Farmgate Dynamics",
-          body: "Transparent auctioning through primary agricultural market committees (APMC) has incentivized farmers to adopt moisture-controlled post-harvest drying. At Balaji Exports, our direct farmgate procurement protocol ensures farmers receive premium pricing for clean pods below 8% harvest moisture, eliminating quality degradation before the crop even enters our processing lines.",
+          body: "Transparent auctioning through primary agricultural market committees (APMC) has incentivized farmers to adopt moisture-controlled post-harvest drying. At Pradeep Trading Company, our direct farmgate procurement protocol ensures farmers receive premium pricing for clean pods below 8% harvest moisture, eliminating quality degradation before the crop even enters our processing lines.",
         },
         {
           heading: "Ocean Freight Logistics & Port Gateways",
@@ -58,7 +58,7 @@ export const BLOG_POSTS: BlogPost[] = [
         },
       ],
       conclusion:
-        "With global food processors demanding traceable, sortex-verified raw ingredients, India's export trajectory remains robust. Forward contracting with established origin processors like Balaji Exports guarantees stable price hedging and quality continuity.",
+        "With global food processors demanding traceable, sortex-verified raw ingredients, India's export trajectory remains robust. Forward contracting with established origin processors like Pradeep Trading Company guarantees stable price hedging and quality continuity.",
     },
   },
   {
@@ -81,7 +81,7 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
     content: {
       intro:
-        "In international commodity trading, consistency is everything. When an overseas confectionery or snack plant loads a container of peanuts into their roasting lines, even a 0.5% defect rate can stall industrial packaging machines or compromise flavor profiles. Double-sortex electronic sorting is how Balaji Exports ensures perfection.",
+        "In international commodity trading, consistency is everything. When an overseas confectionery or snack plant loads a container of peanuts into their roasting lines, even a 0.5% defect rate can stall industrial packaging machines or compromise flavor profiles. Double-sortex electronic sorting is how Pradeep Trading Company ensures perfection.",
       sections: [
         {
           heading: "Multi-Spectral Optical Inspection",
@@ -97,7 +97,7 @@ export const BLOG_POSTS: BlogPost[] = [
         },
       ],
       conclusion:
-        "Double-sortex technology transforms raw agricultural produce into standardized industrial-grade confectionery inputs. Investing in continuous automation ensures Balaji Exports meets the stringent specifications of food importers across 35+ countries.",
+        "Double-sortex technology transforms raw agricultural produce into standardized industrial-grade confectionery inputs. Investing in continuous automation ensures Pradeep Trading Company meets the stringent specifications of food importers across 35+ countries.",
     },
   },
   {
@@ -132,7 +132,7 @@ export const BLOG_POSTS: BlogPost[] = [
         },
         {
           heading: "Ocean Container Desiccation Protocol",
-          body: "When crossing maritime zones, temperature shifts between port of origin (e.g. Mundra, 32°C) and northern destination ports (e.g. Hamburg, 5°C) can cause 'container sweat' on steel ceilings. Balaji Exports installs high-capacity calcium chloride desiccant blankets across container walls to absorb up to 300% of their weight in moisture.",
+          body: "When crossing maritime zones, temperature shifts between port of origin (e.g. Mundra, 32°C) and northern destination ports (e.g. Hamburg, 5°C) can cause 'container sweat' on steel ceilings. Pradeep Trading Company installs high-capacity calcium chloride desiccant blankets across container walls to absorb up to 300% of their weight in moisture.",
         },
       ],
       conclusion:
@@ -149,7 +149,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Understand the key physical, oil-content, and roasting differences between Indian Bold (Runner-type) and Java (Spanish-type) groundnuts to choose the ideal raw material for your product line.",
     heroImage: "/images/peanut-bold.webp",
     author: {
-      name: "Balaji Exports Technical Sales",
+      name: "Pradeep Trading Technical Sales",
       role: "B2B Export Advisory",
     },
     highlights: [
@@ -175,7 +175,7 @@ export const BLOG_POSTS: BlogPost[] = [
         },
       ],
       conclusion:
-        "Balaji Exports maintains segregated processing lines for Bold and Java varieties, preventing cross-contamination and guaranteeing strict adherence to buyers' physical and chemical contract specifications.",
+        "Pradeep Trading Company maintains segregated processing lines for Bold and Java varieties, preventing cross-contamination and guaranteeing strict adherence to buyers' physical and chemical contract specifications.",
     },
   },
   {
@@ -188,7 +188,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "How to choose the optimal packaging configuration for your shipping lane: assessing breathability, shelf-life preservation, and freight efficiency across tropical and cold routes.",
     heroImage: "/images/packaging/authentic-jute-sacks.webp",
     author: {
-      name: "Balaji Exports Logistics Team",
+      name: "Pradeep Trading Logistics Team",
       role: "Maritime Freight Operations",
     },
     highlights: [
@@ -214,7 +214,7 @@ export const BLOG_POSTS: BlogPost[] = [
         },
       ],
       conclusion:
-        "Every consignment from Balaji Exports is custom-packaged according to client specifications, transit route thermodynamics, and local import regulations.",
+        "Every consignment from Pradeep Trading Company is custom-packaged according to client specifications, transit route thermodynamics, and local import regulations.",
     },
   },
   {
@@ -253,7 +253,7 @@ export const BLOG_POSTS: BlogPost[] = [
         },
       ],
       conclusion:
-        "From therapeutic ready-to-use foods (RUTF) combating malnutrition to sports nutrition, the peanut remains the planet's most efficient, nutrient-dense crop. Balaji Exports takes immense pride in delivering this vital staple to tables worldwide.",
+        "From therapeutic ready-to-use foods (RUTF) combating malnutrition to sports nutrition, the peanut remains the planet's most efficient, nutrient-dense crop. Pradeep Trading Company takes immense pride in delivering this vital staple to tables worldwide.",
     },
   },
 ];

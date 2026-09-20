@@ -35,7 +35,7 @@ export default function ContactCtaSection({
           <div className="lg:col-span-7 space-y-6">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FFFDF8]/10 border border-[#D5B58C]/30 text-[11px] font-mono tracking-widest text-[#D5B58C] uppercase">
               <Globe className="w-3.5 h-3.5 text-[#D5B58C]" />
-              <span>BALAJI EXPORTS • B2B GLOBAL TRADE DESK</span>
+              <span>PRADEEP TRADING COMPANY • B2B GLOBAL TRADE DESK</span>
             </div>
 
             <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-normal leading-[1.05] tracking-tight text-[#FFFDF8]">

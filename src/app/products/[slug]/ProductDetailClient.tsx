@@ -169,7 +169,7 @@ export default function ProductDetailClient({ product }: Props) {
               </button>
 
               <a
-                href={`https://wa.me/${COMPANY_INFO.contact.whatsappNumber}?text=Hello%20Balaji%20Exports,%20I%20am%20inquiring%20about%20${encodeURIComponent(product.name)}`}
+                href={`https://wa.me/${COMPANY_INFO.contact.whatsappNumber}?text=Hello%20Pradeep%20Trading%20Company,%20I%20am%20inquiring%20about%20${encodeURIComponent(product.name)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl border border-[#25D366] text-[#25D366] hover:bg-[#25D366] hover:text-white font-semibold text-xs sm:text-sm tracking-wider uppercase transition-all"

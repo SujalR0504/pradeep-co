@@ -141,7 +141,7 @@ export default function Scene08SortingGravityLab() {
             Automated Sortex &amp; Quality Lab
           </h2>
           <p className="mt-3 text-sm sm:text-base font-sans text-[#2E2117]/80 leading-relaxed font-light">
-            Every grain of Balaji Exports groundnuts undergoes a 4-tier screening workflow.
+            Every grain of Pradeep Trading Company groundnuts undergoes a 4-tier screening workflow.
             From density separation to high-speed optical color sorters, we guarantee unmatched purity for international food processors.
           </p>
 
@@ -174,7 +174,7 @@ export default function Scene08SortingGravityLab() {
                   STAGE {currentStageData.num} // WORKFLOW SPEC
                 </span>
                 <span className="text-xs font-mono font-bold text-[#5A3218]">
-                  BALAJI SORTEX UNIT
+                  PRADEEP SORTEX UNIT
                 </span>
               </div>
 

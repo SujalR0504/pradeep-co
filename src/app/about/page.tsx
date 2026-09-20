@@ -47,7 +47,7 @@ export default function AboutPage() {
           <div className="max-w-3xl space-y-4">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#5A3218]/10 border border-[#5A3218]/20 text-xs font-mono tracking-widest text-[#5A3218] uppercase">
               <Award className="w-3.5 h-3.5 text-[#5A3218]" />
-              <span>ABOUT BALAJI EXPORTS • HERITAGE &amp; INFRASTRUCTURE</span>
+              <span>ABOUT PRADEEP TRADING COMPANY • HERITAGE &amp; INFRASTRUCTURE</span>
             </div>
 
             <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl font-normal leading-[1.02] text-[#2E2117]">
@@ -58,7 +58,7 @@ export default function AboutPage() {
             </h1>
 
             <p className="text-base sm:text-lg font-sans text-[#2E2117]/80 font-light leading-relaxed">
-              Balaji Exports unites three generations of agricultural mastery with a high-capacity 4 MT/hour
+              Pradeep Trading Company unites three generations of agricultural mastery with a high-capacity 4 MT/hour
               double-sortex processing facility in Shivpuri, Madhya Pradesh. We deliver uncompromised purity
               from Indian soil to the world&apos;s leading food manufacturers.
             </p>
@@ -188,7 +188,7 @@ export default function AboutPage() {
             <div className="lg:col-span-6 relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-[#5A3218]/15">
               <Image
                 src="/images/quality-lab.webp"
-                alt="Balaji Exports Quality Testing Laboratory"
+                alt="Pradeep Trading Company Quality Testing Laboratory"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"

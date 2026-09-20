@@ -160,7 +160,7 @@ export default function NutJourneyPage() {
             </h1>
 
             <p className="text-base sm:text-lg font-sans text-[#2E2117]/80 font-light leading-relaxed">
-              Trace the continuous 8-stage journey of Balaji Exports groundnuts. From farmgate planting in Madhya Pradesh
+              Trace the continuous 8-stage journey of Pradeep Trading Company groundnuts. From farmgate planting in Madhya Pradesh
               to high-speed optical sorting, hermetic barrier packaging, and container vessel departure at Mundra Port.
             </p>
           </div>
@@ -233,7 +233,7 @@ export default function NutJourneyPage() {
 
       {/* Universal Reusable Contact CTA */}
       <ContactCtaSection
-        title="COMMENCE YOUR CONTRACT WITH BALAJI EXPORTS"
+        title="COMMENCE YOUR CONTRACT WITH PRADEEP TRADING COMPANY"
         subtitle="Reserve guaranteed harvest volumes, customized packaging, and direct Mundra Port container loading."
       />
     </div>
