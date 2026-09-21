@@ -33,6 +33,10 @@ yarn-error.log*
 # env files
 .env*.local
 
+# lockfiles (use standard yarn.lock for Vercel deployment)
+bun.lock
+bun.lockb
+
 # vercel
 .vercel
 
