@@ -94,7 +94,7 @@ export default function RootLayout({
       lang="en"
       className={`${dmSerif.variable} ${manrope.variable} scroll-smooth`}
     >
-      <body className="min-h-screen flex flex-col bg-[#FAF7F1] text-[#26180E] antialiased selection:bg-[#623719] selection:text-[#FAF7F1]">
+      <body className="min-h-screen flex flex-col bg-[#FFFDF9] text-[#26180E] antialiased selection:bg-[#5A3218] selection:text-[#FFFDF9]">
         {/* Lenis Smooth Scroll */}
         <SmoothScroll>
           <Navbar />
