@@ -109,16 +109,16 @@ export default function QualitySection() {
     <section
       id="quality"
       ref={sectionRef}
-      className="relative w-full py-20 lg:py-28 px-6 sm:px-8 lg:px-12 bg-[#FAF7F1] text-[#26180E] border-t border-[#623719]/10"
+      className="relative w-full py-20 lg:py-28 px-6 sm:px-8 lg:px-12 bg-[#F6F1E8]/40 text-[#26180E] border-t border-[#5A3218]/10"
     >
       <div className="max-w-7xl mx-auto w-full space-y-16">
         {/* Section Header */}
         <div className="max-w-3xl space-y-4 text-left">
-          <span className="text-xs font-sans font-bold tracking-[0.2em] text-[#8A5834] uppercase block">
-            QUALITY CONTROL // 03
+          <span className="text-xs font-sans font-bold tracking-[0.2em] text-[#A16B3C] uppercase block">
+            QUALITY CONTROL // 05
           </span>
 
-          <h2 className="font-serif text-[38px] sm:text-[50px] lg:text-[60px] font-normal leading-[1.08] tracking-tight text-[#26180E]">
+          <h2 className="font-serif text-[38px] sm:text-[50px] lg:text-[60px] font-normal leading-[1.08] tracking-tight text-[#5A3218]">
             QUALITY YOU CAN SEE.
           </h2>
 
@@ -140,42 +140,42 @@ export default function QualitySection() {
             {/* Top-Left Line: SIZE */}
             <path
               d="M 280 140 L 400 240"
-              stroke="#8A5834"
+              stroke="#A16B3C"
               strokeWidth="1.5"
               strokeDasharray="100"
               className="quality-line opacity-60"
             />
-            <circle cx="400" cy="240" r="3.5" fill="#623719" />
+            <circle cx="400" cy="240" r="3.5" fill="#5A3218" />
 
             {/* Top-Right Line: COLOR */}
             <path
               d="M 720 140 L 600 230"
-              stroke="#8A5834"
+              stroke="#A16B3C"
               strokeWidth="1.5"
               strokeDasharray="100"
               className="quality-line opacity-60"
             />
-            <circle cx="600" cy="230" r="3.5" fill="#623719" />
+            <circle cx="600" cy="230" r="3.5" fill="#5A3218" />
 
             {/* Bottom-Left Line: CONSISTENCY */}
             <path
               d="M 280 460 L 420 380"
-              stroke="#8A5834"
+              stroke="#A16B3C"
               strokeWidth="1.5"
               strokeDasharray="100"
               className="quality-line opacity-60"
             />
-            <circle cx="420" cy="380" r="3.5" fill="#623719" />
+            <circle cx="420" cy="380" r="3.5" fill="#5A3218" />
 
             {/* Bottom-Right Line: CLEANLINESS */}
             <path
               d="M 720 460 L 590 390"
-              stroke="#8A5834"
+              stroke="#A16B3C"
               strokeWidth="1.5"
               strokeDasharray="100"
               className="quality-line opacity-60"
             />
-            <circle cx="590" cy="390" r="3.5" fill="#623719" />
+            <circle cx="590" cy="390" r="3.5" fill="#5A3218" />
           </svg>
 
           {/* Central Macro Peanut Image (Slowly scales on scroll) */}
@@ -196,14 +196,14 @@ export default function QualitySection() {
           {/* Callout Cards (Desktop: positioned around peanut; Mobile: stacked grid) */}
           <div ref={labelsRef} className="hidden lg:block">
             {/* 1. SIZE - Top Left */}
-            <div className="quality-card absolute top-8 left-4 max-w-[260px] p-5 rounded-2xl bg-[#F3EBDD]/60 border border-[#623719]/15 backdrop-blur-xs space-y-1.5 shadow-xs">
-              <span className="text-[11px] font-sans font-bold text-[#8A5834] uppercase tracking-wider block">
+            <div className="quality-card absolute top-8 left-4 max-w-[260px] p-5 rounded-2xl bg-[#FFFDF9]/85 border border-[#5A3218]/12 backdrop-blur-xs space-y-1.5 shadow-xs">
+              <span className="text-[11px] font-sans font-bold text-[#A16B3C] uppercase tracking-wider block">
                 01 // SIZE
               </span>
-              <h4 className="font-serif text-xl text-[#26180E] font-normal">
+              <h4 className="font-serif text-xl text-[#5A3218] font-normal">
                 Calibrated Caliber
               </h4>
-              <p className="text-xs font-sans text-[#623719] font-semibold">
+              <p className="text-xs font-sans text-[#5A3218] font-semibold">
                 {CALLOUTS[0].spec}
               </p>
               <p className="text-[11px] font-sans text-[#26180E]/70 leading-relaxed">
@@ -212,14 +212,14 @@ export default function QualitySection() {
             </div>
 
             {/* 2. COLOR - Top Right */}
-            <div className="quality-card absolute top-8 right-4 max-w-[260px] p-5 rounded-2xl bg-[#F3EBDD]/60 border border-[#623719]/15 backdrop-blur-xs space-y-1.5 shadow-xs text-right">
-              <span className="text-[11px] font-sans font-bold text-[#8A5834] uppercase tracking-wider block">
+            <div className="quality-card absolute top-8 right-4 max-w-[260px] p-5 rounded-2xl bg-[#FFFDF9]/85 border border-[#5A3218]/12 backdrop-blur-xs space-y-1.5 shadow-xs text-right">
+              <span className="text-[11px] font-sans font-bold text-[#A16B3C] uppercase tracking-wider block">
                 02 // COLOR
               </span>
-              <h4 className="font-serif text-xl text-[#26180E] font-normal">
+              <h4 className="font-serif text-xl text-[#5A3218] font-normal">
                 Optical Purity
               </h4>
-              <p className="text-xs font-sans text-[#623719] font-semibold">
+              <p className="text-xs font-sans text-[#5A3218] font-semibold">
                 {CALLOUTS[1].spec}
               </p>
               <p className="text-[11px] font-sans text-[#26180E]/70 leading-relaxed">
@@ -228,14 +228,14 @@ export default function QualitySection() {
             </div>
 
             {/* 3. CONSISTENCY - Bottom Left */}
-            <div className="quality-card absolute bottom-8 left-4 max-w-[260px] p-5 rounded-2xl bg-[#F3EBDD]/60 border border-[#623719]/15 backdrop-blur-xs space-y-1.5 shadow-xs">
-              <span className="text-[11px] font-sans font-bold text-[#8A5834] uppercase tracking-wider block">
+            <div className="quality-card absolute bottom-8 left-4 max-w-[260px] p-5 rounded-2xl bg-[#FFFDF9]/85 border border-[#5A3218]/12 backdrop-blur-xs space-y-1.5 shadow-xs">
+              <span className="text-[11px] font-sans font-bold text-[#A16B3C] uppercase tracking-wider block">
                 03 // CONSISTENCY
               </span>
-              <h4 className="font-serif text-xl text-[#26180E] font-normal">
+              <h4 className="font-serif text-xl text-[#5A3218] font-normal">
                 Moisture &amp; Aroma
               </h4>
-              <p className="text-xs font-sans text-[#623719] font-semibold">
+              <p className="text-xs font-sans text-[#5A3218] font-semibold">
                 {CALLOUTS[2].spec}
               </p>
               <p className="text-[11px] font-sans text-[#26180E]/70 leading-relaxed">
@@ -244,14 +244,14 @@ export default function QualitySection() {
             </div>
 
             {/* 4. CLEANLINESS - Bottom Right */}
-            <div className="quality-card absolute bottom-8 right-4 max-w-[260px] p-5 rounded-2xl bg-[#F3EBDD]/60 border border-[#623719]/15 backdrop-blur-xs space-y-1.5 shadow-xs text-right">
-              <span className="text-[11px] font-sans font-bold text-[#8A5834] uppercase tracking-wider block">
+            <div className="quality-card absolute bottom-8 right-4 max-w-[260px] p-5 rounded-2xl bg-[#FFFDF9]/85 border border-[#5A3218]/12 backdrop-blur-xs space-y-1.5 shadow-xs text-right">
+              <span className="text-[11px] font-sans font-bold text-[#A16B3C] uppercase tracking-wider block">
                 04 // CLEANLINESS
               </span>
-              <h4 className="font-serif text-xl text-[#26180E] font-normal">
-                Zero Foreign Matter
+              <h4 className="font-serif text-xl text-[#5A3218] font-normal">
+                Foreign Matter Zero
               </h4>
-              <p className="text-xs font-sans text-[#623719] font-semibold">
+              <p className="text-xs font-sans text-[#5A3218] font-semibold">
                 {CALLOUTS[3].spec}
               </p>
               <p className="text-[11px] font-sans text-[#26180E]/70 leading-relaxed">
@@ -261,21 +261,24 @@ export default function QualitySection() {
           </div>
         </div>
 
-        {/* Mobile Callout Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:hidden">
-          {CALLOUTS.map((callout) => (
+        {/* Mobile & Tablet Fallback: Responsive 4-card grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:hidden pt-6">
+          {CALLOUTS.map((c, i) => (
             <div
-              key={callout.id}
-              className="p-5 rounded-2xl bg-[#F3EBDD]/50 border border-[#623719]/15 space-y-2"
+              key={c.id}
+              className="p-5 rounded-2xl bg-[#FFFDF9] border border-[#5A3218]/12 space-y-2 shadow-xs"
             >
-              <span className="text-[10px] font-sans font-bold text-[#8A5834] uppercase tracking-wider block">
-                {callout.title}
+              <span className="text-[11px] font-sans font-bold text-[#A16B3C] uppercase tracking-wider block">
+                0{i + 1} // {c.title}
               </span>
-              <p className="text-xs font-sans font-bold text-[#623719]">
-                {callout.spec}
+              <h4 className="font-serif text-xl text-[#5A3218] font-normal">
+                {c.title === "SIZE" ? "Calibrated Caliber" : c.title === "COLOR" ? "Optical Purity" : c.title === "CONSISTENCY" ? "Moisture & Aroma" : "Foreign Matter Zero"}
+              </h4>
+              <p className="text-xs font-sans text-[#5A3218] font-semibold">
+                {c.spec}
               </p>
-              <p className="text-xs font-sans text-[#26180E]/75 leading-relaxed">
-                {callout.description}
+              <p className="text-xs font-sans text-[#26180E]/70 leading-relaxed">
+                {c.description}
               </p>
             </div>
           ))}

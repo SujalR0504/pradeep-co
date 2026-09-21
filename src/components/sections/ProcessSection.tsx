@@ -136,16 +136,16 @@ export default function ProcessSection() {
     <section
       id="process"
       ref={sectionRef}
-      className="relative w-full py-20 lg:py-28 px-6 sm:px-8 lg:px-12 bg-[#FAF7F1] text-[#26180E] border-t border-[#623719]/10"
+      className="relative w-full py-20 lg:py-28 px-6 sm:px-8 lg:px-12 bg-[#FFFDF9] text-[#26180E] border-t border-[#5A3218]/10"
     >
       <div className="max-w-7xl mx-auto w-full space-y-12">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="space-y-3">
-            <span className="text-xs font-sans font-bold tracking-[0.2em] text-[#8A5834] uppercase block">
-              INDUSTRIAL PROCESS // 04
+            <span className="text-xs font-sans font-bold tracking-[0.2em] text-[#A16B3C] uppercase block">
+              INDUSTRIAL PROCESS // 06
             </span>
-            <h2 className="font-serif text-[38px] sm:text-[50px] lg:text-[60px] font-normal leading-[1.08] tracking-tight text-[#26180E]">
+            <h2 className="font-serif text-[38px] sm:text-[50px] lg:text-[60px] font-normal leading-[1.08] tracking-tight text-[#5A3218]">
               SEVEN STAGES.
               <br />
               ONE UNCOMPROMISING STANDARD.
@@ -160,9 +160,9 @@ export default function ProcessSection() {
         {/* Thin Progress Indicator & Stage Selector */}
         <div className="w-full space-y-4">
           {/* Thin Progress Bar */}
-          <div className="w-full h-1 bg-[#623719]/15 rounded-full overflow-hidden">
+          <div className="w-full h-1 bg-[#5A3218]/12 rounded-full overflow-hidden">
             <div
-              className="h-full bg-[#623719] transition-all duration-500 ease-out"
+              className="h-full bg-[#5A3218] transition-all duration-500 ease-out"
               style={{
                 width: `${((activeStage + 1) / PROCESS_STAGES.length) * 100}%`,
               }}
@@ -179,13 +179,13 @@ export default function ProcessSection() {
                   onClick={() => handleSelectStage(idx)}
                   className={`group flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full transition-all text-xs font-sans uppercase tracking-wider whitespace-nowrap cursor-pointer ${
                     isActive
-                      ? "bg-[#623719] text-[#FAF7F1] font-bold shadow-xs"
-                      : "bg-[#F3EBDD]/50 text-[#26180E]/70 hover:text-[#623719] hover:bg-[#F3EBDD]"
+                      ? "bg-[#5A3218] text-[#FFFDF9] font-bold shadow-xs"
+                      : "bg-[#F6F1E8]/70 text-[#26180E]/70 hover:text-[#5A3218] hover:bg-[#F6F1E8]"
                   }`}
                 >
                   <span
                     className={`font-mono text-[11px] ${
-                      isActive ? "text-[#F3EBDD]" : "text-[#8A5834]"
+                      isActive ? "text-[#D7B88F]" : "text-[#A16B3C]"
                     }`}
                   >
                     {s.num}
@@ -202,7 +202,7 @@ export default function ProcessSection() {
           {/* Visual Container */}
           <div
             ref={visualRef}
-            className="lg:col-span-7 relative h-[360px] sm:h-[440px] rounded-3xl overflow-hidden bg-[#26180E]/5 border border-[#623719]/15 shadow-xs"
+            className="lg:col-span-7 relative h-[360px] sm:h-[440px] rounded-3xl overflow-hidden bg-[#26180E]/5 border border-[#5A3218]/15 shadow-xs"
           >
             {stage.video ? (
               <video
@@ -227,15 +227,15 @@ export default function ProcessSection() {
 
             <div className="absolute inset-0 bg-gradient-to-t from-[#26180E]/70 via-transparent to-transparent pointer-events-none" />
 
-            <div className="absolute top-4 left-4 px-3.5 py-1 rounded-full bg-[#FAF7F1]/90 backdrop-blur-xs text-[10px] font-sans font-bold tracking-wider text-[#623719] uppercase shadow-xs">
+            <div className="absolute top-4 left-4 px-3.5 py-1 rounded-full bg-[#FFFDF9]/90 backdrop-blur-xs text-[10px] font-sans font-bold tracking-wider text-[#5A3218] uppercase shadow-xs">
               STAGE {stage.num} {"//"} {stage.name}
             </div>
 
-            <div className="absolute bottom-6 left-6 right-6 text-[#FAF7F1] space-y-1">
-              <span className="text-xs font-mono text-[#F3EBDD] uppercase tracking-wider block">
+            <div className="absolute bottom-6 left-6 right-6 text-[#FFFDF9] space-y-1">
+              <span className="text-xs font-mono text-[#D7B88F] uppercase tracking-wider block">
                 {stage.spec}
               </span>
-              <h3 className="font-serif text-2xl sm:text-3xl font-normal text-[#FAF7F1]">
+              <h3 className="font-serif text-2xl sm:text-3xl font-normal text-[#FFFDF9]">
                 {stage.subtitle}
               </h3>
             </div>
@@ -244,23 +244,23 @@ export default function ProcessSection() {
           {/* Text Container */}
           <div ref={textRef} className="lg:col-span-5 space-y-6">
             <div className="space-y-3">
-              <span className="text-xs font-mono font-bold tracking-[0.2em] text-[#8A5834] uppercase block">
+              <span className="text-xs font-mono font-bold tracking-[0.2em] text-[#A16B3C] uppercase block">
                 PHASE {stage.num} OF 07
               </span>
-              <h3 className="font-serif text-3xl sm:text-4xl text-[#26180E] font-normal leading-tight">
+              <h3 className="font-serif text-3xl sm:text-4xl text-[#5A3218] font-normal leading-tight">
                 {stage.name}
               </h3>
-              <p className="text-sm font-sans font-medium text-[#8A5834]">
+              <p className="text-sm font-sans font-medium text-[#A16B3C]">
                 {stage.subtitle}
               </p>
             </div>
 
-            <p className="text-sm sm:text-base font-sans text-[#26180E]/80 leading-relaxed">
+            <p className="text-sm sm:text-base font-sans text-[#26180E]/80 leading-relaxed font-normal">
               {stage.description}
             </p>
 
-            <div className="p-4 rounded-xl bg-[#F3EBDD]/40 border border-[#623719]/10 space-y-1">
-              <span className="text-[11px] font-sans font-bold text-[#8A5834] uppercase tracking-wider block">
+            <div className="p-4 rounded-xl bg-[#F6F1E8]/70 border border-[#5A3218]/10 space-y-1">
+              <span className="text-[11px] font-sans font-bold text-[#A16B3C] uppercase tracking-wider block">
                 QUALITY BENCHMARK
               </span>
               <p className="text-xs sm:text-sm font-sans font-semibold text-[#26180E]">
@@ -273,13 +273,13 @@ export default function ProcessSection() {
                 onClick={() =>
                   handleSelectStage((activeStage + 1) % PROCESS_STAGES.length)
                 }
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#623719] hover:bg-[#8A5834] text-[#FAF7F1] text-xs font-sans font-bold uppercase tracking-wider transition-colors cursor-pointer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#5A3218] hover:bg-[#754522] text-[#FFFDF9] text-xs font-sans font-bold uppercase tracking-wider transition-colors cursor-pointer"
               >
                 <span>NEXT STAGE</span>
                 <ChevronRight className="w-4 h-4" />
               </button>
 
-              <span className="text-xs font-mono text-[#8A5834]">
+              <span className="text-xs font-mono text-[#A16B3C]">
                 {activeStage + 1} / {PROCESS_STAGES.length}
               </span>
             </div>

@@ -99,16 +99,16 @@ export default function GlobalExportSection() {
   return (
     <section
       id="global-export"
-      className="relative w-full py-20 lg:py-28 px-6 sm:px-8 lg:px-12 bg-[#FAF7F1] text-[#26180E] border-t border-[#623719]/10"
+      className="relative w-full py-20 lg:py-28 px-6 sm:px-8 lg:px-12 bg-[#FFFDF9] text-[#26180E] border-t border-[#5A3218]/10"
     >
       <div className="max-w-7xl mx-auto w-full space-y-12">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="space-y-3">
-            <span className="text-xs font-sans font-bold tracking-[0.2em] text-[#8A5834] uppercase block">
-              GLOBAL MARITIME CORRIDORS // 06
+            <span className="text-xs font-sans font-bold tracking-[0.2em] text-[#A16B3C] uppercase block">
+              GLOBAL MARITIME CORRIDORS // 08
             </span>
-            <h2 className="font-serif text-[38px] sm:text-[50px] lg:text-[60px] font-normal leading-[1.08] tracking-tight text-[#26180E]">
+            <h2 className="font-serif text-[38px] sm:text-[50px] lg:text-[60px] font-normal leading-[1.08] tracking-tight text-[#5A3218]">
               FROM INDIAN SOIL
               <br />
               TO 35+ NATIONS.
@@ -121,16 +121,16 @@ export default function GlobalExportSection() {
         </div>
 
         {/* 11 & 12. CLEAN GLOBAL MAP: Warm Brown on Cream, India Highlighted, Thin Animated Routes */}
-        <div className="relative w-full rounded-3xl bg-[#F3EBDD]/50 border border-[#623719]/15 p-6 sm:p-10 shadow-xs overflow-hidden">
+        <div className="relative w-full rounded-3xl bg-[#F6F1E8]/70 border border-[#5A3218]/12 p-6 sm:p-10 shadow-xs overflow-hidden">
           {/* Top Map Bar */}
-          <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-[#623719]/10">
-            <div className="flex items-center gap-2 text-xs font-sans font-bold text-[#623719] uppercase tracking-wider">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#623719] animate-pulse" />
+          <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-[#5A3218]/10">
+            <div className="flex items-center gap-2 text-xs font-sans font-bold text-[#5A3218] uppercase tracking-wider">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#5A3218] animate-pulse" />
               <span>ORIGIN: MUNDRA PORT &amp; NHAVA SHEVA (INDIA)</span>
             </div>
 
-            <div className="text-xs font-sans text-[#8A5834]">
-              Active Corridor: <strong className="text-[#623719]">{selectedDest.country}</strong> ({selectedDest.port}) • Est. Transit: {selectedDest.transitDays}
+            <div className="text-xs font-sans text-[#A16B3C]">
+              Active Corridor: <strong className="text-[#5A3218]">{selectedDest.country}</strong> ({selectedDest.port}) • Est. Transit: {selectedDest.transitDays}
             </div>
           </div>
 
@@ -145,18 +145,18 @@ export default function GlobalExportSection() {
               <defs>
                 {/* Subtle linear gradients for maritime shipping routes */}
                 <linearGradient id="routeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#8A5834" stopOpacity="0.8" />
-                  <stop offset="100%" stopColor="#623719" stopOpacity="0.3" />
+                  <stop offset="0%" stopColor="#A16B3C" stopOpacity="0.8" />
+                  <stop offset="100%" stopColor="#5A3218" stopOpacity="0.3" />
                 </linearGradient>
 
                 <linearGradient id="activeRouteGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#623719" stopOpacity="1" />
-                  <stop offset="100%" stopColor="#8A5834" stopOpacity="0.9" />
+                  <stop offset="0%" stopColor="#5A3218" stopOpacity="1" />
+                  <stop offset="100%" stopColor="#A16B3C" stopOpacity="0.9" />
                 </linearGradient>
               </defs>
 
               {/* Simplified Warm Brown Continents Silhouette */}
-              <g fill="#D8C8B4" opacity="0.6">
+              <g fill="#D7B88F" opacity="0.45">
                 {/* Europe */}
                 <path d="M 380 90 Q 440 80 480 120 Q 450 160 410 160 Q 380 130 380 90 Z" />
                 {/* Africa */}
@@ -171,9 +171,9 @@ export default function GlobalExportSection() {
               {/* Highlighted India Subcontinent in Warm Deep Peanut Brown */}
               <path
                 d="M 620 180 Q 645 175 660 195 Q 670 240 645 285 Q 625 240 615 210 Z"
-                fill="#8A5834"
+                fill="#A16B3C"
                 opacity="0.85"
-                stroke="#623719"
+                stroke="#5A3218"
                 strokeWidth="1.5"
               />
 
@@ -190,7 +190,7 @@ export default function GlobalExportSection() {
                     {/* Background track */}
                     <path
                       d={pathD}
-                      stroke={isSelected ? "#623719" : "#8A5834"}
+                      stroke={isSelected ? "#5A3218" : "#A16B3C"}
                       strokeWidth={isSelected ? 2.5 : 1.2}
                       strokeDasharray={isSelected ? "none" : "3 4"}
                       opacity={isSelected ? 1 : 0.4}
@@ -200,7 +200,7 @@ export default function GlobalExportSection() {
 
                     {/* Small Peanut Marker moving along active route */}
                     {isSelected && (
-                      <circle r="4" fill="#623719">
+                      <circle r="4" fill="#5A3218">
                         <animateMotion
                           path={pathD}
                           dur="3s"
@@ -214,8 +214,8 @@ export default function GlobalExportSection() {
                       cx={dest.x}
                       cy={dest.y}
                       r={isSelected ? 6 : 4}
-                      fill={isSelected ? "#623719" : "#8A5834"}
-                      stroke="#FAF7F1"
+                      fill={isSelected ? "#5A3218" : "#A16B3C"}
+                      stroke="#FFFDF9"
                       strokeWidth="2"
                       className="cursor-pointer hover:scale-125 transition-transform"
                       onClick={() => setSelectedDest(dest)}
@@ -228,7 +228,7 @@ export default function GlobalExportSection() {
                       fontSize="9"
                       fontFamily="sans-serif"
                       fontWeight={isSelected ? "bold" : "normal"}
-                      fill={isSelected ? "#623719" : "#26180E"}
+                      fill={isSelected ? "#5A3218" : "#26180E"}
                       opacity={isSelected ? 1 : 0.75}
                       textAnchor="middle"
                       className="select-none pointer-events-none"
@@ -244,8 +244,8 @@ export default function GlobalExportSection() {
                 cx={INDIA_ORIGIN.x}
                 cy={INDIA_ORIGIN.y}
                 r="7"
-                fill="#623719"
-                stroke="#FAF7F1"
+                fill="#5A3218"
+                stroke="#FFFDF9"
                 strokeWidth="2.5"
               />
               <text
@@ -254,7 +254,7 @@ export default function GlobalExportSection() {
                 fontSize="10"
                 fontFamily="sans-serif"
                 fontWeight="bold"
-                fill="#623719"
+                fill="#5A3218"
                 textAnchor="middle"
               >
                 INDIA (Mundra)
@@ -263,7 +263,7 @@ export default function GlobalExportSection() {
           </div>
 
           {/* Quick Destination Corridor Switcher */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5 pt-4 border-t border-[#623719]/10">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5 pt-4 border-t border-[#5A3218]/10">
             {DESTINATIONS.slice(0, 5).map((dest) => {
               const active = selectedDest.country === dest.country;
               return (
@@ -272,13 +272,13 @@ export default function GlobalExportSection() {
                   onClick={() => setSelectedDest(dest)}
                   className={`p-3 rounded-xl text-left transition-all cursor-pointer ${
                     active
-                      ? "bg-[#623719] text-[#FAF7F1] shadow-xs"
-                      : "bg-[#FAF7F1]/80 text-[#26180E] hover:bg-[#FAF7F1] border border-[#623719]/10"
+                      ? "bg-[#5A3218] text-[#FFFDF9] shadow-xs"
+                      : "bg-[#FFFDF9]/80 text-[#26180E] hover:bg-[#FFFDF9] border border-[#5A3218]/10"
                   }`}
                 >
                   <span
                     className={`text-[10px] font-sans font-bold uppercase tracking-wider block ${
-                      active ? "text-[#F3EBDD]" : "text-[#8A5834]"
+                      active ? "text-[#D7B88F]" : "text-[#A16B3C]"
                     }`}
                   >
                     {dest.region}
@@ -288,7 +288,7 @@ export default function GlobalExportSection() {
                   </div>
                   <span
                     className={`text-[10px] font-mono block truncate ${
-                      active ? "text-[#FAF7F1]/80" : "text-[#26180E]/60"
+                      active ? "text-[#FFFDF9]/80" : "text-[#26180E]/60"
                     }`}
                   >
                     {dest.port}

@@ -282,25 +282,56 @@ export default function ContactPage() {
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
-                    {/* Row 1: Name & Corporate Email */}
+                    {/* Row 1: Name & Company */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-xs font-mono text-[#7A4824] uppercase mb-1.5 font-medium">
-                          Contact Name *
+                          Name *
                         </label>
                         <input
                           type="text"
                           required
                           value={formData.fullName}
                           onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                          placeholder="e.g. Michael Henderson"
+                          placeholder="Your Full Name"
                           className="w-full px-4 py-3 rounded-xl bg-[#FFFDF8] border border-[#5A3218]/20 text-sm font-sans placeholder-[#2E2117]/40 focus:outline-none focus:border-[#5A3218]"
                         />
                       </div>
 
                       <div>
                         <label className="block text-xs font-mono text-[#7A4824] uppercase mb-1.5 font-medium">
-                          Corporate Email *
+                          Company *
+                        </label>
+                        <input
+                          type="text"
+                          required
+                          value={formData.companyName}
+                          onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
+                          placeholder="Company / Organization Name"
+                          className="w-full px-4 py-3 rounded-xl bg-[#FFFDF8] border border-[#5A3218]/20 text-sm font-sans placeholder-[#2E2117]/40 focus:outline-none focus:border-[#5A3218]"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Row 2: Country & Email */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-xs font-mono text-[#7A4824] uppercase mb-1.5 font-medium">
+                          Country *
+                        </label>
+                        <input
+                          type="text"
+                          required
+                          value={formData.country}
+                          onChange={(e) => setFormData({ ...formData, country: e.target.value })}
+                          placeholder="Destination Country (e.g. Vietnam, UAE, Netherlands)"
+                          className="w-full px-4 py-3 rounded-xl bg-[#FFFDF8] border border-[#5A3218]/20 text-sm font-sans placeholder-[#2E2117]/40 focus:outline-none focus:border-[#5A3218]"
+                        />
+                      </div>
+
+                      <div>
+                        <label className="block text-xs font-mono text-[#7A4824] uppercase mb-1.5 font-medium">
+                          Email *
                         </label>
                         <input
                           type="email"
@@ -313,42 +344,25 @@ export default function ContactPage() {
                       </div>
                     </div>
 
-                    {/* Row 2: Phone & Company */}
+                    {/* Row 3: Phone & Product */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-xs font-mono text-[#7A4824] uppercase mb-1.5 font-medium">
-                          Phone / WhatsApp (with Country Code) *
+                          Phone *
                         </label>
                         <input
                           type="text"
                           required
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                          placeholder="+1 555 123 4567"
+                          placeholder="+ Country Code & Phone Number"
                           className="w-full px-4 py-3 rounded-xl bg-[#FFFDF8] border border-[#5A3218]/20 text-sm font-sans placeholder-[#2E2117]/40 focus:outline-none focus:border-[#5A3218]"
                         />
                       </div>
 
                       <div>
                         <label className="block text-xs font-mono text-[#7A4824] uppercase mb-1.5 font-medium">
-                          Company Name &amp; Country *
-                        </label>
-                        <input
-                          type="text"
-                          required
-                          value={formData.companyName}
-                          onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
-                          placeholder="Global Foods Ltd (United Kingdom)"
-                          className="w-full px-4 py-3 rounded-xl bg-[#FFFDF8] border border-[#5A3218]/20 text-sm font-sans placeholder-[#2E2117]/40 focus:outline-none focus:border-[#5A3218]"
-                        />
-                      </div>
-                    </div>
-
-                    {/* Row 3: Product Category & Sizing */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div>
-                        <label className="block text-xs font-mono text-[#7A4824] uppercase mb-1.5 font-medium">
-                          Product Category *
+                          Product *
                         </label>
                         <select
                           value={formData.product}
@@ -362,105 +376,55 @@ export default function ContactPage() {
                           ))}
                         </select>
                       </div>
-
-                      <div>
-                        <label className="block text-xs font-mono text-[#7A4824] uppercase mb-1.5 font-medium">
-                          Caliber / Count Specification *
-                        </label>
-                        <select
-                          value={formData.grade}
-                          onChange={(e) => setFormData({ ...formData, grade: e.target.value })}
-                          className="w-full px-4 py-3 rounded-xl bg-[#FFFDF8] border border-[#5A3218]/20 text-sm font-sans focus:outline-none focus:border-[#5A3218]"
-                        >
-                          {gradeOptions.map((opt) => (
-                            <option key={opt} value={opt}>
-                              {opt}
-                            </option>
-                          ))}
-                        </select>
-                      </div>
                     </div>
 
-                    {/* Row 4: Quantity & Packaging */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div>
-                        <label className="block text-xs font-mono text-[#7A4824] uppercase mb-1.5 font-medium">
-                          Contract Volume *
-                        </label>
-                        <select
-                          value={formData.quantity}
-                          onChange={(e) => setFormData({ ...formData, quantity: e.target.value })}
-                          className="w-full px-4 py-3 rounded-xl bg-[#FFFDF8] border border-[#5A3218]/20 text-sm font-sans focus:outline-none focus:border-[#5A3218]"
-                        >
-                          {quantityOptions.map((opt) => (
-                            <option key={opt} value={opt}>
-                              {opt}
-                            </option>
-                          ))}
-                        </select>
-                      </div>
-
-                      <div>
-                        <label className="block text-xs font-mono text-[#7A4824] uppercase mb-1.5 font-medium">
-                          Packaging Preference *
-                        </label>
-                        <select
-                          value={formData.packaging}
-                          onChange={(e) => setFormData({ ...formData, packaging: e.target.value })}
-                          className="w-full px-4 py-3 rounded-xl bg-[#FFFDF8] border border-[#5A3218]/20 text-sm font-sans focus:outline-none focus:border-[#5A3218]"
-                        >
-                          {packagingOptions.map((opt) => (
-                            <option key={opt} value={opt}>
-                              {opt}
-                            </option>
-                          ))}
-                        </select>
-                      </div>
-                    </div>
-
-                    {/* Row 5: Destination Port */}
+                    {/* Row 4: Quantity */}
                     <div>
                       <label className="block text-xs font-mono text-[#7A4824] uppercase mb-1.5 font-medium">
-                        Target Destination Port (for CIF pricing)
+                        Quantity *
                       </label>
-                      <input
-                        type="text"
-                        value={formData.port}
-                        onChange={(e) => setFormData({ ...formData, port: e.target.value })}
-                        placeholder="e.g. Rotterdam, Jebel Ali, Haiphong, Singapore, Felixstowe"
-                        className="w-full px-4 py-3 rounded-xl bg-[#FFFDF8] border border-[#5A3218]/20 text-sm font-sans placeholder-[#2E2117]/40 focus:outline-none focus:border-[#5A3218]"
-                      />
+                      <select
+                        value={formData.quantity}
+                        onChange={(e) => setFormData({ ...formData, quantity: e.target.value })}
+                        className="w-full px-4 py-3 rounded-xl bg-[#FFFDF8] border border-[#5A3218]/20 text-sm font-sans focus:outline-none focus:border-[#5A3218]"
+                      >
+                        {quantityOptions.map((opt) => (
+                          <option key={opt} value={opt}>
+                            {opt}
+                          </option>
+                        ))}
+                      </select>
                     </div>
 
-                    {/* Row 6: Additional Message */}
+                    {/* Row 5: Message */}
                     <div>
                       <label className="block text-xs font-mono text-[#7A4824] uppercase mb-1.5 font-medium">
-                        Special Quality Parameters or Notes
+                        Message
                       </label>
                       <textarea
-                        rows={3}
+                        rows={4}
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        placeholder="Specify moisture tolerance, aflatoxin threshold (<4 ppb), target dispatch date, or certification requirements (SGS, Intertek, etc.)."
+                        placeholder="Tell us about target delivery terms (FOB / CIF), destination port, packaging preferences, or specific quality thresholds."
                         className="w-full px-4 py-3 rounded-xl bg-[#FFFDF8] border border-[#5A3218]/20 text-sm font-sans placeholder-[#2E2117]/40 focus:outline-none focus:border-[#5A3218]"
                       />
                     </div>
 
-                    {/* Submit Button */}
+                    {/* Submit Button: SEND ENQUIRY */}
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full py-4 rounded-2xl bg-[#5A3218] hover:bg-[#7A4824] disabled:bg-[#5A3218]/60 text-[#FFFDF8] font-sans font-medium text-base transition-all shadow-md flex items-center justify-center gap-3 cursor-pointer"
+                      className="w-full py-4 rounded-2xl bg-[#5A3218] hover:bg-[#7A4824] disabled:bg-[#5A3218]/60 text-[#FFFDF8] font-sans font-bold text-sm tracking-widest uppercase transition-all shadow-md flex items-center justify-center gap-3 cursor-pointer"
                     >
                       {isSubmitting ? (
                         <div className="flex items-center gap-2">
                           <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                          <span>Generating Contract Inquiry...</span>
+                          <span>SENDING...</span>
                         </div>
                       ) : (
                         <>
                           <Send className="w-4 h-4" />
-                          <span>Transmit Official Export Inquiry</span>
+                          <span>SEND ENQUIRY</span>
                         </>
                       )}
                     </button>

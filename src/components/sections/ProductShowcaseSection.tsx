@@ -3,7 +3,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, ChevronRight } from "lucide-react";
+import { ArrowRight, ChevronRight } from "lucide-react";
 import { gsap } from "gsap";
 
 interface ShowcaseProduct {
@@ -95,20 +95,25 @@ const SHOWCASE_PRODUCTS: ShowcaseProduct[] = [
 
 export default function ProductShowcaseSection() {
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [prevIndex, setPrevIndex] = useState(0);
+  const [transitioningFrom, setTransitioningFrom] = useState<number | null>(null);
 
   const activeProduct = SHOWCASE_PRODUCTS[selectedIndex];
-  const imageContainerRef = useRef<HTMLDivElement>(null);
-  const currentImgRef = useRef<HTMLDivElement>(null);
+  const outgoingProduct = transitioningFrom !== null ? SHOWCASE_PRODUCTS[transitioningFrom] : null;
+
+  const outgoingImgRef = useRef<HTMLDivElement>(null);
+  const incomingImgRef = useRef<HTMLDivElement>(null);
   const infoRef = useRef<HTMLDivElement>(null);
 
-  // Peanut image hover state
+  // Peanut image hover state: max 10px movement, scale 1 -> 1.03
   const [mousePos, setMousePos] = useState({ x: 0, y: 0, hovering: false });
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 20; // max 10px in each direction
-    const y = ((e.clientY - rect.top) / rect.height - 0.5) * 20;
+    // Clamp to max 10px in either direction
+    const rawX = ((e.clientX - rect.left) / rect.width - 0.5) * 20;
+    const rawY = ((e.clientY - rect.top) / rect.height - 0.5) * 20;
+    const x = Math.max(-10, Math.min(10, rawX));
+    const y = Math.max(-10, Math.min(10, rawY));
     setMousePos({ x, y, hovering: true });
   };
 
@@ -118,50 +123,74 @@ export default function ProductShowcaseSection() {
 
   const handleSelectProduct = (newIndex: number) => {
     if (newIndex === selectedIndex) return;
-    setPrevIndex(selectedIndex);
+    setTransitioningFrom(selectedIndex);
     setSelectedIndex(newIndex);
   };
 
-  // GSAP Transition on Product Change:
+  // GSAP Product Transition:
   // previous image: scale 1 -> 0.96, move left 30px, opacity 1 -> 0
   // new image: scale 1.04 -> 1, move right 30px -> 0, opacity 0 -> 1
   // Duration: 0.7 - 1.0s
   useEffect(() => {
-    if (!currentImgRef.current || !infoRef.current) return;
-
     const ctx = gsap.context(() => {
-      // Animate the new image in
-      gsap.fromTo(
-        currentImgRef.current,
-        {
-          opacity: 0,
-          x: 30,
-          scale: 1.04,
+      const tl = gsap.timeline({
+        onComplete: () => {
+          setTransitioningFrom(null);
         },
-        {
-          opacity: 1,
-          x: 0,
-          scale: 1,
-          duration: 0.85,
-          ease: "power2.out",
-        }
-      );
+      });
 
-      // Subtle fade & lift for information text
-      gsap.fromTo(
-        infoRef.current,
-        {
-          opacity: 0,
-          y: 16,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.65,
-          ease: "power2.out",
-          delay: 0.1,
-        }
-      );
+      // Outgoing product image
+      if (outgoingImgRef.current) {
+        tl.to(
+          outgoingImgRef.current,
+          {
+            scale: 0.96,
+            x: -30,
+            opacity: 0,
+            duration: 0.8,
+            ease: "power2.out",
+          },
+          0
+        );
+      }
+
+      // Incoming product image
+      if (incomingImgRef.current) {
+        tl.fromTo(
+          incomingImgRef.current,
+          {
+            scale: 1.04,
+            x: 30,
+            opacity: 0,
+          },
+          {
+            scale: 1,
+            x: 0,
+            opacity: 1,
+            duration: 0.85,
+            ease: "power2.out",
+          },
+          0
+        );
+      }
+
+      // Information text subtle reveal
+      if (infoRef.current) {
+        tl.fromTo(
+          infoRef.current,
+          {
+            opacity: 0,
+            y: 15,
+          },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.65,
+            ease: "power2.out",
+          },
+          0.05
+        );
+      }
     });
 
     return () => ctx.revert();
@@ -170,16 +199,16 @@ export default function ProductShowcaseSection() {
   return (
     <section
       id="products"
-      className="relative w-full py-20 lg:py-28 px-6 sm:px-8 lg:px-12 bg-[#FAF7F1] text-[#26180E] border-t border-[#623719]/10"
+      className="relative w-full py-20 lg:py-28 px-6 sm:px-8 lg:px-12 bg-[#FFFDF9] text-[#26180E] border-t border-[#5A3218]/10"
     >
       <div className="max-w-7xl mx-auto w-full space-y-12">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="space-y-3">
-            <span className="text-xs font-sans font-bold tracking-[0.2em] text-[#8A5834] uppercase block">
-              PRODUCT EXPERIENCE // 01
+            <span className="text-xs font-sans font-bold tracking-[0.2em] text-[#A16B3C] uppercase block">
+              PRODUCT EXPERIENCE // 03
             </span>
-            <h2 className="font-serif text-[38px] sm:text-[50px] lg:text-[60px] font-normal leading-[1.08] tracking-tight text-[#26180E]">
+            <h2 className="font-serif text-[38px] sm:text-[50px] lg:text-[60px] font-normal leading-[1.08] tracking-tight text-[#5A3218]">
               PEANUTS, PREPARED
               <br />
               FOR THE WORLD.
@@ -187,12 +216,12 @@ export default function ProductShowcaseSection() {
           </div>
 
           <p className="max-w-md text-sm sm:text-base font-sans text-[#26180E]/75 leading-relaxed">
-            Every batch undergoes multi-stage mechanical screening, optical bichromatic color sorting, and strict moisture stabilization before export.
+            Every batch undergoes multi-stage mechanical screening, optical bichromatic color sorting, and strict moisture stabilization before export dispatch.
           </p>
         </div>
 
-        {/* 3. PRODUCT NAVIGATION: Small, clean product selector (01 BOLD, 02 JAVA, etc.) */}
-        <div className="w-full border-y border-[#623719]/15 py-3">
+        {/* 3. PRODUCT NAVIGATION: Small, clean product selector */}
+        <div className="w-full border-y border-[#5A3218]/12 py-3">
           <div className="flex items-center justify-start sm:justify-between overflow-x-auto no-scrollbar gap-2 sm:gap-4">
             {SHOWCASE_PRODUCTS.map((prod, idx) => {
               const isActive = selectedIndex === idx;
@@ -200,41 +229,59 @@ export default function ProductShowcaseSection() {
                 <button
                   key={prod.num}
                   onClick={() => handleSelectProduct(idx)}
-                  className={`group relative flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300 text-xs font-sans tracking-wider uppercase whitespace-nowrap cursor-pointer ${
+                  className={`group relative flex items-center gap-2.5 px-4 sm:px-5 py-2 rounded-full transition-all duration-300 text-xs font-sans tracking-wider uppercase whitespace-nowrap cursor-pointer ${
                     isActive
-                      ? "bg-[#623719] text-[#FAF7F1] shadow-xs"
-                      : "bg-transparent text-[#26180E]/70 hover:text-[#623719] hover:bg-[#F3EBDD]/60"
+                      ? "bg-[#5A3218] text-[#FFFDF9] shadow-xs font-bold"
+                      : "bg-transparent text-[#26180E]/70 hover:text-[#5A3218] hover:bg-[#F6F1E8]"
                   }`}
                 >
                   <span
                     className={`font-mono text-[11px] font-bold ${
-                      isActive ? "text-[#F3EBDD]" : "text-[#8A5834]"
+                      isActive ? "text-[#D7B88F]" : "text-[#A16B3C]"
                     }`}
                   >
                     {prod.num}
                   </span>
-                  <span className="font-bold">{prod.shortLabel}</span>
+                  <span>{prod.shortLabel}</span>
                 </button>
               );
             })}
           </div>
         </div>
 
-        {/* 2. PRODUCT SHOWCASE: Large horizontal experience (Desktop: Left: Image, Right: Information) */}
+        {/* 2. PRODUCT SHOWCASE: Large horizontal experience (Left: Image, Right: Information) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center min-h-[520px]">
-          {/* LEFT: Product Image with Subtle Physical Interaction */}
+          {/* LEFT: Product Image with Subtle Physical Hover Interaction (max 10px, scale 1 -> 1.03) */}
           <div
-            ref={imageContainerRef}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
-            className="lg:col-span-6 relative aspect-[4/3] sm:aspect-[16/11] rounded-3xl bg-[#F3EBDD]/50 border border-[#623719]/15 flex items-center justify-center p-6 sm:p-10 overflow-hidden cursor-crosshair group shadow-xs"
+            className="lg:col-span-6 relative aspect-[4/3] sm:aspect-[16/11] rounded-3xl bg-[#F6F1E8]/70 border border-[#5A3218]/12 flex items-center justify-center p-6 sm:p-10 overflow-hidden cursor-crosshair group shadow-xs"
           >
-            {/* Subtle radial glow under product */}
-            <div className="absolute inset-0 bg-radial from-[#8A5834]/10 via-transparent to-transparent pointer-events-none" />
+            {/* Subtle warm depth glow under product */}
+            <div className="absolute inset-0 bg-radial from-[#A16B3C]/10 via-transparent to-transparent pointer-events-none" />
 
-            {/* Product Image Wrapper with max 10px hover movement & scale 1 -> 1.03 */}
+            {/* Outgoing Image during transition */}
+            {outgoingProduct && (
+              <div
+                ref={outgoingImgRef}
+                className="absolute inset-0 flex items-center justify-center p-6 sm:p-10 pointer-events-none transform-gpu"
+              >
+                <div className="relative w-full h-full max-w-[420px] max-h-[380px] flex items-center justify-center">
+                  <Image
+                    src={outgoingProduct.image}
+                    alt={outgoingProduct.name}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-contain filter drop-shadow-md"
+                    priority
+                  />
+                </div>
+              </div>
+            )}
+
+            {/* Incoming / Active Product Image with Hover Interaction */}
             <div
-              ref={currentImgRef}
+              ref={incomingImgRef}
               style={{
                 transform: mousePos.hovering
                   ? `translate3d(${mousePos.x}px, ${mousePos.y}px, 0px) scale(1.03)`
@@ -255,12 +302,12 @@ export default function ProductShowcaseSection() {
               />
             </div>
 
-            {/* Subtle Origin Badge */}
-            <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-[#FAF7F1]/90 backdrop-blur-xs border border-[#623719]/10 text-[10px] font-sans font-bold tracking-wider text-[#8A5834] uppercase">
+            {/* Origin Pill Badge */}
+            <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-[#FFFDF9]/95 backdrop-blur-xs border border-[#5A3218]/12 text-[10px] font-sans font-bold tracking-wider text-[#A16B3C] uppercase">
               {activeProduct.category}
             </div>
 
-            {/* Interaction Hint */}
+            {/* Physical Interaction Hint */}
             <div className="absolute bottom-4 right-4 text-[10px] font-sans text-[#26180E]/40 uppercase tracking-widest hidden sm:block">
               HOVER TO INSPECT KERNEL
             </div>
@@ -269,25 +316,25 @@ export default function ProductShowcaseSection() {
           {/* RIGHT: Product Information (Real specifications only) */}
           <div ref={infoRef} className="lg:col-span-6 space-y-6">
             <div className="space-y-2">
-              <span className="text-xs font-mono font-bold tracking-[0.2em] text-[#8A5834] uppercase block">
+              <span className="text-xs font-mono font-bold tracking-[0.2em] text-[#A16B3C] uppercase block">
                 {activeProduct.num} {"//"} {activeProduct.category}
               </span>
-              <h3 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-[#26180E] leading-tight">
+              <h3 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-[#5A3218] leading-tight">
                 {activeProduct.name}
               </h3>
-              <p className="text-base font-sans text-[#8A5834] font-medium">
+              <p className="text-base font-sans text-[#A16B3C] font-medium">
                 {activeProduct.tagline}
               </p>
             </div>
 
-            <p className="text-sm sm:text-base font-sans text-[#26180E]/80 leading-relaxed">
+            <p className="text-sm sm:text-base font-sans text-[#26180E]/80 leading-relaxed font-normal">
               {activeProduct.description}
             </p>
 
             {/* Information Grid: Grade, Size, Packaging, Application */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 border-t border-[#623719]/15">
-              <div className="p-4 rounded-xl bg-[#F3EBDD]/40 border border-[#623719]/10 space-y-1">
-                <span className="text-[11px] font-sans font-bold text-[#8A5834] tracking-wider uppercase block">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 border-t border-[#5A3218]/12">
+              <div className="p-4 rounded-xl bg-[#F6F1E8]/70 border border-[#5A3218]/10 space-y-1">
+                <span className="text-[11px] font-sans font-bold text-[#A16B3C] tracking-wider uppercase block">
                   GRADE SPECIFICATION
                 </span>
                 <p className="text-xs sm:text-sm font-sans font-semibold text-[#26180E]">
@@ -295,8 +342,8 @@ export default function ProductShowcaseSection() {
                 </p>
               </div>
 
-              <div className="p-4 rounded-xl bg-[#F3EBDD]/40 border border-[#623719]/10 space-y-1">
-                <span className="text-[11px] font-sans font-bold text-[#8A5834] tracking-wider uppercase block">
+              <div className="p-4 rounded-xl bg-[#F6F1E8]/70 border border-[#5A3218]/10 space-y-1">
+                <span className="text-[11px] font-sans font-bold text-[#A16B3C] tracking-wider uppercase block">
                   COUNTS &amp; SIZING
                 </span>
                 <p className="text-xs sm:text-sm font-sans font-semibold text-[#26180E]">
@@ -304,8 +351,8 @@ export default function ProductShowcaseSection() {
                 </p>
               </div>
 
-              <div className="p-4 rounded-xl bg-[#F3EBDD]/40 border border-[#623719]/10 space-y-1">
-                <span className="text-[11px] font-sans font-bold text-[#8A5834] tracking-wider uppercase block">
+              <div className="p-4 rounded-xl bg-[#F6F1E8]/70 border border-[#5A3218]/10 space-y-1">
+                <span className="text-[11px] font-sans font-bold text-[#A16B3C] tracking-wider uppercase block">
                   EXPORT PACKAGING
                 </span>
                 <p className="text-xs sm:text-sm font-sans font-semibold text-[#26180E]">
@@ -313,8 +360,8 @@ export default function ProductShowcaseSection() {
                 </p>
               </div>
 
-              <div className="p-4 rounded-xl bg-[#F3EBDD]/40 border border-[#623719]/10 space-y-1">
-                <span className="text-[11px] font-sans font-bold text-[#8A5834] tracking-wider uppercase block">
+              <div className="p-4 rounded-xl bg-[#F6F1E8]/70 border border-[#5A3218]/10 space-y-1">
+                <span className="text-[11px] font-sans font-bold text-[#A16B3C] tracking-wider uppercase block">
                   KEY APPLICATIONS
                 </span>
                 <p className="text-xs sm:text-sm font-sans font-semibold text-[#26180E]">
@@ -323,11 +370,11 @@ export default function ProductShowcaseSection() {
               </div>
             </div>
 
-            {/* Action CTA */}
+            {/* Action CTA: REQUEST A QUOTE */}
             <div className="pt-4 flex flex-wrap items-center gap-4">
               <Link
                 href={`/contact?product=${encodeURIComponent(activeProduct.name)}`}
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#623719] hover:bg-[#8A5834] text-[#FAF7F1] text-xs font-sans font-bold uppercase tracking-wider transition-colors shadow-xs"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#5A3218] hover:bg-[#754522] text-[#FFFDF9] text-xs font-sans font-bold uppercase tracking-wider transition-colors shadow-xs"
               >
                 <span>REQUEST A QUOTE</span>
                 <ArrowRight className="w-4 h-4" />
@@ -335,7 +382,7 @@ export default function ProductShowcaseSection() {
 
               <Link
                 href="/products"
-                className="inline-flex items-center gap-1.5 text-xs font-sans font-bold uppercase tracking-wider text-[#8A5834] hover:text-[#623719] transition-colors"
+                className="inline-flex items-center gap-1.5 text-xs font-sans font-bold uppercase tracking-wider text-[#A16B3C] hover:text-[#5A3218] transition-colors"
               >
                 <span>VIEW COMPLETE CATALOGUE</span>
                 <ChevronRight className="w-4 h-4" />

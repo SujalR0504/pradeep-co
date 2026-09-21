@@ -105,16 +105,16 @@ export default function PackagingSection() {
     <section
       id="packaging"
       ref={sectionRef}
-      className="relative w-full py-20 lg:py-28 px-6 sm:px-8 lg:px-12 bg-[#FAF7F1] text-[#26180E] border-t border-[#623719]/10 overflow-hidden"
+      className="relative w-full py-20 lg:py-28 px-6 sm:px-8 lg:px-12 bg-[#F6F1E8]/35 text-[#26180E] border-t border-[#5A3218]/10 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto w-full space-y-12">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="space-y-3">
-            <span className="text-xs font-sans font-bold tracking-[0.2em] text-[#8A5834] uppercase block">
-              LOGISTICS &amp; PACKAGING // 05
+            <span className="text-xs font-sans font-bold tracking-[0.2em] text-[#A16B3C] uppercase block">
+              LOGISTICS &amp; PACKAGING // 07
             </span>
-            <h2 className="font-serif text-[38px] sm:text-[50px] lg:text-[60px] font-normal leading-[1.08] tracking-tight text-[#26180E]">
+            <h2 className="font-serif text-[38px] sm:text-[50px] lg:text-[60px] font-normal leading-[1.08] tracking-tight text-[#5A3218]">
               FROM BURLAP SACK
               <br />
               TO OCEAN CONTAINER.
@@ -134,7 +134,7 @@ export default function PackagingSection() {
           {PACKAGING_STEPS.map((step, idx) => (
             <div
               key={step.id}
-              className="packaging-card rounded-2xl bg-[#F3EBDD]/40 border border-[#623719]/15 overflow-hidden flex flex-col justify-between group hover:bg-[#F3EBDD]/70 transition-all duration-300 shadow-xs"
+              className="packaging-card rounded-2xl bg-[#FFFDF9] border border-[#5A3218]/12 overflow-hidden flex flex-col justify-between group hover:bg-[#F6F1E8]/80 transition-all duration-300 shadow-xs"
             >
               {/* Image Container */}
               <div className="relative w-full h-44 bg-[#26180E]/5 overflow-hidden">
@@ -145,7 +145,7 @@ export default function PackagingSection() {
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 33vw, 20vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-full bg-[#FAF7F1]/90 backdrop-blur-xs text-[10px] font-sans font-bold text-[#623719] uppercase">
+                <div className="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-full bg-[#FFFDF9]/95 backdrop-blur-xs text-[10px] font-sans font-bold text-[#5A3218] uppercase">
                   {step.stepNum}
                 </div>
               </div>
@@ -153,10 +153,10 @@ export default function PackagingSection() {
               {/* Information Body */}
               <div className="p-5 space-y-3 flex-grow flex flex-col justify-between">
                 <div className="space-y-1.5">
-                  <span className="text-[10px] font-sans font-bold tracking-wider text-[#8A5834] uppercase block">
+                  <span className="text-[10px] font-sans font-bold tracking-wider text-[#A16B3C] uppercase block">
                     {step.category}
                   </span>
-                  <h3 className="font-serif text-lg text-[#26180E] font-normal leading-snug">
+                  <h3 className="font-serif text-lg text-[#5A3218] font-normal leading-snug">
                     {step.title}
                   </h3>
                   <p className="text-xs font-sans text-[#26180E]/70 leading-relaxed pt-1">
@@ -164,10 +164,8 @@ export default function PackagingSection() {
                   </p>
                 </div>
 
-                <div className="pt-2 border-t border-[#623719]/10">
-                  <span className="text-[10px] font-mono text-[#623719] font-medium block truncate">
-                    {step.specs}
-                  </span>
+                <div className="pt-3 border-t border-[#5A3218]/10 text-[11px] font-mono text-[#5A3218] font-semibold">
+                  {step.specs}
                 </div>
               </div>
             </div>
