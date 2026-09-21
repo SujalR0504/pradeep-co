@@ -171,7 +171,7 @@ export default function Scene08SortingGravityLab() {
             <div>
               <div className="flex items-center justify-between border-b border-[#5A3218]/15 pb-3 mb-4">
                 <span className="text-[10px] font-mono tracking-widest text-[#7A4824] uppercase font-bold">
-                  STAGE {currentStageData.num} // WORKFLOW SPEC
+                  STAGE {currentStageData.num} {"//"} WORKFLOW SPEC
                 </span>
                 <span className="text-xs font-mono font-bold text-[#5A3218]">
                   PRADEEP SORTEX UNIT

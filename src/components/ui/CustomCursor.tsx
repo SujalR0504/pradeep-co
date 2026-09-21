@@ -14,11 +14,9 @@ export default function CustomCursor() {
     const isDesktop = window.matchMedia("(min-width: 1024px) and (pointer: fine)").matches;
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    if (!isDesktop || prefersReducedMotion) {
-      setIsEnabled(false);
-      return;
+    if (isDesktop && !prefersReducedMotion) {
+      requestAnimationFrame(() => setIsEnabled(true));
     }
-    setIsEnabled(true);
 
     const dot = dotRef.current;
     const peanut = peanutRef.current;

@@ -247,7 +247,7 @@ export default function Scene12ReturnToEarthLoop() {
                 <div className="flex items-center gap-2">
                   <div className="w-2.5 h-2.5 rounded-full bg-[#C7A77C] animate-ping" />
                   <span className="text-xs font-mono font-bold tracking-wider uppercase">
-                    STAGE {currentStage.num} // {currentStage.name}
+                    STAGE {currentStage.num} {"//"} {currentStage.name}
                   </span>
                 </div>
                 <div className="bg-[#FCFAF5]/20 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-mono border border-white/30">

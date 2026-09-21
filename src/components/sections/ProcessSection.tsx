@@ -228,7 +228,7 @@ export default function ProcessSection() {
             <div className="absolute inset-0 bg-gradient-to-t from-[#26180E]/70 via-transparent to-transparent pointer-events-none" />
 
             <div className="absolute top-4 left-4 px-3.5 py-1 rounded-full bg-[#FAF7F1]/90 backdrop-blur-xs text-[10px] font-sans font-bold tracking-wider text-[#623719] uppercase shadow-xs">
-              STAGE {stage.num} // {stage.name}
+              STAGE {stage.num} {"//"} {stage.name}
             </div>
 
             <div className="absolute bottom-6 left-6 right-6 text-[#FAF7F1] space-y-1">

@@ -17,7 +17,7 @@ export default function Preloader() {
   useEffect(() => {
     const hasSeen = sessionStorage.getItem("ptc_preloader_seen_v2");
     if (hasSeen) {
-      setComplete(true);
+      requestAnimationFrame(() => setComplete(true));
       return;
     }
 

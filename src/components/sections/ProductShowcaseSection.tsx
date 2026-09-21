@@ -270,7 +270,7 @@ export default function ProductShowcaseSection() {
           <div ref={infoRef} className="lg:col-span-6 space-y-6">
             <div className="space-y-2">
               <span className="text-xs font-mono font-bold tracking-[0.2em] text-[#8A5834] uppercase block">
-                {activeProduct.num} // {activeProduct.category}
+                {activeProduct.num} {"//"} {activeProduct.category}
               </span>
               <h3 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-[#26180E] leading-tight">
                 {activeProduct.name}

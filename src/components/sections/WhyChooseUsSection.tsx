@@ -96,7 +96,7 @@ export default function WhyChooseUsSection() {
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
                     <span className="font-mono text-xs font-bold text-[#8A5834]">
-                      {item.num} // TRUST PILLAR
+                      {item.num} {"//"} TRUST PILLAR
                     </span>
                     <div className="w-9 h-9 rounded-full bg-[#623719]/10 flex items-center justify-center text-[#623719]">
                       <Icon className="w-4 h-4" />

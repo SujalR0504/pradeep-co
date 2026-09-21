@@ -133,7 +133,7 @@ export default function WhyPradeepWords() {
 
               <div className="space-y-1 pt-1">
                 <span className="text-[10px] font-mono text-[#70421F] uppercase tracking-wider block">
-                  Pillar {activePillar.num} // {activePillar.subtitle}
+                  Pillar {activePillar.num} {"//"} {activePillar.subtitle}
                 </span>
                 <h4 className="font-serif text-2xl text-[#2E2117] font-medium">
                   {activePillar.word}

@@ -302,7 +302,7 @@ export default function Scene09PeanutMacroZoom() {
     const render = () => {
       ctx.clearRect(0, 0, width, height);
 
-      let freqData = new Uint8Array(32);
+      const freqData = new Uint8Array(32);
       if (analyserRef.current && soundEnabled) {
         analyserRef.current.getByteFrequencyData(freqData);
       }

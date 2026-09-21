@@ -202,7 +202,7 @@ export default function NutJourneyPage() {
                 {/* Narrative Details (6 cols) */}
                 <div className={`lg:col-span-6 space-y-5 ${idx % 2 === 1 ? "lg:order-1" : "lg:order-2"}`}>
                   <div className="flex items-center gap-3 text-xs font-mono text-[#7A4824] uppercase tracking-wider font-bold">
-                    <span>STAGE {step.step} // 08</span>
+                    <span>STAGE {step.step} {"//"} 08</span>
                     <span>•</span>
                     <span>{step.tagline}</span>
                   </div>
