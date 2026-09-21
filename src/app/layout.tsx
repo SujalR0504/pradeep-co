@@ -1,23 +1,21 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Manrope } from "next/font/google";
+import { DM_Serif_Display, Manrope } from "next/font/google";
 import Navbar from "@/components/navigation/Navbar";
 import Footer from "@/components/navigation/Footer";
 import SmoothScroll from "@/components/layout/SmoothScroll";
-import Preloader from "@/components/ui/Preloader";
-import CustomCursor from "@/components/ui/CustomCursor";
 import "./globals.css";
 
-const cormorant = Cormorant_Garamond({
+const dmSerif = DM_Serif_Display({
   subsets: ["latin"],
-  variable: "--font-cormorant",
-  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-dm-serif",
+  weight: ["400"],
   display: "swap",
 });
 
 const manrope = Manrope({
   subsets: ["latin"],
   variable: "--font-manrope",
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -94,15 +92,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${cormorant.variable} ${manrope.variable} scroll-smooth`}
+      className={`${dmSerif.variable} ${manrope.variable} scroll-smooth`}
     >
-      <body className="min-h-screen flex flex-col bg-[#FBF8F2] text-[#2E2117] antialiased selection:bg-[#70421F] selection:text-[#FBF8F2]">
-        {/* Minimal 1-Second Preloader */}
-        <Preloader />
-
-        {/* Subtle Desktop Interactive Custom Cursor */}
-        <CustomCursor />
-
+      <body className="min-h-screen flex flex-col bg-[#FAF7F1] text-[#26180E] antialiased selection:bg-[#623719] selection:text-[#FAF7F1]">
         {/* Lenis Smooth Scroll */}
         <SmoothScroll>
           <Navbar />

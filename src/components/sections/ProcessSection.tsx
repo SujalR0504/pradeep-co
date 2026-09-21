@@ -1,247 +1,289 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowUpRight, ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronRight, CheckCircle2 } from "lucide-react";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { PROCESS_STEPS } from "@/data/process";
+
+interface ProcessStage {
+  num: string;
+  name: string;
+  subtitle: string;
+  description: string;
+  spec: string;
+  image?: string;
+  video?: string;
+}
+
+const PROCESS_STAGES: ProcessStage[] = [
+  {
+    num: "01",
+    name: "CULTIVATION",
+    subtitle: "Origin Sourcing & Soil Stewardship",
+    description:
+      "Direct agrarian relationships across certified agricultural belts in Madhya Pradesh and Gujarat. Farmers receive agronomic guidance and high-germination seed stock to cultivate uniform bold and java varieties.",
+    spec: "Direct Farmgate Belts • Zero Intermediate Adulteration",
+    image: "/images/india-farm-aerial.jpg",
+  },
+  {
+    num: "02",
+    name: "HARVEST",
+    subtitle: "Peak Physiological Maturity",
+    description:
+      "Harvested precisely when pods achieve optimal moisture and kernel fullness. Gentle field lifting followed by natural sun curing prevents internal kernel stress and preserves essential oleic fats.",
+    spec: "Field Moisture Screening • Controlled Sun Curing",
+    image: "/images/harvest-farmer.webp",
+  },
+  {
+    num: "03",
+    name: "CLEANING",
+    subtitle: "Pre-Cleaning, Aspiration & Destoning",
+    description:
+      "Raw peanut pods pass through multi-deck vibratory screens, heavy-density gravity separators, and high-velocity cyclone air aspirators to eliminate field soil, plant stems, and foreign matter.",
+    spec: "99.8% Foreign Matter Extraction • High-Volume Aspiration",
+    image: "/images/sustainability-soil.webp",
+  },
+  {
+    num: "04",
+    name: "SORTING",
+    subtitle: "Bichromatic Optical CCD Sorters",
+    description:
+      "Every single peanut kernel is scanned in free fall by high-speed optical CCD cameras. Bichromatic sensors detect minute color discrepancies, dark spots, or damaged testae, ejecting them with microsecond air pulses.",
+    spec: "4 MT / Hour Optical Line • Microsecond Pneumatic Ejection",
+    image: "/images/sortex-machine.webp",
+  },
+  {
+    num: "05",
+    name: "GRADING",
+    subtitle: "Mechanical Count Calibration",
+    description:
+      "Sorted kernels pass through calibrated rotary sizing screens to divide lots into exact count-per-ounce specifications (38/42, 40/50, 50/60, 60/70, 70/80) demanded by international buyers.",
+    spec: "Count-per-Ounce Precision • Strict Tolerance Control",
+    image: "/images/quality-lab.webp",
+  },
+  {
+    num: "06",
+    name: "PACKAGING",
+    subtitle: "Twill Jute & Vacuum Barrier",
+    description:
+      "Weigh-filled into traditional breathable jute burlap bags, polypropylene sacks, or nitrogen-flushed multi-wall vacuum cartons with triple lock-stitched seams to prevent ocean transit sweat.",
+    spec: "25kg / 50kg Bags • Triple Lock-Stitched Seams",
+    video: "/videos/factory-bag-stitch.mp4",
+  },
+  {
+    num: "07",
+    name: "EXPORT",
+    subtitle: "Mundra Port Logistics & Dispatch",
+    description:
+      "Stuffing into dedicated 20ft and 40ft sea containers lined with silica gel blankets. Rapid transit via western rail corridors to Mundra Port (INMUN1) for scheduled sailing across 35+ international destinations.",
+    spec: "FCL Container Logistics • Complete Phytosanitary COA",
+    image: "/images/shipping-port.webp",
+  },
+];
 
 export default function ProcessSection() {
+  const [activeStage, setActiveStage] = useState(0);
   const sectionRef = useRef<HTMLDivElement>(null);
-  const horizontalTrackRef = useRef<HTMLDivElement>(null);
-  const slidesRef = useRef<HTMLDivElement[]>([]);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const visualRef = useRef<HTMLDivElement>(null);
+  const textRef = useRef<HTMLDivElement>(null);
 
+  const stage = PROCESS_STAGES[activeStage];
+
+  // IntersectionObserver to pause/resume video when entering/leaving viewport
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+    const video = videoRef.current;
+    if (!video) return;
 
-    const mm = gsap.matchMedia();
-
-    // DESKTOP: PINNED HORIZONTAL CHAPTER JOURNEY
-    mm.add("(min-width: 1024px)", () => {
-      const track = horizontalTrackRef.current;
-      if (!track) return;
-
-      const totalSlides = PROCESS_STEPS.length;
-      const getScrollAmount = () => -(track.scrollWidth - window.innerWidth);
-
-      const pinTrigger = ScrollTrigger.create({
-        trigger: sectionRef.current,
-        start: "top top",
-        end: () => `+=${track.scrollWidth - window.innerWidth + 800}`,
-        pin: true,
-        anticipatePin: 1,
-        scrub: 1,
-      });
-
-      const horizontalAnim = gsap.to(track, {
-        x: getScrollAmount,
-        ease: "none",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top top",
-          end: () => `+=${track.scrollWidth - window.innerWidth + 800}`,
-          scrub: 1,
-          invalidateOnRefresh: true,
-        },
-      });
-
-      return () => {
-        pinTrigger.kill();
-        horizontalAnim.kill();
-      };
-    });
-
-    // MOBILE / TABLET: CLEAN VERTICAL TIMELINE STACK
-    mm.add("(max-width: 1023px)", () => {
-      slidesRef.current.forEach((slide) => {
-        if (!slide) return;
-        gsap.fromTo(
-          slide,
-          { opacity: 0, y: 30 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            ease: "power2.out",
-            scrollTrigger: {
-              trigger: slide,
-              start: "top 85%",
-            },
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            video.play().catch(() => {});
+          } else {
+            video.pause();
           }
-        );
-      });
-    });
+        });
+      },
+      { threshold: 0.25 }
+    );
 
-    return () => mm.revert();
-  }, []);
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, [activeStage]);
 
-  const addSlideRef = (el: HTMLDivElement | null) => {
-    if (el && !slidesRef.current.includes(el)) {
-      slidesRef.current.push(el);
+  // GSAP clean fade transition when stage changes
+  const handleSelectStage = (idx: number) => {
+    if (idx === activeStage) return;
+
+    if (visualRef.current && textRef.current) {
+      gsap.fromTo(
+        visualRef.current,
+        { opacity: 0.6, scale: 0.98 },
+        { opacity: 1, scale: 1, duration: 0.55, ease: "power2.out" }
+      );
+      gsap.fromTo(
+        textRef.current,
+        { opacity: 0, y: 15 },
+        { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }
+      );
     }
+
+    setActiveStage(idx);
   };
 
   return (
     <section
       id="process"
       ref={sectionRef}
-      className="relative bg-[#FFFDF8] text-[#2B1A0F] overflow-hidden"
+      className="relative w-full py-20 lg:py-28 px-6 sm:px-8 lg:px-12 bg-[#FAF7F1] text-[#26180E] border-t border-[#623719]/10"
     >
-      {/* DESKTOP PINNED VIEWPORT CONTAINER */}
-      <div className="hidden lg:flex flex-col justify-between h-screen w-full py-12">
-        {/* Top Sticky Header */}
-        <div className="max-w-7xl mx-auto px-8 w-full flex items-end justify-between border-b border-[#E8DDCB] pb-6 flex-shrink-0">
-          <div className="space-y-1">
-            <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#8A572F]">
-              <span className="w-6 h-[1.5px] bg-[#8A572F]" />
-              <span>Interactive Horizontal Journey</span>
-            </div>
-            <h2 className="font-serif text-3xl xl:text-4xl text-[#2B1A0F]">
-              FROM HARVEST TO EXPORT
+      <div className="max-w-7xl mx-auto w-full space-y-12">
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div className="space-y-3">
+            <span className="text-xs font-sans font-bold tracking-[0.2em] text-[#8A5834] uppercase block">
+              INDUSTRIAL PROCESS // 04
+            </span>
+            <h2 className="font-serif text-[38px] sm:text-[50px] lg:text-[60px] font-normal leading-[1.08] tracking-tight text-[#26180E]">
+              SEVEN STAGES.
+              <br />
+              ONE UNCOMPROMISING STANDARD.
             </h2>
           </div>
 
-          <div className="flex items-center gap-4 text-xs font-mono text-[#7D6B5D]">
-            <span>SCROLL VERTICALLY TO NAVIGATE 8 CHAPTERS</span>
-            <ArrowRight className="w-4 h-4 text-[#8A572F] animate-pulse" />
-          </div>
-        </div>
-
-        {/* Horizontal Sliding Track */}
-        <div
-          ref={horizontalTrackRef}
-          className="flex items-center gap-12 px-12 will-change-transform flex-grow my-auto"
-        >
-          {PROCESS_STEPS.map((step, idx) => (
-            <div
-              key={step.step}
-              ref={addSlideRef}
-              className="w-[72vw] max-w-[900px] flex-shrink-0 grid grid-cols-12 gap-8 items-center bg-[#FAF6EE] rounded-3xl p-8 border border-[#E8DDCB] shadow-[0_16px_40px_rgba(43,26,15,0.06)]"
-            >
-              {/* Image Side */}
-              <div className="col-span-6 relative aspect-[4/3] rounded-2xl overflow-hidden bg-[#FFFDF8]">
-                <Image
-                  src={step.image}
-                  alt={step.title}
-                  fill
-                  sizes="450px"
-                  className="object-cover"
-                />
-                <div className="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-[#2B1A0F]/85 backdrop-blur-md text-[#FFFDF8] text-xs font-semibold uppercase tracking-wider">
-                  Chapter {step.step} of 08
-                </div>
-              </div>
-
-              {/* Text Content */}
-              <div className="col-span-6 space-y-4">
-                <span className="font-serif text-5xl font-light text-[#8A572F]/50 block">
-                  {step.step}
-                </span>
-
-                <div className="space-y-1">
-                  <h3 className="font-serif text-3xl text-[#2B1A0F]">
-                    {step.title}
-                  </h3>
-                  <div className="text-xs uppercase tracking-wider font-semibold text-[#8A572F]">
-                    {step.subtitle}
-                  </div>
-                </div>
-
-                <p className="text-sm text-[#7D6B5D] font-light leading-relaxed">
-                  {step.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2 pt-2">
-                  {step.highlights.map((hl, i) => (
-                    <span
-                      key={i}
-                      className="text-xs px-3 py-1 rounded-full bg-[#FFFDF8] border border-[#E8DDCB] text-[#5A3215] font-medium"
-                    >
-                      {hl}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Bottom Horizontal Progress Ribbon */}
-        <div className="max-w-7xl mx-auto px-8 w-full flex items-center justify-between text-xs text-[#7D6B5D] pt-4 border-t border-[#E8DDCB] flex-shrink-0">
-          <span className="font-mono text-[11px] uppercase tracking-widest text-[#8A572F]">
-            Timeline: Sourcing → Harvest → Cleaning → Sorting → Grading → Processing → Packaging → Export
-          </span>
-          <Link
-            href="#contact"
-            className="inline-flex items-center gap-1.5 text-[#5A3215] font-semibold hover:underline"
-          >
-            <span>Book Next Shipment Slot</span>
-            <ArrowUpRight className="w-3.5 h-3.5" />
-          </Link>
-        </div>
-      </div>
-
-      {/* MOBILE / TABLET VERTICAL STACK FALLBACK (<1024px) */}
-      <div className="lg:hidden py-20 px-4 sm:px-6">
-        <div className="max-w-3xl mb-12 space-y-3">
-          <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#8A572F]">
-            <span className="w-6 h-[1.5px] bg-[#8A572F]" />
-            <span>Process Timeline</span>
-          </div>
-          <h2 className="font-serif text-3xl sm:text-4xl text-[#2B1A0F]">
-            FROM HARVEST TO EXPORT
-          </h2>
-          <p className="text-sm text-[#7D6B5D] font-light leading-relaxed">
-            The complete 8-step journey of our groundnuts from Central Indian farms to global ports.
+          <p className="max-w-md text-sm sm:text-base font-sans text-[#26180E]/75 leading-relaxed">
+            From the fertile soils of Central India to sealed export shipping containers, each step is strictly controlled for purity and safety.
           </p>
         </div>
 
-        <div className="space-y-8">
-          {PROCESS_STEPS.map((step) => (
+        {/* Thin Progress Indicator & Stage Selector */}
+        <div className="w-full space-y-4">
+          {/* Thin Progress Bar */}
+          <div className="w-full h-1 bg-[#623719]/15 rounded-full overflow-hidden">
             <div
-              key={step.step}
-              ref={addSlideRef}
-              className="bg-[#FAF6EE] rounded-2xl p-6 border border-[#E8DDCB] space-y-4"
-            >
-              <div className="relative aspect-[16/10] w-full rounded-xl overflow-hidden bg-white">
-                <Image
-                  src={step.image}
-                  alt={step.title}
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute top-3 left-3 bg-[#2B1A0F]/85 text-[#FFFDF8] text-[10px] font-semibold px-2.5 py-1 rounded-full uppercase">
-                  Phase {step.step}
-                </div>
-              </div>
+              className="h-full bg-[#623719] transition-all duration-500 ease-out"
+              style={{
+                width: `${((activeStage + 1) / PROCESS_STAGES.length) * 100}%`,
+              }}
+            />
+          </div>
 
-              <div className="space-y-1">
-                <h3 className="font-serif text-2xl text-[#2B1A0F]">
-                  {step.title}
-                </h3>
-                <div className="text-xs uppercase tracking-wider text-[#8A572F] font-semibold">
-                  {step.subtitle}
-                </div>
-              </div>
-
-              <p className="text-xs sm:text-sm text-[#7D6B5D] font-light leading-relaxed">
-                {step.description}
-              </p>
-
-              <div className="flex flex-wrap gap-1.5 pt-1">
-                {step.highlights.map((hl, i) => (
+          {/* Clean 7-Stage Navigation Pills */}
+          <div className="flex items-center justify-start sm:justify-between overflow-x-auto no-scrollbar gap-2 sm:gap-3 py-2">
+            {PROCESS_STAGES.map((s, idx) => {
+              const isActive = activeStage === idx;
+              return (
+                <button
+                  key={s.num}
+                  onClick={() => handleSelectStage(idx)}
+                  className={`group flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full transition-all text-xs font-sans uppercase tracking-wider whitespace-nowrap cursor-pointer ${
+                    isActive
+                      ? "bg-[#623719] text-[#FAF7F1] font-bold shadow-xs"
+                      : "bg-[#F3EBDD]/50 text-[#26180E]/70 hover:text-[#623719] hover:bg-[#F3EBDD]"
+                  }`}
+                >
                   <span
-                    key={i}
-                    className="text-[11px] px-2.5 py-0.5 rounded-full bg-white text-[#5A3215] border border-[#E8DDCB]"
+                    className={`font-mono text-[11px] ${
+                      isActive ? "text-[#F3EBDD]" : "text-[#8A5834]"
+                    }`}
                   >
-                    {hl}
+                    {s.num}
                   </span>
-                ))}
-              </div>
+                  <span>{s.name}</span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Large Stage Display: Left: Visual, Right: Text & Details */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center min-h-[460px]">
+          {/* Visual Container */}
+          <div
+            ref={visualRef}
+            className="lg:col-span-7 relative h-[360px] sm:h-[440px] rounded-3xl overflow-hidden bg-[#26180E]/5 border border-[#623719]/15 shadow-xs"
+          >
+            {stage.video ? (
+              <video
+                ref={videoRef}
+                src={stage.video}
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-full object-cover"
+              />
+            ) : (
+              <Image
+                src={stage.image!}
+                alt={stage.name}
+                fill
+                sizes="(max-width: 1024px) 100vw, 60vw"
+                className="object-cover"
+                priority
+              />
+            )}
+
+            <div className="absolute inset-0 bg-gradient-to-t from-[#26180E]/70 via-transparent to-transparent pointer-events-none" />
+
+            <div className="absolute top-4 left-4 px-3.5 py-1 rounded-full bg-[#FAF7F1]/90 backdrop-blur-xs text-[10px] font-sans font-bold tracking-wider text-[#623719] uppercase shadow-xs">
+              STAGE {stage.num} // {stage.name}
             </div>
-          ))}
+
+            <div className="absolute bottom-6 left-6 right-6 text-[#FAF7F1] space-y-1">
+              <span className="text-xs font-mono text-[#F3EBDD] uppercase tracking-wider block">
+                {stage.spec}
+              </span>
+              <h3 className="font-serif text-2xl sm:text-3xl font-normal text-[#FAF7F1]">
+                {stage.subtitle}
+              </h3>
+            </div>
+          </div>
+
+          {/* Text Container */}
+          <div ref={textRef} className="lg:col-span-5 space-y-6">
+            <div className="space-y-3">
+              <span className="text-xs font-mono font-bold tracking-[0.2em] text-[#8A5834] uppercase block">
+                PHASE {stage.num} OF 07
+              </span>
+              <h3 className="font-serif text-3xl sm:text-4xl text-[#26180E] font-normal leading-tight">
+                {stage.name}
+              </h3>
+              <p className="text-sm font-sans font-medium text-[#8A5834]">
+                {stage.subtitle}
+              </p>
+            </div>
+
+            <p className="text-sm sm:text-base font-sans text-[#26180E]/80 leading-relaxed">
+              {stage.description}
+            </p>
+
+            <div className="p-4 rounded-xl bg-[#F3EBDD]/40 border border-[#623719]/10 space-y-1">
+              <span className="text-[11px] font-sans font-bold text-[#8A5834] uppercase tracking-wider block">
+                QUALITY BENCHMARK
+              </span>
+              <p className="text-xs sm:text-sm font-sans font-semibold text-[#26180E]">
+                {stage.spec}
+              </p>
+            </div>
+
+            <div className="pt-2 flex items-center gap-3">
+              <button
+                onClick={() =>
+                  handleSelectStage((activeStage + 1) % PROCESS_STAGES.length)
+                }
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#623719] hover:bg-[#8A5834] text-[#FAF7F1] text-xs font-sans font-bold uppercase tracking-wider transition-colors cursor-pointer"
+              >
+                <span>NEXT STAGE</span>
+                <ChevronRight className="w-4 h-4" />
+              </button>
+
+              <span className="text-xs font-mono text-[#8A5834]">
+                {activeStage + 1} / {PROCESS_STAGES.length}
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </section>

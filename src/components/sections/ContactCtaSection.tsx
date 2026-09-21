@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowUpRight, Phone, Mail, ShieldCheck, Package, Globe, CheckCircle2 } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Phone, Mail, CheckCircle2 } from "lucide-react";
 import { COMPANY_INFO } from "@/data/company";
 
 interface ContactCtaProps {
@@ -12,125 +12,118 @@ interface ContactCtaProps {
 }
 
 export default function ContactCtaSection({
-  title = "READY TO DISCUSS YOUR PEANUT REQUIREMENTS?",
+  title = "READY TO TAKE\nYOUR PEANUT BUSINESS\nGLOBAL?",
   subtitle = "Direct farm procurement, double-sortex cleaning, calibrated sizing, and certified FCL container delivery to over 35 countries.",
   className = "",
 }: ContactCtaProps) {
   const PILLARS = [
     { title: "Bulk Export Orders", desc: "19 to 27.5 MT container payloads" },
-    { title: "Product Enquiry", desc: "Bold, Java, Blanched & In-Shell" },
-    { title: "Export Logistics", desc: "FOB Mundra / CIF global destination" },
-    { title: "Custom Packaging", desc: "Jute bags, vacuum packs & jumbo totes" },
+    { title: "Product Calibration", desc: "Bold, Java, Blanched & In-Shell" },
+    { title: "Export Gateways", desc: "FOB Mundra / CIF global destinations" },
+    { title: "Custom Packaging", desc: "Jute bags, vacuum cartons & jumbo totes" },
   ];
 
   return (
-    <section className={`relative w-full py-20 lg:py-28 bg-[#5A3218] text-[#FFFDF8] overflow-hidden ${className}`}>
-      {/* Subtle organic background pattern */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(165,107,58,0.25)_0%,_transparent_70%)] pointer-events-none" />
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,253,248,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,253,248,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
-
+    <section
+      id="contact-cta"
+      className={`relative w-full py-20 lg:py-28 bg-[#623719] text-[#FAF7F1] overflow-hidden ${className}`}
+    >
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left: Call to Action Header */}
           <div className="lg:col-span-7 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FFFDF8]/10 border border-[#D5B58C]/30 text-[11px] font-mono tracking-widest text-[#D5B58C] uppercase">
-              <Globe className="w-3.5 h-3.5 text-[#D5B58C]" />
-              <span>PRADEEP TRADING COMPANY • B2B GLOBAL TRADE DESK</span>
-            </div>
+            <span className="text-xs font-sans font-bold tracking-[0.2em] text-[#F3EBDD] uppercase block">
+              B2B EXPORT TRADE DESK
+            </span>
 
-            <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-normal leading-[1.05] tracking-tight text-[#FFFDF8]">
+            <h2 className="font-serif text-[38px] sm:text-[50px] lg:text-[62px] font-normal leading-[1.06] tracking-tight text-[#FAF7F1] whitespace-pre-line">
               {title}
             </h2>
 
-            <p className="text-sm sm:text-base font-sans text-[#FFFDF8]/80 max-w-xl leading-relaxed font-light">
+            <p className="text-base sm:text-lg font-sans text-[#F3EBDD]/90 max-w-xl leading-relaxed font-normal">
               {subtitle}
             </p>
 
-            {/* 4 Feature Badges */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
-              {PILLARS.map((p, i) => (
-                <div
-                  key={i}
-                  className="flex items-start gap-2.5 p-3 rounded-xl bg-black/20 border border-[#D5B58C]/20 backdrop-blur-sm"
-                >
-                  <CheckCircle2 className="w-4 h-4 text-[#D5B58C] shrink-0 mt-0.5" />
-                  <div>
-                    <div className="text-xs font-mono font-bold text-[#FFFDF8]">{p.title}</div>
-                    <div className="text-[11px] text-[#FFFDF8]/70 font-sans">{p.desc}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Action Buttons */}
-            <div className="flex flex-wrap items-center gap-4 pt-4">
+            {/* CTAs: GET A QUOTE & CONTACT US */}
+            <div className="flex flex-wrap items-center gap-4 pt-2">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#D5B58C] text-[#5A3218] hover:bg-[#F7F1E7] text-xs font-mono font-bold uppercase tracking-widest transition-all shadow-lg hover:shadow-xl cursor-pointer"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#FAF7F1] text-[#623719] hover:bg-[#F3EBDD] text-xs font-sans font-bold uppercase tracking-wider transition-colors shadow-sm cursor-pointer"
               >
-                <span>GET IN TOUCH</span>
-                <ArrowUpRight className="w-4 h-4" />
+                <span>GET A QUOTE</span>
+                <ArrowRight className="w-4 h-4 text-[#623719]" />
               </Link>
 
               <Link
-                href="/contact?intent=quote"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#FFFDF8]/10 border border-[#FFFDF8]/25 text-[#FFFDF8] hover:bg-[#FFFDF8]/20 text-xs font-mono font-semibold uppercase tracking-wider transition-all cursor-pointer"
+                href={`tel:${COMPANY_INFO.contact.primaryPhone}`}
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-transparent border border-[#FAF7F1]/40 text-[#FAF7F1] hover:bg-[#FAF7F1]/10 text-xs font-sans font-bold uppercase tracking-wider transition-colors cursor-pointer"
               >
-                <span>REQUEST A QUOTE</span>
+                <span>CONTACT US</span>
+                <ArrowUpRight className="w-4 h-4 text-[#FAF7F1]" />
               </Link>
             </div>
           </div>
 
-          {/* Right: Quick Direct Contact Card */}
-          <div className="lg:col-span-5 bg-[#7A4824]/80 border border-[#D5B58C]/30 rounded-3xl p-7 sm:p-8 backdrop-blur-md shadow-2xl space-y-6">
-            <div className="border-b border-[#D5B58C]/20 pb-4">
-              <span className="text-[10px] font-mono uppercase tracking-[0.25em] text-[#D5B58C] font-bold block mb-1">
-                DIRECT EXPORT DESK
+          {/* Right: Quick Inquiry Box */}
+          <div className="lg:col-span-5 bg-[#FAF7F1] text-[#26180E] p-8 rounded-3xl border border-[#623719]/15 shadow-sm space-y-5">
+            <div className="space-y-1">
+              <span className="text-xs font-sans font-bold tracking-wider text-[#8A5834] uppercase block">
+                DIRECT EXPORT INQUIRY
               </span>
-              <h3 className="font-serif text-2xl text-[#FFFDF8] font-medium">
-                Shivpuri Processing &amp; Port Office
+              <h3 className="font-serif text-2xl text-[#623719]">
+                Connect with Trade Desk
               </h3>
+              <p className="text-xs text-[#26180E]/75 font-sans leading-relaxed">
+                Receive lot specifications, current Mandi rates, and container freight schedules from Bhonti, Shivpuri.
+              </p>
             </div>
 
-            <div className="space-y-4 text-xs font-mono">
-              <div className="flex items-center gap-3 text-[#FFFDF8]/90">
-                <div className="w-8 h-8 rounded-full bg-black/20 flex items-center justify-center text-[#D5B58C]">
+            <div className="space-y-3 pt-1 text-sm font-sans">
+              <a
+                href={`tel:${COMPANY_INFO.contact.primaryPhone}`}
+                className="flex items-center gap-3 p-3.5 rounded-xl bg-[#F3EBDD]/40 border border-[#623719]/10 hover:bg-[#F3EBDD] transition-colors"
+              >
+                <div className="w-8 h-8 rounded-full bg-[#623719] text-[#FAF7F1] flex items-center justify-center shrink-0">
                   <Phone className="w-4 h-4" />
                 </div>
                 <div>
-                  <div className="text-[10px] text-[#D5B58C]/80">PHONE / WHATSAPP</div>
-                  <a href={`tel:${COMPANY_INFO.contact.primaryPhone}`} className="hover:text-[#D5B58C] transition-colors font-bold">
+                  <div className="text-[10px] text-[#8A5834] uppercase font-semibold">
+                    DIRECT PHONE / WHATSAPP
+                  </div>
+                  <div className="font-bold text-[#623719]">
                     {COMPANY_INFO.contact.formattedPhone}
-                  </a>
+                  </div>
                 </div>
-              </div>
+              </a>
 
-              <div className="flex items-center gap-3 text-[#FFFDF8]/90">
-                <div className="w-8 h-8 rounded-full bg-black/20 flex items-center justify-center text-[#D5B58C]">
+              <a
+                href={`mailto:${COMPANY_INFO.contact.exportEmail}`}
+                className="flex items-center gap-3 p-3.5 rounded-xl bg-[#F3EBDD]/40 border border-[#623719]/10 hover:bg-[#F3EBDD] transition-colors"
+              >
+                <div className="w-8 h-8 rounded-full bg-[#623719] text-[#FAF7F1] flex items-center justify-center shrink-0">
                   <Mail className="w-4 h-4" />
                 </div>
                 <div>
-                  <div className="text-[10px] text-[#D5B58C]/80">EXPORT ENQUIRIES</div>
-                  <a href={`mailto:${COMPANY_INFO.contact.exportEmail}`} className="hover:text-[#D5B58C] transition-colors font-bold">
+                  <div className="text-[10px] text-[#8A5834] uppercase font-semibold">
+                    EXPORT DESK EMAIL
+                  </div>
+                  <div className="font-bold text-[#623719]">
                     {COMPANY_INFO.contact.exportEmail}
-                  </a>
+                  </div>
                 </div>
-              </div>
-
-              <div className="flex items-center gap-3 text-[#FFFDF8]/90">
-                <div className="w-8 h-8 rounded-full bg-black/20 flex items-center justify-center text-[#D5B58C]">
-                  <ShieldCheck className="w-4 h-4" />
-                </div>
-                <div>
-                  <div className="text-[10px] text-[#D5B58C]/80">DISPATCH CERTIFICATION</div>
-                  <span className="font-bold">Mundra Port (INMUN1) • FSSAI • APEDA</span>
-                </div>
-              </div>
+              </a>
             </div>
 
-            <div className="pt-2 border-t border-[#D5B58C]/20 flex items-center justify-between text-[10px] font-mono text-[#D5B58C]/80">
-              <span>RESPONSE TIME: &lt; 4 HOURS</span>
-              <span>CIF / FOB / CFR READY</span>
+            {/* Quick Badges */}
+            <div className="pt-2 border-t border-[#623719]/10 grid grid-cols-2 gap-2 text-[11px] font-sans text-[#26180E]/70">
+              <div className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#623719]" />
+                <span>SGS Pre-Shipment</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#623719]" />
+                <span>FOB Mundra Port</span>
+              </div>
             </div>
           </div>
         </div>
