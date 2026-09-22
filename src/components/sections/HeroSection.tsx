@@ -107,8 +107,8 @@ export default function HeroSection() {
         />
 
         {/* Very subtle warm brown/cream overlay — the factory remains clearly visible */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#26180E]/80 via-[#26180E]/25 to-transparent pointer-events-none" />
-        <div className="absolute inset-0 bg-[#5A3218]/15 mix-blend-multiply pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#2D241D]/85 via-[#2D241D]/30 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-[#5C341B]/15 mix-blend-multiply pointer-events-none" />
       </div>
 
       {/* Hero Content: Positioned lower-left with clear contrast */}
@@ -120,9 +120,9 @@ export default function HeroSection() {
           {/* Logo badge / origin mark (0.3s) */}
           <div
             ref={logoRef}
-            className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#FFFDF9]/15 backdrop-blur-xs border border-[#FFFDF9]/25 text-xs font-sans font-semibold tracking-[0.18em] text-[#F6F1E8] uppercase"
+            className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#FCFAF5]/15 backdrop-blur-xs border border-[#FCFAF5]/25 text-xs font-sans font-semibold tracking-[0.18em] text-[#F5EFE5] uppercase"
           >
-            <div className="w-4 h-4 rounded bg-[#5A3218] flex items-center justify-center text-[10px] font-serif font-bold text-[#FFFDF9]">
+            <div className="w-4 h-4 rounded bg-[#5C341B] flex items-center justify-center text-[10px] font-serif font-bold text-[#FCFAF5]">
               P
             </div>
             <span>PRADEEP TRADING COMPANY • BHONTI, SHIVPURI (M.P.)</span>
@@ -131,7 +131,7 @@ export default function HeroSection() {
           {/* Headline in DM Serif Display (0.6s) */}
           <h1
             ref={headlineRef}
-            className="font-serif text-[42px] sm:text-[58px] lg:text-[76px] font-normal leading-[1.04] tracking-tight text-[#FFFDF9]"
+            className="font-serif text-[42px] sm:text-[58px] lg:text-[76px] font-normal leading-[1.04] tracking-tight text-[#FCFAF5]"
           >
             FROM INDIAN SOIL
             <br />
@@ -141,27 +141,27 @@ export default function HeroSection() {
           {/* Supporting Text in Manrope (0.9s) */}
           <p
             ref={subtextRef}
-            className="text-base sm:text-lg font-sans text-[#F6F1E8]/90 max-w-xl leading-relaxed font-normal"
+            className="text-base sm:text-lg font-sans text-[#F5EFE5]/90 max-w-xl leading-relaxed font-normal"
           >
-            Premium Indian peanuts and groundnuts, carefully processed and prepared for global markets.
+            Premium Indian peanuts, carefully processed and prepared for buyers around the world.
           </p>
 
           {/* CTA Buttons in Manrope (1.1s) */}
           <div ref={ctaRef} className="flex flex-wrap items-center gap-4 pt-2">
             <Link
               href="#products"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#FFFDF9] text-[#5A3218] hover:bg-[#F6F1E8] text-xs font-sans font-bold uppercase tracking-wider transition-all shadow-sm hover:shadow-md cursor-pointer"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#FCFAF5] text-[#5C341B] hover:bg-[#F5EFE5] text-xs font-sans font-bold uppercase tracking-wider transition-all shadow-sm hover:shadow-md cursor-pointer"
             >
-              <span>EXPLORE PRODUCTS</span>
-              <ArrowRight className="w-4 h-4 text-[#5A3218]" />
+              <span>EXPLORE OUR PEANUTS</span>
+              <ArrowRight className="w-4 h-4 text-[#5C341B]" />
             </Link>
 
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-transparent border border-[#FFFDF9]/50 text-[#FFFDF9] hover:bg-[#FFFDF9]/10 text-xs font-sans font-bold uppercase tracking-wider transition-colors cursor-pointer"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-transparent border border-[#FCFAF5]/50 text-[#FCFAF5] hover:bg-[#FCFAF5]/10 text-xs font-sans font-bold uppercase tracking-wider transition-colors cursor-pointer"
             >
               <span>REQUEST A QUOTE</span>
-              <ArrowUpRight className="w-4 h-4 text-[#FFFDF9]" />
+              <ArrowUpRight className="w-4 h-4 text-[#FCFAF5]" />
             </Link>
           </div>
         </div>

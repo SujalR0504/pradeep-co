@@ -25,11 +25,11 @@ export default function ProductsPage() {
       : PRODUCTS.filter((p) => p.category === selectedCategory);
 
   return (
-    <div className="flex flex-col w-full bg-[#FFFDF8] text-[#2E2117] pt-24">
+    <div className="flex flex-col w-full bg-[#FFFDF8] text-[#2E2117]">
       {/* Page Hero Header */}
       <section className="relative w-full py-16 sm:py-24 border-b border-[#5A3218]/15 bg-[#F7F1E7]">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="max-w-3xl space-y-4">
+        <div className="site-container max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl space-y-4 text-left">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#5A3218]/10 border border-[#5A3218]/20 text-xs font-mono tracking-widest text-[#5A3218] uppercase">
               <Package className="w-3.5 h-3.5 text-[#5A3218]" />
               <span>PRADEEP TRADING COMPANY • COMMODITY EXPORT CATALOG</span>
@@ -51,8 +51,8 @@ export default function ProductsPage() {
       </section>
 
       {/* Category Filter Pills */}
-      <section className="py-8 border-b border-[#5A3218]/15 bg-[#FFFDF8] sticky top-[68px] z-30 backdrop-blur-md bg-[#FFFDF8]/90">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+      <section className="py-6 border-b border-[#5A3218]/15 bg-[#FFFDF8] sticky top-[70px] z-30 backdrop-blur-md bg-[#FFFDF8]/90">
+        <div className="site-container max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
             {CATEGORIES.map((cat) => (
               <button
@@ -73,7 +73,7 @@ export default function ProductsPage() {
 
       {/* Products Grid */}
       <section className="py-16 lg:py-24 bg-[#FFFDF8]">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="site-container max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProducts.map((product) => (
               <div
@@ -120,21 +120,21 @@ export default function ProductsPage() {
                     </div>
                     <div className="flex items-center justify-between text-[#2E2117]/70">
                       <span>AFLATOXIN SPEC:</span>
-                      <span className="font-bold text-[#5A3218]">{product.specs.aflatoxin || "&lt; 4 PPB"}</span>
+                      <span className="font-bold text-[#5A3218]">{product.specs.aflatoxin || "< 4 PPB"}</span>
                     </div>
                   </div>
 
-                  {/* Action Buttons */}
+                  {/* Action Buttons (Standardized 44px Height, Rounded-full) */}
                   <div className="flex items-center gap-3 pt-3 border-t border-[#5A3218]/10">
                     <Link
                       href={`/products/${product.slug}`}
-                      className="flex-1 py-2.5 rounded-xl bg-[#F7F1E7] text-[#5A3218] hover:bg-[#5A3218] hover:text-[#FFFDF8] font-mono text-xs font-bold text-center uppercase tracking-wider transition-colors border border-[#5A3218]/15"
+                      className="flex-1 h-11 rounded-full bg-[#F7F1E7] text-[#5A3218] hover:bg-[#5A3218] hover:text-[#FFFDF8] font-sans text-xs font-semibold text-center uppercase tracking-wider transition-colors border border-[#5A3218]/15 inline-flex items-center justify-center"
                     >
                       VIEW SPECS
                     </Link>
                     <Link
                       href={`/contact?product=${product.slug}`}
-                      className="py-2.5 px-3.5 rounded-xl bg-[#5A3218] text-[#FFFDF8] hover:bg-[#7A4824] transition-colors"
+                      className="h-11 w-11 rounded-full bg-[#5A3218] text-[#FFFDF8] hover:bg-[#7A4824] transition-colors inline-flex items-center justify-center flex-shrink-0"
                       title="Request Quotation"
                     >
                       <ArrowUpRight className="w-4 h-4 text-[#D5B58C]" />

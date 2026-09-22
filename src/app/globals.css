@@ -1,39 +1,121 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-ivory: #FFFDF9;
-  --color-brand-cream: #F6F1E8;
-  --color-brand-deep: #5A3218;
+  --color-brand-deep: #5C341B;
   --color-brand-brown: #754522;
-  --color-brand-earth: #A16B3C;
-  --color-brand-sand: #D7B88F;
-  --color-brand-olive: #68704C;
-  --color-brand-text: #26180E;
-  --color-brand-border: rgba(90, 50, 24, 0.12);
+  --color-brand-earth: #A4774C;
+  --color-brand-cream: #F5EFE5;
+  --color-brand-ivory: #FCFAF5;
+  --color-brand-olive: #68704E;
+  --color-brand-text: #2D241D;
+  --color-brand-border: rgba(92, 52, 27, 0.12);
 
   --font-serif: var(--font-dm-serif), 'DM Serif Display', Georgia, serif;
   --font-sans: var(--font-manrope), 'Manrope', system-ui, sans-serif;
 }
 
 :root {
-  --background: #FFFDF9;
-  --foreground: #26180E;
+  --background: #FCFAF5;
+  --foreground: #2D241D;
 }
 
 html {
   scroll-behavior: smooth;
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
-  color: #26180E;
-  background-color: #FAF7F1;
+  color: #2D241D;
+  background-color: #FCFAF5;
 }
 
 body {
-  background-color: #FAF7F1;
-  color: #26180E;
+  background-color: #FCFAF5;
+  color: #2D241D;
   overflow-x: hidden;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Unified Global Content Container System (1320px) */
+.site-container,
+.auto-container {
+  max-width: 1320px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 32px !important;
+  padding-right: 32px !important;
+  width: 100% !important;
+}
+
+@media (max-width: 768px) {
+  .site-container,
+  .auto-container {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
+
+/* Global Typography Hierarchy & Alignment */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif), 'DM Serif Display', Georgia, serif;
+  text-align: left;
+  letter-spacing: -0.02em;
+}
+
+p, span, li, a, button, input, select, textarea {
+  font-family: var(--font-sans), 'Manrope', system-ui, sans-serif;
+}
+
+.font-serif {
+  font-family: var(--font-serif), 'DM Serif Display', Georgia, serif !important;
+}
+
+.font-sans {
+  font-family: var(--font-sans), 'Manrope', system-ui, sans-serif !important;
+}
+
+.section-eyebrow {
+  font-family: var(--font-sans), 'Manrope', system-ui, sans-serif !important;
+  font-size: 12.5px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  color: #C88A2E !important;
+  display: inline-block !important;
+  margin-bottom: 12px !important;
+}
+
+/* Unified Button Geometry */
+.theme-btn,
+.btn-primary {
+  height: 48px !important;
+  padding: 0 26px !important;
+  border-radius: 24px !important;
+  font-family: var(--font-sans), 'Manrope', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 13.5px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  box-shadow: 0 3px 12px rgba(92, 52, 27, 0.18) !important;
+  transition: all 0.25s ease !important;
+}
+
+.btn-secondary {
+  height: 48px !important;
+  padding: 0 24px !important;
+  border-radius: 24px !important;
+  font-family: var(--font-sans), 'Manrope', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 13.5px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  border: 2px solid #5C341B !important;
+  background-color: #ffffff !important;
+  color: #5C341B !important;
+  transition: all 0.25s ease !important;
 }
 
 /* Typography Hierarchy */
@@ -43,29 +125,16 @@ body {
 
 .text-editorial-hero {
   font-family: var(--font-dm-serif), 'DM Serif Display', Georgia, serif;
-  font-size: clamp(2.75rem, 5.5vw, 5.25rem); /* 44px to 84px */
-  line-height: 1.05;
-  letter-spacing: -0.015em;
+  font-size: clamp(2.75rem, 5vw, 4.5rem);
+  line-height: 1.0;
+  letter-spacing: -0.02em;
 }
 
 .text-editorial-section {
   font-family: var(--font-dm-serif), 'DM Serif Display', Georgia, serif;
-  font-size: clamp(2.25rem, 4.2vw, 4rem); /* 36px to 64px */
+  font-size: clamp(2.1rem, 3.8vw, 3.4rem);
   line-height: 1.1;
-  letter-spacing: -0.01em;
-}
-
-.text-editorial-heading {
-  font-family: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(1.75rem, 3.2vw, 3.25rem);
-  line-height: 1.08;
-  letter-spacing: -0.01em;
-}
-
-.text-editorial-subheading {
-  font-family: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(1.25rem, 1.8vw, 1.85rem);
-  line-height: 1.25;
+  letter-spacing: -0.015em;
 }
 
 /* Hairline Editorial Borders */
@@ -114,20 +183,20 @@ body {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #FBF8F2;
+  background: #FCFAF5;
 }
 ::-webkit-scrollbar-thumb {
-  background: #C7A77C;
+  background: #A4774C;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #70421F;
+  background: #5C341B;
 }
 
 /* Selection color */
 ::selection {
-  background: #70421F;
-  color: #FBF8F2;
+  background: #5C341B;
+  color: #FCFAF5;
 }
 
 /* Subtle Organic Paper Grain / Soil Micro-Texture */
@@ -149,12 +218,66 @@ body {
     transform: translateY(0px) rotate(0deg);
   }
   50% {
-    transform: translateY(-10px) rotate(2deg);
+    transform: translateY(-14px) rotate(3deg);
+  }
+}
+
+@keyframes peanutFloatAlt {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(12px) rotate(-4deg);
+  }
+}
+
+@keyframes podSwaySlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(-6deg);
+  }
+  50% {
+    transform: translateY(-18px) rotate(2deg);
+  }
+}
+
+@keyframes marqueeInfinite {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(67, 170, 92, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 14px rgba(67, 170, 92, 0);
   }
 }
 
 .animate-peanut-float {
   animation: peanutFloatSlow 6s ease-in-out infinite;
+}
+
+.animate-peanut-float-alt {
+  animation: peanutFloatAlt 7.5s ease-in-out infinite;
+}
+
+.animate-pod-sway {
+  animation: podSwaySlow 8.5s ease-in-out infinite;
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marqueeInfinite 28s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
 }
 
 /* Subtle Peanut Shadow */

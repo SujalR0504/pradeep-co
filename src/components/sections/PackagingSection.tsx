@@ -10,61 +10,61 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-interface PackagingStep {
-  id: string;
-  stepNum: string;
+interface PackagingSequenceNode {
+  step: string;
+  stageName: string;
   title: string;
-  category: string;
   specs: string;
   description: string;
   image: string;
+  badge: string;
 }
 
-const PACKAGING_STEPS: PackagingStep[] = [
+const PACKAGING_NODES: PackagingSequenceNode[] = [
   {
-    id: "bulk-bags",
-    stepNum: "01",
-    title: "Bulk Bags (Jumbo & PP)",
-    category: "BULK CARGO",
-    specs: "500kg / 1000kg Jumbo Bags & 50kg PP",
-    description: "High-tensile woven polypropylene and jumbo bulk bags for high-volume processors and industrial confectionery milling.",
-    image: "/images/packaging/samman-peanuts-packaging.webp",
+    step: "01",
+    stageName: "PEANUT",
+    title: "Double-Sortex Cleaned Kernels",
+    specs: "38/42, 40/50, 50/60 Calibrated Calibers",
+    description: "Screened and optically sorted kernels ready for packaging at moisture levels maintained below 7.5%.",
+    image: "/images/peanut-bold.webp",
+    badge: "SORTED ORIGIN",
   },
   {
-    id: "export-bags",
-    stepNum: "02",
-    title: "Export Jute Sacks",
-    category: "EXPORT STANDARD",
-    specs: "25kg / 50kg Twill Burlap",
-    description: "Traditional breathable twill jute sacks. Aerated weave allows natural ventilation, preventing sweat condensation during ocean voyages.",
+    step: "02",
+    stageName: "PACKAGING",
+    title: "Breathable Jute, PP & Vacuum",
+    specs: "25kg / 50kg Jute, PP Bags & Multi-Wall Vacuum Cartons",
+    description: "Breathable traditional jute burlap for tropical voyages and nitrogen-flushed vacuum barriers for premier confectionery.",
     image: "/images/packaging/authentic-jute-sacks.webp",
+    badge: "EXPORT STANDARD",
   },
   {
-    id: "warehouse",
-    stepNum: "03",
-    title: "Bonded Warehouse",
-    category: "CLIMATE STABILIZATION",
-    specs: "Controlled Ambient Storage",
-    description: "Stacked in organized lot batches on raised slatted platforms with continuous humidity monitoring before dispatch.",
-    image: "/images/peanut-heap-warehouse.jpg",
-  },
-  {
-    id: "pallets",
-    stepNum: "04",
-    title: "ISPM-15 Export Pallets",
-    category: "UNITIZED STACKING",
-    specs: "Heat-Treated Wood & Stretch Wrap",
-    description: "Unitized on phytosanitary certified wooden pallets, tightly wrapped in multi-layer stretch film with edge board protection.",
+    step: "03",
+    stageName: "PALLET",
+    title: "ISPM-15 Heat-Treated Pallets",
+    specs: "Fumigated Wooden Bases & Stretch Wrapping",
+    description: "Bags are unitized on phytosanitary certified heat-treated wooden pallets, secured with heavy-gauge stretch wrap and corner protectors.",
     image: "/images/packaging/stacked-pallet-export.jpg",
+    badge: "UNITIZED CARGO",
   },
   {
-    id: "container",
-    stepNum: "05",
-    title: "FCL Container Stuffing",
-    category: "MARITIME INTERMODAL",
-    specs: "20ft & 40ft Desiccant Lined",
-    description: "Stuffed into ocean containers lined with kraft moisture barriers and hanging silica gel blankets. Tamper-evident bolt sealed.",
+    step: "04",
+    stageName: "WAREHOUSE",
+    title: "Climate-Monitored Lot Staging",
+    specs: "Raised Slatted Stacks & Ambient Control",
+    description: "Pre-dispatch staging in clean, pest-managed, well-ventilated warehouses with continuous hygrometer moisture tracking.",
+    image: "/images/peanut-heap-warehouse.jpg",
+    badge: "BONDED STORAGE",
+  },
+  {
+    step: "05",
+    stageName: "CONTAINER",
+    title: "FCL Maritime Container Stuffing",
+    specs: "20ft (19 MT) & 40ft (27 MT) Desiccant Lined",
+    description: "Containers lined with kraft moisture-absorbing barrier paper and hanging high-capacity calcium chloride desiccant blankets.",
     image: "/images/container-loading-dock.jpg",
+    badge: "PORT DISPATCH",
   },
 ];
 
@@ -76,26 +76,24 @@ export default function PackagingSection() {
     if (!sectionRef.current || !trackRef.current) return;
 
     const ctx = gsap.context(() => {
-      const cards = trackRef.current?.querySelectorAll(".packaging-card");
-      if (cards) {
-        // Horizontal entrance reveal: bags -> second bag -> warehouse -> pallet -> container
-        gsap.fromTo(
-          cards,
-          { opacity: 0, x: 50 },
-          {
-            opacity: 1,
-            x: 0,
-            duration: 0.7,
-            stagger: 0.12,
-            ease: "power2.out",
-            scrollTrigger: {
-              trigger: sectionRef.current,
-              start: "top 70%",
-              toggleActions: "play none none reverse",
-            },
-          }
-        );
-      }
+      const track = trackRef.current;
+      if (!track) return;
+
+      const getScrollDistance = () => track.scrollWidth - window.innerWidth + 120;
+
+      // Smooth horizontal camera/sequence movement as user scrolls
+      gsap.to(track, {
+        x: () => -getScrollDistance(),
+        ease: "none",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          pin: true,
+          scrub: 1,
+          start: "top top",
+          end: () => `+=${getScrollDistance()}`,
+          invalidateOnRefresh: true,
+        },
+      });
     }, sectionRef.current);
 
     return () => ctx.revert();
@@ -105,85 +103,87 @@ export default function PackagingSection() {
     <section
       id="packaging"
       ref={sectionRef}
-      className="relative w-full py-20 lg:py-28 px-6 sm:px-8 lg:px-12 bg-[#F6F1E8]/35 text-[#26180E] border-t border-[#5A3218]/10 overflow-hidden"
+      className="relative w-full h-screen bg-[#F5EFE5]/50 text-[#2D241D] border-t border-[#5C341B]/12 overflow-hidden flex flex-col justify-between py-12 sm:py-16"
     >
-      <div className="max-w-7xl mx-auto w-full space-y-12">
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <div className="space-y-3">
-            <span className="text-xs font-sans font-bold tracking-[0.2em] text-[#A16B3C] uppercase block">
-              LOGISTICS &amp; PACKAGING // 07
-            </span>
-            <h2 className="font-serif text-[38px] sm:text-[50px] lg:text-[60px] font-normal leading-[1.08] tracking-tight text-[#5A3218]">
-              FROM BURLAP SACK
-              <br />
-              TO OCEAN CONTAINER.
-            </h2>
-          </div>
-
-          <p className="max-w-md text-sm sm:text-base font-sans text-[#26180E]/75 leading-relaxed">
-            A continuous horizontal packing sequence engineered to maintain physiological freshness and prevent cargo sweat during long ocean transits.
-          </p>
+      {/* Top Header */}
+      <div className="max-w-7xl mx-auto w-full px-6 sm:px-8 lg:px-12 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+        <div>
+          <span className="text-[11px] font-sans font-bold tracking-[0.2em] text-[#A4774C] uppercase block">
+            08 // PACKAGING &amp; LOGISTICS SEQUENCE
+          </span>
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#5C341B] font-normal tracking-tight">
+            PEANUT &rarr; PACKAGING &rarr; PALLET &rarr; WAREHOUSE &rarr; CONTAINER
+          </h2>
         </div>
 
-        {/* 10. Horizontal Visual Sequence: bag enters -> second bag -> warehouse -> pallet -> container */}
+        <div className="flex items-center gap-2 text-xs font-mono text-[#754522]">
+          <span>HORIZONTAL LOGISTICS PASS</span>
+        </div>
+      </div>
+
+      {/* Horizontal Camera Track */}
+      <div className="w-full flex-grow flex items-center overflow-visible pl-6 sm:pl-12 lg:pl-20">
         <div
           ref={trackRef}
-          className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-5"
+          className="flex items-stretch gap-6 sm:gap-8 flex-nowrap will-change-transform pr-16 sm:pr-24"
         >
-          {PACKAGING_STEPS.map((step, idx) => (
+          {PACKAGING_NODES.map((node, i) => (
             <div
-              key={step.id}
-              className="packaging-card rounded-2xl bg-[#FFFDF9] border border-[#5A3218]/12 overflow-hidden flex flex-col justify-between group hover:bg-[#F6F1E8]/80 transition-all duration-300 shadow-xs"
+              key={node.step}
+              className="w-[300px] sm:w-[350px] lg:w-[380px] shrink-0 rounded-3xl bg-[#FCFAF5] border border-[#5C341B]/12 p-6 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow group"
             >
-              {/* Image Container */}
-              <div className="relative w-full h-44 bg-[#26180E]/5 overflow-hidden">
-                <Image
-                  src={step.image}
-                  alt={step.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 33vw, 20vw"
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-full bg-[#FFFDF9]/95 backdrop-blur-xs text-[10px] font-sans font-bold text-[#5A3218] uppercase">
-                  {step.stepNum}
-                </div>
+              {/* Card Header: Step and Stage */}
+              <div className="flex items-center justify-between border-b border-[#5C341B]/10 pb-3">
+                <span className="font-mono text-xs font-bold text-[#A4774C]">
+                  {node.step} // {node.stageName}
+                </span>
+                <span className="text-[10px] font-sans font-bold tracking-wider text-[#68704E] uppercase">
+                  {node.badge}
+                </span>
               </div>
 
-              {/* Information Body */}
-              <div className="p-5 space-y-3 flex-grow flex flex-col justify-between">
-                <div className="space-y-1.5">
-                  <span className="text-[10px] font-sans font-bold tracking-wider text-[#A16B3C] uppercase block">
-                    {step.category}
-                  </span>
-                  <h3 className="font-serif text-lg text-[#5A3218] font-normal leading-snug">
-                    {step.title}
-                  </h3>
-                  <p className="text-xs font-sans text-[#26180E]/70 leading-relaxed pt-1">
-                    {step.description}
-                  </p>
-                </div>
+              {/* Image Container */}
+              <div className="relative w-full h-44 sm:h-48 my-4 rounded-2xl bg-[#F5EFE5] border border-[#5C341B]/10 overflow-hidden">
+                <Image
+                  src={node.image}
+                  alt={node.title}
+                  fill
+                  sizes="380px"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                />
+              </div>
 
-                <div className="pt-3 border-t border-[#5A3218]/10 text-[11px] font-mono text-[#5A3218] font-semibold">
-                  {step.specs}
-                </div>
+              {/* Info Body */}
+              <div className="space-y-2">
+                <h3 className="font-serif text-xl sm:text-2xl text-[#5C341B] font-normal tracking-tight">
+                  {node.title}
+                </h3>
+                <p className="text-xs font-mono text-[#A4774C] font-semibold">
+                  {node.specs}
+                </p>
+                <p className="text-xs sm:text-sm font-sans text-[#2D241D]/75 leading-relaxed">
+                  {node.description}
+                </p>
+              </div>
+
+              {/* Flow connector at bottom */}
+              <div className="pt-4 border-t border-[#5C341B]/10 flex items-center justify-between text-xs font-mono text-[#754522]">
+                <span>SEQUENCE {i + 1} / 5</span>
+                {i < PACKAGING_NODES.length - 1 ? (
+                  <ArrowRight className="w-4 h-4 text-[#A4774C]" />
+                ) : (
+                  <span className="text-[#68704E] font-bold">READY TO SAIL</span>
+                )}
               </div>
             </div>
           ))}
         </div>
+      </div>
 
-        {/* Visual Flow Indicator */}
-        <div className="hidden lg:flex items-center justify-between text-xs font-mono text-[#8A5834] px-4 pt-2">
-          <span>01 BULK BAG</span>
-          <ArrowRight className="w-4 h-4 text-[#8A5834]/40" />
-          <span>02 EXPORT JUTE</span>
-          <ArrowRight className="w-4 h-4 text-[#8A5834]/40" />
-          <span>03 LOT WAREHOUSE</span>
-          <ArrowRight className="w-4 h-4 text-[#8A5834]/40" />
-          <span>04 PALLETIZED</span>
-          <ArrowRight className="w-4 h-4 text-[#8A5834]/40" />
-          <span>05 FCL CONTAINER</span>
-        </div>
+      {/* Bottom Track Bar */}
+      <div className="max-w-7xl mx-auto w-full px-6 sm:px-8 lg:px-12 flex items-center justify-between text-xs font-sans text-[#A4774C]">
+        <span>MARITIME FOOD-GRADE BARRIER CONTROLS // FCL SHIPMENTS</span>
+        <span>MUNDRA PORT (INMUN1) DIRECT DESPATCH</span>
       </div>
     </section>
   );

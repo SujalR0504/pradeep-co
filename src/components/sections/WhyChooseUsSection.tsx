@@ -1,152 +1,199 @@
 "use client";
 
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  ShieldCheck,
-  Factory,
-  Globe2,
-  CheckCircle2,
-  FileCheck,
-  Scale,
-  ArrowRight,
-} from "lucide-react";
-import { COMPANY_INFO } from "@/data/company";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const REASONS = [
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
+
+interface WhyReason {
+  num: string;
+  heading: string;
+  subheading: string;
+  explanation: string;
+  image: string;
+  tag: string;
+}
+
+const REASONS: WhyReason[] = [
   {
     num: "01",
-    icon: Factory,
-    title: "Direct Farmgate Sourcing",
-    subtitle: "Zero Middlemen Across Madhya Pradesh & Gujarat",
-    description:
-      "Deep 65-year relationships with grower cooperatives ensure harvest freshness, uniform crop varieties, and full agricultural traceability from soil to processing.",
+    heading: "PEANUT SPECIALIZATION",
+    subheading: "65+ Years Agronomic Lineage",
+    explanation:
+      "Unlike generalized commodity traders, our multigenerational agrarian lineage in Bhonti, Shivpuri is dedicated exclusively to groundnut cultivation, procurement, and export conditioning.",
+    image: "/images/harvest-farmer.webp",
+    tag: "CENTRAL INDIA ORIGIN",
   },
   {
     num: "02",
-    icon: Scale,
-    title: "4 MT / Hour Double-Sortex Lines",
-    subtitle: "Bichromatic Optical CCD Purity",
-    description:
-      "Multi-deck mechanical aspirators and high-speed optical sorters guarantee >99.5% kernel purity, removing damaged, split, and discolored seeds at microsecond speed.",
+    heading: "QUALITY CONTROL",
+    subheading: "EU Aflatoxin & Laboratory Compliance",
+    explanation:
+      "Every processed lot is backed by rigorous pre-shipment laboratory analysis (HPLC) ensuring total aflatoxins below 4 ppb, minimal FFA, and certified phytosanitary release.",
+    image: "/images/quality-lab.webp",
+    tag: "AFLATOXIN < 4 PPB",
   },
   {
     num: "03",
-    icon: ShieldCheck,
-    title: "EU Aflatoxin & Chemical Compliance",
-    subtitle: "Strict < 4 ppb Total Aflatoxin Guarantee",
-    description:
-      "Every batch is verified through certified independent laboratories (SGS / Geo-Chem / FARE Labs) to ensure total compliance with European, GCC, and ASEAN food safety thresholds.",
+    heading: "MODERN PROCESSING",
+    subheading: "4 MT / Hour Double-Sortex Lines",
+    explanation:
+      "Our processing infrastructure combines heavy-duty vibratory destoning with multi-spectral bichromatic optical CCD sorters, delivering >99.5% kernel purity and <0.5% broken ratio.",
+    image: "/images/sortex-machine.webp",
+    tag: "OPTICAL CCD PURITY",
   },
   {
     num: "04",
-    icon: Globe2,
-    title: "Dedicated Intermodal Rail to Mundra Port",
-    subtitle: "Port Code: INMUN1 & INNSA1",
-    description:
-      "Direct western railway freight connections from Shivpuri ensure rapid, dry container transit to Mundra and Nhava Sheva, minimizing transit lag and ocean freight demurrage.",
+    heading: "CONSISTENT GRADING",
+    subheading: "Count-per-Ounce Sizing Calibration",
+    explanation:
+      "Rotary cylindrical grading drums ensure strict count-per-ounce calibers (38/42, 40/50, 50/60, 70/80) demanded by international confectionery, snacking, and nut butter mills.",
+    image: "/images/peanut-bold.webp",
+    tag: "CALIBRATED TOLERANCE",
   },
   {
     num: "05",
-    icon: FileCheck,
-    title: "Transparent Pre-Shipment Inspection",
-    subtitle: "Phytosanitary & Certificate of Analysis",
-    description:
-      "Full documentation provided with each export invoice: Certificate of Origin, Phytosanitary Certificate, Fumigation Certificate, and Weight/Quality COA.",
+    heading: "EXPORT PACKAGING",
+    subheading: "Breathable Jute & Vacuum Barriers",
+    explanation:
+      "Triple lock-stitched twill jute sacks, food-grade polypropylene bags, and nitrogen-flushed multi-wall vacuum cartons engineered to prevent cargo sweat on long tropical ocean transits.",
+    image: "/images/packaging/authentic-jute-sacks.webp",
+    tag: "MARITIME FOOD BARRIERS",
+  },
+  {
+    num: "06",
+    heading: "GLOBAL SUPPLY",
+    subheading: "Dependable 35+ Country Fulfillment",
+    explanation:
+      "With 50,000+ MT annual volume and direct intermodal rail links to Mundra Port (INMUN1) and Nhava Sheva, we provide dependable year-round multi-container supply contracts.",
+    image: "/images/shipping-port.webp",
+    tag: "SCHEDULED FCL TRANSIT",
   },
 ];
 
 export default function WhyChooseUsSection() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!sectionRef.current) return;
+
+    const ctx = gsap.context(() => {
+      const cards = sectionRef.current?.querySelectorAll(".why-reason-card");
+      if (cards) {
+        gsap.fromTo(
+          cards,
+          { opacity: 0, y: 30 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.7,
+            stagger: 0.12,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: "top 70%",
+              toggleActions: "play none none reverse",
+            },
+          }
+        );
+      }
+    }, sectionRef.current);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <section
       id="why-choose-us"
-      className="relative w-full py-20 lg:py-28 px-6 sm:px-8 lg:px-12 bg-[#FAF7F1] text-[#26180E] border-t border-[#623719]/10"
+      ref={sectionRef}
+      className="relative w-full py-20 lg:py-28 px-6 sm:px-8 lg:px-12 bg-[#F5EFE5]/40 text-[#2D241D] border-t border-[#5C341B]/12"
     >
       <div className="max-w-7xl mx-auto w-full space-y-16">
         {/* Section Header */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end border-b border-[#5C341B]/12 pb-8">
           <div className="lg:col-span-8 space-y-3">
-            <span className="text-xs font-sans font-bold tracking-[0.2em] text-[#8A5834] uppercase block">
-              OUR COMMITMENT // 07
+            <span className="text-[11px] font-sans font-bold tracking-[0.2em] text-[#A4774C] uppercase block">
+              10 // VALUE PROPOSITION &amp; ASSURANCE
             </span>
-            <h2 className="font-serif text-[38px] sm:text-[50px] lg:text-[60px] font-normal leading-[1.08] tracking-tight text-[#26180E]">
-              WHY GLOBAL IMPORTERS
-              <br />
-              CHOOSE PRADEEP TRADING.
+            <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-[#5C341B] font-normal tracking-tight leading-[1.06]">
+              WHY PRADEEP TRADING.
             </h2>
           </div>
 
           <div className="lg:col-span-4 lg:text-right">
-            <p className="text-sm sm:text-base font-sans text-[#26180E]/75 leading-relaxed">
-              Decades of agrarian integrity, continuous capital investment in modern sorting lines, and dependable maritime delivery.
+            <p className="text-sm font-sans text-[#2D241D]/75 leading-relaxed">
+              Six foundational operational pillars backed by generational heritage, modern optical lines, and reliable maritime execution.
             </p>
           </div>
         </div>
 
-        {/* Pillars Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {REASONS.map((item) => {
-            const Icon = item.icon;
-            return (
-              <div
-                key={item.num}
-                className="p-7 rounded-2xl bg-[#F3EBDD]/40 border border-[#623719]/15 flex flex-col justify-between space-y-5 hover:bg-[#F3EBDD]/70 transition-all duration-300 shadow-xs"
-              >
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <span className="font-mono text-xs font-bold text-[#8A5834]">
-                      {item.num} {"//"} TRUST PILLAR
-                    </span>
-                    <div className="w-9 h-9 rounded-full bg-[#623719]/10 flex items-center justify-center text-[#623719]">
-                      <Icon className="w-4 h-4" />
-                    </div>
-                  </div>
+        {/* 6 Strong Reason Cards with Large Number + Short Heading + Explanation + Supporting Image */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {REASONS.map((r) => (
+            <div
+              key={r.num}
+              className="why-reason-card rounded-3xl bg-[#FCFAF5] border border-[#5C341B]/12 overflow-hidden flex flex-col justify-between shadow-xs hover:shadow-md transition-shadow group"
+            >
+              {/* Supporting Photography Box */}
+              <div className="relative w-full h-48 sm:h-52 bg-[#F5EFE5] overflow-hidden">
+                <Image
+                  src={r.image}
+                  alt={r.heading}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#2D241D]/70 via-transparent to-transparent pointer-events-none" />
 
-                  <div className="space-y-1">
-                    <h3 className="font-serif text-2xl font-normal text-[#26180E]">
-                      {item.title}
-                    </h3>
-                    <p className="text-xs font-sans font-semibold text-[#8A5834]">
-                      {item.subtitle}
-                    </p>
-                  </div>
+                <div className="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-[#FCFAF5]/90 backdrop-blur-xs text-[10px] font-mono font-bold text-[#5C341B] uppercase shadow-xs">
+                  {r.tag}
+                </div>
 
-                  <p className="text-xs sm:text-sm font-sans text-[#26180E]/75 leading-relaxed">
-                    {item.description}
+                {/* Large Number inside banner */}
+                <div className="absolute bottom-3 right-4 font-serif text-5xl font-bold text-[#FCFAF5]/40 leading-none select-none">
+                  {r.num}
+                </div>
+              </div>
+
+              {/* Information Body */}
+              <div className="p-6 sm:p-7 space-y-3 flex-grow flex flex-col justify-between">
+                <div className="space-y-1.5">
+                  <span className="font-mono text-xs font-bold text-[#A4774C] block">
+                    PILLAR {r.num}
+                  </span>
+                  <h3 className="font-serif text-2xl text-[#5C341B] font-normal tracking-tight">
+                    {r.heading}
+                  </h3>
+                  <p className="text-xs font-sans font-semibold text-[#754522]">
+                    {r.subheading}
+                  </p>
+                  <p className="text-xs sm:text-sm font-sans text-[#2D241D]/80 leading-relaxed pt-1">
+                    {r.explanation}
                   </p>
                 </div>
 
-                <div className="pt-3 border-t border-[#623719]/10 flex items-center gap-2 text-xs font-sans text-[#623719]">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#623719]" />
-                  <span>Contractually Verified Standard</span>
+                <div className="pt-4 border-t border-[#5C341B]/10 flex items-center justify-between">
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center gap-1.5 text-xs font-sans font-bold uppercase tracking-wider text-[#5C341B] group-hover:text-[#754522] transition-colors"
+                  >
+                    <span>CONTRACTUAL TERMS</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+
+                  <span className="text-[10px] font-mono text-[#68704E] font-semibold">
+                    VERIFIED
+                  </span>
                 </div>
               </div>
-            );
-          })}
-
-          {/* Quick Stats Summary Card */}
-          <div className="p-7 rounded-2xl bg-[#623719] text-[#FAF7F1] flex flex-col justify-between space-y-6 shadow-md">
-            <div className="space-y-3">
-              <span className="font-mono text-xs font-bold text-[#F3EBDD] uppercase tracking-wider block">
-                ANNUAL EXPORT CAPACITY
-              </span>
-              <div className="font-serif text-4xl sm:text-5xl font-normal text-[#FAF7F1]">
-                35,000+ MT
-              </div>
-              <p className="text-xs sm:text-sm font-sans text-[#F3EBDD]/80 leading-relaxed">
-                Processed, graded, and packed annually for international food manufacturers, confectionery brands, and oil mills.
-              </p>
             </div>
-
-            <Link
-              href="#contact"
-              className="inline-flex items-center justify-between p-3.5 rounded-xl bg-[#FAF7F1] text-[#623719] hover:bg-[#F3EBDD] text-xs font-sans font-bold uppercase tracking-wider transition-colors"
-            >
-              <span>DISCUSS SHIPMENT TERMS</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
+          ))}
         </div>
       </div>
     </section>

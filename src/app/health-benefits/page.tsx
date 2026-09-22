@@ -48,17 +48,17 @@ const BENEFIT_PILLARS = [
 
 export default function HealthBenefitsPage() {
   return (
-    <div className="flex flex-col w-full bg-[#FFFDF8] text-[#2E2117] pt-24">
+    <div className="flex flex-col w-full bg-[#FFFDF8] text-[#2E2117]">
       {/* Editorial Header */}
-      <section className="relative w-full py-16 sm:py-24 border-b border-[#5A3218]/15 bg-[#F7F1E7]">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="max-w-3xl space-y-4">
+      <section className="relative w-full py-16 sm:py-20 border-b border-[#5A3218]/15 bg-[#F7F1E7]">
+        <div className="site-container max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl space-y-4 text-left">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#5A3218]/10 border border-[#5A3218]/20 text-xs font-mono tracking-widest text-[#5A3218] uppercase">
               <Heart className="w-3.5 h-3.5 text-[#5A3218]" />
               <span>NUTRITIONAL ARCHITECTURE • WHOLE SEED BIO-CHEMISTRY</span>
             </div>
 
-            <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl font-normal leading-[1.02] text-[#2E2117]">
+            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal leading-[1.05] tracking-[-0.02em] text-[#2E2117]">
               Botanical Nutrition
               <span className="block italic font-light text-[#5A3218]">
                 In Every Calibrated Kernel.
@@ -75,12 +75,12 @@ export default function HealthBenefitsPage() {
 
       {/* 6 Metric Nutrition Cards */}
       <section className="py-16 border-b border-[#5A3218]/15 bg-[#FFFDF8]">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="text-center max-w-2xl mx-auto mb-12">
+        <div className="site-container max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl mb-12 text-left">
             <span className="text-xs font-mono tracking-widest text-[#7A4824] uppercase font-bold block mb-2">
               BIO-CHEMICAL COMPOSITION
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl text-[#2E2117] font-normal">
+            <h2 className="font-serif text-3xl sm:text-4xl text-[#2E2117] font-normal tracking-tight">
               Laboratory Nutritional Profile
             </h2>
           </div>
@@ -111,7 +111,7 @@ export default function HealthBenefitsPage() {
 
       {/* Editorial Benefit Pillars with Macro Photography */}
       <section className="py-20 lg:py-28 bg-[#FFFDF8]">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="site-container max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-20 lg:space-y-28">
             {BENEFIT_PILLARS.map((b, idx) => (
               <div
@@ -150,7 +150,7 @@ export default function HealthBenefitsPage() {
                   <span className="text-xs font-mono tracking-widest text-[#7A4824] uppercase font-bold">
                     HEALTH BENEFIT 0{idx + 1}
                   </span>
-                  <h2 className="font-serif text-3xl sm:text-4xl text-[#2E2117] font-medium leading-tight">
+                  <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-[#2E2117] font-normal leading-tight tracking-tight">
                     {b.title}
                   </h2>
                   <p className="text-sm sm:text-base font-sans text-[#2E2117]/80 leading-relaxed font-light">

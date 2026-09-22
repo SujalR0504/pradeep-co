@@ -142,17 +142,17 @@ const JOURNEY_STEPS: JourneyStep[] = [
 
 export default function NutJourneyPage() {
   return (
-    <div className="flex flex-col w-full bg-[#FFFDF8] text-[#2E2117] pt-24">
+    <div className="flex flex-col w-full bg-[#FFFDF8] text-[#2E2117]">
       {/* Editorial Header */}
-      <section className="relative w-full py-16 sm:py-24 border-b border-[#5A3218]/15 bg-[#F7F1E7]">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="max-w-3xl space-y-4">
+      <section className="relative w-full py-16 sm:py-20 border-b border-[#5A3218]/15 bg-[#F7F1E7]">
+        <div className="site-container max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl space-y-4 text-left">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#5A3218]/10 border border-[#5A3218]/20 text-xs font-mono tracking-widest text-[#5A3218] uppercase">
               <Compass className="w-3.5 h-3.5 text-[#5A3218]" />
               <span>THE NUT JOURNEY • SOIL TO GLOBAL PORT</span>
             </div>
 
-            <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl font-normal leading-[1.02] text-[#2E2117]">
+            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal leading-[1.05] tracking-[-0.02em] text-[#2E2117]">
               From Indian Soil
               <span className="block italic font-light text-[#5A3218]">
                 To Global Destination.
@@ -169,7 +169,7 @@ export default function NutJourneyPage() {
 
       {/* 8-Stage Continuous Visual Journey */}
       <section className="py-20 lg:py-28 bg-[#FFFDF8]">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="site-container max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-24 lg:space-y-32">
             {JOURNEY_STEPS.map((step, idx) => (
               <div
@@ -207,7 +207,7 @@ export default function NutJourneyPage() {
                     <span>{step.tagline}</span>
                   </div>
 
-                  <h2 className="font-serif text-3xl sm:text-4xl text-[#2E2117] font-medium leading-tight">
+                  <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-[#2E2117] font-normal leading-tight tracking-tight">
                     {step.headline}
                   </h2>
 

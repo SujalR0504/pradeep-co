@@ -87,17 +87,17 @@ export default function ContactPage() {
   ];
 
   return (
-    <div className="flex flex-col w-full bg-[#FFFDF8] text-[#2E2117] pt-24">
+    <div className="flex flex-col w-full bg-[#FFFDF8] text-[#2E2117]">
       {/* Editorial Header */}
-      <section className="relative w-full py-16 sm:py-24 border-b border-[#5A3218]/15 bg-[#F7F1E7]">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="max-w-3xl space-y-4">
+      <section className="relative w-full py-16 sm:py-20 border-b border-[#5A3218]/15 bg-[#F7F1E7]">
+        <div className="site-container max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl space-y-4 text-left">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#5A3218]/10 border border-[#5A3218]/20 text-xs font-mono tracking-widest text-[#5A3218] uppercase">
               <Globe2 className="w-3.5 h-3.5 text-[#5A3218]" />
               <span>DIRECT EXPORT DESK • COMMODITY PROCUREMENT</span>
             </div>
 
-            <h1 className="font-serif text-5xl sm:text-7xl lg:text-8xl font-normal leading-[0.98] text-[#2E2117] tracking-tight">
+            <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl font-normal leading-[1.02] text-[#2E2117] tracking-tight">
               LET&apos;S TALK
               <span className="block italic font-light text-[#5A3218]">
                 PEANUTS.
@@ -114,7 +114,7 @@ export default function ContactPage() {
 
       {/* Main Split Content: Contact Details vs Interactive Form */}
       <section className="py-16 sm:py-20 bg-[#FFFDF8]">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="site-container max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
             {/* Left Column: Direct Contacts & Operating Hubs */}
             <div className="lg:col-span-5 space-y-8">
@@ -182,7 +182,7 @@ export default function ContactPage() {
                     href={`https://wa.me/${COMPANY_INFO.contact.whatsappNumber}?text=Hello%20Pradeep%20Trading%20Company,%20I%20would%20like%20to%20request%20a%20B2B%20quotation%20for%20peanuts.`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#1eb857] text-white font-sans font-medium text-sm transition-colors shadow-sm"
+                    className="w-full h-12 flex items-center justify-center gap-2 px-6 rounded-full bg-[#25D366] hover:bg-[#1eb857] text-white font-sans font-semibold text-xs sm:text-sm tracking-wider uppercase transition-colors shadow-sm"
                   >
                     <MessageSquare className="w-4 h-4" />
                     <span>Chat on WhatsApp Directly</span>
@@ -294,7 +294,7 @@ export default function ContactPage() {
                           value={formData.fullName}
                           onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                           placeholder="Your Full Name"
-                          className="w-full px-4 py-3 rounded-xl bg-[#FFFDF8] border border-[#5A3218]/20 text-sm font-sans placeholder-[#2E2117]/40 focus:outline-none focus:border-[#5A3218]"
+                          className="w-full h-12 px-4 rounded-xl bg-[#FFFDF8] border border-[#5A3218]/20 text-sm font-sans placeholder-[#2E2117]/40 focus:outline-none focus:border-[#5A3218]"
                         />
                       </div>
 
@@ -308,7 +308,7 @@ export default function ContactPage() {
                           value={formData.companyName}
                           onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
                           placeholder="Company / Organization Name"
-                          className="w-full px-4 py-3 rounded-xl bg-[#FFFDF8] border border-[#5A3218]/20 text-sm font-sans placeholder-[#2E2117]/40 focus:outline-none focus:border-[#5A3218]"
+                          className="w-full h-12 px-4 rounded-xl bg-[#FFFDF8] border border-[#5A3218]/20 text-sm font-sans placeholder-[#2E2117]/40 focus:outline-none focus:border-[#5A3218]"
                         />
                       </div>
                     </div>
@@ -325,7 +325,7 @@ export default function ContactPage() {
                           value={formData.country}
                           onChange={(e) => setFormData({ ...formData, country: e.target.value })}
                           placeholder="Destination Country (e.g. Vietnam, UAE, Netherlands)"
-                          className="w-full px-4 py-3 rounded-xl bg-[#FFFDF8] border border-[#5A3218]/20 text-sm font-sans placeholder-[#2E2117]/40 focus:outline-none focus:border-[#5A3218]"
+                          className="w-full h-12 px-4 rounded-xl bg-[#FFFDF8] border border-[#5A3218]/20 text-sm font-sans placeholder-[#2E2117]/40 focus:outline-none focus:border-[#5A3218]"
                         />
                       </div>
 
@@ -339,7 +339,7 @@ export default function ContactPage() {
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                           placeholder="procurement@company.com"
-                          className="w-full px-4 py-3 rounded-xl bg-[#FFFDF8] border border-[#5A3218]/20 text-sm font-sans placeholder-[#2E2117]/40 focus:outline-none focus:border-[#5A3218]"
+                          className="w-full h-12 px-4 rounded-xl bg-[#FFFDF8] border border-[#5A3218]/20 text-sm font-sans placeholder-[#2E2117]/40 focus:outline-none focus:border-[#5A3218]"
                         />
                       </div>
                     </div>
@@ -356,7 +356,7 @@ export default function ContactPage() {
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                           placeholder="+ Country Code & Phone Number"
-                          className="w-full px-4 py-3 rounded-xl bg-[#FFFDF8] border border-[#5A3218]/20 text-sm font-sans placeholder-[#2E2117]/40 focus:outline-none focus:border-[#5A3218]"
+                          className="w-full h-12 px-4 rounded-xl bg-[#FFFDF8] border border-[#5A3218]/20 text-sm font-sans placeholder-[#2E2117]/40 focus:outline-none focus:border-[#5A3218]"
                         />
                       </div>
 
@@ -367,7 +367,7 @@ export default function ContactPage() {
                         <select
                           value={formData.product}
                           onChange={(e) => setFormData({ ...formData, product: e.target.value })}
-                          className="w-full px-4 py-3 rounded-xl bg-[#FFFDF8] border border-[#5A3218]/20 text-sm font-sans focus:outline-none focus:border-[#5A3218]"
+                          className="w-full h-12 px-4 rounded-xl bg-[#FFFDF8] border border-[#5A3218]/20 text-sm font-sans focus:outline-none focus:border-[#5A3218]"
                         >
                           {productOptions.map((opt) => (
                             <option key={opt} value={opt}>
@@ -386,7 +386,7 @@ export default function ContactPage() {
                       <select
                         value={formData.quantity}
                         onChange={(e) => setFormData({ ...formData, quantity: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-[#FFFDF8] border border-[#5A3218]/20 text-sm font-sans focus:outline-none focus:border-[#5A3218]"
+                        className="w-full h-12 px-4 rounded-xl bg-[#FFFDF8] border border-[#5A3218]/20 text-sm font-sans focus:outline-none focus:border-[#5A3218]"
                       >
                         {quantityOptions.map((opt) => (
                           <option key={opt} value={opt}>
@@ -414,7 +414,7 @@ export default function ContactPage() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full py-4 rounded-2xl bg-[#5A3218] hover:bg-[#7A4824] disabled:bg-[#5A3218]/60 text-[#FFFDF8] font-sans font-bold text-sm tracking-widest uppercase transition-all shadow-md flex items-center justify-center gap-3 cursor-pointer"
+                      className="w-full h-12 rounded-full bg-[#5A3218] hover:bg-[#7A4824] disabled:bg-[#5A3218]/60 text-[#FFFDF8] font-sans font-semibold text-xs sm:text-sm tracking-widest uppercase transition-all shadow-md flex items-center justify-center gap-3 cursor-pointer"
                     >
                       {isSubmitting ? (
                         <div className="flex items-center gap-2">
@@ -442,12 +442,12 @@ export default function ContactPage() {
 
       {/* Origin & Port Terminal Visual Section */}
       <section className="py-16 bg-[#F7F1E7] border-t border-[#5A3218]/15">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="text-center max-w-2xl mx-auto mb-12 space-y-2">
+        <div className="site-container max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl mb-12 space-y-2 text-left">
             <span className="text-xs font-mono uppercase tracking-widest text-[#7A4824]">
               INFRASTRUCTURE CORRIDOR
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl text-[#2E2117]">
+            <h2 className="font-serif text-3xl sm:text-4xl font-normal text-[#2E2117] tracking-tight">
               From Bhonti Origin to Global Sea Lanes
             </h2>
             <p className="text-xs sm:text-sm font-sans text-[#2E2117]/75">

@@ -40,11 +40,11 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="flex flex-col w-full bg-[#FFFDF8] text-[#2E2117] pt-24">
+    <div className="flex flex-col w-full bg-[#FFFDF8] text-[#2E2117]">
       {/* Editorial Hero Header */}
       <section className="relative w-full py-16 sm:py-24 border-b border-[#5A3218]/15 bg-[#F7F1E7]">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="max-w-3xl space-y-4">
+        <div className="site-container max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl space-y-4 text-left">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#5A3218]/10 border border-[#5A3218]/20 text-xs font-mono tracking-widest text-[#5A3218] uppercase">
               <Award className="w-3.5 h-3.5 text-[#5A3218]" />
               <span>ABOUT PRADEEP TRADING COMPANY • HERITAGE &amp; INFRASTRUCTURE</span>
@@ -68,7 +68,7 @@ export default function AboutPage() {
 
       {/* Core Factual Credentials Strip */}
       <section className="py-12 border-b border-[#5A3218]/15 bg-[#FFFDF8]">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="site-container max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div className="p-6 rounded-2xl bg-[#F7F1E7] border border-[#5A3218]/15">
               <div className="font-serif text-3xl sm:text-4xl font-bold text-[#5A3218]">65+ Yrs</div>
@@ -92,8 +92,8 @@ export default function AboutPage() {
 
       {/* Editorial Timeline */}
       <section className="py-20 lg:py-28 bg-[#FFFDF8]">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="site-container max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-left max-w-2xl mb-16">
             <span className="text-xs font-mono tracking-widest text-[#7A4824] uppercase font-bold block mb-2">
               HISTORICAL CONTINUITY
             </span>
@@ -150,7 +150,7 @@ export default function AboutPage() {
 
       {/* Quality Infrastructure Showcase */}
       <section className="py-20 bg-[#F7F1E7] border-t border-[#5A3218]/15">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="site-container max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6 space-y-6">
               <span className="text-xs font-mono tracking-widest text-[#7A4824] uppercase font-bold block">

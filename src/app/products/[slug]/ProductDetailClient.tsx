@@ -47,15 +47,15 @@ export default function ProductDetailClient({ product }: Props) {
   };
 
   return (
-    <div className="min-h-screen bg-[#FFFDF8] text-[#2B1A0F] pt-28 pb-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-[#FFFDF8] text-[#2B1A0F] pt-8 sm:pt-10 pb-20">
+      <div className="site-container max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Breadcrumbs */}
         <nav className="flex items-center gap-2 text-xs uppercase tracking-wider text-[#7D6B5D] mb-8">
           <Link href="/" className="hover:text-[#5A3215] transition-colors">
             Home
           </Link>
           <ChevronRight className="w-3.5 h-3.5 text-[#8A572F]" />
-          <Link href="/#products" className="hover:text-[#5A3215] transition-colors">
+          <Link href="/products" className="hover:text-[#5A3215] transition-colors">
             Products
           </Link>
           <ChevronRight className="w-3.5 h-3.5 text-[#8A572F]" />
@@ -65,7 +65,7 @@ export default function ProductDetailClient({ product }: Props) {
         {/* Back Link */}
         <div className="mb-6">
           <Link
-            href="/#products"
+            href="/products"
             className="inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-[#8A572F] hover:text-[#5A3215] transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
@@ -150,7 +150,7 @@ export default function ProductDetailClient({ product }: Props) {
                   {product.hindiName}
                 </div>
               )}
-              <h1 className="font-serif text-3xl sm:text-5xl font-light text-[#2B1A0F] leading-[1.05]">
+              <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-[#2B1A0F] leading-[1.1] tracking-[-0.02em]">
                 {product.name}
               </h1>
               <p className="text-base sm:text-lg text-[#7D6B5D] font-light leading-relaxed">
@@ -162,7 +162,7 @@ export default function ProductDetailClient({ product }: Props) {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
               <button
                 onClick={() => setInquiryModalOpen(true)}
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#5A3215] text-[#FFFDF8] font-semibold text-xs sm:text-sm tracking-wider uppercase hover:bg-[#74431F] transition-all shadow-md cursor-pointer hover:scale-[1.01]"
+                className="inline-flex items-center justify-center gap-2 h-12 px-8 rounded-full bg-[#5A3215] text-[#FFFDF8] font-semibold text-xs sm:text-sm tracking-wider uppercase hover:bg-[#74431F] transition-all shadow-md cursor-pointer hover:scale-[1.01]"
               >
                 <span>Request Product Inquiry</span>
                 <ArrowUpRight className="w-4 h-4" />
@@ -172,7 +172,7 @@ export default function ProductDetailClient({ product }: Props) {
                 href={`https://wa.me/${COMPANY_INFO.contact.whatsappNumber}?text=Hello%20Pradeep%20Trading%20Company,%20I%20am%20inquiring%20about%20${encodeURIComponent(product.name)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl border border-[#25D366] text-[#25D366] hover:bg-[#25D366] hover:text-white font-semibold text-xs sm:text-sm tracking-wider uppercase transition-all"
+                className="inline-flex items-center justify-center gap-2 h-12 px-6 rounded-full border border-[#25D366] text-[#25D366] hover:bg-[#25D366] hover:text-white font-semibold text-xs sm:text-sm tracking-wider uppercase transition-all"
               >
                 <MessageCircle className="w-4 h-4" />
                 <span>Instant WhatsApp Quote</span>
@@ -269,11 +269,11 @@ export default function ProductDetailClient({ product }: Props) {
         {/* Related Products Section */}
         <div className="pt-16 border-t border-[#E8DDCB] space-y-8">
           <div className="flex items-center justify-between">
-            <h3 className="font-serif text-2xl sm:text-3xl text-[#2B1A0F]">
+            <h3 className="font-serif text-2xl sm:text-3xl font-normal text-[#2B1A0F] tracking-tight">
               Explore Other Varieties
             </h3>
             <Link
-              href="/#products"
+              href="/products"
               className="text-xs font-semibold uppercase tracking-wider text-[#8A572F] hover:text-[#5A3215] inline-flex items-center gap-1"
             >
               <span>View Full Catalog</span>
@@ -451,7 +451,7 @@ export default function ProductDetailClient({ product }: Props) {
 
                   <button
                     type="submit"
-                    className="w-full py-3.5 rounded-xl bg-[#5A3215] text-[#FFFDF8] font-semibold text-xs tracking-wider uppercase hover:bg-[#74431F] transition-all flex items-center justify-center gap-2 cursor-pointer"
+                    className="w-full h-12 rounded-full bg-[#5A3215] text-[#FFFDF8] font-semibold text-xs tracking-wider uppercase hover:bg-[#74431F] transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md"
                   >
                     <span>Send Product Inquiry</span>
                     <Send className="w-3.5 h-3.5" />
