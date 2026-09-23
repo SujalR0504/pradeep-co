@@ -23,10 +23,9 @@ export default function Footer() {
       <div
         className="site-container"
         style={{
-          maxWidth: '1320px',
+          maxWidth: '1280px',
           width: '100%',
           margin: '0 auto',
-          padding: '0 32px',
         }}
       >
         {/* 5-Column Clean Footer Grid */}
@@ -75,7 +74,7 @@ export default function Footer() {
                 <i className="fab fa-linkedin-in" style={{ fontSize: '13px' }}></i>
               </a>
               <a
-                href="https://wa.me/918450016454"
+                href="https://wa.me/919589790997"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
@@ -118,7 +117,7 @@ export default function Footer() {
             <h4
               style={{
                 fontSize: '13px',
-                fontWeight: 600,
+                fontWeight: 700,
                 color: '#ffffff',
                 textTransform: 'uppercase',
                 letterSpacing: '0.1em',
@@ -142,7 +141,7 @@ export default function Footer() {
             <h4
               style={{
                 fontSize: '13px',
-                fontWeight: 600,
+                fontWeight: 700,
                 color: '#ffffff',
                 textTransform: 'uppercase',
                 letterSpacing: '0.1em',
@@ -165,7 +164,7 @@ export default function Footer() {
             <h4
               style={{
                 fontSize: '13px',
-                fontWeight: 600,
+                fontWeight: 700,
                 color: '#ffffff',
                 textTransform: 'uppercase',
                 letterSpacing: '0.1em',
@@ -187,7 +186,7 @@ export default function Footer() {
             <h4
               style={{
                 fontSize: '13px',
-                fontWeight: 600,
+                fontWeight: 700,
                 color: '#ffffff',
                 textTransform: 'uppercase',
                 letterSpacing: '0.1em',
@@ -199,11 +198,11 @@ export default function Footer() {
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '13.5px' }}>
               <li>
                 <div style={{ fontSize: '11.5px', color: '#C88A2E', fontWeight: 600, textTransform: 'uppercase' }}>Phone &amp; WhatsApp</div>
-                <a href="tel:+918450016454" style={{ color: '#ffffff', textDecoration: 'none', fontWeight: 600 }}>+91-8450016454</a>
+                <a href="tel:+919589790997" style={{ color: '#ffffff', textDecoration: 'none', fontWeight: 600 }}>+91-9589790997</a>
               </li>
               <li>
                 <div style={{ fontSize: '11.5px', color: '#C88A2E', fontWeight: 600, textTransform: 'uppercase' }}>Direct Export Desk</div>
-                <a href="mailto:export@pradeeptrading.in" style={{ color: '#c9b8aa', textDecoration: 'none' }}>export@pradeeptrading.in</a>
+                <a href="mailto:pradeeptradingcomp@gmail.com" style={{ color: '#c9b8aa', textDecoration: 'none' }}>pradeeptradingcomp@gmail.com</a>
               </li>
               <li>
                 <button

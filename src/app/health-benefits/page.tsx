@@ -51,21 +51,21 @@ export default function HealthBenefitsPage() {
     <div className="flex flex-col w-full bg-[#FFFDF8] text-[#2E2117]">
       {/* Editorial Header */}
       <section className="relative w-full py-16 sm:py-20 border-b border-[#5A3218]/15 bg-[#F7F1E7]">
-        <div className="site-container max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="site-container max-w-[1280px] mx-auto">
           <div className="max-w-3xl space-y-4 text-left">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#5A3218]/10 border border-[#5A3218]/20 text-xs font-mono tracking-widest text-[#5A3218] uppercase">
-              <Heart className="w-3.5 h-3.5 text-[#5A3218]" />
-              <span>NUTRITIONAL ARCHITECTURE • WHOLE SEED BIO-CHEMISTRY</span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#5A3218]/10 border border-[#5A3218]/20 text-[10.5px] sm:text-xs font-mono tracking-widest text-[#5A3218] uppercase max-w-full">
+              <Heart className="w-3.5 h-3.5 text-[#5A3218] shrink-0" />
+              <span className="break-words">NUTRITIONAL ARCHITECTURE • WHOLE SEED BIO-CHEMISTRY</span>
             </div>
 
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal leading-[1.05] tracking-[-0.02em] text-[#2E2117]">
+            <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-[1.12] tracking-tight text-[#2E2117] break-words">
               Botanical Nutrition
-              <span className="block italic font-light text-[#5A3218]">
+              <span className="block font-bold text-[#5A3218]">
                 In Every Calibrated Kernel.
               </span>
             </h1>
 
-            <p className="text-base sm:text-lg font-sans text-[#2E2117]/80 font-light leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg font-sans text-[#2E2117]/85 font-normal leading-relaxed">
               Groundnuts are an extraordinary nutritional matrix: packed with heart-healthy monounsaturated oleic lipids,
               complete plant protein, dietary fiber, and natural resveratrol antioxidants in the intact seed coat.
             </p>
@@ -74,13 +74,13 @@ export default function HealthBenefitsPage() {
       </section>
 
       {/* 6 Metric Nutrition Cards */}
-      <section className="py-16 border-b border-[#5A3218]/15 bg-[#FFFDF8]">
-        <div className="site-container max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mb-12 text-left">
-            <span className="text-xs font-mono tracking-widest text-[#7A4824] uppercase font-bold block mb-2">
+      <section className="py-12 sm:py-16 border-b border-[#5A3218]/15 bg-[#FFFDF8]">
+        <div className="site-container max-w-[1280px] mx-auto">
+          <div className="max-w-2xl mb-8 sm:mb-12 text-left">
+            <span className="text-[11px] sm:text-xs font-mono tracking-widest text-[#7A4824] uppercase font-bold block mb-2">
               BIO-CHEMICAL COMPOSITION
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl text-[#2E2117] font-normal tracking-tight">
+            <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-[#2E2117] font-bold tracking-tight break-words">
               Laboratory Nutritional Profile
             </h2>
           </div>
@@ -89,10 +89,10 @@ export default function HealthBenefitsPage() {
             {NUTRITION_FACTS.map((fact, idx) => (
               <div
                 key={idx}
-                className="p-6 rounded-3xl bg-[#F7F1E7] border border-[#5A3218]/15 shadow-sm space-y-2 flex flex-col justify-between"
+                className="p-6 rounded-3xl bg-[#F7F1E7] border border-[#5A3218]/15 shadow-sm flex flex-col justify-between min-h-[160px]"
               >
                 <div>
-                  <div className="flex items-center justify-between text-xs font-mono text-[#7A4824]">
+                  <div className="flex items-center justify-between text-xs font-mono text-[#7A4824] font-semibold">
                     <span>{fact.label.toUpperCase()}</span>
                     <span>{fact.unit}</span>
                   </div>
@@ -100,7 +100,7 @@ export default function HealthBenefitsPage() {
                     {fact.val}
                   </div>
                 </div>
-                <p className="text-xs font-sans text-[#2E2117]/75 pt-3 border-t border-[#5A3218]/10 font-light leading-relaxed">
+                <p className="text-xs font-sans text-[#2E2117]/80 pt-3 border-t border-[#5A3218]/10 font-normal leading-relaxed">
                   {fact.note}
                 </p>
               </div>
@@ -111,18 +111,16 @@ export default function HealthBenefitsPage() {
 
       {/* Editorial Benefit Pillars with Macro Photography */}
       <section className="py-20 lg:py-28 bg-[#FFFDF8]">
-        <div className="site-container max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="site-container max-w-[1280px] mx-auto">
           <div className="space-y-20 lg:space-y-28">
             {BENEFIT_PILLARS.map((b, idx) => (
               <div
                 key={idx}
-                className={`grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center ${
-                  idx % 2 === 1 ? "lg:flex-row-reverse" : ""
-                }`}
+                className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center"
               >
                 {/* Visual Frame (6 cols) */}
                 <div
-                  className={`lg:col-span-6 relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-[#5A3218]/20 bg-[#F7F1E7] ${
+                  className={`lg:col-span-6 relative aspect-[4/3] rounded-3xl overflow-hidden shadow-xl border border-[#5A3218]/20 bg-[#F7F1E7] ${
                     idx % 2 === 1 ? "lg:order-2" : "lg:order-1"
                   }`}
                 >
@@ -133,12 +131,12 @@ export default function HealthBenefitsPage() {
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover transition-transform duration-700 hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#5A3218]/80 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#5A3218]/85 via-transparent to-transparent" />
                   <div className="absolute top-4 left-4 bg-[#5A3218] text-[#FFFDF8] px-3.5 py-1 rounded-full font-mono text-xs font-bold shadow">
                     {b.category}
                   </div>
                   <div className="absolute bottom-4 left-4 right-4 text-[#FFFDF8] flex items-center justify-between">
-                    <span className="font-serif text-xl font-medium">{b.title}</span>
+                    <span className="font-serif text-xl font-bold">{b.title}</span>
                     <span className="bg-[#FFFDF8]/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-mono border border-white/30">
                       {b.badge}
                     </span>
@@ -150,10 +148,10 @@ export default function HealthBenefitsPage() {
                   <span className="text-xs font-mono tracking-widest text-[#7A4824] uppercase font-bold">
                     HEALTH BENEFIT 0{idx + 1}
                   </span>
-                  <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-[#2E2117] font-normal leading-tight tracking-tight">
+                  <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-[#2E2117] font-bold leading-tight tracking-tight">
                     {b.title}
                   </h2>
-                  <p className="text-sm sm:text-base font-sans text-[#2E2117]/80 leading-relaxed font-light">
+                  <p className="text-sm sm:text-base font-sans text-[#2E2117]/85 leading-relaxed font-normal">
                     {b.desc}
                   </p>
 

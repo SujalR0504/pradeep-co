@@ -48,27 +48,26 @@ export default function ProductDetailClient({ product }: Props) {
 
   return (
     <div className="min-h-screen bg-[#FFFDF8] text-[#2B1A0F] pt-8 sm:pt-10 pb-20">
-      <div className="site-container max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Breadcrumbs */}
-        <nav className="flex items-center gap-2 text-xs uppercase tracking-wider text-[#7D6B5D] mb-8">
-          <Link href="/" className="hover:text-[#5A3215] transition-colors">
-            Home
-          </Link>
-          <ChevronRight className="w-3.5 h-3.5 text-[#8A572F]" />
-          <Link href="/products" className="hover:text-[#5A3215] transition-colors">
-            Products
-          </Link>
-          <ChevronRight className="w-3.5 h-3.5 text-[#8A572F]" />
-          <span className="text-[#2B1A0F] font-semibold">{product.name}</span>
-        </nav>
+      <div className="site-container max-w-[1280px] mx-auto">
+        {/* Breadcrumbs & Back Link Bar */}
+        <div className="flex flex-wrap items-center justify-between gap-4 mb-8 pb-4 border-b border-[#E8DDCB]/60">
+          <nav className="flex items-center gap-2 text-xs uppercase tracking-wider text-[#7D6B5D]">
+            <Link href="/" className="hover:text-[#5A3215] transition-colors">
+              Home
+            </Link>
+            <ChevronRight className="w-3.5 h-3.5 text-[#8A572F]" />
+            <Link href="/products" className="hover:text-[#5A3215] transition-colors">
+              Products
+            </Link>
+            <ChevronRight className="w-3.5 h-3.5 text-[#8A572F]" />
+            <span className="text-[#2B1A0F] font-semibold">{product.name}</span>
+          </nav>
 
-        {/* Back Link */}
-        <div className="mb-6">
           <Link
             href="/products"
-            className="inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-[#8A572F] hover:text-[#5A3215] transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold tracking-wider uppercase text-[#8A572F] hover:text-[#5A3215] transition-colors bg-[#FAF6EE] px-3.5 py-1.5 rounded-full border border-[#E8DDCB]"
           >
-            <ArrowLeft className="w-4 h-4" />
+            <ArrowLeft className="w-3.5 h-3.5" />
             <span>Back to Products</span>
           </Link>
         </div>
@@ -188,36 +187,66 @@ export default function ProductDetailClient({ product }: Props) {
 
               <div className="border border-[#E8DDCB] rounded-2xl overflow-hidden bg-[#FAF6EE]">
                 <div className="divide-y divide-[#E8DDCB] text-xs sm:text-sm">
-                  <div className="grid grid-cols-2 p-3.5">
-                    <span className="text-[#7D6B5D]">Count / Ounce Caliber</span>
-                    <span className="font-semibold text-[#2B1A0F]">
-                      {product.specs.counts || "Available on request"}
-                    </span>
-                  </div>
-                  <div className="grid grid-cols-2 p-3.5 bg-[#FFFDF8]">
-                    <span className="text-[#7D6B5D]">Moisture Content</span>
-                    <span className="font-semibold text-[#2B1A0F]">
-                      {product.specs.moisture || "Available on request (Standard 7-8% Max)"}
-                    </span>
-                  </div>
-                  <div className="grid grid-cols-2 p-3.5">
-                    <span className="text-[#7D6B5D]">Foreign Matter / Admixture</span>
-                    <span className="font-semibold text-[#2B1A0F]">
-                      {product.specs.admixture || "Available on request (Max 0.5%)"}
-                    </span>
-                  </div>
-                  <div className="grid grid-cols-2 p-3.5 bg-[#FFFDF8]">
-                    <span className="text-[#7D6B5D]">Aflatoxin Limits</span>
-                    <span className="font-semibold text-[#2B1A0F]">
-                      {product.specs.aflatoxin || "Below 4 ppb / EU Compliant on request"}
-                    </span>
-                  </div>
-                  <div className="grid grid-cols-2 p-3.5">
-                    <span className="text-[#7D6B5D]">Natural Oil Content</span>
-                    <span className="font-semibold text-[#2B1A0F]">
-                      {product.specs.oilContent || "Available on request (~48-50%)"}
-                    </span>
-                  </div>
+                  {product.specs.counts && (
+                    <div className="grid grid-cols-2 p-3.5 bg-[#FFFDF8]">
+                      <span className="text-[#7D6B5D]">Count / Ounce Caliber</span>
+                      <span className="font-semibold text-[#2B1A0F]">{product.specs.counts}</span>
+                    </div>
+                  )}
+                  {product.size && !product.specs.counts && (
+                    <div className="grid grid-cols-2 p-3.5 bg-[#FFFDF8]">
+                      <span className="text-[#7D6B5D]">Grade &amp; Sizing</span>
+                      <span className="font-semibold text-[#2B1A0F]">{product.size}</span>
+                    </div>
+                  )}
+                  {product.specs.moisture && (
+                    <div className="grid grid-cols-2 p-3.5">
+                      <span className="text-[#7D6B5D]">Moisture Ceiling</span>
+                      <span className="font-semibold text-[#2B1A0F]">{product.specs.moisture}</span>
+                    </div>
+                  )}
+                  {product.specs.purity && (
+                    <div className="grid grid-cols-2 p-3.5 bg-[#FFFDF8]">
+                      <span className="text-[#7D6B5D]">Purity Rating</span>
+                      <span className="font-semibold text-[#2B1A0F]">{product.specs.purity}</span>
+                    </div>
+                  )}
+                  {product.specs.protein && (
+                    <div className="grid grid-cols-2 p-3.5 bg-[#FFFDF8]">
+                      <span className="text-[#7D6B5D]">Crude Protein</span>
+                      <span className="font-semibold text-[#2B1A0F]">{product.specs.protein}</span>
+                    </div>
+                  )}
+                  {product.specs.oilContent && (
+                    <div className="grid grid-cols-2 p-3.5">
+                      <span className="text-[#7D6B5D]">Natural Oil Content</span>
+                      <span className="font-semibold text-[#2B1A0F]">{product.specs.oilContent}</span>
+                    </div>
+                  )}
+                  {(product.specs.admixture || product.specs.foreignMatter) && (
+                    <div className="grid grid-cols-2 p-3.5 bg-[#FFFDF8]">
+                      <span className="text-[#7D6B5D]">Foreign Matter / Admixture</span>
+                      <span className="font-semibold text-[#2B1A0F]">{product.specs.admixture || product.specs.foreignMatter}</span>
+                    </div>
+                  )}
+                  {product.specs.aflatoxin && (
+                    <div className="grid grid-cols-2 p-3.5">
+                      <span className="text-[#7D6B5D]">Aflatoxin Limits</span>
+                      <span className="font-semibold text-[#2B1A0F]">{product.specs.aflatoxin}</span>
+                    </div>
+                  )}
+                  {product.specs.sugarContent && (
+                    <div className="grid grid-cols-2 p-3.5 bg-[#FFFDF8]">
+                      <span className="text-[#7D6B5D]">Natural Sugars</span>
+                      <span className="font-semibold text-[#2B1A0F]">{product.specs.sugarContent}</span>
+                    </div>
+                  )}
+                  {product.specs.crudeFiber && (
+                    <div className="grid grid-cols-2 p-3.5">
+                      <span className="text-[#7D6B5D]">Crude Fiber</span>
+                      <span className="font-semibold text-[#2B1A0F]">{product.specs.crudeFiber}</span>
+                    </div>
+                  )}
                   {product.specs.brokenKernels && (
                     <div className="grid grid-cols-2 p-3.5 bg-[#FFFDF8]">
                       <span className="text-[#7D6B5D]">Broken Kernels</span>
@@ -281,30 +310,36 @@ export default function ProductDetailClient({ product }: Props) {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
             {relatedProducts.map((rel) => (
               <Link
                 key={rel.id}
                 href={`/products/${rel.slug}`}
-                className="group block p-5 rounded-2xl bg-[#FAF6EE] border border-[#E8DDCB] hover:border-[#8A572F] transition-all"
+                className="group flex flex-col justify-between h-full p-5 rounded-2xl bg-[#FAF6EE] border border-[#E8DDCB] hover:border-[#8A572F] transition-all"
               >
-                <div className="relative aspect-[4/3] rounded-xl overflow-hidden mb-4 bg-white">
-                  <Image
-                    src={rel.image}
-                    alt={rel.name}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
+                <div>
+                  <div className="relative aspect-[4/3] rounded-xl overflow-hidden mb-4 bg-white">
+                    <Image
+                      src={rel.image}
+                      alt={rel.name}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="text-[11px] uppercase tracking-wider text-[#8A572F] font-semibold mb-1">
+                    {rel.category}
+                  </div>
+                  <h4 className="font-serif text-xl font-bold text-[#2B1A0F] group-hover:text-[#5A3215] transition-colors line-clamp-1">
+                    {rel.name}
+                  </h4>
+                  <p className="text-xs text-[#7D6B5D] mt-1 line-clamp-2 min-h-[34px]">
+                    {rel.shortDescription}
+                  </p>
                 </div>
-                <div className="text-[11px] uppercase tracking-wider text-[#8A572F] font-semibold mb-1">
-                  {rel.category}
+                <div className="pt-3 border-t border-[#E8DDCB]/60 mt-3 flex items-center justify-between text-xs font-semibold text-[#8A572F] group-hover:text-[#5A3215]">
+                  <span>View Grade Specs</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
                 </div>
-                <h4 className="font-serif text-xl text-[#2B1A0F] group-hover:text-[#5A3215] transition-colors line-clamp-1">
-                  {rel.name}
-                </h4>
-                <p className="text-xs text-[#7D6B5D] mt-1 line-clamp-2">
-                  {rel.shortDescription}
-                </p>
               </Link>
             ))}
           </div>

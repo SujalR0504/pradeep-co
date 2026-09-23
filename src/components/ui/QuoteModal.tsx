@@ -36,12 +36,13 @@ export default function QuoteModal() {
       }}
     >
       <div
+        className="p-5 sm:p-8 rounded-3xl"
         style={{
           backgroundColor: '#ffffff',
-          borderRadius: '22px',
           maxWidth: '540px',
           width: '100%',
-          padding: '32px',
+          maxHeight: '90vh',
+          overflowY: 'auto',
           position: 'relative',
           boxShadow: '0 25px 60px rgba(0,0,0,0.25)',
           animation: 'fadeInDown 0.3s ease-out',
@@ -53,8 +54,8 @@ export default function QuoteModal() {
           aria-label="Close quote modal"
           style={{
             position: 'absolute',
-            top: '20px',
-            right: '20px',
+            top: '18px',
+            right: '18px',
             background: 'none',
             border: 'none',
             fontSize: '26px',
@@ -85,7 +86,7 @@ export default function QuoteModal() {
             const port = (form.elements.namedItem('destPort') as HTMLInputElement)?.value;
 
             const message = `Hello Pradeep Trading! I would like to request an export quote.%0A%0A*Product:* ${productName}%0A*Container:* ${containerSize}%0A*Destination Port:* ${port}%0A*Buyer:* ${buyerName}%0A*Contact:* ${buyerPhone}`;
-            window.open(`https://wa.me/918450016454?text=${message}`, '_blank');
+            window.open(`https://wa.me/919589790997?text=${message}`, '_blank');
             setIsOpen(false);
           }}
         >
@@ -112,7 +113,7 @@ export default function QuoteModal() {
               />
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
                 <label style={{ display: 'block', fontSize: '12.5px', fontWeight: 600, color: '#361C0D', marginBottom: '5px' }}>
                   Container Format
@@ -159,7 +160,7 @@ export default function QuoteModal() {
               </div>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
                 <label style={{ display: 'block', fontSize: '12.5px', fontWeight: 600, color: '#361C0D', marginBottom: '5px' }}>
                   Buyer / Company Name

@@ -2,8 +2,10 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function Header() {
+  const pathname = usePathname();
   const [isSticky, setIsSticky] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -48,10 +50,9 @@ export default function Header() {
           <div
             className="site-container"
             style={{
-              maxWidth: '1320px',
+              maxWidth: '1280px',
               width: '100%',
               margin: '0 auto',
-              padding: '0 32px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
@@ -63,56 +64,56 @@ export default function Header() {
                 style={{
                   display: 'flex',
                   alignItems: 'center',
-                  gap: '22px',
+                  gap: '14px',
                   listStyle: 'none',
                   margin: 0,
                   padding: 0,
-                  fontSize: '12.5px',
+                  fontSize: '12px',
                   fontWeight: 500,
                   whiteSpace: 'nowrap',
                 }}
               >
-                <li style={{ display: 'flex', alignItems: 'center', gap: '7px' }}>
-                  <i className="fa fa-map-marker-alt" style={{ color: '#E5A83B', fontSize: '13.5px' }}></i>
+                <li className="hidden lg:flex" style={{ alignItems: 'center', gap: '7px' }}>
+                  <i className="fa fa-map-marker-alt" style={{ color: '#E5A83B', fontSize: '13px' }}></i>
                   <span style={{ color: '#ffffff' }}>Bhonti, Shivpuri, Madhya Pradesh - 473551, India</span>
                 </li>
-                <li style={{ display: 'flex', alignItems: 'center', gap: '7px' }}>
-                  <i className="fa fa-envelope" style={{ color: '#E5A83B', fontSize: '13.5px' }}></i>
-                  <a href="mailto:export@pradeeptrading.in" style={{ color: '#e0d6cb', textDecoration: 'none' }}>
-                    export@pradeeptrading.in
+                <li className="hidden md:flex" style={{ alignItems: 'center', gap: '7px' }}>
+                  <i className="fa fa-envelope" style={{ color: '#E5A83B', fontSize: '13px' }}></i>
+                  <a href="mailto:pradeeptradingcomp@gmail.com" style={{ color: '#e0d6cb', textDecoration: 'none' }}>
+                    pradeeptradingcomp@gmail.com
                   </a>
                 </li>
-                <li style={{ display: 'flex', alignItems: 'center', gap: '7px' }}>
-                  <i className="fa fa-phone-alt" style={{ color: '#E5A83B', fontSize: '13.5px' }}></i>
-                  <a href="tel:+918450016454" style={{ color: '#ffffff', fontWeight: 600, textDecoration: 'none' }}>
-                    +91-8450016454
+                <li style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                  <i className="fa fa-phone-alt" style={{ color: '#E5A83B', fontSize: '12px' }}></i>
+                  <a href="tel:+919589790997" style={{ color: '#ffffff', fontWeight: 600, textDecoration: 'none', fontSize: '12px' }}>
+                    +91-9589790997
                   </a>
                 </li>
               </ul>
             </div>
-            <div className="top-right" style={{ display: 'flex', alignItems: 'center', gap: '16px', whiteSpace: 'nowrap' }}>
+            <div className="top-right" style={{ display: 'flex', alignItems: 'center', gap: '10px', whiteSpace: 'nowrap' }}>
               <a
-                href="https://wa.me/918450016454?text=Hello%20Pradeep%20Trading,%20I%20would%20like%20to%20inquire%20about%20peanut%20export%20specifications."
+                href="https://wa.me/919589790997?text=Hello%20Pradeep%20Trading,%20I%20would%20like%20to%20inquire%20about%20peanut%20export%20specifications."
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
-                  gap: '6px',
+                  gap: '5px',
                   backgroundColor: '#25D366',
                   color: '#ffffff',
-                  height: '30px',
-                  padding: '0 14px',
-                  borderRadius: '15px',
-                  fontSize: '12px',
+                  height: '26px',
+                  padding: '0 10px',
+                  borderRadius: '13px',
+                  fontSize: '11px',
                   fontWeight: 600,
                   textDecoration: 'none',
                   boxShadow: '0 2px 6px rgba(37, 211, 102, 0.25)',
                 }}
               >
-                <i className="fab fa-whatsapp" style={{ fontSize: '14px' }}></i> WhatsApp Inquiry
+                <i className="fab fa-whatsapp" style={{ fontSize: '12px' }}></i> WhatsApp
               </a>
-              <ul style={{ display: 'flex', alignItems: 'center', gap: '12px', listStyle: 'none', margin: 0, padding: 0 }}>
+              <ul className="hidden md:flex" style={{ alignItems: 'center', gap: '12px', listStyle: 'none', margin: 0, padding: 0 }}>
                 <li>
                   <a href="#" style={{ color: '#e0d6cb', fontSize: '13.5px', display: 'flex' }} aria-label="LinkedIn">
                     <span className="fab fa-linkedin-in"></span>
@@ -152,10 +153,9 @@ export default function Header() {
           <div
             className="site-container"
             style={{
-              maxWidth: '1320px',
+              maxWidth: '1280px',
               width: '100%',
               margin: '0 auto',
-              padding: '0 32px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
@@ -204,9 +204,9 @@ export default function Header() {
               </Link>
             </div>
 
-            {/* Navigation Menu (Single Line, 24px spacing, font Manrope 500) */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '26px' }}>
-              <nav className="header-nav" style={{ display: 'flex', alignItems: 'center' }}>
+            {/* Navigation Menu & Actions */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+              <nav className="header-nav hidden lg:flex" style={{ alignItems: 'center' }}>
                 <ul
                   style={{
                     display: 'flex',
@@ -218,105 +218,51 @@ export default function Header() {
                     whiteSpace: 'nowrap',
                   }}
                 >
-                  <li style={{ padding: 0, margin: 0 }}>
-                    <Link
-                      href="/"
-                      style={{
-                        color: '#5C341B',
-                        textDecoration: 'none',
-                        borderBottom: '2px solid #C88A2E',
-                        paddingBottom: '3px',
-                        fontWeight: 600,
-                        fontSize: '14px',
-                        whiteSpace: 'nowrap',
-                      }}
-                    >
-                      Home
-                    </Link>
-                  </li>
-                  <li style={{ padding: 0, margin: 0 }}>
-                    <Link
-                      href="/about"
-                      style={{
-                        color: '#361C0D',
-                        textDecoration: 'none',
-                        fontWeight: 500,
-                        fontSize: '14px',
-                        whiteSpace: 'nowrap',
-                        transition: 'color 0.2s',
-                      }}
-                    >
-                      About Us
-                    </Link>
-                  </li>
-                  <li style={{ padding: 0, margin: 0 }}>
-                    <Link
-                      href="/products"
-                      style={{
-                        color: '#361C0D',
-                        textDecoration: 'none',
-                        fontWeight: 500,
-                        fontSize: '14px',
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '4px',
-                        whiteSpace: 'nowrap',
-                      }}
-                    >
-                      Peanut Products <i className="fa fa-angle-down" style={{ fontSize: '11px', color: '#C88A2E' }}></i>
-                    </Link>
-                  </li>
-                  <li style={{ padding: 0, margin: 0 }}>
-                    <Link
-                      href="/nut-journey"
-                      style={{
-                        color: '#361C0D',
-                        textDecoration: 'none',
-                        fontWeight: 500,
-                        fontSize: '14px',
-                        whiteSpace: 'nowrap',
-                      }}
-                    >
-                      Our Process
-                    </Link>
-                  </li>
-                  <li style={{ padding: 0, margin: 0 }}>
-                    <Link
-                      href="/health-benefits"
-                      style={{
-                        color: '#361C0D',
-                        textDecoration: 'none',
-                        fontWeight: 500,
-                        fontSize: '14px',
-                        whiteSpace: 'nowrap',
-                      }}
-                    >
-                      Health Benefits
-                    </Link>
-                  </li>
-                  <li style={{ padding: 0, margin: 0 }}>
-                    <Link
-                      href="/contact"
-                      style={{
-                        color: '#361C0D',
-                        textDecoration: 'none',
-                        fontWeight: 500,
-                        fontSize: '14px',
-                        whiteSpace: 'nowrap',
-                      }}
-                    >
-                      Contact
-                    </Link>
-                  </li>
+                  {[
+                    { label: 'Home', href: '/' },
+                    { label: 'About Us', href: '/about' },
+                    { label: 'Peanut Products', href: '/products', hasDropdown: true },
+                    { label: 'Our Process', href: '/nut-journey' },
+                    { label: 'Health Benefits', href: '/health-benefits' },
+                    { label: 'Contact', href: '/contact' },
+                  ].map((item) => {
+                    const isActive = item.href === '/' ? pathname === '/' : pathname?.startsWith(item.href);
+                    return (
+                      <li key={item.href} style={{ padding: 0, margin: 0 }}>
+                        <Link
+                          href={item.href}
+                          style={{
+                            color: isActive ? '#5C341B' : '#361C0D',
+                            textDecoration: 'none',
+                            borderBottom: isActive ? '2px solid #C88A2E' : '2px solid transparent',
+                            paddingBottom: '3px',
+                            fontWeight: 600,
+                            fontSize: '14px',
+                            display: item.hasDropdown ? 'flex' : 'inline-block',
+                            alignItems: item.hasDropdown ? 'center' : undefined,
+                            gap: item.hasDropdown ? '4px' : undefined,
+                            whiteSpace: 'nowrap',
+                            transition: 'all 0.2s ease-in-out',
+                          }}
+                        >
+                          {item.label}
+                          {item.hasDropdown && (
+                            <i className="fa fa-angle-down" style={{ fontSize: '11px', color: '#C88A2E' }}></i>
+                          )}
+                        </Link>
+                      </li>
+                    );
+                  })}
                 </ul>
               </nav>
 
-              {/* Request Quote Button (48px height, 26px radius, padding 0 25px) */}
+              {/* Request Quote Button */}
               <button
                 onClick={() => handleOpenQuote('Bold Peanuts (Singdana)')}
+                className="hidden sm:inline-flex"
                 style={{
                   height: isSticky ? '42px' : '48px',
-                  padding: isSticky ? '0 20px' : '0 25px',
+                  padding: isSticky ? '0 18px' : '0 24px',
                   borderRadius: '24px',
                   backgroundColor: '#5C341B',
                   color: '#ffffff',
@@ -324,7 +270,6 @@ export default function Header() {
                   fontSize: '13.5px',
                   border: 'none',
                   cursor: 'pointer',
-                  display: 'inline-flex',
                   alignItems: 'center',
                   gap: '8px',
                   boxShadow: '0 3px 10px rgba(92, 52, 27, 0.18)',
@@ -339,9 +284,17 @@ export default function Header() {
 
               {/* Mobile Menu Toggler */}
               <div
-                className="mobile-nav-toggler"
+                className="mobile-nav-toggler flex lg:hidden items-center justify-center"
                 onClick={() => setMobileMenuOpen(true)}
-                style={{ cursor: 'pointer', fontSize: '20px', color: '#5C341B', display: 'none' }}
+                style={{
+                  cursor: 'pointer',
+                  fontSize: '22px',
+                  color: '#5C341B',
+                  width: '42px',
+                  height: '42px',
+                  borderRadius: '10px',
+                  backgroundColor: 'rgba(92, 52, 27, 0.06)',
+                }}
                 aria-label="Open Mobile Menu"
               >
                 <i className="fa fa-bars"></i>
@@ -387,19 +340,41 @@ export default function Header() {
                 </button>
               </div>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '18px', fontSize: '16px', fontWeight: 600 }}>
-                <li><Link href="/" onClick={() => setMobileMenuOpen(false)} style={{ color: '#E5A83B', textDecoration: 'none' }}>Home</Link></li>
-                <li><Link href="/about" onClick={() => setMobileMenuOpen(false)} style={{ color: '#fff', textDecoration: 'none' }}>About Us</Link></li>
-                <li><Link href="/products" onClick={() => setMobileMenuOpen(false)} style={{ color: '#fff', textDecoration: 'none' }}>Peanut Products</Link></li>
-                <li><Link href="/nut-journey" onClick={() => setMobileMenuOpen(false)} style={{ color: '#fff', textDecoration: 'none' }}>Our Process</Link></li>
-                <li><Link href="/health-benefits" onClick={() => setMobileMenuOpen(false)} style={{ color: '#fff', textDecoration: 'none' }}>Health Benefits</Link></li>
-                <li><Link href="/contact" onClick={() => setMobileMenuOpen(false)} style={{ color: '#fff', textDecoration: 'none' }}>Contact</Link></li>
+                {[
+                  { label: 'Home', href: '/' },
+                  { label: 'About Us', href: '/about' },
+                  { label: 'Peanut Products', href: '/products' },
+                  { label: 'Our Process', href: '/nut-journey' },
+                  { label: 'Health Benefits', href: '/health-benefits' },
+                  { label: 'Contact', href: '/contact' },
+                ].map((item) => {
+                  const isActive = item.href === '/' ? pathname === '/' : pathname?.startsWith(item.href);
+                  return (
+                    <li key={item.href}>
+                      <Link
+                        href={item.href}
+                        onClick={() => setMobileMenuOpen(false)}
+                        style={{
+                          color: isActive ? '#E5A83B' : '#fff',
+                          textDecoration: 'none',
+                          borderBottom: isActive ? '2px solid #E5A83B' : '2px solid transparent',
+                          paddingBottom: '2px',
+                          display: 'inline-block',
+                          transition: 'all 0.2s ease-in-out',
+                        }}
+                      >
+                        {item.label}
+                      </Link>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
 
             <div style={{ borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '20px' }}>
               <p style={{ fontSize: '12px', color: '#c3d2ce', marginBottom: '6px' }}>Direct Export Desk:</p>
-              <a href="tel:+918450016454" style={{ color: '#E5A83B', fontSize: '15px', fontWeight: 700, textDecoration: 'none', display: 'block', marginBottom: '14px' }}>
-                +91-8450016454
+              <a href="tel:+919589790997" style={{ color: '#E5A83B', fontSize: '15px', fontWeight: 700, textDecoration: 'none', display: 'block', marginBottom: '14px' }}>
+                +91-9589790997
               </a>
               <button
                 onClick={() => {

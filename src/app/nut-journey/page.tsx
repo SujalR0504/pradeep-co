@@ -145,21 +145,21 @@ export default function NutJourneyPage() {
     <div className="flex flex-col w-full bg-[#FFFDF8] text-[#2E2117]">
       {/* Editorial Header */}
       <section className="relative w-full py-16 sm:py-20 border-b border-[#5A3218]/15 bg-[#F7F1E7]">
-        <div className="site-container max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="site-container max-w-[1280px] mx-auto">
           <div className="max-w-3xl space-y-4 text-left">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#5A3218]/10 border border-[#5A3218]/20 text-xs font-mono tracking-widest text-[#5A3218] uppercase">
-              <Compass className="w-3.5 h-3.5 text-[#5A3218]" />
-              <span>THE NUT JOURNEY • SOIL TO GLOBAL PORT</span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#5A3218]/10 border border-[#5A3218]/20 text-[10.5px] sm:text-xs font-mono tracking-widest text-[#5A3218] uppercase max-w-full">
+              <Compass className="w-3.5 h-3.5 text-[#5A3218] shrink-0" />
+              <span className="break-words">THE NUT JOURNEY • SOIL TO GLOBAL PORT</span>
             </div>
 
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal leading-[1.05] tracking-[-0.02em] text-[#2E2117]">
+            <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-[1.12] tracking-tight text-[#2E2117] break-words">
               From Indian Soil
-              <span className="block italic font-light text-[#5A3218]">
+              <span className="block font-bold text-[#5A3218]">
                 To Global Destination.
               </span>
             </h1>
 
-            <p className="text-base sm:text-lg font-sans text-[#2E2117]/80 font-light leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg font-sans text-[#2E2117]/85 font-normal leading-relaxed">
               Trace the continuous 8-stage journey of Pradeep Trading Company groundnuts. From farmgate planting in Madhya Pradesh
               to high-speed optical sorting, hermetic barrier packaging, and container vessel departure at Mundra Port.
             </p>
@@ -169,17 +169,15 @@ export default function NutJourneyPage() {
 
       {/* 8-Stage Continuous Visual Journey */}
       <section className="py-20 lg:py-28 bg-[#FFFDF8]">
-        <div className="site-container max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="site-container max-w-[1280px] mx-auto">
           <div className="space-y-24 lg:space-y-32">
             {JOURNEY_STEPS.map((step, idx) => (
               <div
                 key={idx}
-                className={`grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center ${
-                  idx % 2 === 1 ? "lg:flex-row-reverse" : ""
-                }`}
+                className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center"
               >
                 {/* Image Frame (6 cols) */}
-                <div className={`lg:col-span-6 relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-[#5A3218]/20 bg-[#F7F1E7] group ${idx % 2 === 1 ? "lg:order-2" : "lg:order-1"}`}>
+                <div className={`lg:col-span-6 relative aspect-[4/3] rounded-3xl overflow-hidden shadow-xl border border-[#5A3218]/20 bg-[#F7F1E7] group ${idx % 2 === 1 ? "lg:order-2" : "lg:order-1"}`}>
                   <Image
                     src={step.image}
                     alt={step.alt}
@@ -187,40 +185,40 @@ export default function NutJourneyPage() {
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#5A3218]/80 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#5A3218]/85 via-transparent to-transparent" />
                   <div className="absolute top-4 left-4 bg-[#5A3218] text-[#FFFDF8] px-3.5 py-1 rounded-full font-mono text-xs font-bold shadow">
                     STEP {step.step}
                   </div>
                   <div className="absolute bottom-4 left-4 right-4 text-[#FFFDF8]">
-                    <span className="text-[10px] font-mono uppercase tracking-widest text-[#D5B58C] block">
+                    <span className="text-[10px] font-mono uppercase tracking-widest text-[#E5A83B] font-bold block">
                       {step.stage}
                     </span>
-                    <span className="font-serif text-xl font-medium">{step.headline}</span>
+                    <span className="font-serif text-xl font-bold">{step.headline}</span>
                   </div>
                 </div>
 
                 {/* Narrative Details (6 cols) */}
                 <div className={`lg:col-span-6 space-y-5 ${idx % 2 === 1 ? "lg:order-1" : "lg:order-2"}`}>
-                  <div className="flex items-center gap-3 text-xs font-mono text-[#7A4824] uppercase tracking-wider font-bold">
-                    <span>STAGE {step.step} {"//"} 08</span>
-                    <span>•</span>
-                    <span>{step.tagline}</span>
+                  <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs font-mono text-[#7A4824] uppercase tracking-wider font-bold">
+                    <span className="bg-[#5A3218]/10 px-2.5 py-1 rounded-full text-[#5A3218]">STAGE {step.step} {"//"} 08</span>
+                    <span className="hidden sm:inline">•</span>
+                    <span className="text-[#7A4824]">{step.tagline}</span>
                   </div>
 
-                  <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-[#2E2117] font-normal leading-tight tracking-tight">
+                  <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-[#2E2117] font-bold leading-tight tracking-tight">
                     {step.headline}
                   </h2>
 
-                  <p className="text-sm sm:text-base font-sans text-[#2E2117]/80 leading-relaxed font-light">
+                  <p className="text-sm sm:text-base font-sans text-[#2E2117]/85 leading-relaxed font-normal">
                     {step.description}
                   </p>
 
-                  {/* 3 Metric Pills */}
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-2">
+                  {/* 3 Metric Pills with Equal Height */}
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
                     {step.metrics.map((m, mIdx) => (
-                      <div key={mIdx} className="p-3 bg-[#F7F1E7] rounded-xl border border-[#5A3218]/15">
-                        <div className="text-[9px] font-mono text-[#7A4824] uppercase">{m.label}</div>
-                        <div className="text-xs font-mono font-bold text-[#5A3218] mt-0.5">{m.val}</div>
+                      <div key={mIdx} className="p-3 bg-[#F7F1E7] rounded-xl border border-[#5A3218]/15 flex flex-col justify-center min-h-[66px]">
+                        <div className="text-[9.5px] font-mono text-[#7A4824] uppercase font-semibold">{m.label}</div>
+                        <div className="text-xs font-mono font-bold text-[#5A3218] mt-1">{m.val}</div>
                       </div>
                     ))}
                   </div>

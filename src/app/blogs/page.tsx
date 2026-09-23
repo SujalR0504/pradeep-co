@@ -39,10 +39,10 @@ export default function BlogsPage() {
   const featuredPost = BLOG_POSTS[0];
 
   return (
-    <div className="flex flex-col w-full bg-[#FFFDF8] text-[#2E2117] pt-24">
+    <div className="flex flex-col w-full bg-[#FFFDF8] text-[#2E2117]">
       {/* Hero Header */}
-      <section className="relative w-full py-16 sm:py-24 border-b border-[#5A3218]/15 bg-[#F7F1E7]">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+      <section className="relative w-full py-16 sm:py-20 lg:py-24 border-b border-[#5A3218]/15 bg-[#F7F1E7]">
+        <div className="site-container max-w-[1280px] mx-auto">
           <div className="max-w-3xl space-y-4">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#5A3218]/10 border border-[#5A3218]/20 text-xs font-mono tracking-widest text-[#5A3218] uppercase">
               <BookOpen className="w-3.5 h-3.5 text-[#5A3218]" />

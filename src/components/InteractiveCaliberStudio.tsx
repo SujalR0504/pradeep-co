@@ -5,6 +5,8 @@ import React, { useState } from 'react';
 interface CaliberItem {
   id: string;
   name: string;
+  shortName: string;
+  caliberBadge: string;
   countRange: string;
   category: string;
   kernelLengthMm: number;
@@ -24,6 +26,8 @@ const CALIBERS: CaliberItem[] = [
   {
     id: 'bold38',
     name: 'Bold Peanuts 38/42',
+    shortName: 'Bold Peanuts',
+    caliberBadge: '38/42',
     countRange: '38–42 Seeds/Ounce',
     category: 'Super Jumbo Confectionery',
     kernelLengthMm: 21.5,
@@ -41,6 +45,8 @@ const CALIBERS: CaliberItem[] = [
   {
     id: 'bold40',
     name: 'Bold Peanuts 40/50',
+    shortName: 'Bold Peanuts',
+    caliberBadge: '40/50',
     countRange: '40–50 Seeds/Ounce',
     category: 'Standard Export Benchmark',
     kernelLengthMm: 18.5,
@@ -58,6 +64,8 @@ const CALIBERS: CaliberItem[] = [
   {
     id: 'java50',
     name: 'Java Peanuts 50/60',
+    shortName: 'Java Peanuts',
+    caliberBadge: '50/60',
     countRange: '50–60 Seeds/Ounce',
     category: 'High-Oil Confectionery',
     kernelLengthMm: 15.2,
@@ -75,6 +83,8 @@ const CALIBERS: CaliberItem[] = [
   {
     id: 'blanched',
     name: 'Whole Blanched 40/50',
+    shortName: 'Whole Blanched',
+    caliberBadge: '40/50',
     countRange: '40–50 Cotyledons/Oz',
     category: '100% Skinless Cleanroom',
     kernelLengthMm: 18.0,
@@ -92,6 +102,8 @@ const CALIBERS: CaliberItem[] = [
   {
     id: 'splits',
     name: 'Split Blanched Cotyledons',
+    shortName: 'Split Blanched',
+    caliberBadge: 'Cotyledons',
     countRange: 'Even Hemispheres',
     category: 'Industrial Paste & Butter',
     kernelLengthMm: 14.5,
@@ -124,7 +136,7 @@ export default function InteractiveCaliberStudio() {
         borderBottom: '1px solid #EFE4D2',
       }}
     >
-      <div className="site-container auto-container" style={{ maxWidth: '1320px', margin: '0 auto', padding: '0 32px' }}>
+      <div className="site-container auto-container" style={{ maxWidth: '1280px', margin: '0 auto' }}>
         
         {/* Header */}
         <div style={{ textAlign: 'left', marginBottom: '40px' }}>
@@ -145,7 +157,7 @@ export default function InteractiveCaliberStudio() {
               Interactive Kernel Caliber &amp; Sensory Studio
             </span>
           </div>
-          <h2 style={{ fontFamily: 'var(--font-heading), "DM Serif Display", serif', fontSize: 'clamp(2rem, 3.4vw, 2.75rem)', fontWeight: 600, color: '#2C170A', letterSpacing: '-0.02em', margin: '6px 0 10px', lineHeight: 1.15 }}>
+          <h2 style={{ fontFamily: 'var(--font-heading), "DM Serif Display", serif', fontSize: 'clamp(2rem, 3.4vw, 2.75rem)', fontWeight: 800, color: '#2C170A', letterSpacing: '-0.02em', margin: '6px 0 10px', lineHeight: 1.15 }}>
             Precision Calibrated Groundnut Grades
           </h2>
           <p style={{ fontSize: '15.5px', color: '#5A483D', maxWidth: '640px', margin: 0, lineHeight: 1.6 }}>
@@ -153,70 +165,47 @@ export default function InteractiveCaliberStudio() {
           </p>
         </div>
 
-        {/* Caliber Selection Ribbon */}
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'flex-start',
-            gap: '10px',
-            flexWrap: 'wrap',
-            marginBottom: '40px',
-          }}
-        >
-          {CALIBERS.map((item) => {
-            const isSelected = item.id === selectedCaliberId;
-            return (
-              <button
-                key={item.id}
-                type="button"
-                onClick={() => setSelectedCaliberId(item.id)}
-                style={{
-                  backgroundColor: isSelected ? '#5C341B' : '#FFFFFF',
-                  color: isSelected ? '#FFFFFF' : '#361C0D',
-                  border: isSelected ? '2px solid #5C341B' : '1px solid #E5D9C8',
-                  padding: '12px 22px',
-                  borderRadius: '30px',
-                  fontSize: '13.5px',
-                  fontWeight: 800,
-                  cursor: 'pointer',
-                  transition: 'all 0.25s ease',
-                  boxShadow: isSelected ? '0 8px 20px rgba(92, 52, 27, 0.22)' : '0 2px 6px rgba(0,0,0,0.03)',
-                  transform: isSelected ? 'translateY(-2px)' : 'none',
-                }}
-              >
-                <span>{item.name}</span>
-                <span
-                  style={{
-                    marginLeft: '8px',
-                    fontSize: '11px',
-                    fontWeight: 700,
-                    backgroundColor: isSelected ? 'rgba(255,255,255,0.2)' : 'rgba(200, 138, 46, 0.15)',
-                    color: isSelected ? '#FFFFFF' : '#8C5318',
-                    padding: '2px 8px',
-                    borderRadius: '12px',
-                  }}
+        {/* Caliber Selection Ribbon — Single Horizontal Line Layout */}
+        <div className="caliber-filters-wrapper">
+          <div
+            className="caliber-filters"
+            role="tablist"
+            aria-label="Peanut Caliber Grades"
+          >
+            {CALIBERS.map((item) => {
+              const isSelected = item.id === selectedCaliberId;
+              return (
+                <button
+                  key={item.id}
+                  type="button"
+                  role="tab"
+                  aria-selected={isSelected}
+                  onClick={() => setSelectedCaliberId(item.id)}
+                  className={`caliber-filter ${isSelected ? 'active' : ''}`}
                 >
-                  {item.countRange}
-                </span>
-              </button>
-            );
-          })}
+                  <span>{item.shortName}</span>
+                  <span className="caliber-badge">
+                    {item.caliberBadge}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
         </div>
 
         {/* Interactive Studio Stage */}
         <div
+          className="p-5 sm:p-9 rounded-3xl"
           style={{
             backgroundColor: '#FFFFFF',
-            borderRadius: '24px',
             border: '1px solid #EFE4D2',
-            padding: '36px',
             boxShadow: '0 16px 40px rgba(44, 23, 10, 0.06)',
           }}
         >
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(12, 1fr)', gap: '40px', alignItems: 'center' }}>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             
             {/* Left 5 Columns: Visual Kernel Macro & Physical Caliper Gauge */}
-            <div style={{ gridColumn: 'span 5', textAlign: 'center' }}>
+            <div className="lg:col-span-5 text-center">
               <div
                 style={{
                   position: 'relative',
@@ -303,7 +292,7 @@ export default function InteractiveCaliberStudio() {
             </div>
 
             {/* Right 7 Columns: Technical Specifications & Sensory Dials */}
-            <div style={{ gridColumn: 'span 7' }}>
+            <div className="lg:col-span-7">
               
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
                 <span style={{ fontSize: '11px', fontWeight: 800, color: '#C88A2E', textTransform: 'uppercase', letterSpacing: '0.12em' }}>
@@ -379,7 +368,7 @@ export default function InteractiveCaliberStudio() {
               {/* Actions Row */}
               <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', alignItems: 'center' }}>
                 <a
-                  href={`https://wa.me/918450016454?text=Hello%20Pradeep%20Trading,%20I%20would%20like%20to%20request%20a%20physical%20lab%20sample%20and%20specification%20COA%20for%20${encodeURIComponent(caliber.name)}.`}
+                  href={`https://wa.me/919589790997?text=Hello%20Pradeep%20Trading,%20I%20would%20like%20to%20request%20a%20physical%20lab%20sample%20and%20specification%20COA%20for%20${encodeURIComponent(caliber.name)}.`}
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
@@ -406,7 +395,7 @@ export default function InteractiveCaliberStudio() {
                 </a>
 
                 <a
-                  href="mailto:export@pradeeptrading.in?subject=Certificate%20of%20Analysis%20Request%20-%20Pradeep%20Trading"
+                  href="mailto:pradeeptradingcomp@gmail.com?subject=Certificate%20of%20Analysis%20Request%20-%20Pradeep%20Trading"
                   style={{
                     display: 'inline-flex',
                     alignItems: 'center',

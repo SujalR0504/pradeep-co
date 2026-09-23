@@ -6,6 +6,13 @@ export interface ProductSpec {
   oilContent?: string;
   brokenKernels?: string;
   imperfectDamage?: string;
+  purity?: string;
+  protein?: string;
+  foreignMatter?: string;
+  crudeFiber?: string;
+  freeFattyAcid?: string;
+  refractiveIndex?: string;
+  sugarContent?: string;
 }
 
 export interface Product {
@@ -13,7 +20,7 @@ export interface Product {
   slug: string;
   name: string;
   hindiName?: string;
-  category: "Raw Kernels" | "In-Shell" | "Blanched" | "Value-Added" | "Specialty Brands";
+  category: "Raw Kernels" | "In-Shell" | "Blanched" | "Value-Added" | "Other Products" | "Specialty Brands";
   shortDescription: string;
   description: string;
   image: string;
@@ -405,6 +412,232 @@ export const PRODUCTS: Product[] = [
       moisture: "7.0% Max",
       admixture: "0.5% Max"
     }
+  },
+  {
+    id: "mahua-flower",
+    slug: "mahua-flower",
+    name: "Mahua Flower",
+    hindiName: "महुआ फूल (Dried Mahua Flowers)",
+    category: "Other Products",
+    shortDescription: "Sun-dried natural organic Mahua (Madhuca Longifolia) flowers sourced from Central Indian forest belts.",
+    description: "Sourced from the pristine deciduous forest belts of Madhya Pradesh, our sun-dried Mahua Flowers are rich in natural fruit sugars, minerals, and polyphenolic bio-compounds. Hand-collected at peak seasonal drop, solar-cured on clean breathable tarpaulins, and thoroughly graded for food processing, botanical beverages, natural sweeteners, and Ayurvedic formulations.",
+    image: "/images/mahua-flower.jpg",
+    gallery: [
+      "/images/mahua-flower.jpg",
+      "/images/harvest-farmer.webp",
+      "/images/packaging/authentic-jute-sacks.webp"
+    ],
+    origin: "Madhya Pradesh & Central India",
+    grade: "Cleaned & Sun-Dried / Export Quality",
+    size: "Whole Dried Botanical Flowers",
+    packaging: [
+      "25 kg / 40 kg Breathable Twill Jute Sacks",
+      "25 kg Laminated High-Density PP Bags",
+      "Custom Export Packaging on Request"
+    ],
+    applications: [
+      "Natural Fruit Sugar & Syrup Extraction",
+      "Botanical & Traditional Fermentation",
+      "Ayurvedic & Herbal Formulations",
+      "Organic Animal Feed Fortification"
+    ],
+    availability: "Seasonal Harvest & Stocked",
+    featured: true,
+    order: 11,
+    specs: {
+      moisture: "10.0% - 12.0% Max",
+      purity: "99.0% Min",
+      admixture: "0.5% Max",
+      sugarContent: "65% - 70% Natural Sugars"
+    }
+  },
+  {
+    id: "wheat-barley",
+    slug: "wheat-barley",
+    name: "Wheat & Barley",
+    hindiName: "गेहूं एवं जौ (Export Grade Wheat & Barley Grains)",
+    category: "Other Products",
+    shortDescription: "Golden Sharbati & Milling Wheat alongside high-fiber, machine-cleaned Barley grains.",
+    description: "Premium agricultural grain consignments cultivated in Madhya Pradesh's mineral-rich fertile soils. Our Milling and Sharbati Wheat features high gluten index, robust hectolitre weight, and rich protein, while our machine-cleaned Barley delivers uniform grain weight, low moisture, and high starch ideal for malt extraction, flour milling, and high-nutrition feed.",
+    image: "/images/wheat-barley.jpg",
+    gallery: [
+      "/images/wheat-barley.jpg",
+      "/images/india-farm-aerial.jpg",
+      "/images/packaging/authentic-jute-sacks.webp"
+    ],
+    origin: "Madhya Pradesh & Central India",
+    grade: "Sortex Clean / Machine Cleaned Grade A",
+    size: "Uniform Calibrated Heavy Grains",
+    packaging: [
+      "50 kg New Export Jute Sacks",
+      "25 kg / 50 kg Woven PP Sacks with Liner",
+      "Bulk Container Liner Stuffing (24 MT in 20ft FCL)"
+    ],
+    applications: [
+      "Commercial Flour Milling & Bakeries",
+      "Malt & Brewing Extraction",
+      "Breakfast Cereals & Granola Formulations",
+      "Poultry & High-Protein Livestock Feed"
+    ],
+    availability: "In Stock / Year-round",
+    featured: true,
+    order: 12,
+    specs: {
+      moisture: "11.0% - 12.0% Max",
+      purity: "99.0% Min",
+      protein: "11.5% - 13.0% Min",
+      foreignMatter: "0.5% Max"
+    }
+  },
+  {
+    id: "mustard-seeds",
+    slug: "mustard-seeds",
+    name: "Mustard Seeds",
+    hindiName: "सरसों के बीज (Black & Yellow Mustard Seeds)",
+    category: "Other Products",
+    shortDescription: "High-oil content machine-cleaned natural Black and Yellow Mustard seeds from Central India.",
+    description: "Grown in the semi-arid sandy loam belts of Central India and Rajasthan, our Mustard Seeds are renowned for intense pungency and high natural oil yield (38-42%). Cleaned via vibratory gravity separators, air aspiration, and optical CCD color sorters for spice packaging, oil pressing, and industrial seasonings.",
+    image: "/images/mustard-seeds.jpg",
+    gallery: [
+      "/images/mustard-seeds.jpg",
+      "/images/quality-lab.webp",
+      "/images/packaging/authentic-jute-sacks.webp"
+    ],
+    origin: "Madhya Pradesh & Rajasthan, India",
+    grade: "Sortex Clean / Micro-Cleaned 99.5%",
+    size: "Uniform Spherical Seeds (Black / Yellow)",
+    packaging: [
+      "25 kg / 50 kg New Jute Sacks",
+      "25 kg Multi-wall Paper Bags with PE Liner",
+      "1000 kg Jumbo Big Bags"
+    ],
+    applications: [
+      "Cold-Pressed & Kacchi Ghani Mustard Oil Pressing",
+      "Whole Spice Blends, Pickles & Seasonings",
+      "Condiment & Mustard Paste Production",
+      "De-oiled Mustard Meal for Organic Fertilizer"
+    ],
+    availability: "In Stock / Year-round",
+    featured: true,
+    order: 13,
+    specs: {
+      moisture: "7.0% Max",
+      oilContent: "38.0% - 42.0% Min",
+      purity: "99.5% Min",
+      foreignMatter: "0.5% Max"
+    }
+  },
+  {
+    id: "sortex-rejection",
+    slug: "sortex-rejection",
+    name: "Sortex Rejection Groundnuts",
+    hindiName: "सॉर्टेक्स रिजेक्शन मूंगफली (Feed Grade / Industrial Mix)",
+    category: "Other Products",
+    shortDescription: "Optical sortex rejected peanut kernels and broken cotyledons for high-protein animal feed and industrial oil extraction.",
+    description: "Carefully segregated fractions collected from our Buhler optical CCD color sorting lines in Bhonti, Shivpuri. High in natural vegetable lipids (42-46%) and crude protein (22-25%), making it an economical, nutrient-dense ingredient for livestock feed formulators, bird feeds, and industrial oil refining.",
+    image: "/images/peanut-bold.webp",
+    gallery: [
+      "/images/peanut-bold.webp",
+      "/images/sortex-machine.webp",
+      "/images/packaging/authentic-jute-sacks.webp"
+    ],
+    origin: "Bhonti Processing Hub, Madhya Pradesh",
+    grade: "Feed Grade / Industrial Extraction",
+    size: "Mixed Kernels & Splits",
+    packaging: [
+      "50 kg Sound Second-Hand / New PP Bags",
+      "Bulk Loose Truckload / Container Stuffing"
+    ],
+    applications: [
+      "High-Fat Cattle & Poultry Feed Formulations",
+      "Wild Birdfeed & Animal Nutrition Blends",
+      "Commercial Industrial Oil Extraction"
+    ],
+    availability: "In Stock / Year-round",
+    featured: false,
+    order: 14,
+    specs: {
+      oilContent: "42.0% - 46.0% Min",
+      protein: "22.0% - 25.0% Min",
+      moisture: "8.0% Max"
+    }
+  },
+  {
+    id: "groundnut-oil-cake",
+    slug: "groundnut-oil-cake",
+    name: "Groundnut Oil Cake",
+    hindiName: "मूंगफली की खल (De-Oiled Cake / Cattle Feed)",
+    category: "Other Products",
+    shortDescription: "Expeller-pressed groundnut cake flakes packed with 45%+ bypass protein for dairy and aqua feeds.",
+    description: "Derived during the mechanical expeller oil extraction of pure Indian groundnut seeds. Our groundnut oil cake preserves essential digestible amino acids and natural lipid fractions, serving as a trusted high-protein supplement for dairy cattle feed, broiler poultry rations, and commercial aquaculture.",
+    image: "/images/groundnut-oil-cake.jpg",
+    gallery: [
+      "/images/groundnut-oil-cake.jpg",
+      "/images/quality-lab.webp",
+      "/images/packaging/authentic-jute-sacks.webp"
+    ],
+    origin: "Madhya Pradesh, India",
+    grade: "Expeller Pressed / High Protein Feed Grade",
+    size: "Pressed Flakes / Coarse Meal",
+    packaging: [
+      "50 kg Heavy Duty Polypropylene Bags",
+      "50 kg Jute Sacks",
+      "1000 kg Jumbo Tote Bags"
+    ],
+    applications: [
+      "Dairy Cattle Concentrates & Milk Yield Feeds",
+      "Poultry Broiler & Layer Protein Mash",
+      "Aquaculture Floating Feed Pellets",
+      "Organic Soil Nitrogen Enrichment"
+    ],
+    availability: "In Stock / Year-round",
+    featured: true,
+    order: 15,
+    specs: {
+      protein: "45.0% - 48.0% Crude Protein Min",
+      moisture: "8.0% Max",
+      crudeFiber: "6.0% Max",
+      oilContent: "6.0% - 8.0% Residual Oil"
+    }
+  },
+  {
+    id: "kalyani-140-160",
+    slug: "kalyani-140-160",
+    name: "Kalyani 140/160 Peanuts",
+    hindiName: "कल्याणी मूंगफली दाना 140/160 (TJ Type)",
+    category: "Raw Kernels",
+    shortDescription: "Small-sized, uniform count TJ/Kalyani peanut kernels with delicate sweetness, ideal for confectionery and snack coating.",
+    description: "Kalyani 140/160 (TJ variety) groundnuts feature compact, uniform small grains with smooth red skin. Their consistent micro-caliber and quick-roasting characteristics make them the premier choice worldwide for chikki manufacturing, coated peanuts, birdfeed blends, and confectionery inclusions.",
+    image: "/images/red-kernel.webp",
+    gallery: [
+      "/images/red-kernel.webp",
+      "/images/peanut-bold.webp",
+      "/images/packaging/authentic-jute-sacks.webp"
+    ],
+    origin: "Madhya Pradesh & Gujarat, India",
+    grade: "Double Sortex Cleaned / Export Caliber",
+    size: "140/160 Counts / Ounce",
+    packaging: [
+      "25 kg / 50 kg New Jute Sacks",
+      "25 kg PP Bags with Inner Poly Liner",
+      "10 kg / 25 kg Vacuum Cartons"
+    ],
+    applications: [
+      "Peanut Brittle (Chikki) & Nougat Production",
+      "Crispy Batter & Chickpea-Flour Coated Peanuts",
+      "Confectionery Dragee Centers",
+      "Premium Bird Feed Formulations"
+    ],
+    availability: "In Stock / Year-round",
+    featured: true,
+    order: 16,
+    specs: {
+      counts: "140/160 / oz",
+      moisture: "7.0% Max",
+      admixture: "0.5% Max",
+      aflatoxin: "< 4 ppb / EU Compliant",
+      oilContent: "48% - 50% Min"
+    }
   }
 ];
 
@@ -414,5 +647,6 @@ export const PRODUCT_CATEGORIES = [
   "In-Shell",
   "Blanched",
   "Value-Added",
+  "Other Products",
   "Specialty Brands"
 ] as const;

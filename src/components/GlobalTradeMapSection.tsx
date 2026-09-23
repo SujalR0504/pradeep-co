@@ -140,10 +140,10 @@ export default function GlobalTradeMapSection() {
         borderBottom: '1px solid #EAE0D0',
       }}
     >
-      <div className="site-container auto-container" style={{ maxWidth: '1320px', margin: '0 auto', padding: '0 32px' }}>
+      <div className="site-container auto-container" style={{ maxWidth: '1280px', margin: '0 auto' }}>
         
-        {/* Section Header */}
-        <div style={{ textAlign: 'left', marginBottom: '40px' }}>
+        {/* Section Header — Professionally Centered */}
+        <div style={{ textAlign: 'center', marginBottom: '36px' }}>
           <div
             style={{
               display: 'inline-flex',
@@ -151,32 +151,68 @@ export default function GlobalTradeMapSection() {
               gap: '8px',
               backgroundColor: 'rgba(200, 138, 46, 0.12)',
               border: '1px solid rgba(200, 138, 46, 0.3)',
-              padding: '5px 16px',
+              padding: '6px 18px',
               borderRadius: '30px',
-              marginBottom: '12px',
+              marginBottom: '18px',
+              marginLeft: 'auto',
+              marginRight: 'auto',
+              textAlign: 'center',
             }}
           >
             <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#C88A2E' }}></span>
-            <span style={{ fontSize: '12px', fontWeight: 600, color: '#8C5318', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+            <span style={{ fontSize: '12px', fontWeight: 700, color: '#8C5318', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
               International Maritime Logistics &amp; Trade Corridors
             </span>
           </div>
-          <h2 style={{ fontFamily: 'var(--font-heading), "DM Serif Display", serif', fontSize: 'clamp(2rem, 3.4vw, 2.75rem)', fontWeight: 600, color: '#2C170A', letterSpacing: '-0.02em', margin: '6px 0 10px', lineHeight: 1.15 }}>
+
+          <h2
+            className="text-center"
+            style={{
+              fontFamily: 'var(--font-heading), "DM Serif Display", serif',
+              fontSize: 'clamp(2rem, 3.4vw, 2.75rem)',
+              fontWeight: 800,
+              color: '#2C170A',
+              letterSpacing: '-0.02em',
+              lineHeight: 1.15,
+              textAlign: 'center',
+              marginLeft: 'auto',
+              marginRight: 'auto',
+              marginTop: 0,
+              marginBottom: '18px',
+            }}
+          >
             From Central India, Across Global Oceans
           </h2>
-          <p style={{ fontSize: '15.5px', color: '#5A483D', maxWidth: '640px', margin: 0, lineHeight: 1.6 }}>
+
+          <p
+            className="text-center"
+            style={{
+              fontSize: '15.5px',
+              color: '#5A483D',
+              maxWidth: '760px',
+              marginLeft: 'auto',
+              marginRight: 'auto',
+              marginBottom: 0,
+              lineHeight: 1.65,
+              textAlign: 'center',
+            }}
+          >
             Connecting Shivpuri MP farmgates and Saurashtra processing plants to Mundra Port &amp; Nhava Sheva (JNPT) with guaranteed weekly container departures to 35+ countries.
           </p>
         </div>
 
-        {/* Corridor Tab Pills */}
+        {/* Corridor Tab Pills — Centered Horizontal Group */}
         <div
           style={{
             display: 'flex',
-            justifyContent: 'flex-start',
-            gap: '10px',
+            justifyContent: 'center',
+            alignItems: 'center',
             flexWrap: 'wrap',
-            marginBottom: '35px',
+            gap: '12px',
+            marginBottom: '36px',
+            maxWidth: '1060px',
+            marginLeft: 'auto',
+            marginRight: 'auto',
           }}
         >
           {TRADE_ROUTES.map((route) => {
@@ -189,10 +225,12 @@ export default function GlobalTradeMapSection() {
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '8px',
+                  height: '44px',
+                  boxSizing: 'border-box',
                   backgroundColor: isSelected ? '#5C341B' : '#FFFFFF',
                   color: isSelected ? '#FFFFFF' : '#361C0D',
                   border: isSelected ? '1px solid #5C341B' : '1px solid #E2D6C5',
-                  padding: '10px 20px',
+                  padding: '0 18px',
                   borderRadius: '30px',
                   fontSize: '13.5px',
                   fontWeight: 700,
@@ -202,8 +240,8 @@ export default function GlobalTradeMapSection() {
                   transform: isSelected ? 'translateY(-2px)' : 'none',
                 }}
               >
-                <span style={{ fontSize: '16px' }}>{route.flag}</span>
-                <span>{route.region}</span>
+                <span style={{ fontSize: '16px', lineHeight: 1 }}>{route.flag}</span>
+                <span style={{ whiteSpace: 'nowrap' }}>{route.region}</span>
                 <span
                   style={{
                     fontSize: '11px',
@@ -212,6 +250,7 @@ export default function GlobalTradeMapSection() {
                     padding: '2px 8px',
                     borderRadius: '12px',
                     fontWeight: 800,
+                    whiteSpace: 'nowrap',
                   }}
                 >
                   {route.transitTime}
@@ -223,21 +262,19 @@ export default function GlobalTradeMapSection() {
 
         {/* Main Interactive Map & Manifest Container */}
         <div
+          className="p-4 sm:p-7 rounded-3xl mb-10"
           style={{
             backgroundColor: '#FFFFFF',
-            borderRadius: '24px',
             border: '1px solid #EFE4D2',
-            padding: '28px',
             boxShadow: '0 16px 40px rgba(44, 23, 10, 0.07)',
-            marginBottom: '40px',
           }}
         >
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(12, 1fr)', gap: '30px', alignItems: 'center' }}>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             
             {/* Left 7 Columns: Geographically Accurate High-Tech Maritime Chart */}
             <div
+              className="lg:col-span-7"
               style={{
-                gridColumn: 'span 7',
                 backgroundColor: '#1E120A', // Deep luxury dark walnut maritime sea
                 borderRadius: '20px',
                 border: '2px solid #361C0D',
@@ -543,6 +580,8 @@ export default function GlobalTradeMapSection() {
                   display: 'flex',
                   justifyContent: 'space-between',
                   alignItems: 'center',
+                  flexWrap: 'wrap',
+                  gap: '8px',
                   fontSize: '11.5px',
                   fontWeight: 700,
                   color: '#E8DCCB',
@@ -580,7 +619,7 @@ export default function GlobalTradeMapSection() {
             </div>
 
             {/* Right 5 Columns: Active Corridor Specs & Manifest Card */}
-            <div style={{ gridColumn: 'span 5' }}>
+            <div className="lg:col-span-5">
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
                 <span style={{ fontSize: '30px' }}>{activeRoute.flag}</span>
                 <div>
@@ -638,7 +677,7 @@ export default function GlobalTradeMapSection() {
 
               {/* Direct Booking Action */}
               <a
-                href={`https://wa.me/918450016454?text=Hello%20Pradeep%20Trading,%20I%20want%20to%20inquire%20about%20CIF%20freight%20and%20container%20dispatch%20for%20${encodeURIComponent(activeRoute.name)}%20(${activeRoute.hub}).`}
+                href={`https://wa.me/919589790997?text=Hello%20Pradeep%20Trading,%20I%20want%20to%20inquire%20about%20CIF%20freight%20and%20container%20dispatch%20for%20${encodeURIComponent(activeRoute.name)}%20(${activeRoute.hub}).`}
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

@@ -1,3 +1,16 @@
+export interface LeadershipMember {
+  name: string;
+  role: string;
+  phone: string;
+  formattedPhone: string;
+  whatsapp: string;
+  email?: string;
+  linkedin?: string;
+  twitter?: string;
+  facebook?: string;
+  instagram?: string;
+}
+
 export interface CompanyInfo {
   name: string;
   shortName: string;
@@ -25,6 +38,7 @@ export interface CompanyInfo {
     email: string;
     exportEmail: string;
   };
+  leadership: LeadershipMember[];
   positioningPillars: {
     number: string;
     title: string;
@@ -60,12 +74,30 @@ export const COMPANY_INFO: CompanyInfo = {
     portHubs: ["Mundra Port (INMUN1)", "Nhava Sheva (INNSA1)"],
   },
   contact: {
-    primaryPhone: "+918450016454",
-    formattedPhone: "+91-8450016454",
-    whatsappNumber: "+918450016454",
-    email: "info@pradeeptrading.in",
-    exportEmail: "export@pradeeptrading.in",
+    primaryPhone: "+919589790997",
+    formattedPhone: "+91-9589790997",
+    whatsappNumber: "+919589790997",
+    email: "pradeeptradingcomp@gmail.com",
+    exportEmail: "pradeeptradingcomp@gmail.com",
   },
+  leadership: [
+    {
+      name: "Mr Pradeep Kumar Gupta",
+      role: "Managing Director",
+      phone: "+919754405401",
+      formattedPhone: "+91 97544 05401",
+      whatsapp: "919754405401",
+      email: "pradeep@pradeeptrading.in",
+    },
+    {
+      name: "Mr Samman Gupta",
+      role: "Business Head",
+      phone: "+919589790997",
+      formattedPhone: "+91 95897 90997",
+      whatsapp: "919589790997",
+      email: "samman@pradeeptrading.in",
+    },
+  ],
   positioningPillars: [
     {
       number: "01",

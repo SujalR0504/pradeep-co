@@ -54,67 +54,78 @@ export default function ProductCard({ product }: ProductCardProps) {
       data-cursor="VIEW"
       className="product-card-target group relative bg-[#FFFDF8] border border-[#E8DDCB] transition-colors duration-400 hover:border-[#8A572F] hover:shadow-[0_20px_45px_rgba(43,26,15,0.09)] flex flex-col justify-between overflow-hidden will-change-transform"
     >
-      {/* Top Image Container */}
-      <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#FAF6EE]">
+      {/* Top Image Container: COMPLETELY CLEAN (NO TEXT OVERLAYS) */}
+      <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#FAF6EE] border-b border-[#E8DDCB]/60 flex items-center justify-center p-4">
         <Image
           ref={imageRef}
           src={product.image}
           alt={product.name}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+          className="object-contain p-2 transition-transform duration-500 ease-out group-hover:scale-105"
         />
-
-        {/* Category Badge */}
-        <div className="absolute top-4 left-4 z-10">
-          <span className="inline-block px-3 py-1 bg-[#2B1A0F]/85 backdrop-blur-md text-[#F7F1E7] text-[11px] font-medium tracking-widest uppercase border border-white/10">
-            {product.category}
-          </span>
-        </div>
-
-        {/* Origin Pill */}
-        <div className="absolute bottom-3 right-3 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <span className="inline-block px-2.5 py-1 bg-[#FFFDF8]/90 text-[#5A3215] text-[10px] font-semibold tracking-wider uppercase border border-[#E8DDCB]">
-            Origin: India
-          </span>
-        </div>
       </div>
 
       {/* Card Body */}
-      <div className="p-6 sm:p-7 flex flex-col flex-grow justify-between space-y-4 bg-gradient-to-b from-transparent to-[#FAF6EE]/30 group-hover:to-[#FAF6EE]/80 transition-colors">
-        <div className="space-y-2">
-          {product.hindiName && (
-            <span className="text-xs text-[#8A572F] font-medium tracking-wider block">
-              {product.hindiName}
+      <div className="p-6 flex flex-col flex-grow justify-between space-y-4 bg-gradient-to-b from-transparent to-[#FAF6EE]/30 group-hover:to-[#FAF6EE]/80 transition-colors">
+        <div>
+          {/* Category Tag */}
+          <div className="mb-2">
+            <span className="inline-block px-3 py-1 rounded-full bg-[#5A3215]/10 text-[#5A3215] text-[10.5px] font-mono font-bold uppercase tracking-wider">
+              {product.category}
             </span>
-          )}
+          </div>
+
           <h3
             ref={titleRef}
-            className="font-serif text-2xl font-normal text-[#2B1A0F] group-hover:text-[#5A3215] transition-all duration-300 transform group-hover:translate-x-1 line-clamp-1"
+            className="font-sans text-xl font-bold text-[#2B1A0F] group-hover:text-[#5A3215] transition-colors line-clamp-1 mb-1.5"
           >
             {product.name}
           </h3>
-          <p className="text-sm text-[#7D6B5D] font-light line-clamp-2 leading-relaxed">
+
+          <p className="text-xs text-[#7D6B5D] font-normal line-clamp-2 h-[38px] leading-relaxed m-0 mb-3">
             {product.shortDescription}
           </p>
         </div>
 
-        {/* Key Specs Preview Tag */}
-        {product.specs.counts && (
-          <div className="pt-2 border-t border-[#E8DDCB]/60 text-xs text-[#5A3215] flex items-center justify-between">
-            <span className="text-[#7D6B5D]">Export Caliber:</span>
-            <span className="font-semibold">{product.specs.counts}</span>
+        {/* 2-Column Specifications List */}
+        <div className="pt-3 pb-2 border-t border-[#E8DDCB]/80 space-y-2 text-xs">
+          <div className="flex items-start justify-between gap-3">
+            <span className="w-[120px] shrink-0 font-mono text-[10px] font-bold text-[#8A572F] uppercase">
+              COUNTS / OUNCE
+            </span>
+            <span className="text-right font-sans font-semibold text-[#2B1A0F] text-xs leading-snug">
+              {product.specs.counts || product.size || "Custom Caliber"}
+            </span>
           </div>
-        )}
+
+          <div className="flex items-start justify-between gap-3">
+            <span className="w-[120px] shrink-0 font-mono text-[10px] font-bold text-[#8A572F] uppercase">
+              MOISTURE CEILING
+            </span>
+            <span className="text-right font-sans font-semibold text-[#2B1A0F] text-xs leading-snug">
+              {product.specs.moisture || "7.0% Max"}
+            </span>
+          </div>
+
+          <div className="flex items-start justify-between gap-3">
+            <span className="w-[120px] shrink-0 font-mono text-[10px] font-bold text-[#8A572F] uppercase">
+              AFLATOXIN SPEC
+            </span>
+            <span className="text-right font-sans font-semibold text-[#2B1A0F] text-xs leading-snug">
+              {product.specs.aflatoxin || "Below 4 ppb"}
+            </span>
+          </div>
+        </div>
 
         {/* Action Link */}
-        <div className="pt-2">
+        <div className="pt-2 mt-auto">
           <Link
             href={`/products/${product.slug}`}
-            className="w-full inline-flex items-center justify-between py-3 px-4 bg-[#FAF6EE] text-[#2B1A0F] border border-[#E8DDCB] text-xs font-semibold uppercase tracking-wider transition-all duration-300 group-hover:bg-[#5A3215] group-hover:text-[#FFFDF8] group-hover:border-[#5A3215]"
+            className="w-full inline-flex items-center justify-between py-3 px-5 rounded-full bg-[#FAF6EE] text-[#2B1A0F] border border-[#E8DDCB] text-xs font-bold uppercase tracking-wider transition-all duration-300 group-hover:bg-[#5A3215] group-hover:text-[#FFFDF8] group-hover:border-[#5A3215]"
           >
             <span>View Specifications</span>
-            <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:rotate-12" />
+            <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
           </Link>
         </div>
       </div>

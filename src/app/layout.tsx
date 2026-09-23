@@ -29,7 +29,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap"
           rel="stylesheet"
         />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
@@ -42,6 +42,17 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <QuoteModal />
+        {/* Global Responsive Floating WhatsApp Button */}
+        <a
+          href="https://wa.me/919589790997?text=Hello%20Pradeep%20Trading%20Company,%20I%20would%20like%20to%20inquire%20about%20peanut%20export%20specifications."
+          target="_blank"
+          rel="noopener noreferrer"
+          className="floating-whatsapp-btn"
+          aria-label="Chat with Export Desk on WhatsApp"
+        >
+          <i className="fab fa-whatsapp"></i>
+          <span className="floating-whatsapp-text">Chat with Export Desk</span>
+        </a>
       </body>
     </html>
   );

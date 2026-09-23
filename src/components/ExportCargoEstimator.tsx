@@ -66,7 +66,7 @@ export default function ExportCargoEstimator() {
         borderBottom: '1px solid #EFE8DB',
       }}
     >
-      <div className="site-container auto-container" style={{ maxWidth: '1320px', margin: '0 auto', padding: '0 32px' }}>
+      <div className="site-container auto-container" style={{ maxWidth: '1280px', margin: '0 auto' }}>
         
         {/* Header */}
         <div style={{ textAlign: 'left', marginBottom: '40px' }}>
@@ -87,7 +87,7 @@ export default function ExportCargoEstimator() {
               Maritime Export Logistics
             </span>
           </div>
-          <h2 style={{ fontFamily: 'var(--font-heading), "DM Serif Display", serif', fontSize: 'clamp(2rem, 3.4vw, 2.75rem)', fontWeight: 600, color: '#2C170A', letterSpacing: '-0.02em', margin: '6px 0 10px', lineHeight: 1.15 }}>
+          <h2 style={{ fontFamily: 'var(--font-heading), "DM Serif Display", serif', fontSize: 'clamp(2rem, 3.4vw, 2.75rem)', fontWeight: 800, color: '#2C170A', letterSpacing: '-0.02em', margin: '6px 0 10px', lineHeight: 1.15 }}>
             Bulk Export Cargo &amp; Container Estimator
           </h2>
           <p style={{ fontSize: '15.5px', color: '#5A483D', maxWidth: '640px', margin: 0, lineHeight: 1.6 }}>
@@ -97,18 +97,17 @@ export default function ExportCargoEstimator() {
 
         {/* Calculator Main Grid */}
         <div
+          className="p-5 sm:p-9 rounded-3xl"
           style={{
             backgroundColor: '#FAF6EE',
-            borderRadius: '24px',
             border: '1px solid #EAE0D0',
-            padding: '36px',
             boxShadow: '0 16px 40px rgba(44, 23, 10, 0.06)',
           }}
         >
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(12, 1fr)', gap: '35px' }}>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
             
             {/* Left 7 Columns: Buyer Inputs */}
-            <div style={{ gridColumn: 'span 7' }}>
+            <div className="lg:col-span-7">
               
               {/* Step 1: Grade Selection */}
               <div style={{ marginBottom: '25px' }}>
@@ -252,8 +251,8 @@ export default function ExportCargoEstimator() {
 
             {/* Right 5 Columns: Dynamic Calculation Summary & Direct WhatsApp RFQ Card */}
             <div
+              className="lg:col-span-5"
               style={{
-                gridColumn: 'span 5',
                 backgroundColor: '#FFFFFF',
                 borderRadius: '18px',
                 border: '2px solid #C88A2E',
