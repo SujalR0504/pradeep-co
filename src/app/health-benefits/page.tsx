@@ -74,33 +74,33 @@ export default function HealthBenefitsPage() {
       </section>
 
       {/* 6 Metric Nutrition Cards */}
-      <section className="py-12 sm:py-16 border-b border-[#5A3218]/15 bg-[#FFFDF8]">
-        <div className="site-container max-w-[1280px] mx-auto">
-          <div className="max-w-2xl mb-8 sm:mb-12 text-left">
-            <span className="text-[11px] sm:text-xs font-mono tracking-widest text-[#7A4824] uppercase font-bold block mb-2">
+      <section className="py-10 sm:py-12 border-b border-[#5A3218]/15 bg-[#FFFDF8]">
+        <div className="site-container max-w-[1280px] mx-auto px-4 sm:px-6">
+          <div className="max-w-2xl mb-6 sm:mb-8 text-left">
+            <span className="text-[10px] sm:text-[11px] font-mono tracking-widest text-[#7A4824] uppercase font-bold block mb-1">
               BIO-CHEMICAL COMPOSITION
             </span>
-            <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-[#2E2117] font-bold tracking-tight break-words">
+            <h2 className="font-serif text-xl sm:text-2xl lg:text-3xl text-[#2E2117] font-bold tracking-tight break-words">
               Laboratory Nutritional Profile
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
             {NUTRITION_FACTS.map((fact, idx) => (
               <div
                 key={idx}
-                className="p-6 rounded-3xl bg-[#F7F1E7] border border-[#5A3218]/15 shadow-sm flex flex-col justify-between min-h-[160px]"
+                className="p-4 sm:p-5 rounded-2xl bg-[#F7F1E7] border border-[#5A3218]/15 shadow-sm flex flex-col justify-between min-h-[135px]"
               >
                 <div>
-                  <div className="flex items-center justify-between text-xs font-mono text-[#7A4824] font-semibold">
-                    <span>{fact.label.toUpperCase()}</span>
-                    <span>{fact.unit}</span>
+                  <div className="flex items-center justify-between text-[10px] sm:text-[11px] font-mono text-[#7A4824] font-semibold">
+                    <span className="tracking-wider">{fact.label.toUpperCase()}</span>
+                    <span className="opacity-85">{fact.unit}</span>
                   </div>
-                  <div className="font-serif text-3xl font-bold text-[#5A3218] mt-2">
+                  <div className="font-serif text-xl sm:text-2xl font-bold text-[#5A3218] mt-1.5 mb-2">
                     {fact.val}
                   </div>
                 </div>
-                <p className="text-xs font-sans text-[#2E2117]/80 pt-3 border-t border-[#5A3218]/10 font-normal leading-relaxed">
+                <p className="text-[11px] sm:text-xs font-sans text-[#2E2117]/75 pt-2.5 border-t border-[#5A3218]/10 font-normal leading-relaxed">
                   {fact.note}
                 </p>
               </div>
