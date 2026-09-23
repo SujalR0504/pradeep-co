@@ -74,7 +74,7 @@ export default function HealthBenefitsPage() {
       </section>
 
       {/* 6 Metric Nutrition Cards */}
-      <section className="py-10 sm:py-12 border-b border-[#5A3218]/15 bg-[#FFFDF8]">
+      <section className="py-10 sm:py-14 border-b border-[#5A3218]/15 bg-[#FFFDF8]">
         <div className="site-container max-w-[1280px] mx-auto px-4 sm:px-6">
           <div className="max-w-2xl mb-6 sm:mb-8 text-left">
             <span className="text-[10px] sm:text-[11px] font-mono tracking-widest text-[#7A4824] uppercase font-bold block mb-1">
@@ -85,22 +85,22 @@ export default function HealthBenefitsPage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {NUTRITION_FACTS.map((fact, idx) => (
               <div
                 key={idx}
-                className="p-4 sm:p-5 rounded-2xl bg-[#F7F1E7] border border-[#5A3218]/15 shadow-sm flex flex-col justify-between min-h-[135px]"
+                className="p-5 sm:p-6 rounded-2xl bg-[#F7F1E7] border border-[#5A3218]/15 shadow-sm flex flex-col justify-between h-full"
               >
                 <div>
-                  <div className="flex items-center justify-between text-[10px] sm:text-[11px] font-mono text-[#7A4824] font-semibold">
-                    <span className="tracking-wider">{fact.label.toUpperCase()}</span>
-                    <span className="opacity-85">{fact.unit}</span>
+                  <div className="flex items-start justify-between gap-2 text-[10px] sm:text-[11px] font-mono text-[#7A4824] font-semibold mb-2">
+                    <span className="tracking-wider uppercase font-bold leading-tight">{fact.label}</span>
+                    <span className="opacity-80 shrink-0 bg-[#5A3218]/5 px-2 py-0.5 rounded text-[9.5px] sm:text-[10px]">{fact.unit}</span>
                   </div>
-                  <div className="font-serif text-xl sm:text-2xl font-bold text-[#5A3218] mt-1.5 mb-2">
+                  <div className="font-serif text-xl sm:text-2xl font-extrabold text-[#5A3218] my-2 leading-tight">
                     {fact.val}
                   </div>
                 </div>
-                <p className="text-[11px] sm:text-xs font-sans text-[#2E2117]/75 pt-2.5 border-t border-[#5A3218]/10 font-normal leading-relaxed">
+                <p className="text-[11.5px] sm:text-xs font-sans text-[#2E2117]/80 pt-3 mt-2 border-t border-[#5A3218]/10 font-normal leading-relaxed">
                   {fact.note}
                 </p>
               </div>
