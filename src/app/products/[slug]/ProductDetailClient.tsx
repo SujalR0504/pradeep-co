@@ -263,6 +263,11 @@ export default function ProductDetailClient({ product }: Props) {
                 <Package className="w-4 h-4" />
                 Available Export Packaging
               </h3>
+              {product.packagingNote ? (
+                <p className="text-xs text-[#55473E] leading-relaxed">
+                  We offer customised packaging solutions as per our customers&apos; specific requirements. Our packaging options include:
+                </p>
+              ) : null}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                 {product.packaging.map((pack, i) => (
                   <div
@@ -274,6 +279,11 @@ export default function ProductDetailClient({ product }: Props) {
                   </div>
                 ))}
               </div>
+              {product.packagingNote ? (
+                <p className="text-xs italic text-[#7A4824] pt-1">
+                  (Or customised packaging as per buyer requirements.)
+                </p>
+              ) : null}
             </div>
 
             {/* Applications */}

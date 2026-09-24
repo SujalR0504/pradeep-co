@@ -12,8 +12,9 @@ const SLUG_ALIASES: Record<string, string> = {
   "inshell-groundnuts": "peanuts-in-shell",
   "peanut-oil": "cold-pressed-groundnut-oil",
   "peanut-butter": "pure-peanut-butter",
-  "samman-peanuts": "samman-peanut",
   "bold-runner-peanuts": "bold-peanuts",
+  "tj": "tj-peanuts",
+  "tj-peanut": "tj-peanuts",
 };
 
 export async function generateStaticParams() {

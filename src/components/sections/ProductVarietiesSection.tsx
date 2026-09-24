@@ -50,7 +50,7 @@ const VARIETIES: VarietyItem[] = [
     type: "100% Skin-Removed",
     counts: "38/42, 40/50, 50/60 Whole & Splits",
     description: "Ivory-white steam de-skinned whole and halved splits, double-sortex sorted for zero skin specks and immediate food manufacture.",
-    image: "/images/blanched-peanuts.webp",
+    image: "/images/whole-blanched-peanuts.webp",
     slug: "whole-blanched-peanuts",
   },
   {

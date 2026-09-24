@@ -74,7 +74,7 @@ const PRODUCTS: ProductItem[] = [
     name: "Whole Blanched Peanuts",
     sub: "Skinless Ivory Cotyledons",
     category: "PROCESSED WHOLE",
-    image: "/images/blanched-peanuts.webp",
+    image: "/images/whole-blanched-peanuts.webp",
     description: "100% skin removed through gentle thermal blanching. Spotless ivory-white surface with preserved natural fats, ready for chocolate dragees, peanut butter, and gourmet salting.",
     counts: "38/42, 40/50, 50/60 / oz",
     moisture: "5.0% - 6.0% Max",

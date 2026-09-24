@@ -82,7 +82,7 @@ const STAGES: StageInfo[] = [
 
 const GRADES = [
   {
-    name: "Bold Peanuts (Singdana)",
+    name: "Bold Peanuts",
     count: "38/42 & 40/50 / oz",
     purity: "99.9% Sortex Clean",
     moisture: "7.0% Max",

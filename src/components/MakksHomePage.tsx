@@ -18,7 +18,7 @@ export const MakksHomePage: React.FC = () => {
   const aboutImages = {
     bold: {
       src: "/images/premium-peanuts-bowl.jpg",
-      title: "Premium Indian Bold Peanuts (Singdana)",
+      title: "Premium Indian Bold Peanuts",
       subtitle: "Calibrated 38/42 to 70/80 counts/oz with uniform red skin & deep nutty crunch",
       badge: "Double-Sortex Cleaned",
     },
@@ -47,7 +47,7 @@ export const MakksHomePage: React.FC = () => {
     {
       badge: "Double-Sortex Cleaned • Calibrated Counts",
       title: "Bold Peanuts",
-      subtitle: "(Singdana) Export Caliber",
+      subtitle: "Export Caliber",
       description:
         "Signature large-sized Indian groundnut kernels with characteristic reddish skin and sweet nutty flavor. Rigorously electronic double-sortex cleaned with minimal broken kernels (<0.5%).",
       image: "/images/premium-peanuts-bowl.jpg",
@@ -60,7 +60,7 @@ export const MakksHomePage: React.FC = () => {
       subtitle: "Uniform Round Kernels",
       description:
         "Distinctively round kernels with smooth pink skin and exceptionally high oil content (50-52%). Highly sought-after globally for premium confectionery, peanut butter, and snack roasting.",
-      image: "/images/peanut-bold.webp",
+      image: "/images/java-peanuts.webp",
       link: "/products#java-peanuts",
       specs: ["Counts: 40/50, 50/60, 60/70 / oz", "Oil Content: 50% - 52%", "Aflatoxin: < 4 ppb"],
     },
@@ -103,7 +103,7 @@ export const MakksHomePage: React.FC = () => {
       subtitle: "High-Oil Confectionery",
       bgColor: "#C8822A",
       textColor: "#ffffff",
-      image: "/images/peanut-bold.webp",
+      image: "/images/java-peanuts.webp",
       link: "/products#java-peanuts",
       countText: "Counts: 50/60 • 60/70 • 70/80",
       pillBadge: "Pink Skin Rounds",
@@ -133,7 +133,7 @@ export const MakksHomePage: React.FC = () => {
       subtitle: "Mahua, Grains, Seeds & Feed",
       bgColor: "#3D2B1F",
       textColor: "#ffffff",
-      image: "/images/mahua-flower.jpg",
+      image: "/images/mahua-flower.webp",
       link: "/products?category=Other+Products",
       countText: "Wheat • Mustard • Oil Cake • DOC",
       pillBadge: "Agri Commodities",
@@ -160,7 +160,7 @@ export const MakksHomePage: React.FC = () => {
     java: {
       name: "Java Peanuts (Round Pink-Skinned Kernels)",
       hindi: "जावा मूंगफली",
-      image: "/images/red-kernel.webp",
+      image: "/images/java-peanuts.webp",
       counts: "45/55, 50/60, 60/70, 70/80, 80/90 counts/oz",
       moisture: "7.0% Max",
       oil: "50% - 52% High Oleic Oil Concentration",
@@ -208,13 +208,13 @@ export const MakksHomePage: React.FC = () => {
   const peanutProducts = [
     {
       id: "bold-peanuts",
-      name: "Bold Peanuts (Singdana)",
+      name: "Bold Peanuts",
       hindi: "बोल्ड सींगदाना",
       category: "Raw",
       counts: "38/42, 40/50, 50/60, 60/70 / oz",
       moisture: "7.0% Max",
       oil: "48% - 50%",
-      image: "/images/premium-peanuts-bowl.jpg",
+      image: "/images/peanut-bold.webp",
       badge: "Signature Export Caliber",
     },
     {
@@ -225,7 +225,7 @@ export const MakksHomePage: React.FC = () => {
       counts: "45/55, 50/60, 60/70, 70/80 / oz",
       moisture: "7.0% Max",
       oil: "50% - 52%",
-      image: "/images/peanut-bold.webp",
+      image: "/images/java-peanuts.webp",
       badge: "High-Oil Confectionery",
     },
     {
@@ -236,7 +236,7 @@ export const MakksHomePage: React.FC = () => {
       counts: "38/42, 40/50, 50/60 / oz",
       moisture: "5.5% Max",
       oil: "49% - 51%",
-      image: "/images/blanched-peanuts.webp",
+      image: "/images/whole-blanched-peanuts.webp",
       badge: "100% Skinless White",
     },
     {
@@ -247,7 +247,7 @@ export const MakksHomePage: React.FC = () => {
       counts: "Industrial Splits",
       moisture: "5.5% Max",
       oil: "49% - 50%",
-      image: "/images/blanched-butter-macro.jpg",
+      image: "/images/split-blanched-peanuts.webp",
       badge: "Butter & Bar Centers",
     },
     {
@@ -822,7 +822,7 @@ export const MakksHomePage: React.FC = () => {
               Our Core Peanut &amp; Agricultural Product Lines
             </h2>
             <p style={{ fontSize: '15.5px', color: '#55473E', maxWidth: '720px', margin: 0, lineHeight: 1.6 }}>
-              Calibrated Bold (Singdana), high-oil Java kernels, skinless blanched varieties, in-shell groundnuts, and diversified agricultural export commodities.
+              Calibrated Bold kernels, high-oil Java kernels, skinless blanched varieties, in-shell groundnuts, and diversified agricultural export commodities.
             </p>
           </div>
 
@@ -1207,7 +1207,7 @@ export const MakksHomePage: React.FC = () => {
                 {/* Action Buttons (Standard 48px Height, Radius 24px) */}
                 <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flexWrap: 'wrap' }}>
                   <button
-                    onClick={() => handleOpenQuote('Bold Peanuts (Singdana)')}
+                    onClick={() => handleOpenQuote('Bold Peanuts')}
                     style={{
                       display: 'inline-flex',
                       alignItems: 'center',

@@ -16,6 +16,8 @@ import {
   Anchor,
   Factory,
   ArrowUpRight,
+  QrCode,
+  X,
 } from "lucide-react";
 import { COMPANY_INFO } from "@/data/company";
 
@@ -36,6 +38,7 @@ export default function ContactPage() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [showQrModal, setShowQrModal] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -117,97 +120,115 @@ export default function ContactPage() {
         <div className="site-container max-w-[1280px] mx-auto">
           
           {/* SECTION 12: 3 DIRECT CONTACT CARDS (Equal Height on Desktop, Stacked on Mobile) */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 sm:mb-16 items-stretch">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6 mb-12 sm:mb-16 items-stretch">
             
             {/* Card 1: CALL US DIRECTLY */}
-            <div className="contact-card-equal flex flex-col justify-between p-6 sm:p-7 rounded-3xl bg-[#F7F1E7] border border-[#5A3218]/15 shadow-sm">
+            <div className="contact-card-equal flex flex-col justify-between p-5 sm:p-6 rounded-3xl bg-[#F7F1E7] border border-[#5A3218]/15 shadow-sm">
               <div>
-                <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center justify-between mb-3.5">
                   <span className="text-[11px] font-mono tracking-widest text-[#7A4824] uppercase font-bold">
                     CALL US DIRECTLY
                   </span>
-                  <div className="p-2.5 rounded-xl bg-[#5A3218] text-[#FFFDF8]">
-                    <Phone className="w-4 h-4" />
+                  <div className="p-2 rounded-xl bg-[#5A3218] text-[#FFFDF8]" style={{ color: '#FFFDF8' }}>
+                    <Phone className="w-4 h-4" style={{ color: '#FFFDF8' }} />
                   </div>
                 </div>
-                <h3 className="font-serif text-2xl font-bold text-[#2E2117] mb-1">
-                  {COMPANY_INFO.contact.formattedPhone}
+                <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#2E2117] mb-1 tracking-tight truncate">
+                  <a href={`tel:${COMPANY_INFO.contact.primaryPhone}`} className="hover:text-[#5A3218] transition-colors">
+                    {COMPANY_INFO.contact.formattedPhone}
+                  </a>
                 </h3>
                 <p className="text-xs font-sans text-[#2E2117]/75 leading-relaxed">
                   Direct commercial desk line for contract inquiries &amp; live harvest rate indications. Mon–Sat 08:30–19:30 IST.
                 </p>
               </div>
-              <div className="pt-5 mt-4 border-t border-[#5A3218]/10">
+              <div className="pt-4 mt-4 border-t border-[#5A3218]/10">
                 <a
                   href={`tel:${COMPANY_INFO.contact.primaryPhone}`}
-                  className="w-full h-11 inline-flex items-center justify-center gap-2 rounded-full bg-[#5A3218] text-[#FFFDF8] hover:bg-[#7A4824] font-sans font-semibold text-xs tracking-wider uppercase transition-colors"
+                  className="card-btn-brown w-full h-11 inline-flex items-center justify-center gap-2 rounded-full bg-[#5A3218] text-[#FFFDF8] hover:bg-[#7A4824] font-sans font-semibold text-xs tracking-wider uppercase transition-colors"
+                  style={{ color: '#FFFDF8' }}
                 >
-                  <Phone className="w-3.5 h-3.5" />
-                  <span>Call Export Desk</span>
+                  <Phone className="w-3.5 h-3.5" style={{ color: '#FFFDF8' }} />
+                  <span style={{ color: '#FFFDF8' }}>Call Export Desk</span>
                 </a>
               </div>
             </div>
 
             {/* Card 2: EMAIL US */}
-            <div className="contact-card-equal flex flex-col justify-between p-6 sm:p-7 rounded-3xl bg-[#F7F1E7] border border-[#5A3218]/15 shadow-sm">
+            <div className="contact-card-equal flex flex-col justify-between p-5 sm:p-6 rounded-3xl bg-[#F7F1E7] border border-[#5A3218]/15 shadow-sm">
               <div>
-                <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center justify-between mb-3.5">
                   <span className="text-[11px] font-mono tracking-widest text-[#7A4824] uppercase font-bold">
                     EMAIL US
                   </span>
-                  <div className="p-2.5 rounded-xl bg-[#5A3218] text-[#FFFDF8]">
-                    <Mail className="w-4 h-4" />
+                  <div className="p-2 rounded-xl bg-[#5A3218] text-[#FFFDF8]" style={{ color: '#FFFDF8' }}>
+                    <Mail className="w-4 h-4" style={{ color: '#FFFDF8' }} />
                   </div>
                 </div>
                 <h3
-                  className="font-sans text-[16px] sm:text-[17px] lg:text-[18px] font-bold text-[#2E2117] mb-1 break-word-safe"
+                  className="font-sans text-[13px] sm:text-[14px] md:text-[13px] lg:text-[14px] xl:text-[15.5px] font-bold text-[#2E2117] mb-1 tracking-tight truncate"
                   title={COMPANY_INFO.contact.exportEmail}
                 >
-                  {COMPANY_INFO.contact.exportEmail}
+                  <a
+                    href={`mailto:${COMPANY_INFO.contact.exportEmail}`}
+                    className="hover:text-[#5A3218] transition-colors"
+                  >
+                    {COMPANY_INFO.contact.exportEmail}
+                  </a>
                 </h3>
                 <p className="text-xs font-sans text-[#2E2117]/75 leading-relaxed">
                   Send your official tender documents, COA requests, or annual procurement RFQs. Response within 4 business hours.
                 </p>
               </div>
-              <div className="pt-5 mt-4 border-t border-[#5A3218]/10">
+              <div className="pt-4 mt-4 border-t border-[#5A3218]/10">
                 <a
                   href={`mailto:${COMPANY_INFO.contact.exportEmail}`}
-                  className="w-full h-11 inline-flex items-center justify-center gap-2 rounded-full bg-[#5A3218] text-[#FFFDF8] hover:bg-[#7A4824] font-sans font-semibold text-xs tracking-wider uppercase transition-colors"
+                  className="card-btn-brown w-full h-11 inline-flex items-center justify-center gap-2 rounded-full bg-[#5A3218] text-[#FFFDF8] hover:bg-[#7A4824] font-sans font-semibold text-xs tracking-wider uppercase transition-colors"
+                  style={{ color: '#FFFDF8' }}
                 >
-                  <Mail className="w-3.5 h-3.5" />
-                  <span>Email Tender / RFQ</span>
+                  <Mail className="w-3.5 h-3.5" style={{ color: '#FFFDF8' }} />
+                  <span style={{ color: '#FFFDF8' }}>Email Tender / RFQ</span>
                 </a>
               </div>
             </div>
 
             {/* Card 3: WHATSAPP CHAT */}
-            <div className="contact-card-equal flex flex-col justify-between p-6 sm:p-7 rounded-3xl bg-[#F7F1E7] border border-[#25D366]/30 shadow-sm">
+            <div className="contact-card-equal flex flex-col justify-between p-5 sm:p-6 rounded-3xl bg-[#F7F1E7] border border-[#25D366]/30 shadow-sm">
               <div>
-                <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center justify-between mb-3.5">
                   <span className="text-[11px] font-mono tracking-widest text-[#1e8b46] uppercase font-bold">
                     WHATSAPP CHAT
                   </span>
-                  <div className="p-2.5 rounded-xl bg-[#25D366] text-white">
-                    <MessageSquare className="w-4 h-4" />
+                  <div className="p-2 rounded-xl bg-[#25D366] text-white" style={{ color: '#ffffff' }}>
+                    <MessageSquare className="w-4 h-4" style={{ color: '#ffffff' }} />
                   </div>
                 </div>
-                <h3 className="font-serif text-2xl font-bold text-[#2E2117] mb-1">
+                <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#2E2117] mb-1 tracking-tight truncate">
                   Instant B2B Chat
                 </h3>
                 <p className="text-xs font-sans text-[#2E2117]/75 leading-relaxed">
                   Fast CIF rate checks, container photos, and immediate spec sheets directly to your mobile. 24/7 global time zone monitoring.
                 </p>
               </div>
-              <div className="pt-5 mt-4 border-t border-[#25D366]/20">
+              <div className="pt-4 mt-4 border-t border-[#25D366]/20 space-y-2">
                 <a
                   href={`https://wa.me/${COMPANY_INFO.contact.whatsappNumber}?text=Hello%20Pradeep%20Trading%20Company,%20I%20would%20like%20to%20request%20a%20B2B%20quotation%20for%20peanuts.`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full h-11 inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] hover:bg-[#1eb857] text-white font-sans font-semibold text-xs tracking-wider uppercase transition-colors shadow-sm"
+                  className="card-btn-green w-full h-11 inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] hover:bg-[#1eb857] text-white font-sans font-semibold text-xs tracking-wider uppercase transition-colors shadow-sm"
+                  style={{ color: '#ffffff' }}
                 >
-                  <MessageSquare className="w-3.5 h-3.5" />
-                  <span>Chat on WhatsApp</span>
+                  <MessageSquare className="w-3.5 h-3.5" style={{ color: '#ffffff' }} />
+                  <span style={{ color: '#ffffff' }}>Chat on WhatsApp</span>
                 </a>
+                <button
+                  type="button"
+                  onClick={() => setShowQrModal(true)}
+                  className="w-full py-1 text-center text-[11px] font-mono font-bold text-[#1e8b46] hover:text-[#156031] uppercase tracking-wider transition-colors inline-flex items-center justify-center gap-1.5 cursor-pointer"
+                >
+                  <QrCode className="w-3.5 h-3.5" />
+                  <span>Scan Official QR Code</span>
+                </button>
               </div>
             </div>
 
@@ -279,6 +300,68 @@ export default function ContactPage() {
                       </a>
                     </div>
                   ))}
+                </div>
+              </div>
+
+              {/* Official WhatsApp Business QR Card */}
+              <div className="p-5 sm:p-6 rounded-2xl bg-[#F7F1E7] border border-[#25D366]/35 space-y-3.5 shadow-xs">
+                <div className="flex items-center justify-between">
+                  <div className="text-[11px] font-mono tracking-widest text-[#1e8b46] uppercase font-bold flex items-center gap-2">
+                    <QrCode className="w-3.5 h-3.5 text-[#25D366]" />
+                    <span>WHATSAPP BUSINESS QR</span>
+                  </div>
+                  <span className="text-[10px] font-mono bg-[#25D366]/15 text-[#1e8b46] px-2 py-0.5 rounded-full font-bold">
+                    Official APMC Desk
+                  </span>
+                </div>
+
+                <div className="flex flex-col sm:flex-row items-center gap-4 bg-white p-4 rounded-xl border border-[#25D366]/20">
+                  <div 
+                    onClick={() => setShowQrModal(true)}
+                    className="relative w-36 h-36 shrink-0 rounded-xl overflow-hidden bg-white shadow-xs border border-[#5A3218]/10 cursor-pointer group hover:border-[#25D366] transition-all flex items-center justify-center"
+                    title="Click to enlarge QR Code"
+                  >
+                    <Image
+                      src="/images/whatsapp-qr-card.webp"
+                      alt="Pradeep Trading Company WhatsApp Business QR Code"
+                      fill
+                      className="object-contain p-1 group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                      <span className="opacity-0 group-hover:opacity-100 bg-[#25D366] text-white text-[9px] font-mono font-bold px-2 py-0.5 rounded-full shadow transition-opacity">
+                        Enlarge
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="space-y-2 text-center sm:text-left">
+                    <div className="font-serif text-base font-bold text-[#2E2117]">
+                      Scan to Chat on Mobile
+                    </div>
+                    <p className="text-xs font-sans text-[#2E2117]/75 leading-relaxed m-0">
+                      Open your phone camera or WhatsApp app to scan this QR code and start an instant chat with Pradeep Trading Company.
+                    </p>
+                    <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 pt-1">
+                      <a
+                        href={`https://wa.me/${COMPANY_INFO.contact.whatsappNumber}?text=Hello%20Pradeep%20Trading%20Company,%20I%20am%20contacting%20you%20via%20your%20website%20QR%20code.`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#25D366] hover:bg-[#1eb857] text-white text-[11px] font-sans font-bold uppercase tracking-wider transition-colors shadow-xs"
+                        style={{ color: '#ffffff' }}
+                      >
+                        <MessageSquare className="w-3 h-3" />
+                        <span>Chat Now</span>
+                      </a>
+                      <button
+                        type="button"
+                        onClick={() => setShowQrModal(true)}
+                        className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#F7F1E7] hover:bg-[#E8DDCB] text-[#5A3218] text-[11px] font-mono font-semibold uppercase tracking-wider transition-colors border border-[#5A3218]/15 cursor-pointer"
+                      >
+                        <QrCode className="w-3 h-3" />
+                        <span>View Full QR</span>
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -375,7 +458,7 @@ export default function ContactPage() {
                     </h3>
                     <p className="text-xs font-sans text-[#2E2117]/80 font-normal max-w-md mx-auto leading-relaxed">
                       Thank you, <strong className="font-semibold text-[#5A3218]">{formData.fullName}</strong>. Our export desk has logged your requirement for{" "}
-                      <strong className="font-semibold text-[#5A3218]">{formData.product} ({formData.quantity})</strong>. A commercial representative will contact you at{" "}
+                      <strong className="font-semibold text-[#5A3218]">{formData.product}</strong>. A commercial representative will contact you at{" "}
                       <span className="font-mono text-[11px] text-[#7A4824]">{formData.email}</span> within 4 business hours.
                     </p>
                     <div className="pt-2">
@@ -485,23 +568,6 @@ export default function ContactPage() {
                       </div>
                     </div>
 
-                    {/* Row 4: Quantity (Full Width) */}
-                    <div>
-                      <label className="block text-[10px] font-mono text-[#7A4824] uppercase mb-1 font-bold">
-                        Quantity *
-                      </label>
-                      <select
-                        value={formData.quantity}
-                        onChange={(e) => setFormData({ ...formData, quantity: e.target.value })}
-                        className="w-full h-9.5 px-3 rounded-lg bg-[#FFFDF8] border border-[#5A3218]/20 text-xs font-sans focus:outline-none focus:border-[#5A3218]"
-                      >
-                        {quantityOptions.map((opt) => (
-                          <option key={opt} value={opt}>
-                            {opt}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
 
                     {/* Row 5: Message (Resize-Vertical Only) */}
                     <div>
@@ -632,6 +698,59 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
+      {/* WhatsApp QR Lightbox Modal */}
+      {showQrModal && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-xs p-4 animate-in fade-in duration-200"
+          onClick={() => setShowQrModal(false)}
+        >
+          <div
+            className="relative bg-white rounded-3xl p-6 sm:p-8 max-w-sm w-full shadow-2xl border border-white/20 text-center space-y-4 animate-in zoom-in-95 duration-200"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setShowQrModal(false)}
+              className="absolute top-4 right-4 w-8 h-8 rounded-full bg-[#F7F1E7] text-[#5A3218] hover:bg-[#5A3218] hover:text-white flex items-center justify-center transition-colors cursor-pointer"
+              aria-label="Close QR Modal"
+            >
+              <X className="w-4 h-4" />
+            </button>
+
+            <div className="relative w-64 h-72 mx-auto">
+              <Image
+                src="/images/whatsapp-qr-card.webp"
+                alt="Pradeep Trading Company WhatsApp Business QR Code"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
+
+            <div className="space-y-1">
+              <h4 className="font-serif text-lg font-bold text-[#2E2117]">
+                Scan with WhatsApp
+              </h4>
+              <p className="text-xs font-sans text-[#2E2117]/70">
+                Point your mobile camera to chat directly with Pradeep Trading Company export desk (+91-9589790997).
+              </p>
+            </div>
+
+            <div className="pt-2">
+              <a
+                href={`https://wa.me/${COMPANY_INFO.contact.whatsappNumber}?text=Hello%20Pradeep%20Trading%20Company,%20I%20am%20contacting%20you%20via%20your%20website%20QR%20code.`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full h-10 inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] hover:bg-[#1eb857] text-white font-sans font-bold text-xs tracking-wider uppercase transition-colors shadow-sm"
+                style={{ color: '#ffffff' }}
+              >
+                <MessageSquare className="w-4 h-4" />
+                <span>Open in WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

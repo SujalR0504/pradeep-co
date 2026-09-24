@@ -20,7 +20,7 @@ export interface Product {
   slug: string;
   name: string;
   hindiName?: string;
-  category: "Raw Kernels" | "In-Shell" | "Blanched" | "Value-Added" | "Other Products" | "Specialty Brands";
+  category: "Raw Kernels" | "In-Shell" | "Blanched" | "Value-Added" | "Other Products";
   shortDescription: string;
   description: string;
   image: string;
@@ -29,6 +29,7 @@ export interface Product {
   grade: string;
   size: string;
   packaging: string[];
+  packagingNote?: string;
   applications: string[];
   availability: "In Stock / Year-round" | "Seasonal Harvest" | "Seasonal Harvest & Stocked" | "On Request" | "On Request / Custom Batch";
   featured: boolean;
@@ -40,7 +41,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "bold-peanuts",
     slug: "bold-peanuts",
-    name: "Bold Peanuts (Singdana)",
+    name: "Bold Peanuts",
     hindiName: "बोल्ड सींगदाना",
     category: "Raw Kernels",
     shortDescription: "Signature large-sized Indian peanut kernels with characteristic reddish skin and sweet nutty flavor.",
@@ -55,11 +56,18 @@ export const PRODUCTS: Product[] = [
     grade: "Double Sortex Clean / Machine Cleaned",
     size: "38/42, 40/50, 50/60, 60/70, 70/80 Counts / Ounce",
     packaging: [
-      "25 kg / 50 kg New Jute Bags",
-      "25 kg / 50 kg PP Woven Bags",
-      "10 kg / 25 kg Multi-layer Vacuum Cartons",
-      "1000 kg Jumbo Bulk Bags"
+      "15 kg Jute Bags",
+      "50 kg Jute Bags",
+      "50 kg PP Bags",
+      "25 kg PP Bags",
+      "15 kg PP Bags",
+      "25 kg Vacuum Bags",
+      "12.5 kg Vacuum Bags",
+      "1 MT Jumbo Bags",
+      "1.25 MT Jumbo Bags",
+      "Customised Packaging (As per buyer requirements)"
     ],
+    packagingNote: "We offer customised packaging solutions as per our customers' specific requirements. (Or customised packaging as per buyer requirements.)",
     applications: [
       "Direct Snacking & Roasting",
       "Peanut Butter Manufacturing",
@@ -87,9 +95,10 @@ export const PRODUCTS: Product[] = [
     category: "Raw Kernels",
     shortDescription: "Round-shaped, pink-skinned kernels renowned for high oil concentration and uniform roasting profile.",
     description: "Java peanuts are distinctively rounded with bright pink skins and high oil concentration. Their consistent spherical shape ensures even heat distribution during roasting and blanching, making them the preferred choice worldwide for premier confectionery, candy bars, peanut paste, and industrial oil extraction.",
-    image: "/images/peanut-bold.webp",
+    image: "/images/java-peanuts.webp",
     gallery: [
-      "/images/peanut-bold.webp",
+      "/images/java-peanuts.webp",
+      "/images/java-peanuts-macro.webp",
       "/images/packaging/authentic-jute-sacks.webp",
       "/images/sortex-machine.webp"
     ],
@@ -97,10 +106,18 @@ export const PRODUCTS: Product[] = [
     grade: "Export Grade / Electronic Sortex Cleaned",
     size: "40/50, 45/55, 50/60, 60/70, 70/80, 80/90 Counts / Ounce",
     packaging: [
-      "25 kg / 50 kg Jute Bags",
-      "25 kg / 50 kg PP Bags",
-      "Vacuum Packing in Corrugated Boxes"
+      "15 kg Jute Bags",
+      "50 kg Jute Bags",
+      "50 kg PP Bags",
+      "25 kg PP Bags",
+      "15 kg PP Bags",
+      "25 kg Vacuum Bags",
+      "12.5 kg Vacuum Bags",
+      "1 MT Jumbo Bags",
+      "1.25 MT Jumbo Bags",
+      "Customised Packaging (As per buyer requirements)"
     ],
+    packagingNote: "We offer customised packaging solutions as per our customers' specific requirements. (Or customised packaging as per buyer requirements.)",
     applications: [
       "Confectionery & Nougat Production",
       "High-Yield Peanut Oil Pressing",
@@ -117,6 +134,57 @@ export const PRODUCTS: Product[] = [
       aflatoxin: "< 4 ppb / EU Compliant",
       oilContent: "50% - 52% Min",
       brokenKernels: "1.0% Max"
+    }
+  },
+  {
+    id: "tj-peanuts",
+    slug: "tj-peanuts",
+    name: "TJ Peanuts",
+    hindiName: "टीजे मूंगफली",
+    category: "Raw Kernels",
+    shortDescription: "Small-to-medium compact Indian peanut kernels with reddish-pink skin and high natural sweetness, ideal for confectionery and peanut brittle.",
+    description: "TJ (Tirupati / Java type) groundnuts are renowned in global markets for their uniform compact caliber, smooth pinkish-red seed coat, and natural sweetness. With quick, even roasting characteristics and high oil content (48-50%), TJ peanuts are the premier export choice worldwide for confectionery chikki, coated peanut snacks, candy bar centers, and birdfeed blends.",
+    image: "/images/tj-peanuts.webp",
+    gallery: [
+      "/images/tj-peanuts.webp",
+      "/images/quality-lab.webp",
+      "/images/packaging/authentic-jute-sacks.webp",
+      "/images/sortex-machine.webp"
+    ],
+    origin: "Madhya Pradesh & Gujarat, India",
+    grade: "Double Sortex Clean / Machine Cleaned",
+    size: "50/60, 60/70, 70/80, 80/90, 90/100, 140/160 Counts / Ounce",
+    packaging: [
+      "15 kg Jute Bags",
+      "50 kg Jute Bags",
+      "50 kg PP Bags",
+      "25 kg PP Bags",
+      "15 kg PP Bags",
+      "25 kg Vacuum Bags",
+      "12.5 kg Vacuum Bags",
+      "1 MT Jumbo Bags",
+      "1.25 MT Jumbo Bags",
+      "Customised Packaging (As per buyer requirements)"
+    ],
+    packagingNote: "We offer customised packaging solutions as per our customers' specific requirements. (Or customised packaging as per buyer requirements.)",
+    applications: [
+      "Confectionery & Chikki / Brittle Making",
+      "Coated Peanuts & Savory Snacks",
+      "High-Yield Peanut Oil Pressing",
+      "Direct Roasting & Salted Peanuts",
+      "Birdfeed & Premium Feed Blends"
+    ],
+    availability: "In Stock / Year-round",
+    featured: true,
+    order: 3,
+    specs: {
+      counts: "50/60, 60/70, 70/80, 80/90, 90/100, 140/160 / oz",
+      moisture: "7.0% Max",
+      admixture: "0.5% - 1.0% Max",
+      aflatoxin: "< 4 ppb / EU Compliant",
+      oilContent: "48% - 50% Min",
+      brokenKernels: "0.5% - 1.0% Max",
+      imperfectDamage: "0.5% Max"
     }
   },
   {
@@ -137,10 +205,18 @@ export const PRODUCTS: Product[] = [
     grade: "Machine Cleaned & Hand Picked Selected (HPS)",
     size: "Available on request (18/22, 22/26 pods / ounce)",
     packaging: [
-      "20 kg / 30 kg Aerated Jute Sacks",
-      "25 kg Polypropylene Bags",
-      "Bulk Container Stuffing"
+      "15 kg Jute Bags",
+      "50 kg Jute Bags",
+      "50 kg PP Bags",
+      "25 kg PP Bags",
+      "15 kg PP Bags",
+      "25 kg Vacuum Bags",
+      "12.5 kg Vacuum Bags",
+      "1 MT Jumbo Bags",
+      "1.25 MT Jumbo Bags",
+      "Customised Packaging (As per buyer requirements)"
     ],
+    packagingNote: "We offer customised packaging solutions as per our customers' specific requirements. (Or customised packaging as per buyer requirements.)",
     applications: [
       "Traditional Sand Roasting & Salting",
       "Wholesale Pod Repackaging",
@@ -149,7 +225,7 @@ export const PRODUCTS: Product[] = [
     ],
     availability: "Seasonal Harvest & Stocked",
     featured: true,
-    order: 3,
+    order: 4,
     specs: {
       counts: "18/22, 22/26 pods / oz",
       moisture: "8.0% - 9.0% Max",
@@ -166,9 +242,9 @@ export const PRODUCTS: Product[] = [
     category: "Blanched",
     shortDescription: "Skin-free, ivory-white whole peanut kernels processed with gentle steam skin-removal and optical sorting.",
     description: "Whole Blanched Peanuts are produced by gently heating high-grade raw kernels, passing them through gentle de-skinning rollers, and optical sorters to remove unblanched skins. The result is a pristine, ivory-white whole nut kernel with smooth surfaces, ready for instant industrial frying, coating, chocolate panning, and culinary production.",
-    image: "/images/blanched-peanuts.webp",
+    image: "/images/whole-blanched-peanuts.webp",
     gallery: [
-      "/images/blanched-peanuts.webp",
+      "/images/whole-blanched-peanuts.webp",
       "/images/sortex-machine.webp",
       "/images/quality-lab.webp"
     ],
@@ -176,10 +252,18 @@ export const PRODUCTS: Product[] = [
     grade: "Grade A / 100% Skin Removed / Sortex Clean",
     size: "38/42, 40/50, 50/60 Counts / Ounce",
     packaging: [
-      "10 kg / 25 kg Vacuum Nitrogen-Flushed Bags in Cartons",
-      "25 kg Multi-wall Paper Bags with PE Liner",
-      "1000 kg Jumbo Bags"
+      "15 kg Jute Bags",
+      "50 kg Jute Bags",
+      "50 kg PP Bags",
+      "25 kg PP Bags",
+      "15 kg PP Bags",
+      "25 kg Vacuum Bags",
+      "12.5 kg Vacuum Bags",
+      "1 MT Jumbo Bags",
+      "1.25 MT Jumbo Bags",
+      "Customised Packaging (As per buyer requirements)"
     ],
+    packagingNote: "We offer customised packaging solutions as per our customers' specific requirements. (Or customised packaging as per buyer requirements.)",
     applications: [
       "Gourmet Fried & Salted Snack Packs",
       "Chocolate Bar Centers & Dragees",
@@ -188,7 +272,7 @@ export const PRODUCTS: Product[] = [
     ],
     availability: "In Stock / Year-round",
     featured: true,
-    order: 4,
+    order: 5,
     specs: {
       counts: "38/42, 40/50, 50/60 / oz",
       moisture: "5.0% - 6.0% Max",
@@ -206,19 +290,28 @@ export const PRODUCTS: Product[] = [
     category: "Blanched",
     shortDescription: "Evenly halved skinless peanut splits, providing high surface area for industrial peanut butter and bars.",
     description: "Split Blanched Peanuts feature skinless, heart-removed split cotyledons with uniform golden-white color. Because of their split profile, they grind effortlessly into ultra-smooth peanut butter, blend into energy bar masses, and serve as crunchy toppings for commercial bakery goods.",
-    image: "/images/blanched-peanuts.webp",
+    image: "/images/split-blanched-peanuts.webp",
     gallery: [
-      "/images/blanched-peanuts.webp",
+      "/images/split-blanched-peanuts.webp",
+      "/images/blanched-butter-macro.jpg",
       "/images/peanut-oil-butter.webp"
     ],
     origin: "India",
     grade: "Industrial Export Grade / Sortex Clean",
     size: "40/50, 50/60 equivalent",
     packaging: [
-      "25 kg Vacuum Bags in Corrugated Box",
-      "25 kg Polypropylene Bags with Poly Liner",
-      "Custom bulk options"
+      "15 kg Jute Bags",
+      "50 kg Jute Bags",
+      "50 kg PP Bags",
+      "25 kg PP Bags",
+      "15 kg PP Bags",
+      "25 kg Vacuum Bags",
+      "12.5 kg Vacuum Bags",
+      "1 MT Jumbo Bags",
+      "1.25 MT Jumbo Bags",
+      "Customised Packaging (As per buyer requirements)"
     ],
+    packagingNote: "We offer customised packaging solutions as per our customers' specific requirements. (Or customised packaging as per buyer requirements.)",
     applications: [
       "Commercial Peanut Butter Mills",
       "Granola, Muesli & Cereal Mixes",
@@ -227,7 +320,7 @@ export const PRODUCTS: Product[] = [
     ],
     availability: "In Stock / Year-round",
     featured: false,
-    order: 5,
+    order: 6,
     specs: {
       moisture: "5.5% Max",
       admixture: "0.1% Max",
@@ -265,7 +358,7 @@ export const PRODUCTS: Product[] = [
     ],
     availability: "On Request / Custom Batch",
     featured: true,
-    order: 6,
+    order: 7,
     specs: {
       moisture: "2.5% - 3.5% Max",
       admixture: "Nil",
@@ -302,7 +395,7 @@ export const PRODUCTS: Product[] = [
     ],
     availability: "In Stock / Year-round",
     featured: false,
-    order: 7,
+    order: 8,
     specs: {
       moisture: "0.15% Max",
       oilContent: "100% Pure Arachis Oil",
@@ -338,79 +431,10 @@ export const PRODUCTS: Product[] = [
     ],
     availability: "On Request / Custom Batch",
     featured: false,
-    order: 8,
+    order: 9,
     specs: {
       moisture: "1.5% Max",
       aflatoxin: "Below 4 ppb"
-    }
-  },
-  {
-    id: "king-brand-singdana",
-    slug: "king-brand-singdana",
-    name: "King Brand Super Fine Singdana",
-    hindiName: "किंग ब्राण्ड सुपर फाईन सींगदाना",
-    category: "Specialty Brands",
-    shortDescription: "Authentic double-sortex cleaned peanut kernels packed in traditional protective jute sacks from Bhonti, Shivpuri.",
-    description: "Representing our proprietary brand heritage from Bhonti, Dist. Shivpuri (M.P.), King Brand Super Fine Singdana is rigorously double-sortex cleaned and sized to perfection. Packed in durable traditional breathable jute bags that safeguard the natural oil profile and prevent condensation during long-distance transit.",
-    image: "/images/packaging/king-brand-singdana.webp",
-    gallery: [
-      "/images/packaging/king-brand-singdana.webp",
-      "/images/packaging/authentic-jute-sacks.webp",
-      "/images/peanut-bold.webp"
-    ],
-    origin: "Bhonti, Dist. Shivpuri, Madhya Pradesh, India",
-    grade: "Super Fine / Double Sortex Cleaned",
-    size: "Calibrated Bold / Java Varieties",
-    packaging: [
-      "50 kg Branded King Brand Heavy Duty Jute Bags",
-      "25 kg Export Grade Polypropylene Bags"
-    ],
-    applications: [
-      "Wholesale Grain Markets & Mandis",
-      "Premium Snacking & Roasting Facilities",
-      "Bulk Regional Redistribution"
-    ],
-    availability: "In Stock / Year-round",
-    featured: true,
-    order: 9,
-    specs: {
-      moisture: "7.0% - 7.5% Max",
-      admixture: "0.5% Max",
-      aflatoxin: "Tested Lot-by-Lot"
-    }
-  },
-  {
-    id: "samman-peanut",
-    slug: "samman-peanut",
-    name: "Samman Peanut (Double Sortex)",
-    hindiName: "सम्मान मूंगफली दाना",
-    category: "Specialty Brands",
-    shortDescription: "High-protein, carefully selected double sortex peanut kernels packed under the trusted Samman banner.",
-    description: "Crafted around the philosophy 'Khao Samman Se, Jio Samman Se', our Samman Peanut offering provides clean, double-sortex processed kernels loaded with natural plant proteins and essential nutrients. Processed and packaged directly from our Shivpuri facility with uncompromising quality standards.",
-    image: "/images/packaging/samman-peanuts-packaging.webp",
-    gallery: [
-      "/images/packaging/samman-peanuts-packaging.webp",
-      "/images/packaging/authentic-jute-sacks.webp",
-      "/images/quality-lab.webp"
-    ],
-    origin: "Bhonti, Dist. Shivpuri, Madhya Pradesh, India",
-    grade: "Premium Quality Double Sortex",
-    size: "Standard Export Counts Available",
-    packaging: [
-      "Branded Heavy Duty Burlap & Jute Sacks",
-      "Vacuum Cartons for Global Export"
-    ],
-    applications: [
-      "Health-Conscious Protein Snack Distribution",
-      "Specialty Ethnic Grocery Importers",
-      "Commercial Food Service"
-    ],
-    availability: "In Stock / Year-round",
-    featured: true,
-    order: 10,
-    specs: {
-      moisture: "7.0% Max",
-      admixture: "0.5% Max"
     }
   },
   {
@@ -421,9 +445,9 @@ export const PRODUCTS: Product[] = [
     category: "Other Products",
     shortDescription: "Sun-dried natural organic Mahua (Madhuca Longifolia) flowers sourced from Central Indian forest belts.",
     description: "Sourced from the pristine deciduous forest belts of Madhya Pradesh, our sun-dried Mahua Flowers are rich in natural fruit sugars, minerals, and polyphenolic bio-compounds. Hand-collected at peak seasonal drop, solar-cured on clean breathable tarpaulins, and thoroughly graded for food processing, botanical beverages, natural sweeteners, and Ayurvedic formulations.",
-    image: "/images/mahua-flower.jpg",
+    image: "/images/mahua-flower.webp",
     gallery: [
-      "/images/mahua-flower.jpg",
+      "/images/mahua-flower.webp",
       "/images/harvest-farmer.webp",
       "/images/packaging/authentic-jute-sacks.webp"
     ],
@@ -443,7 +467,7 @@ export const PRODUCTS: Product[] = [
     ],
     availability: "Seasonal Harvest & Stocked",
     featured: true,
-    order: 11,
+    order: 10,
     specs: {
       moisture: "10.0% - 12.0% Max",
       purity: "99.0% Min",
@@ -481,7 +505,7 @@ export const PRODUCTS: Product[] = [
     ],
     availability: "In Stock / Year-round",
     featured: true,
-    order: 12,
+    order: 11,
     specs: {
       moisture: "11.0% - 12.0% Max",
       purity: "99.0% Min",
@@ -519,47 +543,12 @@ export const PRODUCTS: Product[] = [
     ],
     availability: "In Stock / Year-round",
     featured: true,
-    order: 13,
+    order: 12,
     specs: {
       moisture: "7.0% Max",
       oilContent: "38.0% - 42.0% Min",
       purity: "99.5% Min",
       foreignMatter: "0.5% Max"
-    }
-  },
-  {
-    id: "sortex-rejection",
-    slug: "sortex-rejection",
-    name: "Sortex Rejection Groundnuts",
-    hindiName: "सॉर्टेक्स रिजेक्शन मूंगफली (Feed Grade / Industrial Mix)",
-    category: "Other Products",
-    shortDescription: "Optical sortex rejected peanut kernels and broken cotyledons for high-protein animal feed and industrial oil extraction.",
-    description: "Carefully segregated fractions collected from our Buhler optical CCD color sorting lines in Bhonti, Shivpuri. High in natural vegetable lipids (42-46%) and crude protein (22-25%), making it an economical, nutrient-dense ingredient for livestock feed formulators, bird feeds, and industrial oil refining.",
-    image: "/images/peanut-bold.webp",
-    gallery: [
-      "/images/peanut-bold.webp",
-      "/images/sortex-machine.webp",
-      "/images/packaging/authentic-jute-sacks.webp"
-    ],
-    origin: "Bhonti Processing Hub, Madhya Pradesh",
-    grade: "Feed Grade / Industrial Extraction",
-    size: "Mixed Kernels & Splits",
-    packaging: [
-      "50 kg Sound Second-Hand / New PP Bags",
-      "Bulk Loose Truckload / Container Stuffing"
-    ],
-    applications: [
-      "High-Fat Cattle & Poultry Feed Formulations",
-      "Wild Birdfeed & Animal Nutrition Blends",
-      "Commercial Industrial Oil Extraction"
-    ],
-    availability: "In Stock / Year-round",
-    featured: false,
-    order: 14,
-    specs: {
-      oilContent: "42.0% - 46.0% Min",
-      protein: "22.0% - 25.0% Min",
-      moisture: "8.0% Max"
     }
   },
   {
@@ -592,51 +581,12 @@ export const PRODUCTS: Product[] = [
     ],
     availability: "In Stock / Year-round",
     featured: true,
-    order: 15,
+    order: 13,
     specs: {
       protein: "45.0% - 48.0% Crude Protein Min",
       moisture: "8.0% Max",
       crudeFiber: "6.0% Max",
       oilContent: "6.0% - 8.0% Residual Oil"
-    }
-  },
-  {
-    id: "kalyani-140-160",
-    slug: "kalyani-140-160",
-    name: "Kalyani 140/160 Peanuts",
-    hindiName: "कल्याणी मूंगफली दाना 140/160 (TJ Type)",
-    category: "Raw Kernels",
-    shortDescription: "Small-sized, uniform count TJ/Kalyani peanut kernels with delicate sweetness, ideal for confectionery and snack coating.",
-    description: "Kalyani 140/160 (TJ variety) groundnuts feature compact, uniform small grains with smooth red skin. Their consistent micro-caliber and quick-roasting characteristics make them the premier choice worldwide for chikki manufacturing, coated peanuts, birdfeed blends, and confectionery inclusions.",
-    image: "/images/red-kernel.webp",
-    gallery: [
-      "/images/red-kernel.webp",
-      "/images/peanut-bold.webp",
-      "/images/packaging/authentic-jute-sacks.webp"
-    ],
-    origin: "Madhya Pradesh & Gujarat, India",
-    grade: "Double Sortex Cleaned / Export Caliber",
-    size: "140/160 Counts / Ounce",
-    packaging: [
-      "25 kg / 50 kg New Jute Sacks",
-      "25 kg PP Bags with Inner Poly Liner",
-      "10 kg / 25 kg Vacuum Cartons"
-    ],
-    applications: [
-      "Peanut Brittle (Chikki) & Nougat Production",
-      "Crispy Batter & Chickpea-Flour Coated Peanuts",
-      "Confectionery Dragee Centers",
-      "Premium Bird Feed Formulations"
-    ],
-    availability: "In Stock / Year-round",
-    featured: true,
-    order: 16,
-    specs: {
-      counts: "140/160 / oz",
-      moisture: "7.0% Max",
-      admixture: "0.5% Max",
-      aflatoxin: "< 4 ppb / EU Compliant",
-      oilContent: "48% - 50% Min"
     }
   }
 ];
@@ -647,6 +597,5 @@ export const PRODUCT_CATEGORIES = [
   "In-Shell",
   "Blanched",
   "Value-Added",
-  "Other Products",
-  "Specialty Brands"
+  "Other Products"
 ] as const;

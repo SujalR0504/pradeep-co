@@ -53,7 +53,7 @@ export const PROCESS_STEPS: ProcessStep[] = [
     title: "Processing",
     subtitle: "Value-Added Blanching & Roasting",
     description: "For specialized orders, graded kernels undergo gentle radiant heat blanching to loosen outer skins, followed by skin removal, splitting, or precision hot-air roasting to release essential natural nut aromas.",
-    image: "/images/blanched-peanuts.webp",
+    image: "/images/whole-blanched-peanuts.webp",
     highlights: ["Low-temperature skin release", "Split & whole options", "Controlled drum roasting"]
   },
   {

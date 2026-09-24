@@ -71,7 +71,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         <div>
           {/* Category Tag */}
           <div className="mb-2">
-            <span className="inline-block px-3 py-1 rounded-full bg-[#5A3215]/10 text-[#5A3215] text-[10.5px] font-mono font-bold uppercase tracking-wider">
+            <span className="inline-block px-2 py-0.5 rounded-full bg-[#5A3215]/10 text-[#5A3215] text-[9px] font-mono font-bold uppercase tracking-wider whitespace-nowrap">
               {product.category}
             </span>
           </div>

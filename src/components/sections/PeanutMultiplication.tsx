@@ -51,7 +51,7 @@ const PRODUCT_CARDS = [
     num: "04",
     name: "Blanched Peanuts",
     count: "Whole & Split Blanched",
-    image: "/images/blanched-peanuts.webp",
+    image: "/images/whole-blanched-peanuts.webp",
     desc: "Skin-free, Sortex-inspected kernels for roasting and butter manufacturing.",
     slug: "blanched-peanuts",
   },

@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 
 export default function QuoteModal() {
   const [isOpen, setIsOpen] = useState(false);
-  const [productName, setProductName] = useState('Bold Peanuts (Singdana)');
+  const [productName, setProductName] = useState('Bold Peanuts');
 
   useEffect(() => {
     const handleOpen = (e: any) => {

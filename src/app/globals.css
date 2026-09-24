@@ -690,8 +690,48 @@ p, .body-text, .section-desc {
   border-radius: 20px;
   background-color: #F7F1E7;
   border: 1px solid rgba(90, 50, 24, 0.15);
-  padding: 24px;
+  padding: 22px 20px;
   box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  .contact-card-equal {
+    padding: 24px 22px;
+  }
+}
+
+.contact-card-equal a.card-btn-brown,
+a.card-btn-brown {
+  background-color: #5A3218 !important;
+  color: #FFFDF8 !important;
+}
+
+.contact-card-equal a.card-btn-brown *,
+a.card-btn-brown * {
+  color: #FFFDF8 !important;
+}
+
+.contact-card-equal a.card-btn-brown:hover,
+a.card-btn-brown:hover {
+  background-color: #7A4824 !important;
+  color: #FFFDF8 !important;
+}
+
+.contact-card-equal a.card-btn-green,
+a.card-btn-green {
+  background-color: #25D366 !important;
+  color: #FFFFFF !important;
+}
+
+.contact-card-equal a.card-btn-green *,
+a.card-btn-green * {
+  color: #FFFFFF !important;
+}
+
+.contact-card-equal a.card-btn-green:hover,
+a.card-btn-green:hover {
+  background-color: #1eb857 !important;
+  color: #FFFFFF !important;
 }
 
 /* Universal Input & Form Responsiveness */

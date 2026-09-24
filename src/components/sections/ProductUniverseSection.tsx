@@ -19,7 +19,7 @@ const SHOWCASE_SLUGS = [
 const PRODUCT_PHOTOS: Record<string, string> = {
   "bold-peanuts": "/images/single-kernel-cutout.png",
   "java-peanuts": "/images/red-kernel-cutout.png",
-  "whole-blanched-peanuts": "/images/blanched-peanuts.webp",
+  "whole-blanched-peanuts": "/images/whole-blanched-peanuts.webp",
   "peanuts-in-shell": "/images/new-uploaded-image.png",
   "roasted-peanuts": "/images/peanut-roasted.webp",
 };

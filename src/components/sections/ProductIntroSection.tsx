@@ -40,7 +40,7 @@ const EDITORIAL_BLOCKS: EditorialProductBlock[] = [
       { label: "Purity", value: "> 99.5% Double Sortex" },
       { label: "Aflatoxin", value: "< 4 ppb (EU/GCC Compliance)" },
     ],
-    packaging: "25kg / 50kg New Jute Sacks, PP Bags, Vacuum Cartons",
+    packaging: "15/50kg Jute, 15/25/50kg PP, 12.5/25kg Vacuum, 1/1.25 MT Jumbo",
     slug: "bold-peanuts",
   },
   {
@@ -50,7 +50,7 @@ const EDITORIAL_BLOCKS: EditorialProductBlock[] = [
     subtitle: "100% Skin Removed • Pristine Ivory-White",
     description:
       "Gentle warm-air de-skinning and multi-pass optical color sorters produce pure ivory-white whole and split cotyledons. Zero red skin residue, heart/germ removed on splits, ready for chocolate bars, dragees, and super-fine industrial peanut butter grinding.",
-    image: "/images/blanched-peanuts.webp",
+    image: "/images/whole-blanched-peanuts.webp",
     secondaryImage: "/images/split-cotyledon-cutout.png",
     specs: [
       { label: "Available Calibers", value: "38/42, 40/50, 50/60 Counts / Ounce" },
@@ -58,7 +58,7 @@ const EDITORIAL_BLOCKS: EditorialProductBlock[] = [
       { label: "Skin Residue", value: "Nil (< 0.5% Tolerance)" },
       { label: "Aflatoxin", value: "Negative / < 2 ppb" },
     ],
-    packaging: "10kg / 25kg Nitrogen-Flushed Vacuum Cartons, Jumbo Totes",
+    packaging: "15/50kg Jute, 15/25/50kg PP, 12.5/25kg Vacuum, 1/1.25 MT Jumbo",
     slug: "whole-blanched-peanuts",
   },
   {
@@ -76,26 +76,26 @@ const EDITORIAL_BLOCKS: EditorialProductBlock[] = [
       { label: "Moisture", value: "8.0% - 9.0% Max" },
       { label: "Foreign Matter", value: "< 0.5% Machine Cleaned" },
     ],
-    packaging: "20kg / 30kg Aerated Jute Bags & Bulk Sea Container Stuffing",
+    packaging: "15/50kg Jute, 15/25/50kg PP, 12.5/25kg Vacuum, 1/1.25 MT Jumbo",
     slug: "peanuts-in-shell",
   },
   {
     num: "04",
-    category: "PROPRIETARY BRANDS",
-    title: "King Brand & Samman Singdana",
-    subtitle: "Authentic Double-Sortex Jute Sacks from Bhonti, Shivpuri",
+    category: "VALUE-ADDED EXTRACTS",
+    title: "Cold-Pressed Groundnut Oil",
+    subtitle: "Artisanal Unrefined Oil & High-Smoke Point Culinary Grade",
     description:
-      "Processed directly at our Bhonti facility under our proprietary trademark standards. Rigorously double-sortex cleaned and weigh-filled into breathable twill jute burlap sacks that prevent condensation during tropical freight transit.",
-    image: "/images/packaging/king-brand-singdana.webp",
+      "Expeller-pressed from pristine double-sortex Indian peanut kernels without chemical solvents or excessive temperatures. Naturally rich in heart-healthy monounsaturated fatty acids with an authentic nutty aroma and 232°C high-smoke point for gourmet culinary and industrial uses.",
+    image: "/images/peanut-oil-butter.webp",
     secondaryImage: "/images/packaging/authentic-jute-sacks.webp",
     specs: [
-      { label: "Origin Facility", value: "Bhonti, Shivpuri (M.P.), India" },
-      { label: "Process Standard", value: "Bichromatic Optical CCD Sortex" },
-      { label: "Seam Finish", value: "Triple Lock-Stitched Twill Burlap" },
-      { label: "Container Load", value: "19 MT (20ft) / 27.5 MT (40ft)" },
+      { label: "Extraction", value: "Cold-Mechanical Expeller Press" },
+      { label: "Smoke Point", value: "High-Heat 232°C (450°F)" },
+      { label: "Free Fatty Acids", value: "< 0.5% Guaranteed" },
+      { label: "Packaging Options", value: "15L Tins, 200L Drums, IBC Tanks" },
     ],
-    packaging: "50kg Heavy-Duty Branded Jute Bags & Export PP Sacks",
-    slug: "king-brand-singdana",
+    packaging: "15L Export Tins, 200L Drums, 1000L IBC Tanks & Flexitanks",
+    slug: "cold-pressed-groundnut-oil",
   },
 ];
 

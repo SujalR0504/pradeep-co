@@ -17,7 +17,7 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleOpenQuote = (productName = 'Bold Peanuts (Singdana)') => {
+  const handleOpenQuote = (productName = 'Bold Peanuts') => {
     if (typeof window !== 'undefined') {
       window.dispatchEvent(new CustomEvent('open-quote-modal', { detail: productName }));
     }
@@ -221,7 +221,7 @@ export default function Header() {
                   {[
                     { label: 'Home', href: '/' },
                     { label: 'About Us', href: '/about' },
-                    { label: 'Peanut Products', href: '/products', hasDropdown: true },
+                    { label: 'Products', href: '/products', hasDropdown: true },
                     { label: 'Our Process', href: '/nut-journey' },
                     { label: 'Health Benefits', href: '/health-benefits' },
                     { label: 'Contact', href: '/contact' },
@@ -258,7 +258,7 @@ export default function Header() {
 
               {/* Request Quote Button */}
               <button
-                onClick={() => handleOpenQuote('Bold Peanuts (Singdana)')}
+                onClick={() => handleOpenQuote('Bold Peanuts')}
                 className="hidden sm:inline-flex"
                 style={{
                   height: isSticky ? '42px' : '48px',
@@ -343,7 +343,7 @@ export default function Header() {
                 {[
                   { label: 'Home', href: '/' },
                   { label: 'About Us', href: '/about' },
-                  { label: 'Peanut Products', href: '/products' },
+                  { label: 'Products', href: '/products' },
                   { label: 'Our Process', href: '/nut-journey' },
                   { label: 'Health Benefits', href: '/health-benefits' },
                   { label: 'Contact', href: '/contact' },
@@ -379,7 +379,7 @@ export default function Header() {
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);
-                  handleOpenQuote('Bold Peanuts (Singdana)');
+                  handleOpenQuote('Bold Peanuts');
                 }}
                 style={{
                   width: '100%',

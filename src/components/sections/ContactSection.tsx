@@ -13,7 +13,7 @@ export default function ContactSection() {
     country: "",
     email: "",
     phone: "",
-    product: "Bold Peanuts (Singdana)",
+    product: "Bold Peanuts",
     quantity: "",
     message: "",
   });
@@ -72,7 +72,7 @@ export default function ContactSection() {
                         country: "",
                         email: "",
                         phone: "",
-                        product: "Bold Peanuts (Singdana)",
+                        product: "Bold Peanuts",
                         quantity: "",
                         message: "",
                       });

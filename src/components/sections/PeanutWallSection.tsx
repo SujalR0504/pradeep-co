@@ -32,7 +32,7 @@ const PEANUT_TYPES = [
   { type: "kernel", src: "/images/single-kernel-cutout.png", slug: "bold-peanuts", name: "Bold Peanut Kernel" },
   { type: "redskin", src: "/images/red-kernel-cutout.png", slug: "java-peanuts", name: "Java Red Skin Kernel" },
   { type: "split", src: "/images/split-cotyledon-cutout.png", slug: "split-blanched-peanuts", name: "Split Blanched Cotyledon" },
-  { type: "blanched", src: "/images/blanched-peanuts.webp", slug: "whole-blanched-peanuts", name: "Whole Blanched Peanut" },
+  { type: "blanched", src: "/images/whole-blanched-peanuts.webp", slug: "whole-blanched-peanuts", name: "Whole Blanched Peanut" },
   { type: "roasted", src: "/images/peanut-roasted.webp", slug: "roasted-peanuts", name: "Roasted Kernel" },
 ] as const;
 

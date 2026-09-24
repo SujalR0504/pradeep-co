@@ -41,7 +41,7 @@ const MORPH_STAGES: MorphStage[] = [
     name: "WHOLE BLANCHED KERNEL",
     badge: "SKINLESS IVORY COTYLEDON",
     description: "Gentle convective thermal treatment lifts the papery skin without heat stress, producing pristine ivory white seeds.",
-    image: "/images/blanched-peanuts.webp",
+    image: "/images/whole-blanched-peanuts.webp",
     techNote: "Skin Removal: 99.9% • Moisture: 5.5% Max",
   },
   {

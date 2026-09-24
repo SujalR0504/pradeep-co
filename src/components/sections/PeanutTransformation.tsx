@@ -35,7 +35,7 @@ const TRANSFORM_CATEGORIES = [
   {
     title: "Blanched Split & Whole",
     count: "Zero Skin • 99.9% Purity",
-    image: "/images/blanched-peanuts.webp",
+    image: "/images/whole-blanched-peanuts.webp",
     slug: "whole-blanched-peanuts",
     x: -200,
     y: 110,

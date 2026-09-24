@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 
 export default function Footer() {
-  const handleOpenQuote = (productName = 'Bold Peanuts (Singdana)') => {
+  const handleOpenQuote = (productName = 'Bold Peanuts') => {
     if (typeof window !== 'undefined') {
       window.dispatchEvent(new CustomEvent('open-quote-modal', { detail: productName }));
     }
@@ -53,7 +53,7 @@ export default function Footer() {
               </Link>
             </div>
             <p style={{ fontSize: '13.5px', color: '#c9b8aa', lineHeight: 1.7, marginBottom: '20px' }}>
-              India&apos;s benchmark processor and global exporter of Double-Sortex Bold Peanuts (Singdana), Java Confectionery Kernels, Blanched Whole &amp; Splits, and In-Shell Groundnuts from Central India&apos;s primary mandi hub.
+              India&apos;s benchmark processor and global exporter of Double-Sortex Bold Peanuts, Java Confectionery Kernels, Blanched Whole &amp; Splits, and In-Shell Groundnuts from Central India&apos;s primary mandi hub.
             </p>
             <div style={{ display: 'flex', gap: '10px' }}>
               <a
@@ -124,10 +124,10 @@ export default function Footer() {
                 marginBottom: '18px',
               }}
             >
-              Peanut Products
+              Products
             </h4>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '13.5px' }}>
-              <li><Link href="/products#bold-peanuts" style={{ color: '#c9b8aa', textDecoration: 'none', transition: 'color 0.2s' }}>Bold Peanuts (Singdana)</Link></li>
+              <li><Link href="/products#bold-peanuts" style={{ color: '#c9b8aa', textDecoration: 'none', transition: 'color 0.2s' }}>Bold Peanuts</Link></li>
               <li><Link href="/products#java-peanuts" style={{ color: '#c9b8aa', textDecoration: 'none', transition: 'color 0.2s' }}>Java Confectionery Kernels</Link></li>
               <li><Link href="/products#blanched-peanuts" style={{ color: '#c9b8aa', textDecoration: 'none', transition: 'color 0.2s' }}>Whole Blanched Peanuts</Link></li>
               <li><Link href="/products#split-blanched" style={{ color: '#c9b8aa', textDecoration: 'none', transition: 'color 0.2s' }}>Split Blanched Cotyledons</Link></li>
@@ -206,7 +206,7 @@ export default function Footer() {
               </li>
               <li>
                 <button
-                  onClick={() => handleOpenQuote('Bold Peanuts (Singdana)')}
+                  onClick={() => handleOpenQuote('Bold Peanuts')}
                   style={{
                     backgroundColor: '#C88A2E',
                     color: '#ffffff',

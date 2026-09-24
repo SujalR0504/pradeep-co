@@ -198,7 +198,7 @@ export default function Scene06PeanutRoll() {
                 <CheckCircle2 className="w-4 h-4 text-[#5A3218] shrink-0 mt-0.5" />
                 <div>
                   <div className="text-xs font-mono font-bold text-[#5A3218]">
-                    BOLD PEANUTS (SINGDANA) — 38/42 TO 70/80 / OZ
+                    BOLD PEANUTS — 38/42 TO 70/80 / OZ
                   </div>
                   <div className="text-xs text-[#2E2117]/70 font-sans mt-0.5">
                     Elongated kernel with rich red-amber testa, ideal for direct roasting and peanut butter.

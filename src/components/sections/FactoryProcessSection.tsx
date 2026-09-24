@@ -53,7 +53,7 @@ const PROCESS_STAGES: ProcessStage[] = [
     name: "PROCESS",
     subtitle: "Gentle De-Skinning & Blanching",
     description: "Controlled convective air treatment loosens the seed coat, producing whole blanched kernels and pristine split halves without heat degradation.",
-    image: "/images/blanched-peanuts.webp",
+    image: "/images/whole-blanched-peanuts.webp",
     details: "99.9% skin removal efficiency",
   },
   {

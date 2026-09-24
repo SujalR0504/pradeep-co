@@ -152,7 +152,7 @@ function ProductsContent() {
                     <div>
                       {/* Category Tag & Hindi Name */}
                       <div className="flex items-center justify-between gap-2 mb-2">
-                        <span className="inline-block px-2.5 py-0.5 rounded-full bg-[#5A3218]/10 text-[#5A3218] text-[10px] font-mono font-bold uppercase tracking-wider">
+                        <span className="inline-block px-2 py-0.5 rounded-full bg-[#5A3218]/10 text-[#5A3218] text-[9px] font-mono font-bold uppercase tracking-wider whitespace-nowrap">
                           {product.category}
                         </span>
                         {product.hindiName && (
