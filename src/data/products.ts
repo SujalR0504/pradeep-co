@@ -48,9 +48,7 @@ export const PRODUCTS: Product[] = [
     description: "Bold Peanuts are the benchmark of Indian groundnut exports, prized globally for their large kernel size, elongated shape, and rich nutritional profile. Cultivated in fertile, mineral-rich soils and processed through multi-stage optical sorters, our Bold kernels deliver uniform caliber, exceptional crunch, and optimal oil content for international snack processors and food manufacturers.",
     image: "/images/peanut-bold.webp",
     gallery: [
-      "/images/peanut-bold.webp",
-      "/images/packaging/authentic-jute-sacks.webp",
-      "/images/quality-lab.webp"
+      "/images/peanut-bold.webp"
     ],
     origin: "Madhya Pradesh & Gujarat, India",
     grade: "Double Sortex Clean / Machine Cleaned",
@@ -97,10 +95,7 @@ export const PRODUCTS: Product[] = [
     description: "Java peanuts are distinctively rounded with bright pink skins and high oil concentration. Their consistent spherical shape ensures even heat distribution during roasting and blanching, making them the preferred choice worldwide for premier confectionery, candy bars, peanut paste, and industrial oil extraction.",
     image: "/images/java-peanuts.webp",
     gallery: [
-      "/images/java-peanuts.webp",
-      "/images/java-peanuts-macro.webp",
-      "/images/packaging/authentic-jute-sacks.webp",
-      "/images/sortex-machine.webp"
+      "/images/java-peanuts.webp"
     ],
     origin: "Central & Western Agricultural Belts, India",
     grade: "Export Grade / Electronic Sortex Cleaned",
@@ -146,10 +141,7 @@ export const PRODUCTS: Product[] = [
     description: "TJ (Tirupati / Java type) groundnuts are renowned in global markets for their uniform compact caliber, smooth pinkish-red seed coat, and natural sweetness. With quick, even roasting characteristics and high oil content (48-50%), TJ peanuts are the premier export choice worldwide for confectionery chikki, coated peanut snacks, candy bar centers, and birdfeed blends.",
     image: "/images/tj-peanuts.webp",
     gallery: [
-      "/images/tj-peanuts.webp",
-      "/images/quality-lab.webp",
-      "/images/packaging/authentic-jute-sacks.webp",
-      "/images/sortex-machine.webp"
+      "/images/tj-peanuts.webp"
     ],
     origin: "Madhya Pradesh & Gujarat, India",
     grade: "Double Sortex Clean / Machine Cleaned",
@@ -197,9 +189,7 @@ export const PRODUCTS: Product[] = [
     description: "Harvested at peak physiological maturity, our In-Shell Groundnuts undergo gentle de-stoning, mechanical de-dusting, and thorough hand-sorting. The shells are bright, fibrous, and structurally robust, protecting the inner kernels from oxidation and preserving harvest-fresh sweetness for wholesale bulk trade and traditional roasting.",
     image: "/images/peanut-inshell.webp",
     gallery: [
-      "/images/peanut-inshell.webp",
-      "/images/harvest-farmer.webp",
-      "/images/packaging/authentic-jute-sacks.webp"
+      "/images/peanut-inshell.webp"
     ],
     origin: "Madhya Pradesh, India",
     grade: "Machine Cleaned & Hand Picked Selected (HPS)",
@@ -244,9 +234,7 @@ export const PRODUCTS: Product[] = [
     description: "Whole Blanched Peanuts are produced by gently heating high-grade raw kernels, passing them through gentle de-skinning rollers, and optical sorters to remove unblanched skins. The result is a pristine, ivory-white whole nut kernel with smooth surfaces, ready for instant industrial frying, coating, chocolate panning, and culinary production.",
     image: "/images/whole-blanched-peanuts.webp",
     gallery: [
-      "/images/whole-blanched-peanuts.webp",
-      "/images/sortex-machine.webp",
-      "/images/quality-lab.webp"
+      "/images/whole-blanched-peanuts.webp"
     ],
     origin: "India",
     grade: "Grade A / 100% Skin Removed / Sortex Clean",
@@ -292,9 +280,7 @@ export const PRODUCTS: Product[] = [
     description: "Split Blanched Peanuts feature skinless, heart-removed split cotyledons with uniform golden-white color. Because of their split profile, they grind effortlessly into ultra-smooth peanut butter, blend into energy bar masses, and serve as crunchy toppings for commercial bakery goods.",
     image: "/images/split-blanched-peanuts.webp",
     gallery: [
-      "/images/split-blanched-peanuts.webp",
-      "/images/blanched-butter-macro.jpg",
-      "/images/peanut-oil-butter.webp"
+      "/images/split-blanched-peanuts.webp"
     ],
     origin: "India",
     grade: "Industrial Export Grade / Sortex Clean",
@@ -338,9 +324,7 @@ export const PRODUCTS: Product[] = [
     description: "Our roasted peanuts are processed in controlled temperature roasters to achieve a uniform golden roast and signature snap. Available in whole kernels, split, salted, or traditional sand-roasted styles that maintain their crispness across long shipping transits.",
     image: "/images/peanut-roasted.webp",
     gallery: [
-      "/images/peanut-roasted.webp",
-      "/images/peanut-bold.webp",
-      "/images/packaging/authentic-jute-sacks.webp"
+      "/images/peanut-roasted.webp"
     ],
     origin: "India",
     grade: "Ready-to-Eat / Export Certified",
@@ -375,8 +359,7 @@ export const PRODUCTS: Product[] = [
     description: "Extracted using traditional slow mechanical expellers without chemical refining, solvents, or excessive heat. Our unrefined groundnut oil preserves natural antioxidants, phytosterols, and delicate mono-unsaturated fats, making it a high-grade culinary oil sought after for gourmet cooking and fine food manufacturing.",
     image: "/images/peanut-oil-butter.webp",
     gallery: [
-      "/images/peanut-oil-butter.webp",
-      "/images/shipping-port.webp"
+      "/images/peanut-oil-butter.webp"
     ],
     origin: "Madhya Pradesh, India",
     grade: "100% Virgin Food Grade / Unrefined",
@@ -412,8 +395,7 @@ export const PRODUCTS: Product[] = [
     description: "Crafted exclusively from selected Indian roasted peanuts. Ground in stone mills to achieve micron-level smoothness or custom-formulated with roasted peanut granulate for crunchiness. Tailored for private label retail, bulk food-service pails, and confectionery ingredients.",
     image: "/images/peanut-oil-butter.webp",
     gallery: [
-      "/images/peanut-oil-butter.webp",
-      "/images/blanched-peanuts.webp"
+      "/images/peanut-oil-butter.webp"
     ],
     origin: "India",
     grade: "Custom Specifications / Private Label Ready",
@@ -447,9 +429,7 @@ export const PRODUCTS: Product[] = [
     description: "Sourced from the pristine deciduous forest belts of Madhya Pradesh, our sun-dried Mahua Flowers are rich in natural fruit sugars, minerals, and polyphenolic bio-compounds. Hand-collected at peak seasonal drop, solar-cured on clean breathable tarpaulins, and thoroughly graded for food processing, botanical beverages, natural sweeteners, and Ayurvedic formulations.",
     image: "/images/mahua-flower.webp",
     gallery: [
-      "/images/mahua-flower.webp",
-      "/images/harvest-farmer.webp",
-      "/images/packaging/authentic-jute-sacks.webp"
+      "/images/mahua-flower.webp"
     ],
     origin: "Madhya Pradesh & Central India",
     grade: "Cleaned & Sun-Dried / Export Quality",
@@ -485,8 +465,7 @@ export const PRODUCTS: Product[] = [
     description: "Premium agricultural grain consignments cultivated in Madhya Pradesh's mineral-rich fertile soils. Our Milling and Sharbati Wheat features high gluten index, robust hectolitre weight, and rich protein, while our machine-cleaned Barley delivers uniform grain weight, low moisture, and high starch ideal for malt extraction, flour milling, and high-nutrition feed.",
     image: "/images/wheat-barley.jpg",
     gallery: [
-      "/images/wheat-barley.jpg",
-      "/images/packaging/authentic-jute-sacks.webp"
+      "/images/wheat-barley.jpg"
     ],
     origin: "Madhya Pradesh & Central India",
     grade: "Sortex Clean / Machine Cleaned Grade A",
@@ -522,9 +501,7 @@ export const PRODUCTS: Product[] = [
     description: "Grown in the semi-arid sandy loam belts of Central India and Rajasthan, our Mustard Seeds are renowned for intense pungency and high natural oil yield (38-42%). Cleaned via vibratory gravity separators, air aspiration, and optical CCD color sorters for spice packaging, oil pressing, and industrial seasonings.",
     image: "/images/mustard-seeds.jpg",
     gallery: [
-      "/images/mustard-seeds.jpg",
-      "/images/quality-lab.webp",
-      "/images/packaging/authentic-jute-sacks.webp"
+      "/images/mustard-seeds.jpg"
     ],
     origin: "Madhya Pradesh & Rajasthan, India",
     grade: "Sortex Clean / Micro-Cleaned 99.5%",
@@ -560,9 +537,7 @@ export const PRODUCTS: Product[] = [
     description: "Derived during the mechanical expeller oil extraction of pure Indian groundnut seeds. Our groundnut oil cake preserves essential digestible amino acids and natural lipid fractions, serving as a trusted high-protein supplement for dairy cattle feed, broiler poultry rations, and commercial aquaculture.",
     image: "/images/groundnut-oil-cake.jpg",
     gallery: [
-      "/images/groundnut-oil-cake.jpg",
-      "/images/quality-lab.webp",
-      "/images/packaging/authentic-jute-sacks.webp"
+      "/images/groundnut-oil-cake.jpg"
     ],
     origin: "Madhya Pradesh, India",
     grade: "Expeller Pressed / High Protein Feed Grade",
