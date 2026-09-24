@@ -486,7 +486,6 @@ export const PRODUCTS: Product[] = [
     image: "/images/wheat-barley.jpg",
     gallery: [
       "/images/wheat-barley.jpg",
-      "/images/india-farm-aerial.jpg",
       "/images/packaging/authentic-jute-sacks.webp"
     ],
     origin: "Madhya Pradesh & Central India",
