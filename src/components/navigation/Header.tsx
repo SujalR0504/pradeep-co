@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { Menu } from 'lucide-react';
 
 export default function Header() {
   const pathname = usePathname();
@@ -283,22 +284,37 @@ export default function Header() {
               </button>
 
               {/* Mobile Menu Toggler */}
-              <div
-                className="mobile-nav-toggler flex lg:hidden items-center justify-center"
+              <button
+                type="button"
+                className="mobile-nav-toggler lg:hidden"
                 onClick={() => setMobileMenuOpen(true)}
                 style={{
                   cursor: 'pointer',
-                  fontSize: '22px',
-                  color: '#5C341B',
                   width: '42px',
                   height: '42px',
                   borderRadius: '10px',
-                  backgroundColor: 'rgba(92, 52, 27, 0.06)',
+                  backgroundColor: 'rgba(92, 52, 27, 0.08)',
+                  border: '1px solid rgba(92, 52, 27, 0.15)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  padding: 0,
+                  margin: 0,
+                  outline: 'none',
                 }}
                 aria-label="Open Mobile Menu"
               >
-                <i className="fa fa-bars"></i>
-              </div>
+                <Menu
+                  size={22}
+                  strokeWidth={2.4}
+                  style={{
+                    color: '#5C341B',
+                    display: 'block',
+                    margin: 'auto',
+                    flexShrink: 0,
+                  }}
+                />
+              </button>
             </div>
           </div>
         </div>

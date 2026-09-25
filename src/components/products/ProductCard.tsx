@@ -89,30 +89,30 @@ export default function ProductCard({ product }: ProductCardProps) {
         </div>
 
         {/* 2-Column Specifications List */}
-        <div className="pt-3 pb-2 border-t border-[#E8DDCB]/80 space-y-2 text-xs">
+        <div className="pt-3 pb-2 border-t border-[#E8DDCB]/80 flex flex-col gap-2.5">
           <div className="flex items-start justify-between gap-3">
-            <span className="w-[120px] shrink-0 font-mono text-[10px] font-bold text-[#8A572F] uppercase">
+            <span className="w-[120px] shrink-0 font-mono text-[9px] sm:text-[9.5px] font-bold text-[#8A572F] uppercase tracking-wider pt-0.5">
               COUNTS / OUNCE
             </span>
-            <span className="text-right font-sans font-semibold text-[#2B1A0F] text-xs leading-snug">
+            <span className="text-right font-sans font-medium text-[#2B1A0F] text-[10.5px] sm:text-[11px] leading-relaxed">
               {product.specs.counts || product.size || "Custom Caliber"}
             </span>
           </div>
 
           <div className="flex items-start justify-between gap-3">
-            <span className="w-[120px] shrink-0 font-mono text-[10px] font-bold text-[#8A572F] uppercase">
+            <span className="w-[120px] shrink-0 font-mono text-[9px] sm:text-[9.5px] font-bold text-[#8A572F] uppercase tracking-wider pt-0.5">
               MOISTURE CEILING
             </span>
-            <span className="text-right font-sans font-semibold text-[#2B1A0F] text-xs leading-snug">
+            <span className="text-right font-sans font-medium text-[#2B1A0F] text-[10.5px] sm:text-[11px] leading-relaxed">
               {product.specs.moisture || "7.0% Max"}
             </span>
           </div>
 
           <div className="flex items-start justify-between gap-3">
-            <span className="w-[120px] shrink-0 font-mono text-[10px] font-bold text-[#8A572F] uppercase">
+            <span className="w-[120px] shrink-0 font-mono text-[9px] sm:text-[9.5px] font-bold text-[#8A572F] uppercase tracking-wider pt-0.5">
               AFLATOXIN SPEC
             </span>
-            <span className="text-right font-sans font-semibold text-[#2B1A0F] text-xs leading-snug">
+            <span className="text-right font-sans font-medium text-[#2B1A0F] text-[10.5px] sm:text-[11px] leading-relaxed">
               {product.specs.aflatoxin || "Below 4 ppb"}
             </span>
           </div>

@@ -144,11 +144,6 @@ export default function ProductDetailClient({ product }: Props) {
           {/* Right: Specifications & CTAs */}
           <div className="lg:col-span-6 space-y-8">
             <div className="space-y-3">
-              {product.hindiName && (
-                <div className="text-sm font-medium text-[#8A572F] tracking-wide">
-                  {product.hindiName}
-                </div>
-              )}
               <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-[#2B1A0F] leading-[1.1] tracking-[-0.02em]">
                 {product.name}
               </h1>

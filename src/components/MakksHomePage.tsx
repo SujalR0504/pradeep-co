@@ -144,7 +144,6 @@ export const MakksHomePage: React.FC = () => {
   const specDetails = {
     bold: {
       name: "Bold Peanuts (Singdana / Large Kernels)",
-      hindi: "बोल्ड सींगदाना",
       image: "/images/premium-peanuts-bowl.jpg",
       counts: "38/42, 40/50, 50/60, 60/70, 70/80 counts/oz",
       moisture: "7.0% Max (Strict automated drying)",
@@ -159,7 +158,6 @@ export const MakksHomePage: React.FC = () => {
     },
     java: {
       name: "Java Peanuts (Round Pink-Skinned Kernels)",
-      hindi: "जावा मूंगफली",
       image: "/images/java-peanuts.webp",
       counts: "45/55, 50/60, 60/70, 70/80, 80/90 counts/oz",
       moisture: "7.0% Max",
@@ -174,7 +172,6 @@ export const MakksHomePage: React.FC = () => {
     },
     blanched: {
       name: "Whole & Split Blanched Peanuts",
-      hindi: "होल एवं स्प्लिट ब्लैंक्ड मूंगफली",
       image: "/images/blanched-butter-macro.jpg",
       counts: "38/42, 40/50, 50/60 counts/oz (Whole) & Calibrated Splits",
       moisture: "5.0% - 5.5% Max",
@@ -189,7 +186,6 @@ export const MakksHomePage: React.FC = () => {
     },
     inshell: {
       name: "Groundnuts In-Shell & Roasted Kernels",
-      hindi: "साबुत छिलके वाली मूंगफली एवं भुनी हुई",
       image: "/images/peanut-inshell.webp",
       counts: "18/22, 22/26 pods/oz (In-Shell) & 40/50, 50/60 (Roasted)",
       moisture: "8.0% Max (In-Shell) | 2.5% Max (Roasted)",
@@ -209,7 +205,6 @@ export const MakksHomePage: React.FC = () => {
     {
       id: "bold-peanuts",
       name: "Bold Peanuts",
-      hindi: "बोल्ड सींगदाना",
       category: "Raw",
       counts: "38/42, 40/50, 50/60, 60/70 / oz",
       moisture: "7.0% Max",
@@ -220,7 +215,6 @@ export const MakksHomePage: React.FC = () => {
     {
       id: "java-peanuts",
       name: "Java Peanuts",
-      hindi: "जावा मूंगफली",
       category: "Raw",
       counts: "45/55, 50/60, 60/70, 70/80 / oz",
       moisture: "7.0% Max",
@@ -231,7 +225,6 @@ export const MakksHomePage: React.FC = () => {
     {
       id: "whole-blanched",
       name: "Whole Blanched Peanuts",
-      hindi: "होल ब्लैंक्ड मूंगफली",
       category: "Blanched",
       counts: "38/42, 40/50, 50/60 / oz",
       moisture: "5.5% Max",
@@ -242,7 +235,6 @@ export const MakksHomePage: React.FC = () => {
     {
       id: "split-blanched",
       name: "Split Blanched Peanuts",
-      hindi: "स्प्लिट ब्लैंक्ड मूंगफली",
       category: "Blanched",
       counts: "Industrial Splits",
       moisture: "5.5% Max",
@@ -253,7 +245,6 @@ export const MakksHomePage: React.FC = () => {
     {
       id: "inshell-peanuts",
       name: "Groundnuts In-Shell",
-      hindi: "साबुत छिलके वाली मूंगफली",
       category: "Value",
       counts: "18/22, 22/26 pods / oz",
       moisture: "8.0% Max",
@@ -264,7 +255,6 @@ export const MakksHomePage: React.FC = () => {
     {
       id: "roasted-peanuts",
       name: "Roasted Salted Peanuts",
-      hindi: "भुनी हुई नमकीन मूंगफली",
       category: "Value",
       counts: "40/50, 50/60 / oz",
       moisture: "2.5% Max",
@@ -275,7 +265,6 @@ export const MakksHomePage: React.FC = () => {
     {
       id: "peanut-oil-butter",
       name: "Cold-Pressed Oil & Peanut Butter",
-      hindi: "कोल्ड प्रेस्ड मूंगफली तेल",
       category: "Value",
       counts: "100% Pure Natural",
       moisture: "Zero Additives",
@@ -830,14 +819,14 @@ export const MakksHomePage: React.FC = () => {
             {topBanners.map((banner, index) => (
               <div
                 key={index}
-                className="banner-box flex flex-col justify-between"
+                className="banner-box flex flex-col justify-between h-full"
                 style={{
                   backgroundColor: banner.bgColor,
                   borderRadius: '24px',
                   padding: '24px 20px',
                   position: 'relative',
                   overflow: 'hidden',
-                  minHeight: '400px',
+                  minHeight: '430px',
                   boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
                   transition: 'transform 0.3s ease, box-shadow 0.3s ease',
                   display: 'flex',
@@ -854,7 +843,7 @@ export const MakksHomePage: React.FC = () => {
                 }}
               >
                 {/* Top Section: Badge & Image */}
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', width: '100%' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', width: '100%', flexGrow: 1 }}>
                   
                   {/* Category Pill Badge */}
                   <div style={{ width: '100%', display: 'flex', justifyContent: 'center', marginBottom: '16px' }}>
@@ -906,6 +895,12 @@ export const MakksHomePage: React.FC = () => {
                       margin: '0 0 6px',
                       lineHeight: 1.25,
                       letterSpacing: '-0.01em',
+                      minHeight: '48px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      textAlign: 'center',
+                      width: '100%',
                     }}
                   >
                     {banner.title}
@@ -915,9 +910,15 @@ export const MakksHomePage: React.FC = () => {
                     style={{
                       fontSize: '12.5px',
                       color: 'rgba(255,255,255,0.92)',
-                      margin: '0 0 8px',
+                      margin: '0 0 10px',
                       fontWeight: 600,
-                      lineHeight: 1.4,
+                      lineHeight: 1.35,
+                      minHeight: '38px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      textAlign: 'center',
+                      width: '100%',
                     }}
                   >
                     {banner.subtitle}
@@ -926,12 +927,17 @@ export const MakksHomePage: React.FC = () => {
                   <div
                     style={{
                       fontSize: '11.5px',
-                      color: 'rgba(255,255,255,0.82)',
+                      color: 'rgba(255,255,255,0.9)',
                       lineHeight: 1.4,
-                      backgroundColor: 'rgba(0,0,0,0.12)',
-                      padding: '4px 10px',
+                      backgroundColor: 'rgba(0,0,0,0.18)',
+                      padding: '6px 10px',
                       borderRadius: '8px',
                       width: '100%',
+                      minHeight: '46px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      textAlign: 'center',
                     }}
                   >
                     {banner.countText}
@@ -939,7 +945,7 @@ export const MakksHomePage: React.FC = () => {
                 </div>
 
                 {/* Bottom CTA Button: Always at bottom */}
-                <div style={{ marginTop: '22px', display: 'flex', justifyContent: 'center', width: '100%' }}>
+                <div style={{ marginTop: 'auto', paddingTop: '20px', display: 'flex', justifyContent: 'center', width: '100%' }}>
                   <Link
                     href={banner.link}
                     style={{
@@ -1689,12 +1695,9 @@ export const MakksHomePage: React.FC = () => {
               >
                 <div>
                   {/* Top Badge */}
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px' }}>
+                  <div style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', marginBottom: '14px' }}>
                     <span style={{ backgroundColor: '#FAF2E6', color: '#8C4318', fontSize: '11.5px', fontWeight: 600, padding: '4px 10px', borderRadius: '12px', border: '1px solid #f0e2cf' }}>
                       {product.badge}
-                    </span>
-                    <span style={{ fontSize: '12px', color: '#706155', fontWeight: 600 }}>
-                      {product.hindi}
                     </span>
                   </div>
 
@@ -1939,7 +1942,9 @@ export const MakksHomePage: React.FC = () => {
             display: none !important;
           }
           .mobile-nav-toggler {
-            display: block !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
           }
         }
 

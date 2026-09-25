@@ -43,23 +43,23 @@ const CALIBERS: CaliberItem[] = [
     description: 'The crowning jewel of Shivpuri harvest. Largest elongated teardrop kernels with deep red papery skin and commanding crunch.',
   },
   {
-    id: 'bold40',
-    name: 'Bold Peanuts 40/50',
-    shortName: 'Bold Peanuts',
-    caliberBadge: '40/50',
-    countRange: '40–50 Seeds/Ounce',
-    category: 'Standard Export Benchmark',
-    kernelLengthMm: 18.5,
-    oilPercent: 49.0,
+    id: 'tj-peanuts',
+    name: 'TJ Peanuts',
+    shortName: 'TJ Peanuts',
+    caliberBadge: '80/90',
+    countRange: '50/60 • 80/90 Seeds/Ounce',
+    category: 'Confectionery & Snack Roasting',
+    kernelLengthMm: 14.0,
+    oilPercent: 49.5,
     moistureMax: 7.0,
     purityPercent: 99.95,
-    skinColor: 'Rich Russet Red',
-    crunchScore: 9.7,
-    sweetnessScore: 9.2,
-    aromaScore: 9.5,
-    image: '/images/peanut-bold.webp',
-    applications: ['Industrial Snack Roasting', 'Chikki / Peanut Brittle', 'Coated Peanuts', 'Confectionery Bars'],
-    description: 'India’s most exported peanut caliber globally. Uniform elongation, resilient skin adhesion during transport, and balanced nutty richness.',
+    skinColor: 'Smooth Pinkish Red',
+    crunchScore: 9.6,
+    sweetnessScore: 9.7,
+    aromaScore: 9.6,
+    image: '/images/tj-peanuts.webp',
+    applications: ['Confectionery & Chikki / Brittle', 'Coated Peanuts & Snacks', 'High-Yield Peanut Butter', 'Birdfeed Blends'],
+    description: 'Small-to-medium compact Indian peanut kernels with reddish-pink skin and high natural sweetness. Excellent uniform roasting characteristics for confectionery snacks and brittle.',
   },
   {
     id: 'java50',
@@ -195,7 +195,7 @@ export default function InteractiveCaliberStudio() {
 
         {/* Interactive Studio Stage */}
         <div
-          className="p-5 sm:p-9 rounded-3xl"
+          className="p-4 sm:p-9 rounded-2xl sm:rounded-3xl overflow-hidden"
           style={{
             backgroundColor: '#FFFFFF',
             border: '1px solid #EFE4D2',
@@ -294,48 +294,50 @@ export default function InteractiveCaliberStudio() {
             {/* Right 7 Columns: Technical Specifications & Sensory Dials */}
             <div className="lg:col-span-7">
               
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
-                <span style={{ fontSize: '11px', fontWeight: 800, color: '#C88A2E', textTransform: 'uppercase', letterSpacing: '0.12em' }}>
+              <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '8px', marginBottom: '8px' }}>
+                <span style={{ fontSize: '11px', fontWeight: 800, color: '#C88A2E', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
                   {caliber.category}
                 </span>
-                <span style={{ fontSize: '11px', backgroundColor: 'rgba(35, 93, 67, 0.12)', color: '#235D43', fontWeight: 800, padding: '2px 8px', borderRadius: '12px' }}>
+                <span style={{ fontSize: '10.5px', backgroundColor: 'rgba(35, 93, 67, 0.12)', color: '#235D43', fontWeight: 800, padding: '2px 8px', borderRadius: '12px', whiteSpace: 'nowrap' }}>
                   99.95% Purity Graded
                 </span>
               </div>
 
-              <h3 style={{ fontSize: '26px', fontWeight: 900, color: '#2C170A', margin: '2px 0 10px' }}>
+              <h3 style={{ fontSize: 'clamp(20px, 4vw, 26px)', fontWeight: 900, color: '#2C170A', margin: '2px 0 10px', lineHeight: 1.25 }}>
                 {caliber.name}
               </h3>
 
-              <p style={{ fontSize: '14.5px', color: '#5A483D', lineHeight: 1.65, margin: '0 0 24px' }}>
+              <p style={{ fontSize: '14px', color: '#5A483D', lineHeight: 1.6, margin: '0 0 20px' }}>
                 {caliber.description}
               </p>
 
-              {/* 4 Laboratory Metric Circles */}
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '14px', marginBottom: '25px' }}>
+              {/* 4 Laboratory Metric Boxes: 2-column on mobile, 4-column on sm+ */}
+              <div 
+                className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3.5 mb-6"
+              >
                 
-                <div style={{ backgroundColor: '#FAF5EC', padding: '14px 10px', borderRadius: '14px', textAlign: 'center', border: '1px solid #EFE4D2' }}>
-                  <span style={{ fontSize: '10.5px', fontWeight: 800, color: '#776254', textTransform: 'uppercase', display: 'block' }}>Oil Content</span>
-                  <span style={{ fontSize: '19px', fontWeight: 900, color: '#C88A2E', margin: '4px 0 2px', display: 'block' }}>{caliber.oilPercent}%</span>
-                  <span style={{ fontSize: '10px', color: '#887467' }}>Natural Lipids</span>
+                <div style={{ backgroundColor: '#FAF5EC', padding: '12px 8px', borderRadius: '12px', textAlign: 'center', border: '1px solid #EFE4D2' }}>
+                  <span style={{ fontSize: '10px', fontWeight: 800, color: '#776254', textTransform: 'uppercase', display: 'block' }}>Oil Content</span>
+                  <span className="text-[17px] sm:text-[19px] font-black block my-0.5" style={{ color: '#C88A2E' }}>{caliber.oilPercent}%</span>
+                  <span style={{ fontSize: '9.5px', color: '#887467' }}>Natural Lipids</span>
                 </div>
 
-                <div style={{ backgroundColor: '#FAF5EC', padding: '14px 10px', borderRadius: '14px', textAlign: 'center', border: '1px solid #EFE4D2' }}>
-                  <span style={{ fontSize: '10.5px', fontWeight: 800, color: '#776254', textTransform: 'uppercase', display: 'block' }}>Moisture</span>
-                  <span style={{ fontSize: '19px', fontWeight: 900, color: '#235D43', margin: '4px 0 2px', display: 'block' }}>&le; {caliber.moistureMax}%</span>
-                  <span style={{ fontSize: '10px', color: '#887467' }}>Anti-Mould Safe</span>
+                <div style={{ backgroundColor: '#FAF5EC', padding: '12px 8px', borderRadius: '12px', textAlign: 'center', border: '1px solid #EFE4D2' }}>
+                  <span style={{ fontSize: '10px', fontWeight: 800, color: '#776254', textTransform: 'uppercase', display: 'block' }}>Moisture</span>
+                  <span className="text-[17px] sm:text-[19px] font-black block my-0.5" style={{ color: '#235D43' }}>&le; {caliber.moistureMax}%</span>
+                  <span style={{ fontSize: '9.5px', color: '#887467' }}>Anti-Mould Safe</span>
                 </div>
 
-                <div style={{ backgroundColor: '#FAF5EC', padding: '14px 10px', borderRadius: '14px', textAlign: 'center', border: '1px solid #EFE4D2' }}>
-                  <span style={{ fontSize: '10.5px', fontWeight: 800, color: '#776254', textTransform: 'uppercase', display: 'block' }}>Aflatoxin</span>
-                  <span style={{ fontSize: '19px', fontWeight: 900, color: '#8C4318', margin: '4px 0 2px', display: 'block' }}>&lt; 4 PPB</span>
-                  <span style={{ fontSize: '10px', color: '#887467' }}>HPLC EU Standard</span>
+                <div style={{ backgroundColor: '#FAF5EC', padding: '12px 8px', borderRadius: '12px', textAlign: 'center', border: '1px solid #EFE4D2' }}>
+                  <span style={{ fontSize: '10px', fontWeight: 800, color: '#776254', textTransform: 'uppercase', display: 'block' }}>Aflatoxin</span>
+                  <span className="text-[17px] sm:text-[19px] font-black block my-0.5" style={{ color: '#8C4318' }}>&lt; 4 PPB</span>
+                  <span style={{ fontSize: '9.5px', color: '#887467' }}>HPLC EU Standard</span>
                 </div>
 
-                <div style={{ backgroundColor: '#FAF5EC', padding: '14px 10px', borderRadius: '14px', textAlign: 'center', border: '1px solid #EFE4D2' }}>
-                  <span style={{ fontSize: '10.5px', fontWeight: 800, color: '#776254', textTransform: 'uppercase', display: 'block' }}>Sortex Purity</span>
-                  <span style={{ fontSize: '19px', fontWeight: 900, color: '#5C341B', margin: '4px 0 2px', display: 'block' }}>{caliber.purityPercent}%</span>
-                  <span style={{ fontSize: '10px', color: '#887467' }}>Multi-CCD Graded</span>
+                <div style={{ backgroundColor: '#FAF5EC', padding: '12px 8px', borderRadius: '12px', textAlign: 'center', border: '1px solid #EFE4D2' }}>
+                  <span style={{ fontSize: '10px', fontWeight: 800, color: '#776254', textTransform: 'uppercase', display: 'block' }}>Sortex Purity</span>
+                  <span className="text-[17px] sm:text-[19px] font-black block my-0.5" style={{ color: '#5C341B' }}>{caliber.purityPercent}%</span>
+                  <span style={{ fontSize: '9.5px', color: '#887467' }}>Multi-CCD Graded</span>
                 </div>
 
               </div>

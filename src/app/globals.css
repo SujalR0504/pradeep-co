@@ -655,15 +655,21 @@ p, .body-text, .section-desc {
 .contact-master-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  gap: 32px;
+  gap: 36px;
   align-items: start;
   width: 100%;
 }
 
 @media (min-width: 1024px) {
   .contact-master-grid {
-    grid-template-columns: minmax(320px, 0.8fr) minmax(0, 1.2fr);
-    gap: 40px;
+    grid-template-columns: minmax(360px, 0.95fr) minmax(0, 1.15fr);
+    gap: 48px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .contact-master-grid {
+    gap: 56px;
   }
 }
 
@@ -771,5 +777,26 @@ img {
 
 .flex-card-footer {
   margin-top: auto;
+}
+
+/* Perfect Centering for Mobile Navigation Toggler */
+.mobile-nav-toggler,
+button.mobile-nav-toggler,
+div.mobile-nav-toggler {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 1 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  text-align: center !important;
+}
+
+.mobile-nav-toggler i,
+.mobile-nav-toggler svg {
+  display: block !important;
+  margin: auto !important;
+  line-height: 1 !important;
+  flex-shrink: 0 !important;
 }
 

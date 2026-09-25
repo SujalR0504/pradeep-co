@@ -14,7 +14,7 @@ if (typeof window !== "undefined") {
 interface VarietyItem {
   num: string;
   name: string;
-  hindiName: string;
+  hindiName?: string;
   type: string;
   counts: string;
   description: string;
@@ -26,7 +26,6 @@ const VARIETIES: VarietyItem[] = [
   {
     num: "01",
     name: "BOLD",
-    hindiName: "बोल्ड सींगदाना",
     type: "Large Export Caliber",
     counts: "38/42, 40/50, 50/60, 60/70, 70/80 / oz",
     description: "The premier large elongated Indian peanut. Rich reddish skin, high crunch, and balanced oleic acid for roasting and confectionery.",
@@ -36,7 +35,6 @@ const VARIETIES: VarietyItem[] = [
   {
     num: "02",
     name: "JAVA",
-    hindiName: "जावा मूंगफली",
     type: "Spherical Oil Caliber",
     counts: "40/50, 50/60, 60/70, 70/80, 80/90 / oz",
     description: "Round, pink-skinned kernels with 50-52% oil content. Exceptional roasting heat distribution for candy bars and premium paste.",
@@ -46,7 +44,6 @@ const VARIETIES: VarietyItem[] = [
   {
     num: "03",
     name: "BLANCHED",
-    hindiName: "होल एवं स्प्लिट",
     type: "100% Skin-Removed",
     counts: "38/42, 40/50, 50/60 Whole & Splits",
     description: "Ivory-white steam de-skinned whole and halved splits, double-sortex sorted for zero skin specks and immediate food manufacture.",
@@ -56,7 +53,6 @@ const VARIETIES: VarietyItem[] = [
   {
     num: "04",
     name: "RED SKIN",
-    hindiName: "लाल सींगदाना (TJ)",
     type: "Polyphenol Rich",
     counts: "50/60, 60/70, 70/80 / oz",
     description: "Distinct ruby-red testae rich in natural antioxidants. Highly coveted in the Gulf and ASEAN for salted and roasted snack pouches.",
@@ -66,7 +62,6 @@ const VARIETIES: VarietyItem[] = [
   {
     num: "05",
     name: "VIRGINIA",
-    hindiName: "वर्जिनिया मूंगफली",
     type: "Gourmet Shell Pod",
     counts: "18/22, 22/26 Pods / oz",
     description: "Extra-large fibrous shells holding firm sweet kernels. Hand picked selected (HPS) for traditional in-shell roasting and bulk trade.",
@@ -76,7 +71,6 @@ const VARIETIES: VarietyItem[] = [
   {
     num: "06",
     name: "G20",
-    hindiName: "जी-20 वेरायटी",
     type: "High-Yield Export Grade",
     counts: "45/55, 50/60 Counts / oz",
     description: "Celebrated western-belt variety recognized for uniform pod size, high germination vitality, and excellent roasting stability.",
@@ -86,7 +80,6 @@ const VARIETIES: VarietyItem[] = [
   {
     num: "07",
     name: "K6",
-    hindiName: "के-6 वेरायटी",
     type: "Confectionery Caliber",
     counts: "40/50, 50/60 Counts / oz",
     description: "Nutty, high-density peanut kernels ideal for peanut brittle, energy bars, and high-temperature extrusion processing.",
@@ -96,7 +89,6 @@ const VARIETIES: VarietyItem[] = [
   {
     num: "08",
     name: "ORGANIC",
-    hindiName: "जैविक मूंगफली",
     type: "Bio-Certified Origin",
     counts: "Tested Lot-by-Lot / Traceable",
     description: "Grown using traditional zero-synthetic agricultural protocols in certified soil clusters, tested for pesticide MRL compliance.",
@@ -197,9 +189,6 @@ export default function ProductVarietiesSection() {
                   <h3 className="font-serif text-2xl sm:text-3xl text-[#5C341B] font-normal tracking-tight">
                     {v.name}
                   </h3>
-                  <span className="text-xs font-sans text-[#754522]/80">
-                    {v.hindiName}
-                  </span>
                 </div>
 
                 <p className="text-xs font-mono text-[#A4774C] font-semibold">

@@ -186,7 +186,7 @@ export default function NutJourneyPage() {
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#5A3218]/85 via-transparent to-transparent" />
-                  <div className="absolute top-4 left-4 bg-[#5A3218] text-[#FFFDF8] px-3.5 py-1 rounded-full font-mono text-xs font-bold shadow">
+                  <div className="absolute top-3.5 left-3.5 bg-[#5A3218] text-[#FFFDF8] px-2.5 py-0.5 rounded-full font-mono text-[9px] sm:text-[9.5px] font-bold tracking-wider shadow-xs">
                     STEP {step.step}
                   </div>
                   <div className="absolute bottom-4 left-4 right-4 text-[#FFFDF8]">
@@ -199,10 +199,10 @@ export default function NutJourneyPage() {
 
                 {/* Narrative Details (6 cols) */}
                 <div className={`lg:col-span-6 space-y-5 ${idx % 2 === 1 ? "lg:order-1" : "lg:order-2"}`}>
-                  <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs font-mono text-[#7A4824] uppercase tracking-wider font-bold">
-                    <span className="bg-[#5A3218]/10 px-2.5 py-1 rounded-full text-[#5A3218]">STAGE {step.step} {"//"} 08</span>
+                  <div className="flex flex-wrap items-center gap-2 text-[9.5px] sm:text-[10px] font-mono text-[#7A4824] uppercase tracking-wider font-bold">
+                    <span className="bg-[#5A3218]/10 px-2 py-0.5 rounded-full text-[#5A3218] text-[8.5px] sm:text-[9px] tracking-wider">STAGE {step.step} {"//"} 08</span>
                     <span className="hidden sm:inline">•</span>
-                    <span className="text-[#7A4824]">{step.tagline}</span>
+                    <span className="text-[#7A4824] text-[9.5px] sm:text-[10px]">{step.tagline}</span>
                   </div>
 
                   <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-[#2E2117] font-bold leading-tight tracking-tight">
