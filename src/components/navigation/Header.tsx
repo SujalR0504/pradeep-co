@@ -60,39 +60,102 @@ export default function Header() {
               height: '100%',
             }}
           >
-            <div className="top-left">
+            {/* Top Left: Email & Address */}
+            <div className="top-left flex items-center">
               <ul
                 style={{
                   display: 'flex',
                   alignItems: 'center',
-                  gap: '14px',
+                  gap: '16px',
                   listStyle: 'none',
                   margin: 0,
                   padding: 0,
-                  fontSize: '12px',
+                  fontSize: '11.5px',
                   fontWeight: 500,
                   whiteSpace: 'nowrap',
                 }}
               >
-                <li className="hidden lg:flex" style={{ alignItems: 'center', gap: '7px' }}>
-                  <i className="fa fa-map-marker-alt" style={{ color: '#E5A83B', fontSize: '13px' }}></i>
-                  <span style={{ color: '#ffffff' }}>Bhonti, Shivpuri, Madhya Pradesh - 473551, India</span>
-                </li>
-                <li className="hidden md:flex" style={{ alignItems: 'center', gap: '7px' }}>
-                  <i className="fa fa-envelope" style={{ color: '#E5A83B', fontSize: '13px' }}></i>
-                  <a href="mailto:pradeeptradingcomp@gmail.com" style={{ color: '#e0d6cb', textDecoration: 'none' }}>
+                <li className="hidden sm:flex" style={{ alignItems: 'center', gap: '6px' }}>
+                  <i className="fa fa-envelope" style={{ color: '#E5A83B', fontSize: '12px' }}></i>
+                  <a
+                    href="mailto:pradeeptradingcomp@gmail.com"
+                    style={{ color: '#e0d6cb', textDecoration: 'none', transition: 'color 0.2s' }}
+                    onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = '#ffffff')}
+                    onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = '#e0d6cb')}
+                  >
                     pradeeptradingcomp@gmail.com
                   </a>
                 </li>
-                <li style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  <i className="fa fa-phone-alt" style={{ color: '#E5A83B', fontSize: '12px' }}></i>
-                  <a href="tel:+919589790997" style={{ color: '#ffffff', fontWeight: 600, textDecoration: 'none', fontSize: '12px' }}>
-                    +91-9589790997
-                  </a>
+                <li className="hidden lg:flex" style={{ alignItems: 'center', gap: '6px' }}>
+                  <i className="fa fa-map-marker-alt" style={{ color: '#E5A83B', fontSize: '12px' }}></i>
+                  <span style={{ color: '#ffffff' }}>
+                    <span className="hidden xl:inline">Bhonti, Shivpuri, Madhya Pradesh - 473551, India</span>
+                    <span className="inline xl:hidden">Shivpuri, MP - 473551, India</span>
+                  </span>
                 </li>
               </ul>
             </div>
-            <div className="top-right" style={{ display: 'flex', alignItems: 'center', gap: '10px', whiteSpace: 'nowrap' }}>
+
+            {/* Top Mid: Phone Number */}
+            <div className="top-mid flex items-center justify-center">
+              <a
+                href="tel:+919589790997"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  color: '#ffffff',
+                  fontWeight: 700,
+                  textDecoration: 'none',
+                  fontSize: '12px',
+                  backgroundColor: 'rgba(255, 255, 255, 0.08)',
+                  padding: '3px 12px',
+                  borderRadius: '14px',
+                  border: '1px solid rgba(229, 168, 59, 0.35)',
+                  letterSpacing: '0.02em',
+                  transition: 'all 0.2s',
+                  whiteSpace: 'nowrap',
+                }}
+                onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.backgroundColor = 'rgba(229, 168, 59, 0.2)')}
+                onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.backgroundColor = 'rgba(255, 255, 255, 0.08)')}
+              >
+                <i className="fa fa-phone-alt" style={{ color: '#E5A83B', fontSize: '11px' }}></i>
+                <span>+91-9589790997</span>
+              </a>
+            </div>
+
+            {/* Top Right: Request Quote & WhatsApp & Socials */}
+            <div className="top-right" style={{ display: 'flex', alignItems: 'center', gap: '8px', whiteSpace: 'nowrap' }}>
+              {/* Request Quote Button */}
+              <button
+                type="button"
+                onClick={() => handleOpenQuote('Bold Peanuts')}
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '5px',
+                  backgroundColor: '#E5A83B',
+                  color: '#2C170A',
+                  height: '26px',
+                  padding: '0 11px',
+                  borderRadius: '13px',
+                  fontSize: '11px',
+                  fontWeight: 700,
+                  border: 'none',
+                  cursor: 'pointer',
+                  boxShadow: '0 2px 6px rgba(229, 168, 59, 0.3)',
+                  transition: 'background 0.2s',
+                  whiteSpace: 'nowrap',
+                }}
+                onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.backgroundColor = '#f2be60')}
+                onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.backgroundColor = '#E5A83B')}
+                aria-label="Request Quote"
+              >
+                <i className="fa fa-file-invoice" style={{ fontSize: '11px', color: '#2C170A' }}></i>
+                <span>Request Quote</span>
+              </button>
+
+              {/* WhatsApp Button */}
               <a
                 href="https://wa.me/919589790997?text=Hello%20Pradeep%20Trading,%20I%20would%20like%20to%20inquire%20about%20peanut%20export%20specifications."
                 target="_blank"
@@ -114,19 +177,21 @@ export default function Header() {
               >
                 <i className="fab fa-whatsapp" style={{ fontSize: '12px' }}></i> WhatsApp
               </a>
-              <ul className="hidden md:flex" style={{ alignItems: 'center', gap: '12px', listStyle: 'none', margin: 0, padding: 0 }}>
+
+              {/* Social Media Links */}
+              <ul className="hidden md:flex" style={{ alignItems: 'center', gap: '10px', listStyle: 'none', margin: 0, padding: 0 }}>
                 <li>
-                  <a href="#" style={{ color: '#e0d6cb', fontSize: '13.5px', display: 'flex' }} aria-label="LinkedIn">
+                  <a href="#" style={{ color: '#e0d6cb', fontSize: '13px', display: 'flex' }} aria-label="LinkedIn">
                     <span className="fab fa-linkedin-in"></span>
                   </a>
                 </li>
                 <li>
-                  <a href="#" style={{ color: '#e0d6cb', fontSize: '13.5px', display: 'flex' }} aria-label="Twitter">
+                  <a href="#" style={{ color: '#e0d6cb', fontSize: '13px', display: 'flex' }} aria-label="Twitter">
                     <span className="fab fa-twitter"></span>
                   </a>
                 </li>
                 <li>
-                  <a href="#" style={{ color: '#e0d6cb', fontSize: '13.5px', display: 'flex' }} aria-label="Facebook">
+                  <a href="#" style={{ color: '#e0d6cb', fontSize: '13px', display: 'flex' }} aria-label="Facebook">
                     <span className="fab fa-facebook-f"></span>
                   </a>
                 </li>
