@@ -514,6 +514,32 @@ p, .body-text, .section-desc {
   animation: podSwaySlow 8.5s ease-in-out infinite;
 }
 
+@keyframes burstingPeanutFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translateY(-16px) rotate(5deg) scale(1.03);
+  }
+}
+
+@keyframes burstingPeanutFloatAlt {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translateY(14px) rotate(-6deg) scale(0.98);
+  }
+}
+
+.animate-bursting-peanut {
+  animation: burstingPeanutFloat 6.5s ease-in-out infinite;
+}
+
+.animate-bursting-peanut-alt {
+  animation: burstingPeanutFloatAlt 8s ease-in-out infinite;
+}
+
 .animate-marquee {
   display: flex;
   width: max-content;

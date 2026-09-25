@@ -408,7 +408,7 @@ export const MakksHomePage: React.FC = () => {
           }}
         />
 
-        {/* Floating Parallax Peanut Cutouts (ANIMATIONS - Kept subtle at 0.8-0.85 opacity, no extra added) */}
+        {/* Floating Parallax Peanut Cutouts (ANIMATIONS - Dynamic 3D Bursting & Single Cutouts) */}
         <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 1, overflow: 'hidden' }}>
           
           {/* 1. Large Peanut Pod Floating Top-Left */}
@@ -426,14 +426,34 @@ export const MakksHomePage: React.FC = () => {
             <img src="/images/single-pod-cutout.png" alt="Floating Peanut Pod" style={{ width: '100%', transform: 'rotate(-10deg)' }} />
           </div>
 
-          {/* 2. Red Kernel Floating Right-Middle */}
+          {/* 2. Bursting Cracking Peanut Pod with Flying Kernels & Shells (Top-Right / Mid) - Small Size */}
+          <div
+            className="animate-bursting-peanut hidden sm:block"
+            style={{
+              position: 'absolute',
+              right: '6%',
+              top: '16%',
+              maxWidth: '110px',
+              opacity: 0.9,
+              filter: 'drop-shadow(0 18px 24px rgba(92, 52, 27, 0.22))',
+              zIndex: 2,
+            }}
+          >
+            <img
+              src="/images/bursting-peanuts-cutout.webp"
+              alt="Bursting Cracking Peanuts with Flying Kernels"
+              style={{ width: '100%', transform: 'rotate(6deg)' }}
+            />
+          </div>
+
+          {/* 3. Red Kernel Floating Right-Middle */}
           <div
             className="animate-peanut-float"
             style={{
               position: 'absolute',
               right: '5%',
-              top: '26%',
-              maxWidth: '80px',
+              top: '38%',
+              maxWidth: '75px',
               opacity: 0.82,
               filter: 'drop-shadow(0 18px 24px rgba(100, 35, 15, 0.22))',
             }}
@@ -441,14 +461,34 @@ export const MakksHomePage: React.FC = () => {
             <img src="/images/red-kernel-cutout.png" alt="Floating Singdana Kernel" style={{ width: '100%', transform: 'rotate(20deg)' }} />
           </div>
 
-          {/* 3. Split Blanched Kernel Floating Bottom-Center */}
+          {/* 4. Bursting Peanuts Floating Lower-Left - Small Size */}
+          <div
+            className="animate-bursting-peanut-alt hidden lg:block"
+            style={{
+              position: 'absolute',
+              left: '3%',
+              bottom: '14%',
+              maxWidth: '95px',
+              opacity: 0.85,
+              filter: 'drop-shadow(0 16px 22px rgba(92, 52, 27, 0.18))',
+              zIndex: 2,
+            }}
+          >
+            <img
+              src="/images/bursting-peanuts-cutout.webp"
+              alt="Bursting Cracking Peanuts with Flying Kernels"
+              style={{ width: '100%', transform: 'rotate(-10deg)' }}
+            />
+          </div>
+
+          {/* 5. Split Blanched Kernel Floating Bottom-Center */}
           <div
             className="animate-peanut-float-alt"
             style={{
               position: 'absolute',
               left: '42%',
               bottom: '6%',
-              maxWidth: '70px',
+              maxWidth: '65px',
               opacity: 0.8,
               filter: 'drop-shadow(0 15px 20px rgba(90, 50, 20, 0.16))',
             }}
@@ -456,14 +496,14 @@ export const MakksHomePage: React.FC = () => {
             <img src="/images/split-cotyledon-cutout.png" alt="Floating Peanut Split" style={{ width: '100%', transform: 'rotate(8deg)' }} />
           </div>
 
-          {/* 4. Natural Single Seed Floating Top-Right */}
+          {/* 6. Natural Single Seed Floating Top-Center/Right */}
           <div
             className="animate-peanut-float"
             style={{
               position: 'absolute',
-              right: '24%',
+              right: '25%',
               top: '8%',
-              maxWidth: '60px',
+              maxWidth: '55px',
               opacity: 0.78,
               filter: 'drop-shadow(0 12px 18px rgba(80, 40, 10, 0.18))',
             }}
