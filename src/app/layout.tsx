@@ -3,6 +3,10 @@ import './globals.css';
 import Header from '@/components/navigation/Header';
 import Footer from '@/components/navigation/Footer';
 import QuoteModal from '@/components/ui/QuoteModal';
+import SearchModal from '@/components/ui/SearchModal';
+import BrochureModal from '@/components/ui/BrochureModal';
+import QuickSpecsModal from '@/components/ui/QuickSpecsModal';
+import SideFloatingDock from '@/components/navigation/SideFloatingDock';
 
 export const viewport: Viewport = {
   themeColor: '#5C341B',
@@ -11,8 +15,8 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'Pradeep Trading Company - Benchmark Indian Peanut & Groundnut Exporter',
-  description: 'M/s Pradeep Trading Company - Sourcing, processing, and exporting double-sortex Bold, Java, Blanched, and In-Shell peanuts from Shivpuri, Madhya Pradesh, India.',
+  title: 'Pradeep Trading Company - Trusted Peanut Exporter | From Us to World',
+  description: 'M/s Pradeep Trading Company - Sourcing, Buhler Sortex processing, and exporting double-sortex Bold, Java, Blanched, and In-Shell peanuts from Shivpuri, Madhya Pradesh, India.',
   icons: {
     icon: '/images/logo/logo.png',
   },
@@ -42,17 +46,10 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <QuoteModal />
-        {/* Global Responsive Floating WhatsApp Button */}
-        <a
-          href="https://wa.me/919589790997?text=Hello%20Pradeep%20Trading%20Company,%20I%20would%20like%20to%20inquire%20about%20peanut%20export%20specifications."
-          target="_blank"
-          rel="noopener noreferrer"
-          className="floating-whatsapp-btn"
-          aria-label="Chat with Export Desk on WhatsApp"
-        >
-          <i className="fab fa-whatsapp"></i>
-          <span className="floating-whatsapp-text">Chat with Export Desk</span>
-        </a>
+        <SearchModal />
+        <BrochureModal />
+        <QuickSpecsModal />
+        <SideFloatingDock />
       </body>
     </html>
   );
