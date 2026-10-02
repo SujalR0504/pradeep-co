@@ -1,16 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
-import { Phone, Mail, FileText, Download, Send, ExternalLink, ChevronRight, ChevronLeft } from "lucide-react";
+import Link from "next/link";
+import { Phone, Mail, Download, ChevronRight, ChevronLeft } from "lucide-react";
 
 export default function SideFloatingDock() {
   const [isCollapsed, setIsCollapsed] = useState(false);
-
-  const handleOpenQuote = () => {
-    if (typeof window !== "undefined") {
-      window.dispatchEvent(new CustomEvent("open-quote-modal", { detail: "Export Inquiry" }));
-    }
-  };
 
   const handleOpenBrochure = () => {
     if (typeof window !== "undefined") {
@@ -31,104 +26,100 @@ export default function SideFloatingDock() {
         <button
           onClick={() => setIsCollapsed(!isCollapsed)}
           aria-label={isCollapsed ? "Expand Quick Actions Dock" : "Collapse Quick Actions Dock"}
-          className="bg-[#361C0D] text-[#E5A83B] hover:text-white p-1 rounded-l-md border-l border-t border-b border-[#C88A2E]/40 shadow-lg cursor-pointer transition-colors"
-          style={{ width: "18px", height: "42px", display: "flex", alignItems: "center", justifyContent: "center" }}
+          className="bg-[#E5A83B] text-[#2C170A] hover:bg-[#ffffff] hover:text-[#2C170A] p-1 rounded-l-md border-l border-t border-b border-[#2C170A]/20 shadow-xl cursor-pointer transition-colors"
+          style={{ width: "18px", height: "46px", display: "flex", alignItems: "center", justifyContent: "center" }}
         >
-          {isCollapsed ? <ChevronLeft size={14} /> : <ChevronRight size={14} />}
+          {isCollapsed ? <ChevronLeft size={16} strokeWidth={2.8} /> : <ChevronRight size={16} strokeWidth={2.8} />}
         </button>
 
-        {/* Vertical Icon Stack */}
+        {/* Vertical Icon Stack - High Contrast Vibrant Gold Single Color Palette */}
         <div
-          className="flex flex-col rounded-l-2xl overflow-hidden shadow-2xl border-l border-t border-b border-[#C88A2E]/30"
+          className="flex flex-col rounded-l-2xl overflow-hidden shadow-2xl border-l border-t border-b border-[#C88A2E]"
           style={{
-            backgroundColor: "#2C170A",
-            backdropFilter: "blur(8px)",
+            backgroundColor: "#E5A83B",
+            boxShadow: "0 10px 35px rgba(0, 0, 0, 0.45)",
           }}
         >
-          {/* 1. WHATSAPP (Priority #1) */}
+          {/* 1. CONTACT US (First) */}
+          <Link
+            href="/contact"
+            aria-label="Contact Us"
+            className="group relative flex items-center justify-center w-12 h-12 bg-[#E5A83B] text-[#2C170A] hover:bg-[#2C170A] hover:text-[#E5A83B] transition-all"
+            style={{ borderBottom: "1px solid rgba(44, 23, 10, 0.18)" }}
+          >
+            <Phone size={20} strokeWidth={2.5} style={{ color: "inherit" }} />
+            <span className="pointer-events-none absolute right-full mr-3 whitespace-nowrap rounded-lg bg-[#1a0e06] text-white px-3 py-1.5 text-xs font-semibold shadow-xl opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all border border-[#C88A2E]/50">
+              Contact Us (+91-9589790997)
+            </span>
+          </Link>
+
+          {/* 2. WHATSAPP */}
           <a
             href="https://wa.me/919589790997?text=Hello%20Pradeep%20Trading%20Company,%20I%20would%20like%20to%20inquire%20about%20peanut%20export%20specifications%20and%20container%20pricing."
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Chat with Export Desk on WhatsApp"
-            className="group relative flex items-center justify-center w-12 h-12 bg-[#25D366] text-white hover:bg-[#20ba59] transition-all"
-            style={{ borderBottom: "1px solid rgba(255,255,255,0.12)" }}
+            aria-label="Chat on WhatsApp"
+            className="group relative flex items-center justify-center w-12 h-12 bg-[#E5A83B] text-[#2C170A] hover:bg-[#2C170A] hover:text-[#E5A83B] transition-all"
+            style={{ borderBottom: "1px solid rgba(44, 23, 10, 0.18)" }}
           >
-            <i className="fab fa-whatsapp text-xl"></i>
-            {/* Tooltip */}
-            <span className="pointer-events-none absolute right-full mr-3 whitespace-nowrap rounded-lg bg-[#1a0e06] text-white px-3 py-1.5 text-xs font-semibold shadow-xl opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all border border-[#C88A2E]/40">
-              WhatsApp Export Desk (+91-9589790997)
+            <i className="fab fa-whatsapp" style={{ fontSize: "22px", color: "inherit" }}></i>
+            <span className="pointer-events-none absolute right-full mr-3 whitespace-nowrap rounded-lg bg-[#1a0e06] text-white px-3 py-1.5 text-xs font-semibold shadow-xl opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all border border-[#C88A2E]/50">
+              WhatsApp (+91-9589790997)
             </span>
           </a>
 
-          {/* 2. REQUEST QUOTE (Priority #2) */}
-          <button
-            onClick={handleOpenQuote}
-            aria-label="Request Fast Export Container Quote"
-            className="group relative flex items-center justify-center w-12 h-12 bg-[#E5A83B] text-[#2C170A] hover:bg-[#f0be62] transition-all cursor-pointer"
-            style={{ borderBottom: "1px solid rgba(255,255,255,0.12)" }}
-          >
-            <FileText size={20} strokeWidth={2.2} />
-            {/* Tooltip */}
-            <span className="pointer-events-none absolute right-full mr-3 whitespace-nowrap rounded-lg bg-[#1a0e06] text-white px-3 py-1.5 text-xs font-semibold shadow-xl opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all border border-[#C88A2E]/40">
-              Request Fast Quote
-            </span>
-          </button>
-
-          {/* 3. DOWNLOAD BROCHURE (Priority #3) */}
-          <button
-            onClick={handleOpenBrochure}
-            aria-label="Download 2026 Export Product Brochure"
-            className="group relative flex items-center justify-center w-12 h-12 bg-[#5C341B] text-white hover:bg-[#784323] transition-all cursor-pointer"
-            style={{ borderBottom: "1px solid rgba(255,255,255,0.12)" }}
-          >
-            <Download size={19} strokeWidth={2.2} />
-            {/* Tooltip */}
-            <span className="pointer-events-none absolute right-full mr-3 whitespace-nowrap rounded-lg bg-[#1a0e06] text-white px-3 py-1.5 text-xs font-semibold shadow-xl opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all border border-[#C88A2E]/40">
-              Download Export Brochure
-            </span>
-          </button>
-
-          {/* 4. CALL DIRECT */}
-          <a
-            href="tel:+919589790997"
-            aria-label="Call Pradeep Trading Company"
-            className="group relative flex items-center justify-center w-12 h-12 text-[#E5A83B] hover:bg-white/10 transition-all"
-            style={{ borderBottom: "1px solid rgba(255,255,255,0.12)" }}
-          >
-            <Phone size={18} strokeWidth={2} />
-            {/* Tooltip */}
-            <span className="pointer-events-none absolute right-full mr-3 whitespace-nowrap rounded-lg bg-[#1a0e06] text-white px-3 py-1.5 text-xs font-semibold shadow-xl opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all border border-[#C88A2E]/40">
-              Direct Call (+91-9589790997)
-            </span>
-          </a>
-
-          {/* 5. EMAIL DIRECT */}
+          {/* 3. EMAIL */}
           <a
             href="mailto:pradeeptradingcomp@gmail.com"
-            aria-label="Email Pradeep Trading Company"
-            className="group relative flex items-center justify-center w-12 h-12 text-white/90 hover:bg-white/10 transition-all"
-            style={{ borderBottom: "1px solid rgba(255,255,255,0.12)" }}
+            aria-label="Email Pradeep Trading"
+            className="group relative flex items-center justify-center w-12 h-12 bg-[#E5A83B] text-[#2C170A] hover:bg-[#2C170A] hover:text-[#E5A83B] transition-all"
+            style={{ borderBottom: "1px solid rgba(44, 23, 10, 0.18)" }}
           >
-            <Mail size={18} strokeWidth={2} />
-            {/* Tooltip */}
-            <span className="pointer-events-none absolute right-full mr-3 whitespace-nowrap rounded-lg bg-[#1a0e06] text-white px-3 py-1.5 text-xs font-semibold shadow-xl opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all border border-[#C88A2E]/40">
-              pradeeptradingcomp@gmail.com
+            <Mail size={20} strokeWidth={2.5} style={{ color: "inherit" }} />
+            <span className="pointer-events-none absolute right-full mr-3 whitespace-nowrap rounded-lg bg-[#1a0e06] text-white px-3 py-1.5 text-xs font-semibold shadow-xl opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all border border-[#C88A2E]/50">
+              Email (pradeeptradingcomp@gmail.com)
             </span>
           </a>
 
-          {/* 6. LINKEDIN SOCIAL */}
+          {/* 4. BROCHURE */}
+          <button
+            onClick={handleOpenBrochure}
+            aria-label="Download Export Brochure"
+            className="group relative flex items-center justify-center w-12 h-12 bg-[#E5A83B] text-[#2C170A] hover:bg-[#2C170A] hover:text-[#E5A83B] transition-all cursor-pointer border-none"
+            style={{ borderBottom: "1px solid rgba(44, 23, 10, 0.18)" }}
+          >
+            <Download size={20} strokeWidth={2.5} style={{ color: "inherit" }} />
+            <span className="pointer-events-none absolute right-full mr-3 whitespace-nowrap rounded-lg bg-[#1a0e06] text-white px-3 py-1.5 text-xs font-semibold shadow-xl opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all border border-[#C88A2E]/50">
+              Download Brochure
+            </span>
+          </button>
+
+          {/* 5. INSTAGRAM (IG) */}
           <a
-            href="https://linkedin.com"
+            href="https://instagram.com"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Pradeep Trading on LinkedIn"
-            className="group relative flex items-center justify-center w-12 h-12 text-[#0A66C2] hover:bg-white/10 transition-all"
+            aria-label="Instagram"
+            className="group relative flex items-center justify-center w-12 h-12 bg-[#E5A83B] text-[#2C170A] hover:bg-[#2C170A] hover:text-[#E5A83B] transition-all"
+            style={{ borderBottom: "1px solid rgba(44, 23, 10, 0.18)" }}
           >
-            <i className="fab fa-linkedin-in text-lg"></i>
-            {/* Tooltip */}
-            <span className="pointer-events-none absolute right-full mr-3 whitespace-nowrap rounded-lg bg-[#1a0e06] text-white px-3 py-1.5 text-xs font-semibold shadow-xl opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all border border-[#C88A2E]/40">
-              Pradeep Trading on LinkedIn
+            <i className="fab fa-instagram" style={{ fontSize: "20px", color: "inherit" }}></i>
+            <span className="pointer-events-none absolute right-full mr-3 whitespace-nowrap rounded-lg bg-[#1a0e06] text-white px-3 py-1.5 text-xs font-semibold shadow-xl opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all border border-[#C88A2E]/50">
+              Follow on Instagram
+            </span>
+          </a>
+
+          {/* 6. FACEBOOK (FB) */}
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+            className="group relative flex items-center justify-center w-12 h-12 bg-[#E5A83B] text-[#2C170A] hover:bg-[#2C170A] hover:text-[#E5A83B] transition-all"
+          >
+            <i className="fab fa-facebook-f" style={{ fontSize: "19px", color: "inherit" }}></i>
+            <span className="pointer-events-none absolute right-full mr-3 whitespace-nowrap rounded-lg bg-[#1a0e06] text-white px-3 py-1.5 text-xs font-semibold shadow-xl opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all border border-[#C88A2E]/50">
+              Follow on Facebook
             </span>
           </a>
         </div>

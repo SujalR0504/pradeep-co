@@ -57,9 +57,9 @@ export const COMPANY_INFO: CompanyInfo = {
   shortName: "Pradeep Trading",
   tagline: "INDIA'S BENCHMARK GROUNDNUT & PEANUT EXPORTER",
   supportingLine:
-    "65+ years of Indian farming heritage combined with 4 MT/hour double-sortex processing to supply premium peanuts across 35+ global destinations.",
+    "29+ years of Indian farming heritage combined with 4 MT/hour double-sortex processing to supply premium peanuts across 35+ global destinations.",
   heritage: {
-    yearsOfExpertise: "65+ Years",
+    yearsOfExpertise: "29+ Years",
     processingCapacity: "4 Metric Tons / Hour",
     annualVolume: "50,000+ Metric Tons",
     countriesExported: "35+ Countries",

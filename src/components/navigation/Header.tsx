@@ -3,7 +3,22 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, Search, Download, FileText, Phone, Mail, X } from "lucide-react";
+import {
+  Menu,
+  Search,
+  Download,
+  FileText,
+  Phone,
+  Mail,
+  X,
+  Home,
+  Building2,
+  Package,
+  Factory,
+  ShieldCheck,
+  Leaf,
+  PhoneCall,
+} from "lucide-react";
 
 export default function Header() {
   const pathname = usePathname();
@@ -37,16 +52,16 @@ export default function Header() {
   };
 
   const leftNavItems = [
-    { label: "Home", href: "/" },
-    { label: "About Us", href: "/about" },
-    { label: "Our Quality", href: "/#pradeep-advantage" },
-    { label: "Process", href: "/nut-journey" },
+    { label: "Home", href: "/", icon: Home },
+    { label: "About Us", href: "/about", icon: Building2 },
+    { label: "Products", href: "/products", icon: Package },
   ];
 
   const rightNavItems = [
-    { label: "Sustainability", href: "/about#sustainability" },
-    { label: "Download Brochure", href: "#", isBrochure: true },
-    { label: "Contact", href: "/contact" },
+    { label: "Process", href: "/nut-journey", icon: Factory },
+    { label: "Our Quality", href: "/#pradeep-advantage", icon: ShieldCheck },
+    { label: "Sustainability", href: "/about#sustainability", icon: Leaf },
+    { label: "Contact Us", href: "/contact", icon: PhoneCall },
   ];
 
   return (
@@ -60,16 +75,18 @@ export default function Header() {
           fontFamily: "'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
         }}
       >
-        {/* ROW 1: Top Information Bar (40px) */}
+        {/* ROW 1: Top Information Bar */}
         <div
           className="header-top"
           style={{
             backgroundColor: "#2C170A",
             color: "#ffffff",
-            minHeight: "38px",
-            borderBottom: "1px solid rgba(200, 138, 46, 0.25)",
+            minHeight: "48px",
+            borderTop: "2px solid #C88A2E",
+            borderBottom: "2px solid #C88A2E",
             display: "flex",
             alignItems: "center",
+            padding: "6px 0",
           }}
         >
           <div
@@ -91,17 +108,17 @@ export default function Header() {
                 style={{
                   display: "flex",
                   alignItems: "center",
-                  gap: "18px",
+                  gap: "22px",
                   listStyle: "none",
                   margin: 0,
                   padding: 0,
-                  fontSize: "11.5px",
+                  fontSize: "13.5px",
                   fontWeight: 500,
                   whiteSpace: "nowrap",
                 }}
               >
-                <li className="hidden sm:flex" style={{ alignItems: "center", gap: "6px" }}>
-                  <i className="fa fa-envelope" style={{ color: "#E5A83B", fontSize: "11px" }}></i>
+                <li className="hidden sm:flex" style={{ alignItems: "center", gap: "7px" }}>
+                  <i className="fa fa-envelope" style={{ color: "#E5A83B", fontSize: "13px" }}></i>
                   <a
                     href="mailto:pradeeptradingcomp@gmail.com"
                     style={{ color: "#e3d7cc", textDecoration: "none", transition: "color 0.2s" }}
@@ -111,8 +128,8 @@ export default function Header() {
                     pradeeptradingcomp@gmail.com
                   </a>
                 </li>
-                <li className="hidden xl:flex" style={{ alignItems: "center", gap: "6px" }}>
-                  <i className="fa fa-map-marker-alt" style={{ color: "#E5A83B", fontSize: "11px" }}></i>
+                <li className="hidden xl:flex" style={{ alignItems: "center", gap: "7px" }}>
+                  <i className="fa fa-map-marker-alt" style={{ color: "#E5A83B", fontSize: "13px" }}></i>
                   <span style={{ color: "#e3d7cc" }}>
                     Bhonti, Shivpuri, Madhya Pradesh - 473551, India
                   </span>
@@ -127,14 +144,14 @@ export default function Header() {
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
-                  gap: "6px",
+                  gap: "7px",
                   color: "#ffffff",
                   fontWeight: 700,
                   textDecoration: "none",
-                  fontSize: "11.5px",
+                  fontSize: "13.5px",
                   backgroundColor: "rgba(255, 255, 255, 0.08)",
-                  padding: "3px 12px",
-                  borderRadius: "14px",
+                  padding: "4px 14px",
+                  borderRadius: "16px",
                   border: "1px solid rgba(229, 168, 59, 0.35)",
                   transition: "all 0.2s",
                   whiteSpace: "nowrap",
@@ -146,13 +163,13 @@ export default function Header() {
                   (e.currentTarget as HTMLElement).style.backgroundColor = "rgba(255, 255, 255, 0.08)";
                 }}
               >
-                <i className="fa fa-phone-alt" style={{ color: "#E5A83B", fontSize: "10.5px" }}></i>
+                <i className="fa fa-phone-alt" style={{ color: "#E5A83B", fontSize: "12px" }}></i>
                 <span>+91-9589790997</span>
               </a>
             </div>
 
             {/* Top Right: Priorities: WhatsApp, Brochure & Quote */}
-            <div className="top-right" style={{ display: "flex", alignItems: "center", gap: "8px", whiteSpace: "nowrap" }}>
+            <div className="top-right" style={{ display: "flex", alignItems: "center", gap: "10px", whiteSpace: "nowrap" }}>
               {/* WhatsApp Button */}
               <a
                 href="https://wa.me/919589790997?text=Hello%20Pradeep%20Trading,%20I%20would%20like%20to%20inquire%20about%20peanut%20export%20specifications."
@@ -161,19 +178,19 @@ export default function Header() {
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
-                  gap: "5px",
+                  gap: "6px",
                   backgroundColor: "#25D366",
                   color: "#ffffff",
-                  height: "26px",
-                  padding: "0 10px",
-                  borderRadius: "13px",
-                  fontSize: "11px",
+                  height: "30px",
+                  padding: "0 13px",
+                  borderRadius: "15px",
+                  fontSize: "13px",
                   fontWeight: 700,
                   textDecoration: "none",
                   boxShadow: "0 2px 6px rgba(37, 211, 102, 0.25)",
                 }}
               >
-                <i className="fab fa-whatsapp" style={{ fontSize: "12px" }}></i>
+                <i className="fab fa-whatsapp" style={{ fontSize: "14px" }}></i>
                 <span className="hidden sm:inline">WhatsApp</span>
               </a>
 
@@ -184,13 +201,13 @@ export default function Header() {
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
-                  gap: "5px",
+                  gap: "6px",
                   backgroundColor: "#5C341B",
                   color: "#ffffff",
-                  height: "26px",
-                  padding: "0 11px",
-                  borderRadius: "13px",
-                  fontSize: "11px",
+                  height: "30px",
+                  padding: "0 13px",
+                  borderRadius: "15px",
+                  fontSize: "13px",
                   fontWeight: 700,
                   border: "1px solid rgba(229, 168, 59, 0.4)",
                   cursor: "pointer",
@@ -201,7 +218,7 @@ export default function Header() {
                 onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.backgroundColor = "#5C341B")}
                 aria-label="Download Export Brochure"
               >
-                <Download size={11} style={{ color: "#E5A83B" }} />
+                <Download size={13} style={{ color: "#E5A83B" }} />
                 <span className="hidden sm:inline">Brochure</span>
               </button>
 
@@ -212,13 +229,13 @@ export default function Header() {
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
-                  gap: "5px",
+                  gap: "6px",
                   backgroundColor: "#E5A83B",
                   color: "#2C170A",
-                  height: "26px",
-                  padding: "0 12px",
-                  borderRadius: "13px",
-                  fontSize: "11px",
+                  height: "30px",
+                  padding: "0 15px",
+                  borderRadius: "15px",
+                  fontSize: "13px",
                   fontWeight: 800,
                   border: "none",
                   cursor: "pointer",
@@ -230,7 +247,7 @@ export default function Header() {
                 onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.backgroundColor = "#E5A83B")}
                 aria-label="Request Fast Quote"
               >
-                <FileText size={11} style={{ color: "#2C170A" }} />
+                <FileText size={13} style={{ color: "#2C170A" }} />
                 <span>Request Quote</span>
               </button>
             </div>
@@ -271,15 +288,51 @@ export default function Header() {
                 style={{
                   display: "flex",
                   alignItems: "center",
-                  gap: "28px",
+                  gap: "clamp(12px, 1.4vw, 22px)",
                   listStyle: "none",
                   margin: 0,
                   padding: 0,
                   whiteSpace: "nowrap",
                 }}
               >
+                {/* 1. Search First */}
+                <li style={{ padding: 0, margin: 0 }}>
+                  <button
+                    type="button"
+                    onClick={handleOpenSearch}
+                    aria-label="Search"
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "6px",
+                      backgroundColor: "#FAF2E6",
+                      color: "#5C341B",
+                      border: "1px solid #e2d2bd",
+                      borderRadius: "20px",
+                      padding: "6px 14px",
+                      fontSize: "15px",
+                      fontWeight: 700,
+                      cursor: "pointer",
+                      transition: "all 0.2s ease",
+                    }}
+                    onMouseEnter={(e) => {
+                      (e.currentTarget as HTMLElement).style.backgroundColor = "#5C341B";
+                      (e.currentTarget as HTMLElement).style.color = "#ffffff";
+                    }}
+                    onMouseLeave={(e) => {
+                      (e.currentTarget as HTMLElement).style.backgroundColor = "#FAF2E6";
+                      (e.currentTarget as HTMLElement).style.color = "#5C341B";
+                    }}
+                  >
+                    <Search size={15} style={{ color: "currentColor" }} />
+                    <span>Search</span>
+                  </button>
+                </li>
+
+                {/* 2. Home, 3. About Us, 4. Products */}
                 {leftNavItems.map((item) => {
                   const isActive = item.href === "/" ? pathname === "/" : pathname?.startsWith(item.href);
+                  const Icon = item.icon;
                   return (
                     <li key={item.label} style={{ padding: 0, margin: 0 }}>
                       <Link
@@ -287,11 +340,14 @@ export default function Header() {
                         style={{
                           color: isActive ? "#8C4318" : "#361C0D",
                           textDecoration: "none",
-                          fontSize: "14.5px",
+                          fontSize: "15.5px",
                           fontWeight: 700,
                           letterSpacing: "-0.01em",
                           borderBottom: isActive ? "2px solid #C88A2E" : "2px solid transparent",
                           paddingBottom: "4px",
+                          display: "inline-flex",
+                          alignItems: "center",
+                          gap: "6px",
                           transition: "color 0.2s, border-color 0.2s",
                         }}
                         onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "#8C4318")}
@@ -299,7 +355,8 @@ export default function Header() {
                           if (!isActive) (e.currentTarget as HTMLElement).style.color = "#361C0D";
                         }}
                       >
-                        {item.label}
+                        <Icon size={15} style={{ color: isActive ? "#8C4318" : "#C88A2E" }} />
+                        <span>{item.label}</span>
                       </Link>
                     </li>
                   );
@@ -310,7 +367,7 @@ export default function Header() {
             {/* CENTER BRAND LOGO (Enlarged & Centered, Premium Reflection) */}
             <div
               style={{
-                padding: "0 24px",
+                padding: "0 20px",
                 flexShrink: 0,
                 textAlign: "center",
                 display: "flex",
@@ -343,7 +400,7 @@ export default function Header() {
                     src="/images/logo/logo.png"
                     alt="Pradeep Trading Company - Trusted Peanut Exporter"
                     style={{
-                      height: isSticky ? "60px" : "74px",
+                      height: isSticky ? "58px" : "72px",
                       width: "auto",
                       objectFit: "contain",
                       transition: "height 0.3s ease-out",
@@ -368,77 +425,60 @@ export default function Header() {
                     style={{
                       display: "inline-flex",
                       alignItems: "center",
+                      justifyContent: "center",
                       gap: "4px",
-                      fontSize: "9.5px",
+                      fontSize: isSticky ? "9px" : "10px",
                       fontWeight: 800,
-                      color: "#C88A2E",
-                      letterSpacing: "0.14em",
+                      color: "#2C170A",
+                      background: "linear-gradient(135deg, #F5D38A 0%, #D49B35 100%)",
+                      padding: isSticky ? "2px 8px" : "3px 12px",
+                      borderRadius: "12px",
+                      letterSpacing: "0.12em",
                       textTransform: "uppercase",
+                      boxShadow: "0 2px 8px rgba(200, 138, 46, 0.35)",
+                      border: "1px solid #C88A2E",
+                      marginTop: "3px",
+                      whiteSpace: "nowrap",
                     }}
                   >
-                    Trusted Peanut Exporter
+                    ★ TRUSTED PEANUT EXPORTER ★
                   </span>
                 </div>
               </Link>
             </div>
 
-            {/* DESKTOP RIGHT NAVIGATION LINKS + SEARCH */}
+            {/* DESKTOP RIGHT NAVIGATION LINKS */}
             <nav className="hidden lg:flex items-center justify-start" style={{ flex: "1 1 0" }}>
               <ul
                 style={{
                   display: "flex",
                   alignItems: "center",
-                  gap: "24px",
+                  gap: "clamp(12px, 1.4vw, 22px)",
                   listStyle: "none",
                   margin: 0,
                   padding: 0,
                   whiteSpace: "nowrap",
                 }}
               >
+                {/* 5. Process, 6. Our Quality, 7. Sustainability, 8. Contact Us */}
                 {rightNavItems.map((item) => {
-                  if (item.isBrochure) {
-                    return (
-                      <li key={item.label}>
-                        <button
-                          type="button"
-                          onClick={handleOpenBrochure}
-                          style={{
-                            background: "none",
-                            border: "none",
-                            cursor: "pointer",
-                            padding: "0 0 4px",
-                            margin: 0,
-                            color: "#361C0D",
-                            fontSize: "14.5px",
-                            fontWeight: 700,
-                            letterSpacing: "-0.01em",
-                            display: "inline-flex",
-                            alignItems: "center",
-                            gap: "5px",
-                            transition: "color 0.2s",
-                          }}
-                          onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "#8C4318")}
-                          onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "#361C0D")}
-                        >
-                          <Download size={14} style={{ color: "#C88A2E" }} />
-                          <span>{item.label}</span>
-                        </button>
-                      </li>
-                    );
-                  }
                   const isActive = pathname?.startsWith(item.href);
+                  const Icon = item.icon;
                   return (
-                    <li key={item.label}>
+                    <li key={item.label} style={{ padding: 0, margin: 0 }}>
                       <Link
                         href={item.href}
                         style={{
                           color: isActive ? "#8C4318" : "#361C0D",
                           textDecoration: "none",
-                          fontSize: "14.5px",
+                          fontSize: "15.5px",
                           fontWeight: 700,
                           letterSpacing: "-0.01em",
                           borderBottom: isActive ? "2px solid #C88A2E" : "2px solid transparent",
                           paddingBottom: "4px",
+                          display: "inline-flex",
+                          alignItems: "center",
+                          gap: "6px",
                           transition: "color 0.2s, border-color 0.2s",
                         }}
                         onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "#8C4318")}
@@ -446,46 +486,12 @@ export default function Header() {
                           if (!isActive) (e.currentTarget as HTMLElement).style.color = "#361C0D";
                         }}
                       >
-                        {item.label}
+                        <Icon size={15} style={{ color: isActive ? "#8C4318" : "#C88A2E" }} />
+                        <span>{item.label}</span>
                       </Link>
                     </li>
                   );
                 })}
-
-                {/* Search Option Button */}
-                <li>
-                  <button
-                    type="button"
-                    onClick={handleOpenSearch}
-                    aria-label="Open Search Option"
-                    style={{
-                      display: "inline-flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      gap: "6px",
-                      backgroundColor: "#FAF2E6",
-                      color: "#5C341B",
-                      border: "1px solid #e2d2bd",
-                      borderRadius: "20px",
-                      padding: "6px 14px",
-                      fontSize: "13px",
-                      fontWeight: 700,
-                      cursor: "pointer",
-                      transition: "all 0.2s ease",
-                    }}
-                    onMouseEnter={(e) => {
-                      (e.currentTarget as HTMLElement).style.backgroundColor = "#5C341B";
-                      (e.currentTarget as HTMLElement).style.color = "#ffffff";
-                    }}
-                    onMouseLeave={(e) => {
-                      (e.currentTarget as HTMLElement).style.backgroundColor = "#FAF2E6";
-                      (e.currentTarget as HTMLElement).style.color = "#5C341B";
-                    }}
-                  >
-                    <Search size={14} />
-                    <span>Search</span>
-                  </button>
-                </li>
               </ul>
             </nav>
 
@@ -584,8 +590,20 @@ export default function Header() {
                   <img src="/images/logo/logo-light.png" alt="Pradeep Trading" style={{ maxHeight: "48px" }} />
                   <div>
                     <div style={{ fontSize: "14px", fontWeight: 800, color: "#ffffff" }}>PRADEEP TRADING</div>
-                    <div style={{ fontSize: "9px", color: "#C88A2E", fontWeight: 700, letterSpacing: "0.1em" }}>
-                      TRUSTED PEANUT EXPORTER
+                    <div
+                      style={{
+                        display: "inline-block",
+                        fontSize: "9px",
+                        background: "linear-gradient(135deg, #F5D38A 0%, #D49B35 100%)",
+                        color: "#2C170A",
+                        fontWeight: 800,
+                        letterSpacing: "0.1em",
+                        padding: "1px 8px",
+                        borderRadius: "10px",
+                        marginTop: "2px",
+                      }}
+                    >
+                      ★ TRUSTED PEANUT EXPORTER ★
                     </div>
                   </div>
                 </div>
@@ -621,7 +639,7 @@ export default function Header() {
                     padding: "10px 14px",
                     borderRadius: "14px",
                     color: "#d4c8bd",
-                    fontSize: "13px",
+                    fontSize: "14px",
                     cursor: "pointer",
                     textAlign: "left",
                   }}
@@ -639,18 +657,19 @@ export default function Header() {
                   margin: 0,
                   display: "flex",
                   flexDirection: "column",
-                  gap: "16px",
-                  fontSize: "15px",
+                  gap: "14px",
+                  fontSize: "15.5px",
                   fontWeight: 600,
                 }}
               >
                 {[
-                  { label: "Home", href: "/" },
-                  { label: "About Us", href: "/about" },
-                  { label: "Our Quality", href: "/#pradeep-advantage" },
-                  { label: "Process", href: "/nut-journey" },
-                  { label: "Sustainability", href: "/about#sustainability" },
-                  { label: "Contact", href: "/contact" },
+                  { label: "Home", href: "/", icon: Home },
+                  { label: "About Us", href: "/about", icon: Building2 },
+                  { label: "Products", href: "/products", icon: Package },
+                  { label: "Process", href: "/nut-journey", icon: Factory },
+                  { label: "Our Quality", href: "/#pradeep-advantage", icon: ShieldCheck },
+                  { label: "Sustainability", href: "/about#sustainability", icon: Leaf },
+                  { label: "Contact Us", href: "/contact", icon: PhoneCall },
                 ].map((item) => (
                   <li key={item.label}>
                     <Link
@@ -659,14 +678,17 @@ export default function Header() {
                       style={{
                         color: "#ffffff",
                         textDecoration: "none",
-                        display: "block",
-                        padding: "4px 0",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "10px",
+                        padding: "5px 0",
                         transition: "color 0.2s",
                       }}
                       onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "#E5A83B")}
                       onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "#ffffff")}
                     >
-                      {item.label}
+                      <item.icon size={17} style={{ color: "#E5A83B" }} />
+                      <span>{item.label}</span>
                     </Link>
                   </li>
                 ))}

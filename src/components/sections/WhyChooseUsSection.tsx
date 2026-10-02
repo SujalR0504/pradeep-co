@@ -24,7 +24,7 @@ const REASONS: WhyReason[] = [
   {
     num: "01",
     heading: "PEANUT SPECIALIZATION",
-    subheading: "65+ Years Agronomic Lineage",
+    subheading: "29+ Years Agronomic Lineage",
     explanation:
       "Unlike generalized commodity traders, our multigenerational agrarian lineage in Bhonti, Shivpuri is dedicated exclusively to groundnut cultivation, procurement, and export conditioning.",
     image: "/images/harvest-farmer.webp",

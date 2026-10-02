@@ -105,7 +105,7 @@ export default function CompanyIntroSection() {
                 </div>
                 <div className="text-right">
                   <span className="font-mono text-xs font-bold text-[#5C341B]">
-                    65+ YEARS
+                    29+ YEARS
                   </span>
                   <span className="text-[9px] font-sans text-[#2D241D]/60 block uppercase">
                     HERITAGE
@@ -130,7 +130,7 @@ export default function CompanyIntroSection() {
             </div>
 
             <p className="text-base sm:text-lg font-sans text-[#2D241D]/85 leading-relaxed font-normal">
-              Pradeep Trading Company is an established processor and global exporter of premium benchmark groundnuts and peanuts, rooted in Bhonti, District Shivpuri (Madhya Pradesh). Combining 65+ years of generational farming relationships across Central India with advanced 4 MT/hour double-sortex electronic processing lines, we supply certified, calibrated peanuts to international snack manufacturers, confectionery brands, and food importers across 35+ countries.
+              Pradeep Trading Company is an established processor and global exporter of premium benchmark groundnuts and peanuts, rooted in Bhonti, District Shivpuri (Madhya Pradesh). Combining 29+ years of generational farming relationships across Central India with advanced 4 MT/hour double-sortex electronic processing lines, we supply certified, calibrated peanuts to international snack manufacturers, confectionery brands, and food importers across 35+ countries.
             </p>
 
             {/* Processing & Export Benchmarks Summary Box */}
