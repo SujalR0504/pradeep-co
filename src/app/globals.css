@@ -826,3 +826,59 @@ div.mobile-nav-toggler {
   flex-shrink: 0 !important;
 }
 
+/* Ensure background pseudo shapes never block buttons or links in about section */
+.about-section::before,
+.about-section:before,
+.about-section-two::before,
+.about-section-two:before,
+.about-section .bg-shape {
+  pointer-events: none !important;
+  z-index: 0 !important;
+}
+
+.about-text-col {
+  position: relative !important;
+  z-index: 20 !important;
+  pointer-events: auto !important;
+}
+
+.about-text-col button,
+.about-text-col a {
+  position: relative !important;
+  z-index: 30 !important;
+  pointer-events: auto !important;
+  cursor: pointer !important;
+}
+
+/* ============================================================== */
+/* Google Translate Clean Luxury Integration */
+/* ============================================================== */
+.goog-te-banner-frame,
+.skiptranslate,
+#goog-gt-tt,
+.goog-te-balloon-frame {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+body {
+  top: 0px !important;
+  position: static !important;
+}
+
+.goog-tooltip,
+.goog-tooltip:hover {
+  display: none !important;
+}
+
+.goog-text-highlight {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+#google_translate_element {
+  display: none !important;
+}
+
+

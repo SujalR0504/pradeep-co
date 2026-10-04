@@ -350,9 +350,9 @@ export const PRODUCTS: Product[] = [
     category: "Value-Added",
     shortDescription: "100% roasted groundnut paste with zero hydrogenated oils, available in Creamy and Crunchy textures.",
     description: "Crafted exclusively from selected Indian roasted peanuts. Ground in stone mills to achieve micron-level smoothness or custom-formulated with roasted peanut granulate for crunchiness. Tailored for private label retail, bulk food-service pails, and confectionery ingredients.",
-    image: "/images/peanut-oil-butter.webp",
+    image: "/images/pure-peanut-butter.png",
     gallery: [
-      "/images/peanut-oil-butter.webp"
+      "/images/pure-peanut-butter.png"
     ],
     origin: "India",
     grade: "Custom Specifications / Private Label Ready",
@@ -418,9 +418,9 @@ export const PRODUCTS: Product[] = [
     category: "Other Products",
     shortDescription: "Golden Sharbati & Milling Wheat alongside high-fiber, machine-cleaned Barley grains.",
     description: "Premium agricultural grain consignments cultivated in Madhya Pradesh's mineral-rich fertile soils. Our Milling and Sharbati Wheat features high gluten index, robust hectolitre weight, and rich protein, while our machine-cleaned Barley delivers uniform grain weight, low moisture, and high starch ideal for malt extraction, flour milling, and high-nutrition feed.",
-    image: "/images/wheat-barley.jpg",
+    image: "/images/wheat-barley.png",
     gallery: [
-      "/images/wheat-barley.jpg"
+      "/images/wheat-barley.png"
     ],
     origin: "Madhya Pradesh & Central India",
     grade: "Sortex Clean / Machine Cleaned Grade A",

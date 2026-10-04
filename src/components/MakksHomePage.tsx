@@ -4,7 +4,7 @@ import Link from 'next/link';
 import gsap from 'gsap';
 import GlobalTradeMapSection from '@/components/GlobalTradeMapSection';
 import ExportCargoEstimator from '@/components/ExportCargoEstimator';
-import InteractiveCaliberStudio from '@/components/InteractiveCaliberStudio';
+import CoreProductSlider from '@/components/sections/CoreProductSlider';
 
 export const MakksHomePage: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -428,12 +428,12 @@ export const MakksHomePage: React.FC = () => {
         style={{
           position: 'relative',
           overflow: 'hidden',
-          minHeight: 'clamp(620px, 86vh, 800px)',
+          minHeight: 'clamp(480px, 72vh, 620px)',
           backgroundColor: '#FAF2EA',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          padding: '80px 20px 60px',
+          padding: 'clamp(18px, 2.6vh, 28px) 20px clamp(24px, 3.4vh, 36px)',
         }}
       >
         {/* Background Video Layer with Soft Opacity */}
@@ -486,8 +486,8 @@ export const MakksHomePage: React.FC = () => {
           className="side-peanut-left hidden md:block"
           style={{
             position: 'absolute',
-            left: '3%',
-            top: '16%',
+            left: '2%',
+            top: '15%',
             zIndex: 2,
             pointerEvents: 'none',
           }}
@@ -495,7 +495,7 @@ export const MakksHomePage: React.FC = () => {
           <div
             className="animate-pod-sway"
             style={{
-              maxWidth: '125px',
+              maxWidth: '115px',
               filter: 'drop-shadow(0 20px 30px rgba(0, 0, 0, 0.7))',
               transform: 'rotate(-14deg)',
             }}
@@ -505,9 +505,9 @@ export const MakksHomePage: React.FC = () => {
           <div
             className="animate-peanut-float-alt"
             style={{
-              maxWidth: '65px',
-              marginTop: '55px',
-              marginLeft: '28px',
+              maxWidth: '55px',
+              marginTop: '45px',
+              marginLeft: '24px',
               filter: 'drop-shadow(0 14px 22px rgba(0, 0, 0, 0.6))',
               transform: 'rotate(24deg)',
             }}
@@ -521,8 +521,8 @@ export const MakksHomePage: React.FC = () => {
           className="side-peanut-right hidden md:block"
           style={{
             position: 'absolute',
-            right: '3%',
-            top: '14%',
+            right: '65px',
+            top: '13%',
             zIndex: 2,
             pointerEvents: 'none',
           }}
@@ -530,7 +530,7 @@ export const MakksHomePage: React.FC = () => {
           <div
             className="animate-bursting-peanut"
             style={{
-              maxWidth: '165px',
+              maxWidth: '140px',
               filter: 'drop-shadow(0 22px 35px rgba(0, 0, 0, 0.75))',
               transform: 'rotate(8deg)',
             }}
@@ -540,9 +540,9 @@ export const MakksHomePage: React.FC = () => {
           <div
             className="animate-peanut-float"
             style={{
-              maxWidth: '70px',
-              marginTop: '45px',
-              marginRight: '32px',
+              maxWidth: '60px',
+              marginTop: '35px',
+              marginRight: '28px',
               filter: 'drop-shadow(0 12px 20px rgba(0, 0, 0, 0.6))',
               transform: 'rotate(-18deg)',
             }}
@@ -566,7 +566,7 @@ export const MakksHomePage: React.FC = () => {
             alignItems: 'center',
           }}
         >
-          {/* Top Pill Tag in Warm Earth Tone */}
+          {/* Top Pill Tag in Warm Earth Tone (Shifted Upwards) */}
           <div
             style={{
               display: 'inline-flex',
@@ -577,186 +577,188 @@ export const MakksHomePage: React.FC = () => {
               border: '1px solid rgba(92, 52, 27, 0.22)',
               padding: '6px 18px',
               borderRadius: '24px',
-              fontSize: '12px',
+              fontSize: '11.5px',
               fontWeight: 700,
               letterSpacing: '0.08em',
               textTransform: 'uppercase',
-              marginBottom: '22px',
+              marginTop: '-16px',
+              marginBottom: '16px',
               backdropFilter: 'blur(6px)',
               boxShadow: '0 2px 10px rgba(92, 52, 27, 0.06)',
             }}
           >
             <i className="fa fa-award" style={{ color: '#C88A2E' }}></i>
-            <span>Benchmark Indian Peanut Processor &amp; Global Exporter • Since 1998</span>
+            <span>Benchmark Indian Peanut Processor &amp; Global Exporter • Since 1986</span>
           </div>
 
           {/* MAIN GRAND TAGLINE 1 (Heading Brown the same that you use) */}
           <h1
             style={{
               fontFamily: 'var(--font-heading), "DM Serif Display", serif',
-              fontSize: 'clamp(2.9rem, 6.2vw, 5.2rem)',
+              fontSize: 'clamp(2.4rem, 5.2vw, 4.3rem)',
               fontWeight: 800,
               color: '#361C0D',
-              lineHeight: 1.05,
+              lineHeight: 1.08,
               letterSpacing: '-0.02em',
-              margin: '0 0 14px',
+              margin: '0 0 24px',
               textShadow: '0 2px 16px rgba(54, 28, 13, 0.08)',
             }}
           >
             FROM US TO WORLD
           </h1>
 
-          {/* MAIN SECONDARY TAGLINE 2 */}
-          <h2
-            style={{
-              fontFamily: '"Manrope", sans-serif',
-              fontSize: 'clamp(1.25rem, 2.6vw, 2rem)',
-              fontWeight: 800,
-              color: '#8C4318',
-              letterSpacing: '0.14em',
-              textTransform: 'uppercase',
-              margin: '0 0 34px',
-            }}
-          >
-            SINCE 1998
-          </h2>
-
-          {/* Hero Action Buttons (Single Color Uniform Styling, WhatsApp First) */}
+          {/* Hero Action Buttons (Light, Refined Luxury Styling) */}
           <div
             style={{
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              gap: '14px',
+              gap: '12px',
               flexWrap: 'wrap',
-              marginBottom: '44px',
+              marginBottom: '28px',
             }}
           >
-            {/* 1. Chat on WhatsApp (First) */}
-            <a
-              href="https://wa.me/919589790997?text=Hello%20Pradeep%20Trading,%20I%20would%20like%20to%20inquire%20about%20peanut%20export%20specifications."
-              target="_blank"
-              rel="noopener noreferrer"
+            {/* 1. Contact Us */}
+            <Link
+              href="/contact"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '8px',
-                backgroundColor: '#E5A83B',
-                color: '#2C170A',
-                height: '50px',
-                padding: '0 26px',
-                borderRadius: '25px',
-                fontSize: '14px',
+                background: 'linear-gradient(135deg, #361C0D 0%, #5C341B 100%)',
+                color: '#ffffff',
+                border: '1.5px solid #8C4318',
+                height: '46px',
+                padding: '0 24px',
+                borderRadius: '23px',
+                fontSize: '13.5px',
                 fontWeight: 800,
                 textDecoration: 'none',
-                boxShadow: '0 8px 25px rgba(229, 168, 59, 0.35)',
+                boxShadow: '0 4px 16px rgba(54, 28, 13, 0.22)',
                 transition: 'all 0.25s ease',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#f3be60';
+                e.currentTarget.style.background = 'linear-gradient(135deg, #5C341B 0%, #8C4318 100%)';
+                e.currentTarget.style.borderColor = '#C88A2E';
+                e.currentTarget.style.boxShadow = '0 6px 22px rgba(92, 52, 27, 0.35)';
                 e.currentTarget.style.transform = 'translateY(-2px)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#E5A83B';
+                e.currentTarget.style.background = 'linear-gradient(135deg, #361C0D 0%, #5C341B 100%)';
+                e.currentTarget.style.borderColor = '#8C4318';
+                e.currentTarget.style.boxShadow = '0 4px 16px rgba(54, 28, 13, 0.22)';
                 e.currentTarget.style.transform = 'translateY(0)';
               }}
             >
-              <i className="fab fa-whatsapp" style={{ fontSize: '18px', color: '#2C170A' }}></i>
-              <span>Chat on WhatsApp</span>
-            </a>
+              <i className="fa fa-envelope" style={{ fontSize: '15px', color: '#E5A83B' }}></i>
+              <span>Contact Us</span>
+            </Link>
 
-            {/* 2. Explore Products */}
+            {/* 2. Explore Products (Light Champagne Gold) */}
             <a
               href="#core-products"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '8px',
-                backgroundColor: '#E5A83B',
-                color: '#2C170A',
-                height: '50px',
-                padding: '0 26px',
-                borderRadius: '25px',
-                fontSize: '14px',
+                background: 'linear-gradient(135deg, #FFF9EF 0%, #FEEECF 100%)',
+                color: '#361C0D',
+                border: '1.5px solid #E8CE99',
+                height: '46px',
+                padding: '0 22px',
+                borderRadius: '23px',
+                fontSize: '13.5px',
                 fontWeight: 800,
                 textDecoration: 'none',
-                boxShadow: '0 8px 25px rgba(229, 168, 59, 0.35)',
+                boxShadow: '0 4px 16px rgba(200, 138, 46, 0.12)',
                 transition: 'all 0.25s ease',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#f3be60';
+                e.currentTarget.style.background = 'linear-gradient(135deg, #FFFFFF 0%, #FDE4B8 100%)';
+                e.currentTarget.style.borderColor = '#C88A2E';
+                e.currentTarget.style.boxShadow = '0 6px 22px rgba(200, 138, 46, 0.24)';
                 e.currentTarget.style.transform = 'translateY(-2px)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#E5A83B';
+                e.currentTarget.style.background = 'linear-gradient(135deg, #FFF9EF 0%, #FEEECF 100%)';
+                e.currentTarget.style.borderColor = '#E8CE99';
+                e.currentTarget.style.boxShadow = '0 4px 16px rgba(200, 138, 46, 0.12)';
                 e.currentTarget.style.transform = 'translateY(0)';
               }}
             >
               <span>Explore Products</span>
-              <i className="fa fa-arrow-down" style={{ fontSize: '12px', color: '#2C170A' }}></i>
+              <i className="fa fa-arrow-down" style={{ fontSize: '12px', color: '#C88A2E' }}></i>
             </a>
 
-            {/* 3. Request Quote */}
+            {/* 3. Request Quote (Light Champagne Gold) */}
             <button
               onClick={() => handleOpenQuote('Bold Peanuts')}
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '8px',
-                backgroundColor: '#E5A83B',
-                color: '#2C170A',
-                border: 'none',
-                height: '50px',
-                padding: '0 26px',
-                borderRadius: '25px',
-                fontSize: '14px',
+                background: 'linear-gradient(135deg, #FFF9EF 0%, #FEEECF 100%)',
+                color: '#361C0D',
+                border: '1.5px solid #E8CE99',
+                height: '46px',
+                padding: '0 22px',
+                borderRadius: '23px',
+                fontSize: '13.5px',
                 fontWeight: 800,
                 cursor: 'pointer',
-                boxShadow: '0 8px 25px rgba(229, 168, 59, 0.35)',
+                boxShadow: '0 4px 16px rgba(200, 138, 46, 0.12)',
                 transition: 'all 0.25s ease',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#f3be60';
+                e.currentTarget.style.background = 'linear-gradient(135deg, #FFFFFF 0%, #FDE4B8 100%)';
+                e.currentTarget.style.borderColor = '#C88A2E';
+                e.currentTarget.style.boxShadow = '0 6px 22px rgba(200, 138, 46, 0.24)';
                 e.currentTarget.style.transform = 'translateY(-2px)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#E5A83B';
+                e.currentTarget.style.background = 'linear-gradient(135deg, #FFF9EF 0%, #FEEECF 100%)';
+                e.currentTarget.style.borderColor = '#E8CE99';
+                e.currentTarget.style.boxShadow = '0 4px 16px rgba(200, 138, 46, 0.12)';
                 e.currentTarget.style.transform = 'translateY(0)';
               }}
             >
-              <i className="fa fa-file-invoice" style={{ fontSize: '14px', color: '#2C170A' }}></i>
+              <i className="fa fa-file-invoice" style={{ fontSize: '13px', color: '#C88A2E' }}></i>
               <span>Request Quote</span>
             </button>
 
-            {/* 4. Download Brochure */}
+            {/* 4. Download Brochure (Light Champagne Gold) */}
             <button
               onClick={handleOpenBrochure}
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '8px',
-                backgroundColor: '#E5A83B',
-                color: '#2C170A',
-                border: 'none',
-                height: '50px',
-                padding: '0 26px',
-                borderRadius: '25px',
-                fontSize: '14px',
+                background: 'linear-gradient(135deg, #FFF9EF 0%, #FEEECF 100%)',
+                color: '#361C0D',
+                border: '1.5px solid #E8CE99',
+                height: '46px',
+                padding: '0 22px',
+                borderRadius: '23px',
+                fontSize: '13.5px',
                 fontWeight: 800,
                 cursor: 'pointer',
-                boxShadow: '0 8px 25px rgba(229, 168, 59, 0.35)',
+                boxShadow: '0 4px 16px rgba(200, 138, 46, 0.12)',
                 transition: 'all 0.25s ease',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#f3be60';
+                e.currentTarget.style.background = 'linear-gradient(135deg, #FFFFFF 0%, #FDE4B8 100%)';
+                e.currentTarget.style.borderColor = '#C88A2E';
+                e.currentTarget.style.boxShadow = '0 6px 22px rgba(200, 138, 46, 0.24)';
                 e.currentTarget.style.transform = 'translateY(-2px)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#E5A83B';
+                e.currentTarget.style.background = 'linear-gradient(135deg, #FFF9EF 0%, #FEEECF 100%)';
+                e.currentTarget.style.borderColor = '#E8CE99';
+                e.currentTarget.style.boxShadow = '0 4px 16px rgba(200, 138, 46, 0.12)';
                 e.currentTarget.style.transform = 'translateY(0)';
               }}
             >
-              <i className="fa fa-download" style={{ fontSize: '14px', color: '#2C170A' }}></i>
+              <i className="fa fa-download" style={{ fontSize: '13px', color: '#C88A2E' }}></i>
               <span>Download Brochure</span>
             </button>
           </div>
@@ -767,28 +769,27 @@ export const MakksHomePage: React.FC = () => {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              gap: '24px',
+              gap: 'clamp(14px, 2vw, 24px)',
               flexWrap: 'wrap',
-              padding: '16px 28px',
-              borderRadius: '20px',
-              backgroundColor: 'rgba(255, 255, 255, 0.88)',
+              padding: '12px 22px',
+              borderRadius: '18px',
+              backgroundColor: 'rgba(255, 255, 255, 0.92)',
               border: '1px solid rgba(92, 52, 27, 0.16)',
               backdropFilter: 'blur(10px)',
-              boxShadow: '0 8px 26px rgba(92, 52, 27, 0.08)',
+              boxShadow: '0 6px 20px rgba(92, 52, 27, 0.08)',
             }}
           >
             {[
-              { icon: 'fa-history', title: '29+ Years', desc: 'Indian Agro Heritage' },
+              { icon: 'fa-history', title: '40+ Years', desc: 'Indian Agro Heritage' },
               { icon: 'fa-cubes', title: '50,000 MT', desc: 'Annual Sourcing' },
-              { icon: 'fa-microchip', title: '4 MT / Hr', desc: 'Buhler Sortex Clean' },
               { icon: 'fa-shield-alt', title: '< 4 ppb Aflatoxin', desc: 'Strict EU Compliance' },
               { icon: 'fa-ship', title: 'Mundra & JNPT', desc: 'Direct Port Dispatch' },
             ].map((pillar, idx) => (
               <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '8px', textAlign: 'left' }}>
-                <i className={`fa ${pillar.icon}`} style={{ color: '#C88A2E', fontSize: '15px' }}></i>
+                <i className={`fa ${pillar.icon}`} style={{ color: '#C88A2E', fontSize: '14px' }}></i>
                 <div>
-                  <div style={{ fontSize: '13px', fontWeight: 800, color: '#361C0D', lineHeight: 1.1 }}>{pillar.title}</div>
-                  <div style={{ fontSize: '10.5px', color: '#705745', fontWeight: 600 }}>{pillar.desc}</div>
+                  <div style={{ fontSize: '12.5px', fontWeight: 800, color: '#361C0D', lineHeight: 1.15 }}>{pillar.title}</div>
+                  <div style={{ fontSize: '10px', color: '#705745', fontWeight: 600 }}>{pillar.desc}</div>
                 </div>
               </div>
             ))}
@@ -832,11 +833,11 @@ export const MakksHomePage: React.FC = () => {
             '★',
             'TRUSTED PEANUT EXPORTER',
             '★',
-            '29+ YEARS OF HERITAGE',
+            'ROOTED AGRO HERITAGE',
             '★',
             'DOUBLE-SORTEX CLEANED',
             '★',
-            'SHIVPURI (M.P.) TO 40+ NATIONS',
+            'EXPORTING TO 40+ NATIONS',
             '★',
             'APEDA & FSSAI CERTIFIED',
             '★',
@@ -844,11 +845,11 @@ export const MakksHomePage: React.FC = () => {
             '★',
             'TRUSTED PEANUT EXPORTER',
             '★',
-            '29+ YEARS OF HERITAGE',
+            'ROOTED AGRO HERITAGE',
             '★',
             'DOUBLE-SORTEX CLEANED',
             '★',
-            'SHIVPURI (M.P.) TO 40+ NATIONS',
+            'EXPORTING TO 40+ NATIONS',
             '★',
             'APEDA & FSSAI CERTIFIED',
           ].map((item, idx) => (
@@ -865,238 +866,13 @@ export const MakksHomePage: React.FC = () => {
       </div>
 
       {/* ============================================================ */}
-      {/* 3. CORE PRODUCT LINES (Enhanced with Rich Export Information) */}
       {/* ============================================================ */}
-      <section
-        id="core-products"
-        className="top-banners"
-        style={{
-          padding: '48px 0 42px',
-          backgroundColor: '#ffffff',
-          position: 'relative',
-        }}
-      >
-        <div className="site-container auto-container" style={{ maxWidth: '1280px', margin: '0 auto' }}>
-          
-          <div style={{ textAlign: 'left', marginBottom: '32px' }}>
-            <span style={{ fontSize: '12.5px', fontWeight: 700, color: '#C88A2E', textTransform: 'uppercase', letterSpacing: '0.12em', display: 'block', marginBottom: '6px' }}>
-              Export Caliber Lineup • Central India Origin
-            </span>
-            <h2 style={{ fontFamily: 'var(--font-heading), "DM Serif Display", serif', fontSize: 'clamp(2rem, 3.2vw, 2.65rem)', fontWeight: 800, color: '#2C170A', margin: '0 0 10px', letterSpacing: '-0.02em', lineHeight: 1.12 }}>
-              Our Core Peanut &amp; Agricultural Product Lines
-            </h2>
-            <p style={{ fontSize: '15.5px', color: '#55473E', maxWidth: '780px', margin: 0, lineHeight: 1.6 }}>
-              Calibrated Bold kernels, high-oil Java kernels, skinless blanched varieties, in-shell groundnuts, and diversified agricultural commodities processed under Buhler Sortex standards.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 items-stretch">
-            {topBanners.map((banner, index) => (
-              <div
-                key={index}
-                className="banner-box flex flex-col justify-between h-full"
-                style={{
-                  backgroundColor: banner.bgColor,
-                  borderRadius: '20px',
-                  padding: '16px 14px 14px',
-                  position: 'relative',
-                  overflow: 'hidden',
-                  minHeight: '370px',
-                  boxShadow: '0 8px 24px rgba(0,0,0,0.1)',
-                  transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.transform = 'translateY(-4px)';
-                  (e.currentTarget as HTMLElement).style.boxShadow = '0 14px 32px rgba(0,0,0,0.18)';
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.transform = 'translateY(0)';
-                  (e.currentTarget as HTMLElement).style.boxShadow = '0 8px 24px rgba(0,0,0,0.1)';
-                }}
-              >
-                {/* Top Section: Badge, Image, Titles */}
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', width: '100%', flexGrow: 1 }}>
-                  
-                  {/* Category Pill Badge */}
-                  <div style={{ width: '100%', display: 'flex', justifyContent: 'center', marginBottom: '10px' }}>
-                    <span
-                      style={{
-                        fontSize: '9.5px',
-                        fontWeight: 700,
-                        backgroundColor: 'rgba(255,255,255,0.22)',
-                        color: '#ffffff',
-                        padding: '3px 10px',
-                        borderRadius: '12px',
-                        letterSpacing: '0.06em',
-                        textTransform: 'uppercase',
-                        border: '1px solid rgba(255,255,255,0.25)',
-                      }}
-                    >
-                      {banner.pillBadge}
-                    </span>
-                  </div>
-
-                  {/* Product Image (Compact 80px Circular Frame) */}
-                  <div
-                    style={{
-                      width: '80px',
-                      height: '80px',
-                      borderRadius: '50%',
-                      overflow: 'hidden',
-                      border: '3px solid rgba(255,255,255,0.9)',
-                      boxShadow: '0 6px 16px rgba(0,0,0,0.22)',
-                      marginBottom: '10px',
-                      flexShrink: 0,
-                      backgroundColor: 'rgba(255,255,255,0.1)',
-                    }}
-                  >
-                    <img
-                      src={banner.image}
-                      alt={banner.title}
-                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                    />
-                  </div>
-
-                  {/* Title & Subtitle */}
-                  <h3
-                    style={{
-                      fontFamily: '"Manrope", sans-serif',
-                      fontSize: '16.5px',
-                      fontWeight: 800,
-                      color: banner.textColor,
-                      margin: '0 0 2px',
-                      lineHeight: 1.2,
-                      letterSpacing: '-0.01em',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      textAlign: 'center',
-                      width: '100%',
-                    }}
-                  >
-                    {banner.title}
-                  </h3>
-
-                  <p
-                    style={{
-                      fontSize: '11px',
-                      color: 'rgba(255,255,255,0.92)',
-                      margin: '0 0 8px',
-                      fontWeight: 600,
-                      lineHeight: 1.25,
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      textAlign: 'center',
-                      width: '100%',
-                    }}
-                  >
-                    {banner.subtitle}
-                  </p>
-
-                  {/* Compact Specifications Box */}
-                  <div
-                    style={{
-                      backgroundColor: 'rgba(0,0,0,0.22)',
-                      borderRadius: '8px',
-                      padding: '6px 8px',
-                      width: '100%',
-                      fontSize: '10.5px',
-                      color: '#ffffff',
-                      lineHeight: 1.35,
-                      marginBottom: '10px',
-                      textAlign: 'center',
-                    }}
-                  >
-                    <div style={{ fontWeight: 800, color: '#ffffff', marginBottom: '2px' }}>
-                      {banner.countText}
-                    </div>
-                    <div style={{ fontSize: '9.5px', opacity: 0.9, color: '#f5eee6' }}>
-                      Moisture: {banner.moisture} • Oil: {banner.oil}
-                    </div>
-                  </div>
-
-                </div>
-
-                {/* Bottom Action Buttons: Compact Side-by-Side (Specs + RFQ) */}
-                <div style={{ marginTop: 'auto', display: 'flex', gap: '6px', width: '100%' }}>
-                  <button
-                    type="button"
-                    onClick={() => handleOpenQuickSpecs(banner.productId)}
-                    style={{
-                      flex: 1,
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      gap: '4px',
-                      backgroundColor: '#ffffff',
-                      color: '#361C0D',
-                      height: '32px',
-                      padding: '0 6px',
-                      borderRadius: '16px',
-                      fontSize: '11px',
-                      fontWeight: 800,
-                      border: 'none',
-                      cursor: 'pointer',
-                      boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
-                      transition: 'all 0.2s',
-                      whiteSpace: 'nowrap',
-                    }}
-                    onMouseEnter={(e) => {
-                      (e.currentTarget as HTMLElement).style.backgroundColor = '#FAF5EC';
-                      (e.currentTarget as HTMLElement).style.transform = 'translateY(-1px)';
-                    }}
-                    onMouseLeave={(e) => {
-                      (e.currentTarget as HTMLElement).style.backgroundColor = '#ffffff';
-                      (e.currentTarget as HTMLElement).style.transform = 'translateY(0)';
-                    }}
-                  >
-                    <span>Specs</span>
-                    <i className="fa fa-info-circle" style={{ fontSize: '10px', color: '#C88A2E' }}></i>
-                  </button>
-
-                  <button
-                    type="button"
-                    onClick={() => handleOpenQuote(banner.title)}
-                    style={{
-                      flex: 1,
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      gap: '4px',
-                      backgroundColor: 'rgba(255, 255, 255, 0.18)',
-                      color: '#ffffff',
-                      height: '32px',
-                      padding: '0 6px',
-                      borderRadius: '16px',
-                      fontSize: '11px',
-                      fontWeight: 700,
-                      border: '1px solid rgba(255, 255, 255, 0.4)',
-                      cursor: 'pointer',
-                      transition: 'all 0.2s',
-                      whiteSpace: 'nowrap',
-                    }}
-                    onMouseEnter={(e) => {
-                      (e.currentTarget as HTMLElement).style.backgroundColor = 'rgba(255, 255, 255, 0.3)';
-                      (e.currentTarget as HTMLElement).style.transform = 'translateY(-1px)';
-                    }}
-                    onMouseLeave={(e) => {
-                      (e.currentTarget as HTMLElement).style.backgroundColor = 'rgba(255, 255, 255, 0.18)';
-                      (e.currentTarget as HTMLElement).style.transform = 'translateY(0)';
-                    }}
-                  >
-                    <span>Quote</span>
-                    <i className="fa fa-arrow-right" style={{ fontSize: '9px' }}></i>
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* 3. CORE PRODUCT LINES (Continuous Slider Showcase) */}
+      {/* ============================================================ */}
+      <CoreProductSlider
+        onOpenSpecs={handleOpenQuickSpecs}
+        onOpenQuote={handleOpenQuote}
+      />
 
       {/* ============================================================ */}
       {/* 4. REDESIGNED EDITORIAL ABOUT SECTION WITH REAL PEANUT IMAGES */}
@@ -1238,11 +1014,11 @@ export const MakksHomePage: React.FC = () => {
                     textAlign: 'center',
                   }}
                 >
-                  <span style={{ fontSize: '24px', fontWeight: 700, color: '#E5A83B', display: 'block', lineHeight: 1 }}>
-                    29+ Years
+                  <span style={{ fontSize: '15px', fontWeight: 800, color: '#E5A83B', display: 'block', lineHeight: 1.25, textTransform: 'uppercase' }}>
+                    Rooted Agro Heritage
                   </span>
                   <span style={{ fontSize: '10.5px', fontWeight: 600, color: '#e0d6cb', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                    Peanut Export Heritage
+                    Benchmark Processor
                   </span>
                 </div>
               </div>
@@ -1325,9 +1101,13 @@ export const MakksHomePage: React.FC = () => {
                 </div>
 
                 {/* Action Buttons (Standard 48px Height, Radius 24px) */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flexWrap: 'wrap' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flexWrap: 'wrap', position: 'relative', zIndex: 30, pointerEvents: 'auto' }}>
                   <button
-                    onClick={() => handleOpenQuote('Bold Peanuts')}
+                    type="button"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleOpenQuote('Bold Peanuts');
+                    }}
                     style={{
                       display: 'inline-flex',
                       alignItems: 'center',
@@ -1338,14 +1118,23 @@ export const MakksHomePage: React.FC = () => {
                       height: '48px',
                       padding: '0 26px',
                       borderRadius: '24px',
-                      fontWeight: 600,
+                      fontWeight: 700,
                       fontSize: '13.5px',
                       cursor: 'pointer',
                       boxShadow: '0 6px 20px rgba(92, 52, 27, 0.25)',
-                      transition: 'background 0.2s',
+                      transition: 'all 0.2s ease',
+                      position: 'relative',
+                      zIndex: 35,
+                      pointerEvents: 'auto',
                     }}
-                    onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.backgroundColor = '#7A4322')}
-                    onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.backgroundColor = '#5C341B')}
+                    onMouseEnter={(e) => {
+                      (e.currentTarget as HTMLElement).style.backgroundColor = '#7A4322';
+                      (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)';
+                    }}
+                    onMouseLeave={(e) => {
+                      (e.currentTarget as HTMLElement).style.backgroundColor = '#5C341B';
+                      (e.currentTarget as HTMLElement).style.transform = 'translateY(0)';
+                    }}
                   >
                     Request Lot Specifications
                   </button>
@@ -1363,10 +1152,23 @@ export const MakksHomePage: React.FC = () => {
                       height: '48px',
                       padding: '0 24px',
                       borderRadius: '24px',
-                      fontWeight: 600,
+                      fontWeight: 700,
                       fontSize: '13.5px',
                       textDecoration: 'none',
                       boxShadow: '0 6px 18px rgba(37, 211, 102, 0.25)',
+                      transition: 'all 0.2s ease',
+                      position: 'relative',
+                      zIndex: 35,
+                      pointerEvents: 'auto',
+                      cursor: 'pointer',
+                    }}
+                    onMouseEnter={(e) => {
+                      (e.currentTarget as HTMLElement).style.backgroundColor = '#20BD5A';
+                      (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)';
+                    }}
+                    onMouseLeave={(e) => {
+                      (e.currentTarget as HTMLElement).style.backgroundColor = '#25D366';
+                      (e.currentTarget as HTMLElement).style.transform = 'translateY(0)';
                     }}
                   >
                     <i className="fab fa-whatsapp" style={{ fontSize: '18px' }}></i>
@@ -1380,9 +1182,13 @@ export const MakksHomePage: React.FC = () => {
                       height: '48px',
                       gap: '6px',
                       color: '#5C341B',
-                      fontWeight: 600,
+                      fontWeight: 700,
                       fontSize: '13.5px',
                       textDecoration: 'none',
+                      position: 'relative',
+                      zIndex: 35,
+                      pointerEvents: 'auto',
+                      cursor: 'pointer',
                     }}
                   >
                     <span>View Processing Flow</span>
@@ -1396,10 +1202,6 @@ export const MakksHomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* ============================================================ */}
-      {/* 5. INTERACTIVE PEANUT CALIBER & SENSORY STUDIO */}
-      {/* ============================================================ */}
-      <InteractiveCaliberStudio />
 
       {/* ============================================================ */}
       {/* 6. METRICS & STATS BAR */}
@@ -1432,6 +1234,46 @@ export const MakksHomePage: React.FC = () => {
               <div style={{ fontSize: '12px', color: '#a8988b', marginTop: '4px' }}>Double-Sortex Electronic Capacity</div>
             </div>
 
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================================ */}
+      {/* CERTIFICATIONS & COMPLIANCE INFINITE MARQUEE */}
+      {/* ============================================================ */}
+      <section style={{ padding: '45px 0', backgroundColor: '#ffffff', borderTop: '1px solid #f0eee8', borderBottom: '1px solid #f0eee8', overflow: 'hidden' }}>
+        <div className="site-container auto-container" style={{ maxWidth: '1280px', margin: '0 auto', marginBottom: '20px', textAlign: 'center' }}>
+          <span style={{ fontSize: '12px', fontWeight: 600, color: '#7a827e', textTransform: 'uppercase', letterSpacing: '0.12em' }}>
+            International Compliance &amp; Export Certifications
+          </span>
+        </div>
+
+        <div style={{ width: '100%', overflow: 'hidden' }}>
+          <div className="animate-marquee" style={{ display: 'flex', gap: '60px', alignItems: 'center' }}>
+            {certificates.concat(certificates).map((cert, idx) => (
+              <div key={idx} style={{ flexShrink: 0, padding: '0 15px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+                <img
+                  src={cert.src}
+                  alt={cert.name}
+                  style={{
+                    maxHeight: '62px',
+                    maxWidth: '120px',
+                    objectFit: 'contain',
+                    filter: 'grayscale(20%)',
+                    transition: 'all 0.3s',
+                  }}
+                  onMouseEnter={(e) => {
+                    (e.currentTarget as HTMLElement).style.filter = 'grayscale(0%)';
+                    (e.currentTarget as HTMLElement).style.transform = 'scale(1.1)';
+                  }}
+                  onMouseLeave={(e) => {
+                    (e.currentTarget as HTMLElement).style.filter = 'grayscale(20%)';
+                    (e.currentTarget as HTMLElement).style.transform = 'scale(1)';
+                  }}
+                />
+                <span style={{ fontSize: '13px', fontWeight: 600, color: '#361C0D' }}>{cert.name}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -1656,46 +1498,6 @@ export const MakksHomePage: React.FC = () => {
       {/* 7B. GLOBAL MARITIME CORRIDORS & PORT LOGISTICS (Interactive Chart) */}
       {/* ============================================================ */}
       <GlobalTradeMapSection />
-
-      {/* ============================================================ */}
-      {/* 8. CERTIFICATIONS & COMPLIANCE INFINITE MARQUEE */}
-      {/* ============================================================ */}
-      <section style={{ padding: '45px 0', backgroundColor: '#ffffff', borderTop: '1px solid #f0eee8', borderBottom: '1px solid #f0eee8', overflow: 'hidden' }}>
-        <div className="site-container auto-container" style={{ maxWidth: '1280px', margin: '0 auto', marginBottom: '20px', textAlign: 'center' }}>
-          <span style={{ fontSize: '12px', fontWeight: 600, color: '#7a827e', textTransform: 'uppercase', letterSpacing: '0.12em' }}>
-            International Compliance &amp; Export Certifications
-          </span>
-        </div>
-
-        <div style={{ width: '100%', overflow: 'hidden' }}>
-          <div className="animate-marquee" style={{ display: 'flex', gap: '60px', alignItems: 'center' }}>
-            {certificates.concat(certificates).map((cert, idx) => (
-              <div key={idx} style={{ flexShrink: 0, padding: '0 15px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <img
-                  src={cert.src}
-                  alt={cert.name}
-                  style={{
-                    maxHeight: '62px',
-                    maxWidth: '120px',
-                    objectFit: 'contain',
-                    filter: 'grayscale(20%)',
-                    transition: 'all 0.3s',
-                  }}
-                  onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLElement).style.filter = 'grayscale(0%)';
-                    (e.currentTarget as HTMLElement).style.transform = 'scale(1.1)';
-                  }}
-                  onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLElement).style.filter = 'grayscale(20%)';
-                    (e.currentTarget as HTMLElement).style.transform = 'scale(1)';
-                  }}
-                />
-                <span style={{ fontSize: '13px', fontWeight: 600, color: '#361C0D' }}>{cert.name}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ============================================================ */}
       {/* 9. PRODUCT SHOWCASE CAROUSEL (Peanut Varieties & Specs) */}

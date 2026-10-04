@@ -139,7 +139,7 @@ const PRODUCTS: ProductItem[] = [
     tagline: "100% roasted groundnut paste with zero hydrogenated oils, available in Creamy and Crunchy textures.",
     description:
       "Crafted exclusively from selected Indian roasted peanuts. Ground in stone mills to achieve micron-level smoothness or custom-formulated with roasted peanut granulate for crunchiness. Tailored for private label retail, bulk food-service pails, and confectionery ingredients.",
-    image: "/images/peanut-oil-butter.webp",
+    image: "/images/pure-peanut-butter.png",
     grade: "100% Pure Peanut Paste / Zero Hydrogenated Fats / Tested Lot-by-Lot",
     form: "Creamy, Crunchy & Super-Fine Styles",
     packaging: "340g / 500g / 1kg Jars, 20 kg Food Service Buckets, 200 kg Drums",

@@ -2803,6 +2803,8 @@ Section Title
   width: 695px;
   background-image: url(../images/icons/shape-2.png);
   content: "";
+  pointer-events: none;
+  z-index: 0;
 }
 .about-section .sec-title {
   margin-bottom: 40px;

@@ -81,12 +81,12 @@ export default function Header() {
           style={{
             backgroundColor: "#2C170A",
             color: "#ffffff",
-            minHeight: "48px",
+            minHeight: "36px",
             borderTop: "2px solid #C88A2E",
-            borderBottom: "2px solid #C88A2E",
+            borderBottom: "1px solid rgba(200, 138, 46, 0.4)",
             display: "flex",
             alignItems: "center",
-            padding: "6px 0",
+            padding: "3px 0",
           }}
         >
           <div
@@ -99,7 +99,7 @@ export default function Header() {
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
-              gap: "12px",
+              gap: "10px",
             }}
           >
             {/* Top Left: Email & Address */}
@@ -108,17 +108,17 @@ export default function Header() {
                 style={{
                   display: "flex",
                   alignItems: "center",
-                  gap: "22px",
+                  gap: "18px",
                   listStyle: "none",
                   margin: 0,
                   padding: 0,
-                  fontSize: "13.5px",
+                  fontSize: "12px",
                   fontWeight: 500,
                   whiteSpace: "nowrap",
                 }}
               >
-                <li className="hidden sm:flex" style={{ alignItems: "center", gap: "7px" }}>
-                  <i className="fa fa-envelope" style={{ color: "#E5A83B", fontSize: "13px" }}></i>
+                <li className="hidden sm:flex" style={{ alignItems: "center", gap: "6px" }}>
+                  <i className="fa fa-envelope" style={{ color: "#E5A83B", fontSize: "11px" }}></i>
                   <a
                     href="mailto:pradeeptradingcomp@gmail.com"
                     style={{ color: "#e3d7cc", textDecoration: "none", transition: "color 0.2s" }}
@@ -128,8 +128,8 @@ export default function Header() {
                     pradeeptradingcomp@gmail.com
                   </a>
                 </li>
-                <li className="hidden xl:flex" style={{ alignItems: "center", gap: "7px" }}>
-                  <i className="fa fa-map-marker-alt" style={{ color: "#E5A83B", fontSize: "13px" }}></i>
+                <li className="hidden xl:flex" style={{ alignItems: "center", gap: "6px" }}>
+                  <i className="fa fa-map-marker-alt" style={{ color: "#E5A83B", fontSize: "11px" }}></i>
                   <span style={{ color: "#e3d7cc" }}>
                     Bhonti, Shivpuri, Madhya Pradesh - 473551, India
                   </span>
@@ -144,14 +144,14 @@ export default function Header() {
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
-                  gap: "7px",
+                  gap: "5px",
                   color: "#ffffff",
                   fontWeight: 700,
                   textDecoration: "none",
-                  fontSize: "13.5px",
+                  fontSize: "12px",
                   backgroundColor: "rgba(255, 255, 255, 0.08)",
-                  padding: "4px 14px",
-                  borderRadius: "16px",
+                  padding: "2px 10px",
+                  borderRadius: "14px",
                   border: "1px solid rgba(229, 168, 59, 0.35)",
                   transition: "all 0.2s",
                   whiteSpace: "nowrap",
@@ -163,13 +163,13 @@ export default function Header() {
                   (e.currentTarget as HTMLElement).style.backgroundColor = "rgba(255, 255, 255, 0.08)";
                 }}
               >
-                <i className="fa fa-phone-alt" style={{ color: "#E5A83B", fontSize: "12px" }}></i>
+                <i className="fa fa-phone-alt" style={{ color: "#E5A83B", fontSize: "10.5px" }}></i>
                 <span>+91-9589790997</span>
               </a>
             </div>
 
             {/* Top Right: Priorities: WhatsApp, Brochure & Quote */}
-            <div className="top-right" style={{ display: "flex", alignItems: "center", gap: "10px", whiteSpace: "nowrap" }}>
+            <div className="top-right" style={{ display: "flex", alignItems: "center", gap: "8px", whiteSpace: "nowrap" }}>
               {/* WhatsApp Button */}
               <a
                 href="https://wa.me/919589790997?text=Hello%20Pradeep%20Trading,%20I%20would%20like%20to%20inquire%20about%20peanut%20export%20specifications."
@@ -178,19 +178,19 @@ export default function Header() {
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
-                  gap: "6px",
+                  gap: "5px",
                   backgroundColor: "#25D366",
                   color: "#ffffff",
-                  height: "30px",
-                  padding: "0 13px",
-                  borderRadius: "15px",
-                  fontSize: "13px",
+                  height: "26px",
+                  padding: "0 10px",
+                  borderRadius: "13px",
+                  fontSize: "12px",
                   fontWeight: 700,
                   textDecoration: "none",
-                  boxShadow: "0 2px 6px rgba(37, 211, 102, 0.25)",
+                  boxShadow: "0 2px 5px rgba(37, 211, 102, 0.25)",
                 }}
               >
-                <i className="fab fa-whatsapp" style={{ fontSize: "14px" }}></i>
+                <i className="fab fa-whatsapp" style={{ fontSize: "12.5px" }}></i>
                 <span className="hidden sm:inline">WhatsApp</span>
               </a>
 
@@ -201,13 +201,13 @@ export default function Header() {
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
-                  gap: "6px",
+                  gap: "5px",
                   backgroundColor: "#5C341B",
                   color: "#ffffff",
-                  height: "30px",
-                  padding: "0 13px",
-                  borderRadius: "15px",
-                  fontSize: "13px",
+                  height: "26px",
+                  padding: "0 10px",
+                  borderRadius: "13px",
+                  fontSize: "12px",
                   fontWeight: 700,
                   border: "1px solid rgba(229, 168, 59, 0.4)",
                   cursor: "pointer",
@@ -218,7 +218,7 @@ export default function Header() {
                 onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.backgroundColor = "#5C341B")}
                 aria-label="Download Export Brochure"
               >
-                <Download size={13} style={{ color: "#E5A83B" }} />
+                <Download size={11.5} style={{ color: "#E5A83B" }} />
                 <span className="hidden sm:inline">Brochure</span>
               </button>
 
@@ -229,13 +229,13 @@ export default function Header() {
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
-                  gap: "6px",
+                  gap: "5px",
                   backgroundColor: "#E5A83B",
                   color: "#2C170A",
-                  height: "30px",
-                  padding: "0 15px",
-                  borderRadius: "15px",
-                  fontSize: "13px",
+                  height: "26px",
+                  padding: "0 12px",
+                  borderRadius: "13px",
+                  fontSize: "12px",
                   fontWeight: 800,
                   border: "none",
                   cursor: "pointer",
@@ -247,25 +247,29 @@ export default function Header() {
                 onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.backgroundColor = "#E5A83B")}
                 aria-label="Request Fast Quote"
               >
-                <FileText size={13} style={{ color: "#2C170A" }} />
+                <FileText size={11.5} style={{ color: "#2C170A" }} />
                 <span>Request Quote</span>
               </button>
             </div>
           </div>
         </div>
 
-        {/* ROW 2: Main Centered Navigation Bar (Premium Peanut Reference Layout) */}
+        {/* ROW 2: Main Centered Navigation Bar (Sleek, Compact Layout) */}
+        {isSticky && <div style={{ height: "66px" }} aria-hidden="true" />}
         <div
           className={`header-upper ${isSticky ? "fixed-header is-sticky" : ""}`}
           style={{
-            position: "sticky",
+            position: isSticky ? "fixed" : "relative",
             top: 0,
+            left: 0,
+            right: 0,
+            width: "100%",
             zIndex: 9999,
             backgroundColor: "#ffffff",
-            minHeight: isSticky ? "76px" : "96px",
+            minHeight: isSticky ? "56px" : "66px",
             borderBottom: "1px solid #efe4d3",
-            boxShadow: isSticky ? "0 4px 22px rgba(44, 23, 10, 0.09)" : "0 2px 8px rgba(44, 23, 10, 0.03)",
-            transition: "all 0.3s ease-out",
+            boxShadow: isSticky ? "0 4px 18px rgba(44, 23, 10, 0.1)" : "0 1px 6px rgba(44, 23, 10, 0.03)",
+            transition: "all 0.25s ease-out",
             display: "flex",
             alignItems: "center",
           }}
@@ -288,7 +292,7 @@ export default function Header() {
                 style={{
                   display: "flex",
                   alignItems: "center",
-                  gap: "clamp(12px, 1.4vw, 22px)",
+                  gap: "clamp(8px, 1.1vw, 16px)",
                   listStyle: "none",
                   margin: 0,
                   padding: 0,
@@ -308,9 +312,9 @@ export default function Header() {
                       backgroundColor: "#FAF2E6",
                       color: "#5C341B",
                       border: "1px solid #e2d2bd",
-                      borderRadius: "20px",
-                      padding: "6px 14px",
-                      fontSize: "15px",
+                      borderRadius: "18px",
+                      padding: "5px 14px",
+                      fontSize: "14.5px",
                       fontWeight: 700,
                       cursor: "pointer",
                       transition: "all 0.2s ease",
@@ -324,7 +328,7 @@ export default function Header() {
                       (e.currentTarget as HTMLElement).style.color = "#5C341B";
                     }}
                   >
-                    <Search size={15} style={{ color: "currentColor" }} />
+                    <Search size={14.5} style={{ color: "currentColor" }} />
                     <span>Search</span>
                   </button>
                 </li>
@@ -344,7 +348,7 @@ export default function Header() {
                           fontWeight: 700,
                           letterSpacing: "-0.01em",
                           borderBottom: isActive ? "2px solid #C88A2E" : "2px solid transparent",
-                          paddingBottom: "4px",
+                          paddingBottom: "3px",
                           display: "inline-flex",
                           alignItems: "center",
                           gap: "6px",
@@ -364,10 +368,10 @@ export default function Header() {
               </ul>
             </nav>
 
-            {/* CENTER BRAND LOGO (Enlarged & Centered, Premium Reflection) */}
+            {/* CENTER BRAND LOGO (Compact, Sleek, Proportional) */}
             <div
               style={{
-                padding: "0 20px",
+                padding: "0 16px",
                 flexShrink: 0,
                 textAlign: "center",
                 display: "flex",
@@ -382,7 +386,7 @@ export default function Header() {
                   flexDirection: "column",
                   alignItems: "center",
                   textDecoration: "none",
-                  gap: "2px",
+                  gap: "1px",
                 }}
               >
                 <div
@@ -400,10 +404,10 @@ export default function Header() {
                     src="/images/logo/logo.png"
                     alt="Pradeep Trading Company - Trusted Peanut Exporter"
                     style={{
-                      height: isSticky ? "58px" : "72px",
+                      height: isSticky ? "38px" : "46px",
                       width: "auto",
                       objectFit: "contain",
-                      transition: "height 0.3s ease-out",
+                      transition: "height 0.25s ease-out",
                     }}
                   />
                 </div>
@@ -411,10 +415,10 @@ export default function Header() {
                   <span
                     style={{
                       display: "block",
-                      fontSize: isSticky ? "15px" : "17px",
+                      fontSize: isSticky ? "14px" : "15.5px",
                       fontWeight: 800,
                       color: "#361C0D",
-                      letterSpacing: "0.06em",
+                      letterSpacing: "0.05em",
                       fontFamily: 'var(--font-heading), "DM Serif Display", serif',
                       lineHeight: 1.1,
                     }}
@@ -426,18 +430,18 @@ export default function Header() {
                       display: "inline-flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      gap: "4px",
-                      fontSize: isSticky ? "9px" : "10px",
+                      gap: "3px",
+                      fontSize: "9.5px",
                       fontWeight: 800,
                       color: "#2C170A",
                       background: "linear-gradient(135deg, #F5D38A 0%, #D49B35 100%)",
-                      padding: isSticky ? "2px 8px" : "3px 12px",
-                      borderRadius: "12px",
-                      letterSpacing: "0.12em",
+                      padding: "2px 9px",
+                      borderRadius: "11px",
+                      letterSpacing: "0.1em",
                       textTransform: "uppercase",
-                      boxShadow: "0 2px 8px rgba(200, 138, 46, 0.35)",
+                      boxShadow: "0 1px 4px rgba(200, 138, 46, 0.3)",
                       border: "1px solid #C88A2E",
-                      marginTop: "3px",
+                      marginTop: "2px",
                       whiteSpace: "nowrap",
                     }}
                   >
@@ -453,7 +457,7 @@ export default function Header() {
                 style={{
                   display: "flex",
                   alignItems: "center",
-                  gap: "clamp(12px, 1.4vw, 22px)",
+                  gap: "clamp(8px, 1.1vw, 16px)",
                   listStyle: "none",
                   margin: 0,
                   padding: 0,
@@ -475,7 +479,7 @@ export default function Header() {
                           fontWeight: 700,
                           letterSpacing: "-0.01em",
                           borderBottom: isActive ? "2px solid #C88A2E" : "2px solid transparent",
-                          paddingBottom: "4px",
+                          paddingBottom: "3px",
                           display: "inline-flex",
                           alignItems: "center",
                           gap: "6px",
@@ -587,7 +591,7 @@ export default function Header() {
                 }}
               >
                 <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                  <img src="/images/logo/logo-light.png" alt="Pradeep Trading" style={{ maxHeight: "48px" }} />
+                  <img src="/images/logo/logo-light.png" alt="Pradeep Trading" style={{ maxHeight: "58px" }} />
                   <div>
                     <div style={{ fontSize: "14px", fontWeight: 800, color: "#ffffff" }}>PRADEEP TRADING</div>
                     <div
