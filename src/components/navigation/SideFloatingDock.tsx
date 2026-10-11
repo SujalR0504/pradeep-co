@@ -17,7 +17,7 @@ export default function SideFloatingDock() {
     <>
       <aside
         aria-label="Quick Actions Desk"
-        className="fixed right-0 top-1/2 -translate-y-1/2 z-[9990] flex items-center transition-transform duration-300"
+        className="fixed right-0 top-1/2 -translate-y-1/2 z-[9990] hidden md:flex items-center transition-transform duration-300"
         style={{
           transform: isCollapsed ? "translate(calc(100% - 22px), -50%)" : "translate(0, -50%)",
         }}

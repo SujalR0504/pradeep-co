@@ -442,34 +442,36 @@ export default function ContactPage() {
                     </div>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-3.5 sm:space-y-4">
+                  <form onSubmit={handleSubmit} className="space-y-4">
                     {/* Row 1: Name & Company (2 columns desktop, 1 column mobile) */}
                     <div className="contact-form-grid">
                       <div>
-                        <label className="block text-[9.5px] font-mono text-[#7A4824] uppercase mb-1 font-bold tracking-wider">
+                        <label className="block text-[11px] sm:text-[11.5px] font-mono text-[#7A4824] uppercase mb-1 font-bold tracking-wider">
                           Name *
                         </label>
                         <input
                           type="text"
                           required
+                          autoComplete="name"
                           value={formData.fullName}
                           onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                           placeholder="Your Full Name"
-                          className="w-full h-10 px-3 rounded-lg bg-[#FFFDF8] border border-[#5A3218]/20 text-xs font-sans placeholder-[#2E2117]/40 focus:outline-none focus:border-[#5A3218]"
+                          className="w-full h-11 px-3.5 rounded-lg bg-[#FFFDF8] border border-[#5A3218]/20 text-sm font-sans placeholder-[#2E2117]/40 focus:outline-none focus:border-[#5A3218]"
                         />
                       </div>
 
                       <div>
-                        <label className="block text-[9.5px] font-mono text-[#7A4824] uppercase mb-1 font-bold tracking-wider">
+                        <label className="block text-[11px] sm:text-[11.5px] font-mono text-[#7A4824] uppercase mb-1 font-bold tracking-wider">
                           Company *
                         </label>
                         <input
                           type="text"
                           required
+                          autoComplete="organization"
                           value={formData.companyName}
                           onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
                           placeholder="Company / Organization Name"
-                          className="w-full h-10 px-3 rounded-lg bg-[#FFFDF8] border border-[#5A3218]/20 text-xs font-sans placeholder-[#2E2117]/40 focus:outline-none focus:border-[#5A3218]"
+                          className="w-full h-11 px-3.5 rounded-lg bg-[#FFFDF8] border border-[#5A3218]/20 text-sm font-sans placeholder-[#2E2117]/40 focus:outline-none focus:border-[#5A3218]"
                         />
                       </div>
                     </div>
@@ -477,7 +479,7 @@ export default function ContactPage() {
                     {/* Row 2: Country & Email (2 columns desktop, 1 column mobile) */}
                     <div className="contact-form-grid">
                       <div>
-                        <label className="block text-[9.5px] font-mono text-[#7A4824] uppercase mb-1 font-bold tracking-wider">
+                        <label className="block text-[11px] sm:text-[11.5px] font-mono text-[#7A4824] uppercase mb-1 font-bold tracking-wider">
                           Country *
                         </label>
                         <input
@@ -485,22 +487,23 @@ export default function ContactPage() {
                           required
                           value={formData.country}
                           onChange={(e) => setFormData({ ...formData, country: e.target.value })}
-                          placeholder="Destination Country (e.g. Vietnam, UAE, Netherlands)"
-                          className="w-full h-10 px-3 rounded-lg bg-[#FFFDF8] border border-[#5A3218]/20 text-xs font-sans placeholder-[#2E2117]/40 focus:outline-none focus:border-[#5A3218]"
+                          placeholder="Destination Country (e.g. Vietnam, UAE)"
+                          className="w-full h-11 px-3.5 rounded-lg bg-[#FFFDF8] border border-[#5A3218]/20 text-sm font-sans placeholder-[#2E2117]/40 focus:outline-none focus:border-[#5A3218]"
                         />
                       </div>
 
                       <div>
-                        <label className="block text-[9.5px] font-mono text-[#7A4824] uppercase mb-1 font-bold tracking-wider">
+                        <label className="block text-[11px] sm:text-[11.5px] font-mono text-[#7A4824] uppercase mb-1 font-bold tracking-wider">
                           Email *
                         </label>
                         <input
                           type="email"
                           required
+                          autoComplete="email"
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                           placeholder="procurement@company.com"
-                          className="w-full h-10 px-3 rounded-lg bg-[#FFFDF8] border border-[#5A3218]/20 text-xs font-sans placeholder-[#2E2117]/40 focus:outline-none focus:border-[#5A3218]"
+                          className="w-full h-11 px-3.5 rounded-lg bg-[#FFFDF8] border border-[#5A3218]/20 text-sm font-sans placeholder-[#2E2117]/40 focus:outline-none focus:border-[#5A3218]"
                         />
                       </div>
                     </div>
@@ -508,27 +511,28 @@ export default function ContactPage() {
                     {/* Row 3: Phone & Product (2 columns desktop, 1 column mobile) */}
                     <div className="contact-form-grid">
                       <div>
-                        <label className="block text-[9.5px] font-mono text-[#7A4824] uppercase mb-1 font-bold tracking-wider">
-                          Phone *
+                        <label className="block text-[11px] sm:text-[11.5px] font-mono text-[#7A4824] uppercase mb-1 font-bold tracking-wider">
+                          Phone / WhatsApp *
                         </label>
                         <input
-                          type="text"
+                          type="tel"
                           required
+                          autoComplete="tel"
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                           placeholder="+ Country Code & Phone Number"
-                          className="w-full h-10 px-3 rounded-lg bg-[#FFFDF8] border border-[#5A3218]/20 text-xs font-sans placeholder-[#2E2117]/40 focus:outline-none focus:border-[#5A3218]"
+                          className="w-full h-11 px-3.5 rounded-lg bg-[#FFFDF8] border border-[#5A3218]/20 text-sm font-sans placeholder-[#2E2117]/40 focus:outline-none focus:border-[#5A3218]"
                         />
                       </div>
 
                       <div>
-                        <label className="block text-[9.5px] font-mono text-[#7A4824] uppercase mb-1 font-bold tracking-wider">
+                        <label className="block text-[11px] sm:text-[11.5px] font-mono text-[#7A4824] uppercase mb-1 font-bold tracking-wider">
                           Product *
                         </label>
                         <select
                           value={formData.product}
                           onChange={(e) => setFormData({ ...formData, product: e.target.value })}
-                          className="w-full h-10 px-3 rounded-lg bg-[#FFFDF8] border border-[#5A3218]/20 text-xs font-sans focus:outline-none focus:border-[#5A3218]"
+                          className="w-full h-11 px-3.5 rounded-lg bg-[#FFFDF8] border border-[#5A3218]/20 text-sm font-sans focus:outline-none focus:border-[#5A3218]"
                         >
                           {productOptions.map((opt) => (
                             <option key={opt} value={opt}>
@@ -541,15 +545,15 @@ export default function ContactPage() {
 
                     {/* Row 4: Message (Resize-Vertical Only) */}
                     <div>
-                      <label className="block text-[9.5px] font-mono text-[#7A4824] uppercase mb-1 font-bold tracking-wider">
-                        Message
+                      <label className="block text-[11px] sm:text-[11.5px] font-mono text-[#7A4824] uppercase mb-1 font-bold tracking-wider">
+                        Message / RFQ Specifications
                       </label>
                       <textarea
                         rows={3}
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                         placeholder="Tell us about target delivery terms (FOB / CIF), destination port, packaging preferences, or specific quality thresholds."
-                        className="w-full px-3 py-2 rounded-lg bg-[#FFFDF8] border border-[#5A3218]/20 text-xs font-sans placeholder-[#2E2117]/40 focus:outline-none focus:border-[#5A3218] resize-y"
+                        className="w-full px-3.5 py-2.5 rounded-lg bg-[#FFFDF8] border border-[#5A3218]/20 text-sm font-sans placeholder-[#2E2117]/40 focus:outline-none focus:border-[#5A3218] resize-y"
                       />
                     </div>
 
@@ -557,22 +561,22 @@ export default function ContactPage() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full h-10.5 rounded-full bg-[#5A3218] hover:bg-[#7A4824] disabled:bg-[#5A3218]/60 text-[#FFFDF8] font-sans font-semibold text-xs tracking-wider uppercase transition-all shadow-xs flex items-center justify-center gap-2 cursor-pointer mt-1"
+                      className="w-full h-12 rounded-full bg-[#5A3218] hover:bg-[#7A4824] disabled:bg-[#5A3218]/60 text-[#FFFDF8] font-sans font-semibold text-xs tracking-wider uppercase transition-all shadow-xs flex items-center justify-center gap-2 cursor-pointer mt-1"
                     >
                       {isSubmitting ? (
                         <div className="flex items-center gap-2">
-                          <div className="w-3.5 h-3.5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                          <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                           <span>SENDING...</span>
                         </div>
                       ) : (
                         <>
-                          <Send className="w-3.5 h-3.5" />
-                          <span>SEND ENQUIRY</span>
+                          <Send className="w-4 h-4" />
+                          <span>SEND EXPORT ENQUIRY</span>
                         </>
                       )}
                     </button>
 
-                    <p className="text-[9px] font-mono text-center text-[#7A4824] uppercase tracking-wider pt-0.5 m-0">
+                    <p className="text-[10px] font-mono text-center text-[#7A4824] uppercase tracking-wider pt-0.5 m-0">
                       CONFIDENTIAL &bull; DIRECT APMC PROCESSOR RATES &bull; NO BROKER MARKUPS
                     </p>
                   </form>

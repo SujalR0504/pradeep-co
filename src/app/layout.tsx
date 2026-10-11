@@ -7,14 +7,17 @@ import SearchModal from '@/components/ui/SearchModal';
 import BrochureModal from '@/components/ui/BrochureModal';
 import QuickSpecsModal from '@/components/ui/QuickSpecsModal';
 import SideFloatingDock from '@/components/navigation/SideFloatingDock';
+import MobileBottomBar from '@/components/navigation/MobileBottomBar';
 
 export const viewport: Viewport = {
   themeColor: '#5C341B',
   width: 'device-width',
   initialScale: 1,
+  viewportFit: 'cover',
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://pradeep-co.vercel.app'),
   title: 'Pradeep Trading Company - Trusted Peanut Exporter | From Us to World',
   description: 'M/s Pradeep Trading Company - Sourcing, Buhler Sortex processing, and exporting double-sortex Bold, Java, Blanched, and In-Shell peanuts from Shivpuri, Madhya Pradesh, India.',
   icons: {
@@ -43,13 +46,14 @@ export default function RootLayout({
       </head>
       <body className="bg-white antialiased text-[#2D241D]">
         <Header />
-        <main>{children}</main>
+        <main className="pb-16 md:pb-0">{children}</main>
         <Footer />
         <QuoteModal />
         <SearchModal />
         <BrochureModal />
         <QuickSpecsModal />
         <SideFloatingDock />
+        <MobileBottomBar />
       </body>
     </html>
   );

@@ -408,28 +408,29 @@ export default function QuickSpecsModal() {
           style={{
             backgroundColor: "#2C170A",
             color: "#ffffff",
-            padding: "22px 26px",
+            padding: "clamp(14px, 3.5vw, 22px) clamp(16px, 4vw, 26px)",
             position: "relative",
             borderTopLeftRadius: "22px",
             borderTopRightRadius: "22px",
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
+            gap: "12px",
           }}
         >
           <div>
             <span
               style={{
-                fontSize: "11px",
+                fontSize: "10.5px",
                 fontWeight: 700,
                 color: "#E5A83B",
                 textTransform: "uppercase",
-                letterSpacing: "0.1em",
+                letterSpacing: "0.08em",
               }}
             >
               Export Caliber Technical Specification
             </span>
-            <h3 style={{ fontSize: "20px", fontWeight: 800, margin: "4px 0 0", color: "#ffffff" }}>
+            <h3 style={{ fontSize: "clamp(16px, 3.5vw, 20px)", fontWeight: 800, margin: "4px 0 0", color: "#ffffff", lineHeight: 1.25 }}>
               {activeProduct.name}
             </h3>
           </div>
@@ -447,6 +448,7 @@ export default function QuickSpecsModal() {
               alignItems: "center",
               justifyContent: "center",
               cursor: "pointer",
+              flexShrink: 0,
             }}
           >
             <X size={18} />
@@ -454,24 +456,22 @@ export default function QuickSpecsModal() {
         </div>
 
         {/* Modal Content */}
-        <div style={{ padding: "26px" }}>
+        <div style={{ padding: "clamp(16px, 4vw, 26px)" }}>
           {/* Top Info Banner */}
           <div
+            className="flex flex-col sm:flex-row items-start gap-4"
             style={{
-              display: "flex",
-              gap: "20px",
-              alignItems: "center",
               padding: "16px",
               backgroundColor: "#FAF6EE",
               borderRadius: "16px",
               border: "1px solid #ebdcc8",
-              marginBottom: "22px",
+              marginBottom: "20px",
             }}
           >
             <div
               style={{
-                width: "90px",
-                height: "90px",
+                width: "72px",
+                height: "72px",
                 borderRadius: "50%",
                 overflow: "hidden",
                 border: "3px solid #C88A2E",
@@ -487,20 +487,21 @@ export default function QuickSpecsModal() {
             <div>
               <span
                 style={{
-                  fontSize: "11px",
+                  fontSize: "10.5px",
                   fontWeight: 700,
                   backgroundColor: "#5C341B",
                   color: "#ffffff",
                   padding: "3px 10px",
                   borderRadius: "12px",
+                  display: "inline-block",
                 }}
               >
                 {activeProduct.category}
               </span>
-              <h4 style={{ fontSize: "15px", fontWeight: 700, color: "#361C0D", margin: "6px 0 4px" }}>
+              <h4 style={{ fontSize: "14.5px", fontWeight: 700, color: "#361C0D", margin: "6px 0 4px" }}>
                 {activeProduct.tagline}
               </h4>
-              <p style={{ fontSize: "12.5px", color: "#6e5d52", margin: 0, lineHeight: 1.45 }}>
+              <p style={{ fontSize: "12px", color: "#6e5d52", margin: 0, lineHeight: 1.5 }}>
                 {activeProduct.description}
               </p>
             </div>
@@ -523,9 +524,9 @@ export default function QuickSpecsModal() {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 180px), 1fr))",
               gap: "10px",
-              marginBottom: "24px",
+              marginBottom: "22px",
             }}
           >
             <div style={{ backgroundColor: "#FAF2E6", padding: "12px 14px", borderRadius: "12px", border: "1px solid #ebdcc8" }}>
@@ -555,7 +556,7 @@ export default function QuickSpecsModal() {
           </div>
 
           {/* Key Applications */}
-          <div style={{ marginBottom: "24px" }}>
+          <div style={{ marginBottom: "22px" }}>
             <h4
               style={{
                 fontSize: "13px",
@@ -568,7 +569,7 @@ export default function QuickSpecsModal() {
             >
               Recommended Food &amp; Industrial Uses
             </h4>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "8px" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 240px), 1fr))", gap: "8px" }}>
               {activeProduct.applications.map((app, idx) => (
                 <div
                   key={idx}
@@ -576,7 +577,7 @@ export default function QuickSpecsModal() {
                     display: "flex",
                     alignItems: "center",
                     gap: "8px",
-                    fontSize: "12.5px",
+                    fontSize: "12px",
                     color: "#54463c",
                     backgroundColor: "#FAF6EE",
                     padding: "8px 12px",
@@ -593,20 +594,12 @@ export default function QuickSpecsModal() {
 
           {/* Action Row */}
           <div
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              alignItems: "center",
-              justifyContent: "space-between",
-              gap: "12px",
-              borderTop: "1px solid #ebdcc8",
-              paddingTop: "20px",
-            }}
+            className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-4 border-t border-[#ebdcc8]"
           >
-            <div style={{ fontSize: "12px", color: "#776355" }}>
+            <div style={{ fontSize: "11.5px", color: "#776355" }}>
               FCL Container Loadability: <strong>19 MT (20ft) / 27 MT (40ft)</strong>
             </div>
-            <div style={{ display: "flex", gap: "10px" }}>
+            <div className="flex flex-col sm:flex-row gap-2">
               <a
                 href={`https://wa.me/919589790997?text=Hello%20Pradeep%20Trading,%20I%20need%20a%20container%20quote%20for%20${encodeURIComponent(
                   activeProduct.name
@@ -616,11 +609,12 @@ export default function QuickSpecsModal() {
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
+                  justifyContent: "center",
                   gap: "6px",
                   backgroundColor: "#25D366",
                   color: "#ffffff",
                   textDecoration: "none",
-                  padding: "9px 16px",
+                  padding: "10px 16px",
                   borderRadius: "20px",
                   fontSize: "12px",
                   fontWeight: 700,
@@ -639,7 +633,7 @@ export default function QuickSpecsModal() {
                   backgroundColor: "#5C341B",
                   color: "#ffffff",
                   border: "none",
-                  padding: "9px 18px",
+                  padding: "10px 18px",
                   borderRadius: "20px",
                   fontSize: "12px",
                   fontWeight: 700,

@@ -337,7 +337,7 @@ export default function CoreProductSlider({
               maxWidth: "760px",
             }}
           >
-            Calibrated Bold kernels, high-oil Java kernels, skinless blanched varieties, in-shell groundnuts, and diversified agricultural commodities processed under Buhler Sortex standards.
+            Discover our premium range of most trusted peanut varieties and peanut-derived products along with extensive range of agriculture products line sourced from our organic farms and processed with care to deliver exceptional quality.
           </p>
 
           {/* Controls: Auto-Scroll Indicator + Arrow Navigation Buttons Centered */}
@@ -531,16 +531,16 @@ export default function CoreProductSlider({
               key={`${banner.productId}-${index}`}
               className="banner-box flex flex-col justify-between"
               style={{
-                flex: "0 0 255px",
-                width: "255px",
-                minWidth: "255px",
-                maxWidth: "255px",
+                flex: "0 0 260px",
+                width: "260px",
+                minWidth: "260px",
+                maxWidth: "260px",
                 backgroundColor: banner.bgColor,
                 borderRadius: "20px",
-                padding: "16px 14px 14px",
+                padding: "18px 14px 14px",
                 position: "relative",
                 overflow: "hidden",
-                minHeight: "370px",
+                minHeight: "405px",
                 boxShadow: "0 8px 24px rgba(0,0,0,0.12)",
                 transition: "transform 0.28s ease, box-shadow 0.28s ease",
                 display: "flex",
@@ -587,16 +587,16 @@ export default function CoreProductSlider({
                   </span>
                 </div>
 
-                {/* Product Image (Compact 80px Circular Frame) */}
+                {/* Product Image (Prominent 112px Circular Frame) */}
                 <div
                   style={{
-                    width: "80px",
-                    height: "80px",
+                    width: "112px",
+                    height: "112px",
                     borderRadius: "50%",
                     overflow: "hidden",
-                    border: "3px solid rgba(255,255,255,0.9)",
-                    boxShadow: "0 6px 16px rgba(0,0,0,0.22)",
-                    marginBottom: "10px",
+                    border: "3.5px solid rgba(255,255,255,0.92)",
+                    boxShadow: "0 8px 22px rgba(0,0,0,0.25)",
+                    marginBottom: "12px",
                     flexShrink: 0,
                     backgroundColor: "rgba(255,255,255,0.1)",
                   }}

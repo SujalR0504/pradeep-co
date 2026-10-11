@@ -145,55 +145,55 @@ function ProductsContent() {
                     />
                   </div>
 
-                  {/* Product Content Body: Aligned Hierarchy (Compact & Refined Typography) */}
-                  <div className="p-3 sm:p-3.5 flex-1 flex flex-col justify-between gap-2">
+                  {/* Product Content Body: Aligned Hierarchy (Legible B2B Typography) */}
+                  <div className="p-4 sm:p-4.5 flex-1 flex flex-col justify-between gap-3">
                     
                     {/* Category, Title, Description */}
                     <div>
                       {/* Category Tag */}
-                      <div className="flex items-center justify-between gap-2 mb-1">
-                        <span className="inline-block px-1.5 py-0.5 rounded-full bg-[#5A3218]/10 text-[#5A3218] text-[8px] font-mono font-bold uppercase tracking-wider whitespace-nowrap">
+                      <div className="flex items-center justify-between gap-2 mb-1.5">
+                        <span className="inline-block px-2 py-0.5 rounded-full bg-[#5A3218]/10 text-[#5A3218] text-[10px] sm:text-[10.5px] font-mono font-bold uppercase tracking-wider whitespace-nowrap">
                           {product.category}
                         </span>
                       </div>
 
                       {/* Product Name */}
-                      <h3 className="font-sans text-[13px] sm:text-[14px] font-bold text-[#2E2117] group-hover:text-[#5A3218] transition-colors m-0 mb-1 leading-snug">
+                      <h3 className="font-sans text-[15px] sm:text-[16px] font-bold text-[#2E2117] group-hover:text-[#5A3218] transition-colors m-0 mb-1.5 leading-snug">
                         {product.name}
                       </h3>
 
                       {/* Product Description */}
-                      <p className="text-[10px] sm:text-[10.5px] font-sans text-[#55473E] font-normal leading-relaxed m-0 line-clamp-2">
+                      <p className="text-[12px] sm:text-[12.5px] font-sans text-[#55473E] font-normal leading-relaxed m-0 line-clamp-2">
                         {product.shortDescription}
                       </p>
                     </div>
 
                     {/* Clean Two-Column Specification Table (Label Column / Value Column) */}
-                    <div className="pt-2 pb-0.5 border-t border-[#5A3218]/12 flex flex-col gap-1.5">
+                    <div className="pt-2.5 pb-1 border-t border-[#5A3218]/12 flex flex-col gap-2">
                       
                       {/* Row 1: Counts / Caliber / Size */}
                       <div className="flex items-start justify-between gap-2">
-                        <span className="shrink-0 font-mono text-[7.5px] sm:text-[8px] font-semibold text-[#7A4824] uppercase tracking-wider pt-0.5">
+                        <span className="shrink-0 font-mono text-[9.5px] sm:text-[10px] font-semibold text-[#7A4824] uppercase tracking-wider pt-0.5">
                           {product.specs.counts ? "COUNTS / OUNCE" : "GRADE / CALIBER"}
                         </span>
-                        <span className="text-right font-sans font-medium text-[#2E2117] text-[9px] sm:text-[9.5px] leading-snug">
+                        <span className="text-right font-sans font-medium text-[#2E2117] text-[11.5px] sm:text-[12px] leading-snug">
                           {product.specs.counts || product.grade || product.size || "Export Standard"}
                         </span>
                       </div>
 
                       {/* Row 2: Moisture Ceiling */}
                       <div className="flex items-start justify-between gap-2">
-                        <span className="shrink-0 font-mono text-[7.5px] sm:text-[8px] font-semibold text-[#7A4824] uppercase tracking-wider pt-0.5">
+                        <span className="shrink-0 font-mono text-[9.5px] sm:text-[10px] font-semibold text-[#7A4824] uppercase tracking-wider pt-0.5">
                           MOISTURE CEILING
                         </span>
-                        <span className="text-right font-sans font-medium text-[#2E2117] text-[9px] sm:text-[9.5px] leading-snug">
+                        <span className="text-right font-sans font-medium text-[#2E2117] text-[11.5px] sm:text-[12px] leading-snug">
                           {product.specs.moisture || "Standard Export Ceiling"}
                         </span>
                       </div>
 
                       {/* Row 3: Aflatoxin / Purity / Protein / Oil */}
                       <div className="flex items-start justify-between gap-2">
-                        <span className="shrink-0 font-mono text-[7.5px] sm:text-[8px] font-semibold text-[#7A4824] uppercase tracking-wider pt-0.5">
+                        <span className="shrink-0 font-mono text-[9.5px] sm:text-[10px] font-semibold text-[#7A4824] uppercase tracking-wider pt-0.5">
                           {product.specs.protein 
                             ? "PROTEIN CONTENT" 
                             : product.specs.oilContent 
@@ -202,26 +202,26 @@ function ProductsContent() {
                                 ? "AFLATOXIN SPEC" 
                                 : "PURITY RATING"}
                         </span>
-                        <span className="text-right font-sans font-medium text-[#2E2117] text-[9px] sm:text-[9.5px] leading-snug">
+                        <span className="text-right font-sans font-medium text-[#2E2117] text-[11.5px] sm:text-[12px] leading-snug">
                           {product.specs.protein || product.specs.oilContent || product.specs.aflatoxin || product.specs.purity || "99.5% Min Double Sortex"}
                         </span>
                       </div>
 
                     </div>
 
-                    {/* Standardized B2B Action Buttons with Compact Height and Pill Styling */}
+                    {/* Standardized B2B Action Buttons with Comfortable Touch Heights and Pill Styling */}
                     <div 
-                      className="pt-2.5 mt-auto border-t border-[#5A3218]/12"
-                      style={{ display: 'flex', flexDirection: 'column', gap: '7px' }}
+                      className="pt-3 mt-auto border-t border-[#5A3218]/12"
+                      style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}
                     >
                       
                       {/* Top Action Row: View Details & Request Quote */}
                       <div 
-                        style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '7px' }}
+                        style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '8px' }}
                       >
                         <Link
                           href={`/products/${product.slug}`}
-                          className="w-full h-8 px-2 bg-[#F7F1E7] text-[#5A3218] hover:bg-[#5A3218] hover:text-[#FFFDF8] font-sans text-[9px] sm:text-[9.5px] font-bold text-center uppercase tracking-wide transition-colors border border-[#5A3218]/15 shadow-2xs"
+                          className="w-full min-h-[38px] px-2.5 bg-[#F7F1E7] text-[#5A3218] hover:bg-[#5A3218] hover:text-[#FFFDF8] font-sans text-[11px] sm:text-[11.5px] font-bold text-center uppercase tracking-wide transition-colors border border-[#5A3218]/15 shadow-2xs"
                           style={{
                             borderRadius: '9999px',
                             display: 'flex',
@@ -232,13 +232,13 @@ function ProductsContent() {
                           }}
                         >
                           <span className="whitespace-nowrap">View Details</span>
-                          <ArrowRight className="w-2.5 h-2.5 shrink-0" />
+                          <ArrowRight className="w-3 h-3 shrink-0" />
                         </Link>
                         
                         <button
                           type="button"
                           onClick={() => handleOpenQuote(product.name)}
-                          className="w-full h-8 px-2 bg-[#5A3218] text-[#FFFDF8] hover:bg-[#7A4824] font-sans text-[9px] sm:text-[9.5px] font-bold text-center uppercase tracking-wide transition-colors shadow-2xs cursor-pointer border border-[#5A3218]"
+                          className="w-full min-h-[38px] px-2.5 bg-[#5A3218] text-[#FFFDF8] hover:bg-[#7A4824] font-sans text-[11px] sm:text-[11.5px] font-bold text-center uppercase tracking-wide transition-colors shadow-2xs cursor-pointer border border-[#5A3218]"
                           style={{
                             borderRadius: '9999px',
                             display: 'flex',
@@ -247,7 +247,7 @@ function ProductsContent() {
                             gap: '4px'
                           }}
                         >
-                          <FileText className="w-2.5 h-2.5 text-[#D5B58C] shrink-0" />
+                          <FileText className="w-3 h-3 text-[#D5B58C] shrink-0" />
                           <span className="whitespace-nowrap">Get Quote</span>
                         </button>
                       </div>
@@ -257,17 +257,17 @@ function ProductsContent() {
                         href={whatsappLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-full h-8 px-3 bg-[#25D366]/12 hover:bg-[#25D366] text-[#1E7E34] hover:text-white font-sans text-[9.5px] sm:text-[10px] font-bold text-center uppercase tracking-wide transition-all border border-[#25D366]/30 shadow-2xs"
+                        className="w-full min-h-[38px] px-3 bg-[#25D366]/15 hover:bg-[#25D366] text-[#166534] hover:text-white font-sans text-[11px] sm:text-[11.5px] font-bold text-center uppercase tracking-wide transition-all border border-[#25D366]/30 shadow-2xs"
                         style={{
                           borderRadius: '9999px',
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'center',
-                          gap: '5px',
+                          gap: '6px',
                           textDecoration: 'none'
                         }}
                       >
-                        <MessageCircle className="w-3 h-3 shrink-0" />
+                        <MessageCircle className="w-3.5 h-3.5 shrink-0" />
                         <span className="whitespace-nowrap">Chat on WhatsApp</span>
                       </a>
 

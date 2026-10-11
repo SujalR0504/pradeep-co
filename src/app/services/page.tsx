@@ -175,7 +175,7 @@ export default function ServicesPage() {
                 </div>
 
                 {/* Small Supporting Overlapping Image */}
-                <div className="absolute -bottom-6 -right-4 sm:right-2 w-40 sm:w-52 h-40 sm:h-52 rounded-2xl overflow-hidden shadow-[0_20px_45px_rgba(90,50,24,0.25)] border-4 border-[#FFFDF8] z-20">
+                <div className="absolute -bottom-4 right-2 sm:right-2 w-32 sm:w-52 h-32 sm:h-52 rounded-2xl overflow-hidden shadow-[0_20px_45px_rgba(90,50,24,0.25)] border-4 border-[#FFFDF8] z-20">
                   <Image
                     src={srv.subImage}
                     alt={`${srv.name} Supporting Visual`}

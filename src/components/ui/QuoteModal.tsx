@@ -62,7 +62,7 @@ export default function QuoteModal() {
           backgroundColor: '#ffffff',
           maxWidth: '440px',
           width: '100%',
-          padding: '22px 24px',
+          padding: 'clamp(18px, 4vw, 24px)',
           maxHeight: '90vh',
           overflowY: 'auto',
           position: 'relative',
@@ -82,8 +82,8 @@ export default function QuoteModal() {
             background: '#F6EFE7',
             border: 'none',
             borderRadius: '50%',
-            width: '28px',
-            height: '28px',
+            width: '32px',
+            height: '32px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -132,7 +132,7 @@ export default function QuoteModal() {
           </h3>
           <p
             style={{
-              fontSize: '11.5px',
+              fontSize: '12px',
               color: '#7A6B63',
               margin: 0,
               lineHeight: 1.4,
@@ -157,14 +157,14 @@ export default function QuoteModal() {
             setIsOpen(false);
           }}
         >
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '11px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
             {/* 1. Variety of Products (Dropdown) */}
             <div>
               <label
                 htmlFor="quote-product-select"
                 style={{
                   display: 'block',
-                  fontSize: '11.5px',
+                  fontSize: '12px',
                   fontWeight: 700,
                   color: '#4A3B32',
                   marginBottom: '4px',
@@ -179,12 +179,12 @@ export default function QuoteModal() {
                 onChange={(e) => setProductName(e.target.value)}
                 style={{
                   width: '100%',
-                  height: '38px',
-                  padding: '0 10px',
-                  borderRadius: '9px',
+                  height: '42px',
+                  padding: '0 12px',
+                  borderRadius: '10px',
                   border: '1px solid #D9C9B8',
                   backgroundColor: '#ffffff',
-                  fontSize: '12.5px',
+                  fontSize: '13px',
                   fontWeight: 600,
                   color: '#2C170A',
                   outline: 'none',
@@ -199,15 +199,15 @@ export default function QuoteModal() {
               </select>
             </div>
 
-            {/* Row 2: Quantity & Country Side-by-Side (2 Columns) */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+            {/* Row 2: Quantity & Country Side-by-Side (Stacked on narrow mobile) */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
               {/* 2. Quantity */}
               <div>
                 <label
                   htmlFor="quote-quantity"
                   style={{
                     display: 'block',
-                    fontSize: '11.5px',
+                    fontSize: '12px',
                     fontWeight: 700,
                     color: '#4A3B32',
                     marginBottom: '4px',
@@ -223,11 +223,11 @@ export default function QuoteModal() {
                   placeholder="e.g. 20 MT / 1 FCL"
                   style={{
                     width: '100%',
-                    height: '38px',
-                    padding: '0 10px',
-                    borderRadius: '9px',
+                    height: '42px',
+                    padding: '0 12px',
+                    borderRadius: '10px',
                     border: '1px solid #D9C9B8',
-                    fontSize: '12px',
+                    fontSize: '13px',
                     outline: 'none',
                     color: '#2C170A',
                     backgroundColor: '#ffffff',
@@ -241,7 +241,7 @@ export default function QuoteModal() {
                   htmlFor="quote-country"
                   style={{
                     display: 'block',
-                    fontSize: '11.5px',
+                    fontSize: '12px',
                     fontWeight: 700,
                     color: '#4A3B32',
                     marginBottom: '4px',
@@ -257,11 +257,11 @@ export default function QuoteModal() {
                   placeholder="e.g. UAE / India"
                   style={{
                     width: '100%',
-                    height: '38px',
-                    padding: '0 10px',
-                    borderRadius: '9px',
+                    height: '42px',
+                    padding: '0 12px',
+                    borderRadius: '10px',
                     border: '1px solid #D9C9B8',
-                    fontSize: '12px',
+                    fontSize: '13px',
                     outline: 'none',
                     color: '#2C170A',
                     backgroundColor: '#ffffff',
@@ -276,7 +276,7 @@ export default function QuoteModal() {
                 htmlFor="quote-buyer-name"
                 style={{
                   display: 'block',
-                  fontSize: '11.5px',
+                  fontSize: '12px',
                   fontWeight: 700,
                   color: '#4A3B32',
                   marginBottom: '4px',
@@ -292,11 +292,11 @@ export default function QuoteModal() {
                 placeholder="Your Name or Business Entity"
                 style={{
                   width: '100%',
-                  height: '38px',
-                  padding: '0 10px',
-                  borderRadius: '9px',
+                  height: '42px',
+                  padding: '0 12px',
+                  borderRadius: '10px',
                   border: '1px solid #D9C9B8',
-                  fontSize: '12px',
+                  fontSize: '13px',
                   outline: 'none',
                   color: '#2C170A',
                   backgroundColor: '#ffffff',
@@ -312,10 +312,10 @@ export default function QuoteModal() {
                 backgroundColor: '#5C341B',
                 color: '#ffffff',
                 border: 'none',
-                height: '42px',
-                borderRadius: '21px',
+                height: '44px',
+                borderRadius: '22px',
                 fontWeight: 700,
-                fontSize: '12.5px',
+                fontSize: '13px',
                 cursor: 'pointer',
                 marginTop: '6px',
                 display: 'flex',

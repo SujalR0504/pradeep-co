@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle2 } from 'lucide-react';
+import GlobalMaritimeBanner from '@/components/sections/GlobalMaritimeBanner';
 
 export default function Footer() {
   const [formData, setFormData] = useState({
@@ -42,6 +43,11 @@ export default function Footer() {
         overflow: 'hidden',
       }}
     >
+      {/* ============================================================== */}
+      {/* 0. MARITIME CARGO BANNER (Pentastar Style Outlined Marquee)   */}
+      {/* ============================================================== */}
+      <GlobalMaritimeBanner />
+
       {/* ============================================================== */}
       {/* 1. CONTACT US FOR ENQUIRY & LIVE GOOGLE MAP SECTION */}
       {/* ============================================================== */}
@@ -301,6 +307,7 @@ export default function Footer() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
+                      className="w-full sm:w-auto"
                       style={{
                         display: 'inline-flex',
                         alignItems: 'center',
@@ -309,6 +316,7 @@ export default function Footer() {
                         backgroundColor: '#E5A83B',
                         color: '#2C170A',
                         padding: '12px 32px',
+                        minHeight: '44px',
                         borderRadius: '6px',
                         fontSize: '13.5px',
                         fontWeight: 800,
@@ -340,7 +348,7 @@ export default function Footer() {
 
           {/* RIGHT 6 COLUMNS: LIVE GOOGLE MAP OF FACTORY HEADQUARTERS */}
           <div
-            className="lg:col-span-6 relative min-h-[380px] lg:min-h-full"
+            className="lg:col-span-6 relative min-h-[300px] lg:min-h-full"
             style={{
               backgroundColor: '#0E0804',
               borderLeft: '1px solid rgba(229, 168, 59, 0.2)',
@@ -353,7 +361,7 @@ export default function Footer() {
               style={{
                 width: '100%',
                 height: '100%',
-                minHeight: '420px',
+                minHeight: 'clamp(280px, 45vw, 420px)',
                 border: 0,
                 display: 'block',
               }}
@@ -366,15 +374,15 @@ export default function Footer() {
             <div
               style={{
                 position: 'absolute',
-                top: '18px',
-                left: '18px',
+                top: '14px',
+                left: '14px',
                 backgroundColor: 'rgba(26, 15, 8, 0.94)',
                 backdropFilter: 'blur(8px)',
                 border: '1px solid rgba(229, 168, 59, 0.4)',
                 borderRadius: '12px',
-                padding: '12px 18px',
+                padding: '10px 16px',
                 boxShadow: '0 8px 24px rgba(0,0,0,0.4)',
-                maxWidth: '280px',
+                maxWidth: 'calc(100% - 28px)',
                 pointerEvents: 'none',
               }}
             >

@@ -201,8 +201,8 @@ export default function AboutPage() {
                   </div>
                 </div>
 
-                {/* Second Floating Industrial Card: Top-Right */}
-                <div className="absolute top-4 right-4 z-20 p-3 sm:p-3.5 rounded-xl bg-[#FFFDF8] text-[#2E2117] border border-[#5A3218]/25 shadow-xl max-w-[200px]">
+                {/* Second Floating Industrial Card: Top-Right (hidden on small mobile) */}
+                <div className="absolute top-4 right-4 z-20 p-3 sm:p-3.5 rounded-xl bg-[#FFFDF8] text-[#2E2117] border border-[#5A3218]/25 shadow-xl max-w-[200px] hidden sm:block">
                   <div className="text-[9.5px] font-mono tracking-widest text-[#7A4824] uppercase font-bold">
                     Industrial Capability
                   </div>

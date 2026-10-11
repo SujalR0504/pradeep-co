@@ -481,9 +481,9 @@ export const MakksHomePage: React.FC = () => {
           }}
         />
 
-        {/* SIDE PEANUT ANIMATION: Left Side (Page 3 Requirement) */}
+        {/* SIDE PEANUT ANIMATION: Left Side (Only visible on large desktop to prevent covering content) */}
         <div
-          className="side-peanut-left hidden md:block"
+          className="side-peanut-left hidden xl:block"
           style={{
             position: 'absolute',
             left: '2%',
@@ -516,9 +516,9 @@ export const MakksHomePage: React.FC = () => {
           </div>
         </div>
 
-        {/* SIDE PEANUT ANIMATION: Right Side (Page 3 Requirement) */}
+        {/* SIDE PEANUT ANIMATION: Right Side (Only visible on large desktop to prevent covering content) */}
         <div
-          className="side-peanut-right hidden md:block"
+          className="side-peanut-right hidden xl:block"
           style={{
             position: 'absolute',
             right: '65px',
@@ -551,7 +551,7 @@ export const MakksHomePage: React.FC = () => {
           </div>
         </div>
 
-        {/* Main Centered Content (Page 1, 2, 3, 4 Requirements) */}
+        {/* Main Centered Content */}
         <div
           className="site-container"
           style={{
@@ -564,59 +564,56 @@ export const MakksHomePage: React.FC = () => {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
+            padding: '0 12px',
           }}
         >
-          {/* Top Pill Tag in Warm Earth Tone (Shifted Upwards) */}
+          {/* Top Pill Tag in Warm Earth Tone */}
           <div
             style={{
               display: 'inline-flex',
               alignItems: 'center',
+              justifyContent: 'center',
               gap: '8px',
               backgroundColor: 'rgba(92, 52, 27, 0.08)',
               color: '#5C341B',
               border: '1px solid rgba(92, 52, 27, 0.22)',
-              padding: '6px 18px',
+              padding: '6px 14px',
               borderRadius: '24px',
-              fontSize: '11.5px',
+              fontSize: 'clamp(10px, 2.5vw, 11.5px)',
               fontWeight: 700,
-              letterSpacing: '0.08em',
+              letterSpacing: '0.06em',
               textTransform: 'uppercase',
-              marginTop: '-16px',
               marginBottom: '16px',
               backdropFilter: 'blur(6px)',
               boxShadow: '0 2px 10px rgba(92, 52, 27, 0.06)',
+              maxWidth: '100%',
+              textAlign: 'center',
             }}
           >
-            <i className="fa fa-award" style={{ color: '#C88A2E' }}></i>
-            <span>Benchmark Indian Peanut Processor &amp; Global Exporter • Since 1986</span>
+            <i className="fa fa-award" style={{ color: '#C88A2E', flexShrink: 0 }}></i>
+            <span className="truncate">Benchmark Indian Peanut Processor &amp; Global Exporter • Since 1986</span>
           </div>
 
-          {/* MAIN GRAND TAGLINE 1 (Heading Brown the same that you use) */}
+          {/* MAIN GRAND TAGLINE 1 */}
           <h1
             style={{
               fontFamily: 'var(--font-heading), "DM Serif Display", serif',
-              fontSize: 'clamp(2.4rem, 5.2vw, 4.3rem)',
+              fontSize: 'clamp(2rem, 5.2vw, 4.3rem)',
               fontWeight: 800,
               color: '#361C0D',
               lineHeight: 1.08,
               letterSpacing: '-0.02em',
-              margin: '0 0 24px',
+              margin: '0 0 20px',
               textShadow: '0 2px 16px rgba(54, 28, 13, 0.08)',
+              wordBreak: 'break-word',
             }}
           >
             FROM US TO WORLD
           </h1>
 
-          {/* Hero Action Buttons (Light, Refined Luxury Styling) */}
+          {/* Hero Action Buttons (Responsive Grid on Mobile, Flex on Desktop) */}
           <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '12px',
-              flexWrap: 'wrap',
-              marginBottom: '28px',
-            }}
+            className="grid grid-cols-2 sm:flex sm:flex-wrap items-center justify-center gap-2.5 sm:gap-3 mb-6 sm:mb-8 w-full max-w-xl mx-auto"
           >
             {/* 1. Contact Us */}
             <Link
@@ -624,156 +621,154 @@ export const MakksHomePage: React.FC = () => {
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
-                gap: '8px',
+                justifyContent: 'center',
+                gap: '6px',
                 background: 'linear-gradient(135deg, #361C0D 0%, #5C341B 100%)',
                 color: '#ffffff',
                 border: '1.5px solid #8C4318',
-                height: '46px',
-                padding: '0 24px',
-                borderRadius: '23px',
-                fontSize: '13.5px',
+                height: '44px',
+                padding: '0 16px',
+                borderRadius: '22px',
+                fontSize: '12.5px',
                 fontWeight: 800,
                 textDecoration: 'none',
                 boxShadow: '0 4px 16px rgba(54, 28, 13, 0.22)',
                 transition: 'all 0.25s ease',
+                whiteSpace: 'nowrap',
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.background = 'linear-gradient(135deg, #5C341B 0%, #8C4318 100%)';
                 e.currentTarget.style.borderColor = '#C88A2E';
-                e.currentTarget.style.boxShadow = '0 6px 22px rgba(92, 52, 27, 0.35)';
                 e.currentTarget.style.transform = 'translateY(-2px)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.background = 'linear-gradient(135deg, #361C0D 0%, #5C341B 100%)';
                 e.currentTarget.style.borderColor = '#8C4318';
-                e.currentTarget.style.boxShadow = '0 4px 16px rgba(54, 28, 13, 0.22)';
                 e.currentTarget.style.transform = 'translateY(0)';
               }}
             >
-              <i className="fa fa-envelope" style={{ fontSize: '15px', color: '#E5A83B' }}></i>
+              <i className="fa fa-envelope" style={{ fontSize: '13px', color: '#E5A83B' }}></i>
               <span>Contact Us</span>
             </Link>
 
-            {/* 2. Explore Products (Light Champagne Gold) */}
+            {/* 2. Explore Products */}
             <a
               href="#core-products"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
-                gap: '8px',
+                justifyContent: 'center',
+                gap: '6px',
                 background: 'linear-gradient(135deg, #FFF9EF 0%, #FEEECF 100%)',
                 color: '#361C0D',
                 border: '1.5px solid #E8CE99',
-                height: '46px',
-                padding: '0 22px',
-                borderRadius: '23px',
-                fontSize: '13.5px',
+                height: '44px',
+                padding: '0 16px',
+                borderRadius: '22px',
+                fontSize: '12.5px',
                 fontWeight: 800,
                 textDecoration: 'none',
                 boxShadow: '0 4px 16px rgba(200, 138, 46, 0.12)',
                 transition: 'all 0.25s ease',
+                whiteSpace: 'nowrap',
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.background = 'linear-gradient(135deg, #FFFFFF 0%, #FDE4B8 100%)';
                 e.currentTarget.style.borderColor = '#C88A2E';
-                e.currentTarget.style.boxShadow = '0 6px 22px rgba(200, 138, 46, 0.24)';
                 e.currentTarget.style.transform = 'translateY(-2px)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.background = 'linear-gradient(135deg, #FFF9EF 0%, #FEEECF 100%)';
                 e.currentTarget.style.borderColor = '#E8CE99';
-                e.currentTarget.style.boxShadow = '0 4px 16px rgba(200, 138, 46, 0.12)';
                 e.currentTarget.style.transform = 'translateY(0)';
               }}
             >
               <span>Explore Products</span>
-              <i className="fa fa-arrow-down" style={{ fontSize: '12px', color: '#C88A2E' }}></i>
+              <i className="fa fa-arrow-down" style={{ fontSize: '11px', color: '#C88A2E' }}></i>
             </a>
 
-            {/* 3. Request Quote (Light Champagne Gold) */}
+            {/* 3. Request Quote */}
             <button
+              type="button"
               onClick={() => handleOpenQuote('Bold Peanuts')}
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
-                gap: '8px',
+                justifyContent: 'center',
+                gap: '6px',
                 background: 'linear-gradient(135deg, #FFF9EF 0%, #FEEECF 100%)',
                 color: '#361C0D',
                 border: '1.5px solid #E8CE99',
-                height: '46px',
-                padding: '0 22px',
-                borderRadius: '23px',
-                fontSize: '13.5px',
+                height: '44px',
+                padding: '0 16px',
+                borderRadius: '22px',
+                fontSize: '12.5px',
                 fontWeight: 800,
                 cursor: 'pointer',
                 boxShadow: '0 4px 16px rgba(200, 138, 46, 0.12)',
                 transition: 'all 0.25s ease',
+                whiteSpace: 'nowrap',
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.background = 'linear-gradient(135deg, #FFFFFF 0%, #FDE4B8 100%)';
                 e.currentTarget.style.borderColor = '#C88A2E';
-                e.currentTarget.style.boxShadow = '0 6px 22px rgba(200, 138, 46, 0.24)';
                 e.currentTarget.style.transform = 'translateY(-2px)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.background = 'linear-gradient(135deg, #FFF9EF 0%, #FEEECF 100%)';
                 e.currentTarget.style.borderColor = '#E8CE99';
-                e.currentTarget.style.boxShadow = '0 4px 16px rgba(200, 138, 46, 0.12)';
                 e.currentTarget.style.transform = 'translateY(0)';
               }}
             >
-              <i className="fa fa-file-invoice" style={{ fontSize: '13px', color: '#C88A2E' }}></i>
+              <i className="fa fa-file-invoice" style={{ fontSize: '12px', color: '#C88A2E' }}></i>
               <span>Request Quote</span>
             </button>
 
-            {/* 4. Download Brochure (Light Champagne Gold) */}
+            {/* 4. Download Brochure */}
             <button
+              type="button"
               onClick={handleOpenBrochure}
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
-                gap: '8px',
+                justifyContent: 'center',
+                gap: '6px',
                 background: 'linear-gradient(135deg, #FFF9EF 0%, #FEEECF 100%)',
                 color: '#361C0D',
                 border: '1.5px solid #E8CE99',
-                height: '46px',
-                padding: '0 22px',
-                borderRadius: '23px',
-                fontSize: '13.5px',
+                height: '44px',
+                padding: '0 16px',
+                borderRadius: '22px',
+                fontSize: '12.5px',
                 fontWeight: 800,
                 cursor: 'pointer',
                 boxShadow: '0 4px 16px rgba(200, 138, 46, 0.12)',
                 transition: 'all 0.25s ease',
+                whiteSpace: 'nowrap',
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.background = 'linear-gradient(135deg, #FFFFFF 0%, #FDE4B8 100%)';
                 e.currentTarget.style.borderColor = '#C88A2E';
-                e.currentTarget.style.boxShadow = '0 6px 22px rgba(200, 138, 46, 0.24)';
                 e.currentTarget.style.transform = 'translateY(-2px)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.background = 'linear-gradient(135deg, #FFF9EF 0%, #FEEECF 100%)';
                 e.currentTarget.style.borderColor = '#E8CE99';
-                e.currentTarget.style.boxShadow = '0 4px 16px rgba(200, 138, 46, 0.12)';
                 e.currentTarget.style.transform = 'translateY(0)';
               }}
             >
-              <i className="fa fa-download" style={{ fontSize: '13px', color: '#C88A2E' }}></i>
-              <span>Download Brochure</span>
+              <i className="fa fa-download" style={{ fontSize: '12px', color: '#C88A2E' }}></i>
+              <span>Brochure</span>
             </button>
           </div>
 
-          {/* Bottom Trust Pillars */}
+          {/* Bottom Trust Pillars (Responsive 2-Col on mobile, 4-Col on desktop) */}
           <div
+            className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-4 w-full max-w-4xl mx-auto"
             style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: 'clamp(14px, 2vw, 24px)',
-              flexWrap: 'wrap',
-              padding: '12px 22px',
+              padding: '12px 14px',
               borderRadius: '18px',
-              backgroundColor: 'rgba(255, 255, 255, 0.92)',
+              backgroundColor: 'rgba(255, 255, 255, 0.94)',
               border: '1px solid rgba(92, 52, 27, 0.16)',
               backdropFilter: 'blur(10px)',
               boxShadow: '0 6px 20px rgba(92, 52, 27, 0.08)',
@@ -785,11 +780,11 @@ export const MakksHomePage: React.FC = () => {
               { icon: 'fa-shield-alt', title: '< 4 ppb Aflatoxin', desc: 'Strict EU Compliance' },
               { icon: 'fa-ship', title: 'Mundra & JNPT', desc: 'Direct Port Dispatch' },
             ].map((pillar, idx) => (
-              <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '8px', textAlign: 'left' }}>
-                <i className={`fa ${pillar.icon}`} style={{ color: '#C88A2E', fontSize: '14px' }}></i>
+              <div key={idx} className="flex items-center gap-2 p-1 text-left">
+                <i className={`fa ${pillar.icon}`} style={{ color: '#C88A2E', fontSize: '13px', flexShrink: 0 }}></i>
                 <div>
-                  <div style={{ fontSize: '12.5px', fontWeight: 800, color: '#361C0D', lineHeight: 1.15 }}>{pillar.title}</div>
-                  <div style={{ fontSize: '10px', color: '#705745', fontWeight: 600 }}>{pillar.desc}</div>
+                  <div style={{ fontSize: '11.5px', fontWeight: 800, color: '#361C0D', lineHeight: 1.2 }}>{pillar.title}</div>
+                  <div style={{ fontSize: '9.5px', color: '#705745', fontWeight: 600 }}>{pillar.desc}</div>
                 </div>
               </div>
             ))}
@@ -889,10 +884,13 @@ export const MakksHomePage: React.FC = () => {
                 className="about-badges-row"
                 style={{
                   display: 'flex',
-                  flexWrap: 'nowrap',
                   alignItems: 'center',
-                  gap: '10px',
+                  gap: '8px',
                   marginBottom: '18px',
+                  overflowX: 'auto',
+                  WebkitOverflowScrolling: 'touch',
+                  scrollbarWidth: 'none',
+                  paddingBottom: '4px',
                 }}
               >
                 {(
@@ -910,10 +908,10 @@ export const MakksHomePage: React.FC = () => {
                       backgroundColor: aboutImageTab === tab.id ? '#5C341B' : '#ffffff',
                       color: aboutImageTab === tab.id ? '#ffffff' : '#361C0D',
                       border: aboutImageTab === tab.id ? '2px solid #5C341B' : '1px solid #ddd6c8',
-                      height: '38px',
-                      padding: '0 16px',
-                      borderRadius: '19px',
-                      fontSize: '13px',
+                      height: '36px',
+                      padding: '0 14px',
+                      borderRadius: '18px',
+                      fontSize: '12.5px',
                       fontWeight: 600,
                       cursor: 'pointer',
                       whiteSpace: 'nowrap',
@@ -934,14 +932,14 @@ export const MakksHomePage: React.FC = () => {
                     borderRadius: '22px',
                     overflow: 'hidden',
                     boxShadow: '0 25px 50px rgba(92, 52, 27, 0.25)',
-                    border: '5px solid #ffffff',
+                    border: '4px solid #ffffff',
                     position: 'relative',
                   }}
                 >
                   <img
                     src={aboutImages[aboutImageTab].src}
                     alt={aboutImages[aboutImageTab].title}
-                    style={{ width: '100%', height: '520px', objectFit: 'cover', display: 'block', transition: 'all 0.4s ease' }}
+                    style={{ width: '100%', height: 'clamp(280px, 46vw, 520px)', objectFit: 'cover', display: 'block', transition: 'all 0.4s ease' }}
                   />
 
                   {/* Gradient Overlay for Text Legibility */}
@@ -954,30 +952,31 @@ export const MakksHomePage: React.FC = () => {
                   />
 
                   {/* Top Pill Tag */}
-                  <div style={{ position: 'absolute', top: '18px', right: '18px', zIndex: 2 }}>
-                    <span style={{ backgroundColor: '#C88A2E', color: '#ffffff', padding: '5px 14px', borderRadius: '15px', fontSize: '11.5px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', boxShadow: '0 4px 12px rgba(0,0,0,0.2)' }}>
+                  <div style={{ position: 'absolute', top: '14px', right: '14px', zIndex: 2 }}>
+                    <span style={{ backgroundColor: '#C88A2E', color: '#ffffff', padding: '4px 12px', borderRadius: '15px', fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', boxShadow: '0 4px 12px rgba(0,0,0,0.2)' }}>
                       {aboutImages[aboutImageTab].badge}
                     </span>
                   </div>
 
                   {/* Bottom Caption Overlay */}
-                  <div style={{ position: 'absolute', bottom: '20px', left: '25px', right: '25px', color: '#fff' }}>
-                    <div style={{ fontSize: '11.5px', fontWeight: 700, color: '#E5A83B', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                  <div style={{ position: 'absolute', bottom: '16px', left: '16px', right: '16px', color: '#fff' }}>
+                    <div style={{ fontSize: '11px', fontWeight: 700, color: '#E5A83B', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
                       {aboutImages[aboutImageTab].title}
                     </div>
-                    <div style={{ fontSize: '15.5px', fontWeight: 700, marginTop: '2px' }}>
+                    <div style={{ fontSize: 'clamp(13px, 2.8vw, 15.5px)', fontWeight: 700, marginTop: '2px' }}>
                       {aboutImages[aboutImageTab].subtitle}
                     </div>
                   </div>
                 </div>
 
-                {/* Inset Secondary Image Card: Quality Control Laboratory (Enlarged to 230px) */}
+                {/* Inset Secondary Image Card: Quality Control Laboratory (Enlarged to 230px, hidden on small mobile) */}
                 <div
+                  className="hidden sm:block"
                   style={{
                     position: 'absolute',
                     top: '16px',
                     left: '16px',
-                    width: '210px',
+                    width: 'clamp(160px, 25vw, 210px)',
                     borderRadius: '16px',
                     overflow: 'hidden',
                     boxShadow: '0 15px 35px rgba(0,0,0,0.22)',
@@ -989,7 +988,7 @@ export const MakksHomePage: React.FC = () => {
                   <img
                     src="/images/quality-lab.webp"
                     alt="HPLC Aflatoxin Testing & Sieving Lab"
-                    style={{ width: '100%', height: '120px', objectFit: 'cover' }}
+                    style={{ width: '100%', height: '110px', objectFit: 'cover' }}
                   />
                   <div style={{ padding: '8px 10px', textAlign: 'center' }}>
                     <div style={{ fontSize: '11px', fontWeight: 700, color: '#361C0D' }}>In-House Quality Lab</div>
@@ -1001,23 +1000,23 @@ export const MakksHomePage: React.FC = () => {
                 <div
                   style={{
                     position: 'absolute',
-                    bottom: '16px',
-                    right: '16px',
+                    bottom: '12px',
+                    right: '12px',
                     backgroundColor: 'rgba(54, 28, 13, 0.95)',
                     backdropFilter: 'blur(8px)',
                     color: '#ffffff',
-                    padding: '12px 18px',
-                    borderRadius: '16px',
-                    border: '2px solid rgba(200, 138, 46, 0.6)',
+                    padding: '8px 14px',
+                    borderRadius: '14px',
+                    border: '1.5px solid rgba(200, 138, 46, 0.6)',
                     boxShadow: '0 12px 28px rgba(0,0,0,0.25)',
                     zIndex: 3,
                     textAlign: 'center',
                   }}
                 >
-                  <span style={{ fontSize: '15px', fontWeight: 800, color: '#E5A83B', display: 'block', lineHeight: 1.25, textTransform: 'uppercase' }}>
+                  <span style={{ fontSize: 'clamp(12px, 2.5vw, 14px)', fontWeight: 800, color: '#E5A83B', display: 'block', lineHeight: 1.2, textTransform: 'uppercase' }}>
                     Rooted Agro Heritage
                   </span>
-                  <span style={{ fontSize: '10.5px', fontWeight: 600, color: '#e0d6cb', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                  <span style={{ fontSize: '9.5px', fontWeight: 600, color: '#e0d6cb', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                     Benchmark Processor
                   </span>
                 </div>
@@ -1585,7 +1584,7 @@ export const MakksHomePage: React.FC = () => {
           </div>
 
           {/* Products Grid / Carousel Viewport */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: '20px' }}>
             {filteredProducts.slice(galleryOffset, galleryOffset + 4).map((product) => (
               <div
                 key={product.id}

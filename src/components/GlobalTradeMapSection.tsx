@@ -431,7 +431,7 @@ export default function GlobalTradeMapSection() {
           </div>
 
           {/* SVG Map Container */}
-          <div style={{ position: 'relative', width: '100%', aspectRatio: '16 / 8.2', minHeight: '380px', zIndex: 2 }}>
+          <div style={{ position: 'relative', width: '100%', aspectRatio: '16 / 8.2', minHeight: 'clamp(220px, 42vw, 380px)', zIndex: 2 }}>
             <svg
               viewBox="65 40 910 415"
               style={{ width: '100%', height: '100%', display: 'block', overflow: 'visible' }}
@@ -629,15 +629,16 @@ export default function GlobalTradeMapSection() {
               <div
                 style={{
                   position: 'absolute',
-                  top: '16px',
-                  right: '16px',
+                  top: '12px',
+                  right: '12px',
                   backgroundColor: 'rgba(15, 44, 59, 0.95)',
                   backdropFilter: 'blur(10px)',
                   color: '#FFFFFF',
                   borderRadius: '16px',
                   border: '1px solid rgba(0, 163, 224, 0.35)',
-                  padding: '16px 20px',
-                  maxWidth: '310px',
+                  padding: '12px 16px',
+                  width: '310px',
+                  maxWidth: 'calc(100% - 24px)',
                   boxShadow: '0 12px 30px rgba(0, 0, 0, 0.25)',
                   zIndex: 20,
                   animation: 'fadeInPop 0.2s ease',

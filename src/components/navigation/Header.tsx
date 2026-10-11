@@ -24,14 +24,37 @@ export default function Header() {
   const pathname = usePathname();
   const [isSticky, setIsSticky] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsSticky(window.scrollY > 30);
     };
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+    handleResize();
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
+
+  // Accessibility: Lock body scroll & handle Escape key when mobile menu is open
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMobileMenuOpen(false);
+    };
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [mobileMenuOpen]);
 
   const handleOpenQuote = (productName = "Bold Peanuts") => {
     if (typeof window !== "undefined") {
@@ -75,7 +98,32 @@ export default function Header() {
           fontFamily: "'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
         }}
       >
-        {/* ROW 1: Top Information Bar */}
+        <style>{`
+          .main-header img.header-brand-logo-img {
+            height: 42px !important;
+            max-height: 42px !important;
+            width: auto !important;
+            object-fit: contain !important;
+            display: block !important;
+          }
+          .main-header.is-sticky img.header-brand-logo-img,
+          .fixed-header img.header-brand-logo-img {
+            height: 36px !important;
+            max-height: 36px !important;
+          }
+          @media (max-width: 1023px) {
+            .main-header img.header-brand-logo-img {
+              height: 32px !important;
+              max-height: 32px !important;
+            }
+            .main-header.is-sticky img.header-brand-logo-img,
+            .fixed-header img.header-brand-logo-img {
+              height: 28px !important;
+              max-height: 28px !important;
+            }
+          }
+        `}</style>
+        {/* ROW 1: Top Information Bar (Fully Responsive, No Overflow) */}
         <div
           className="header-top"
           style={{
@@ -86,7 +134,8 @@ export default function Header() {
             borderBottom: "1px solid rgba(200, 138, 46, 0.4)",
             display: "flex",
             alignItems: "center",
-            padding: "3px 0",
+            padding: "4px 0",
+            overflow: "hidden",
           }}
         >
           <div
@@ -95,50 +144,15 @@ export default function Header() {
               maxWidth: "1320px",
               width: "100%",
               margin: "0 auto",
-              padding: "0 16px",
+              padding: "0 12px",
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
-              gap: "10px",
+              gap: "8px",
             }}
           >
-            {/* Top Left: Email & Address */}
-            <div className="top-left flex items-center">
-              <ul
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "18px",
-                  listStyle: "none",
-                  margin: 0,
-                  padding: 0,
-                  fontSize: "12px",
-                  fontWeight: 500,
-                  whiteSpace: "nowrap",
-                }}
-              >
-                <li className="hidden sm:flex" style={{ alignItems: "center", gap: "6px" }}>
-                  <i className="fa fa-envelope" style={{ color: "#E5A83B", fontSize: "11px" }}></i>
-                  <a
-                    href="mailto:pradeeptradingcomp@gmail.com"
-                    style={{ color: "#e3d7cc", textDecoration: "none", transition: "color 0.2s" }}
-                    onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "#ffffff")}
-                    onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "#e3d7cc")}
-                  >
-                    pradeeptradingcomp@gmail.com
-                  </a>
-                </li>
-                <li className="hidden xl:flex" style={{ alignItems: "center", gap: "6px" }}>
-                  <i className="fa fa-map-marker-alt" style={{ color: "#E5A83B", fontSize: "11px" }}></i>
-                  <span style={{ color: "#e3d7cc" }}>
-                    Bhonti, Shivpuri, Madhya Pradesh - 473551, India
-                  </span>
-                </li>
-              </ul>
-            </div>
-
-            {/* Top Mid: Phone Number */}
-            <div className="top-mid flex items-center justify-center">
+            {/* Top Left: Email (desktop) & Phone (mobile & desktop) */}
+            <div className="flex items-center gap-3">
               <a
                 href="tel:+919589790997"
                 style={{
@@ -150,26 +164,30 @@ export default function Header() {
                   textDecoration: "none",
                   fontSize: "12px",
                   backgroundColor: "rgba(255, 255, 255, 0.08)",
-                  padding: "2px 10px",
+                  padding: "3px 8px",
                   borderRadius: "14px",
                   border: "1px solid rgba(229, 168, 59, 0.35)",
                   transition: "all 0.2s",
                   whiteSpace: "nowrap",
                 }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.backgroundColor = "rgba(229, 168, 59, 0.25)";
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.backgroundColor = "rgba(255, 255, 255, 0.08)";
-                }}
+                aria-label="Call Pradeep Trading Company export desk"
               >
-                <i className="fa fa-phone-alt" style={{ color: "#E5A83B", fontSize: "10.5px" }}></i>
+                <i className="fa fa-phone-alt" style={{ color: "#E5A83B", fontSize: "10px" }}></i>
                 <span>+91-9589790997</span>
+              </a>
+
+              <a
+                href="mailto:pradeeptradingcomp@gmail.com"
+                className="hidden md:inline-flex items-center gap-1.5 text-xs text-[#e3d7cc] hover:text-white transition-colors"
+                style={{ textDecoration: "none", whiteSpace: "nowrap" }}
+              >
+                <i className="fa fa-envelope" style={{ color: "#E5A83B", fontSize: "11px" }}></i>
+                <span>pradeeptradingcomp@gmail.com</span>
               </a>
             </div>
 
-            {/* Top Right: Priorities: WhatsApp, Brochure & Quote */}
-            <div className="top-right" style={{ display: "flex", alignItems: "center", gap: "8px", whiteSpace: "nowrap" }}>
+            {/* Top Right: WhatsApp, Brochure & Fast Quote */}
+            <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
               {/* WhatsApp Button */}
               <a
                 href="https://wa.me/919589790997?text=Hello%20Pradeep%20Trading,%20I%20would%20like%20to%20inquire%20about%20peanut%20export%20specifications."
@@ -178,48 +196,44 @@ export default function Header() {
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
-                  gap: "5px",
+                  gap: "4px",
                   backgroundColor: "#25D366",
                   color: "#ffffff",
                   height: "26px",
-                  padding: "0 10px",
+                  padding: "0 8px",
                   borderRadius: "13px",
-                  fontSize: "12px",
+                  fontSize: "11.5px",
                   fontWeight: 700,
                   textDecoration: "none",
                   boxShadow: "0 2px 5px rgba(37, 211, 102, 0.25)",
                 }}
+                aria-label="Chat on WhatsApp"
               >
-                <i className="fab fa-whatsapp" style={{ fontSize: "12.5px" }}></i>
+                <i className="fab fa-whatsapp" style={{ fontSize: "12px" }}></i>
                 <span className="hidden sm:inline">WhatsApp</span>
               </a>
 
-              {/* Download Brochure Button */}
+              {/* Download Brochure Button (Desktop/Tablet) */}
               <button
                 type="button"
                 onClick={handleOpenBrochure}
+                className="hidden sm:inline-flex items-center gap-1 text-xs"
                 style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "5px",
                   backgroundColor: "#5C341B",
                   color: "#ffffff",
                   height: "26px",
-                  padding: "0 10px",
+                  padding: "0 9px",
                   borderRadius: "13px",
-                  fontSize: "12px",
                   fontWeight: 700,
                   border: "1px solid rgba(229, 168, 59, 0.4)",
                   cursor: "pointer",
                   transition: "background 0.2s",
                   whiteSpace: "nowrap",
                 }}
-                onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.backgroundColor = "#7A4322")}
-                onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.backgroundColor = "#5C341B")}
                 aria-label="Download Export Brochure"
               >
-                <Download size={11.5} style={{ color: "#E5A83B" }} />
-                <span className="hidden sm:inline">Brochure</span>
+                <Download size={11} style={{ color: "#E5A83B" }} />
+                <span>Brochure</span>
               </button>
 
               {/* Request Quote Button */}
@@ -229,13 +243,13 @@ export default function Header() {
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
-                  gap: "5px",
+                  gap: "4px",
                   backgroundColor: "#E5A83B",
                   color: "#2C170A",
                   height: "26px",
-                  padding: "0 12px",
+                  padding: "0 10px",
                   borderRadius: "13px",
-                  fontSize: "12px",
+                  fontSize: "11.5px",
                   fontWeight: 800,
                   border: "none",
                   cursor: "pointer",
@@ -243,19 +257,23 @@ export default function Header() {
                   transition: "background 0.2s",
                   whiteSpace: "nowrap",
                 }}
-                onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.backgroundColor = "#f2be60")}
-                onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.backgroundColor = "#E5A83B")}
                 aria-label="Request Fast Quote"
               >
-                <FileText size={11.5} style={{ color: "#2C170A" }} />
-                <span>Request Quote</span>
+                <FileText size={11} style={{ color: "#2C170A" }} />
+                <span className="hidden xs:inline">Request Quote</span>
+                <span className="xs:hidden">Quote</span>
               </button>
             </div>
           </div>
         </div>
 
         {/* ROW 2: Main Centered Navigation Bar (Sleek, Compact Layout) */}
-        {isSticky && <div style={{ height: "66px" }} aria-hidden="true" />}
+        {isSticky && (
+          <div
+            className="h-[58px] lg:h-[66px] w-full"
+            aria-hidden="true"
+          />
+        )}
         <div
           className={`header-upper ${isSticky ? "fixed-header is-sticky" : ""}`}
           style={{
@@ -266,9 +284,9 @@ export default function Header() {
             width: "100%",
             zIndex: 9999,
             backgroundColor: "#ffffff",
-            minHeight: isSticky ? "56px" : "66px",
+            minHeight: isSticky ? "54px" : "60px",
             borderBottom: "1px solid #efe4d3",
-            boxShadow: isSticky ? "0 4px 18px rgba(44, 23, 10, 0.1)" : "0 1px 6px rgba(44, 23, 10, 0.03)",
+            boxShadow: isSticky ? "0 4px 18px rgba(44, 23, 10, 0.08)" : "0 1px 6px rgba(44, 23, 10, 0.03)",
             transition: "all 0.25s ease-out",
             display: "flex",
             alignItems: "center",
@@ -280,7 +298,7 @@ export default function Header() {
               maxWidth: "1340px",
               width: "100%",
               margin: "0 auto",
-              padding: "0 16px",
+              padding: "0 12px",
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
@@ -368,81 +386,60 @@ export default function Header() {
               </ul>
             </nav>
 
-            {/* CENTER BRAND LOGO (Compact, Sleek, Proportional) */}
+            {/* BRAND LOGO: Clean horizontal on mobile, centered vertical stack on desktop */}
             <div
+              className="shrink-0 flex items-center lg:flex-col lg:justify-center py-1 lg:py-0 lg:px-4"
               style={{
-                padding: "0 16px",
-                flexShrink: 0,
-                textAlign: "center",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
+                textAlign: "left",
               }}
             >
               <Link
                 href="/"
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  textDecoration: "none",
-                  gap: "1px",
-                }}
+                className="flex items-center gap-2 lg:gap-2.5 lg:flex-col lg:items-center lg:gap-0.5 no-underline group"
+                style={{ textDecoration: "none" }}
               >
                 <div
+                  className="relative inline-flex items-center justify-center transition-transform duration-200 group-hover:scale-105 shrink-0"
                   style={{
-                    position: "relative",
-                    display: "inline-flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    transition: "transform 0.3s ease",
+                    height: isSticky ? "36px" : (isMobile ? "32px" : "42px"),
+                    maxHeight: isSticky ? "36px" : (isMobile ? "32px" : "42px"),
                   }}
-                  onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.04)")}
-                  onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
                 >
                   <img
                     src="/images/logo/logo.png"
                     alt="Pradeep Trading Company - Trusted Peanut Exporter"
+                    className="header-brand-logo-img"
                     style={{
-                      height: isSticky ? "38px" : "46px",
+                      height: isSticky ? "36px" : (isMobile ? "32px" : "42px"),
+                      maxHeight: isSticky ? "36px" : (isMobile ? "32px" : "42px"),
                       width: "auto",
                       objectFit: "contain",
-                      transition: "height 0.25s ease-out",
+                      display: "block",
                     }}
                   />
                 </div>
-                <div style={{ textAlign: "center", marginTop: "1px" }}>
+                <div className="flex flex-col items-start lg:items-center justify-center leading-none">
                   <span
+                    className={`block font-extrabold text-[#361C0D] tracking-wide transition-all duration-200 ${
+                      isSticky ? "text-[13px] sm:text-[13.5px] lg:text-[14px]" : "text-[13.5px] sm:text-[14px] lg:text-[14.5px]"
+                    }`}
                     style={{
-                      display: "block",
-                      fontSize: isSticky ? "14px" : "15.5px",
-                      fontWeight: 800,
-                      color: "#361C0D",
-                      letterSpacing: "0.05em",
                       fontFamily: 'var(--font-heading), "DM Serif Display", serif',
-                      lineHeight: 1.1,
+                      lineHeight: "1.1",
+                      letterSpacing: "0.03em",
                     }}
                   >
                     PRADEEP TRADING
                   </span>
                   <span
+                    className="inline-flex items-center justify-center gap-1 font-extrabold text-[#2C170A] tracking-wider uppercase whitespace-nowrap shadow-xs mt-0.5"
                     style={{
-                      display: "inline-flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      gap: "3px",
-                      fontSize: "9.5px",
-                      fontWeight: 800,
-                      color: "#2C170A",
+                      fontSize: "8px",
                       background: "linear-gradient(135deg, #F5D38A 0%, #D49B35 100%)",
-                      padding: "2px 9px",
-                      borderRadius: "11px",
-                      letterSpacing: "0.1em",
-                      textTransform: "uppercase",
-                      boxShadow: "0 1px 4px rgba(200, 138, 46, 0.3)",
+                      padding: "1.5px 6.5px",
+                      borderRadius: "10px",
                       border: "1px solid #C88A2E",
-                      marginTop: "2px",
-                      whiteSpace: "nowrap",
+                      boxShadow: "0 1px 3px rgba(200, 138, 46, 0.25)",
                     }}
                   >
                     ★ TRUSTED PEANUT EXPORTER ★
@@ -500,14 +497,15 @@ export default function Header() {
             </nav>
 
             {/* MOBILE / TABLET RIGHT ACTIONS */}
-            <div className="flex lg:hidden items-center gap-2">
+            <div className="flex lg:hidden items-center gap-1.5 sm:gap-2 shrink-0">
               <button
                 type="button"
                 onClick={handleOpenSearch}
-                aria-label="Search"
+                aria-label="Search products and specifications"
+                className="transition-all active:scale-95 hover:bg-[#ebdcc8]"
                 style={{
-                  width: "40px",
-                  height: "40px",
+                  width: "36px",
+                  height: "36px",
                   borderRadius: "10px",
                   backgroundColor: "#FAF2E6",
                   border: "1px solid #ebdcc8",
@@ -518,17 +516,20 @@ export default function Header() {
                   cursor: "pointer",
                 }}
               >
-                <Search size={18} />
+                <Search size={16} />
               </button>
 
               <button
                 type="button"
-                className="mobile-nav-toggler"
+                className="mobile-nav-toggler transition-all active:scale-95"
                 onClick={() => setMobileMenuOpen(true)}
+                aria-expanded={mobileMenuOpen}
+                aria-controls="mobile-navigation-drawer"
+                aria-label="Open Mobile Navigation Menu"
                 style={{
                   cursor: "pointer",
-                  width: "40px",
-                  height: "40px",
+                  width: "36px",
+                  height: "36px",
                   borderRadius: "10px",
                   backgroundColor: "rgba(92, 52, 27, 0.08)",
                   border: "1px solid rgba(92, 52, 27, 0.15)",
@@ -539,9 +540,8 @@ export default function Header() {
                   margin: 0,
                   outline: "none",
                 }}
-                aria-label="Open Mobile Menu"
               >
-                <Menu size={22} style={{ color: "#5C341B" }} />
+                <Menu size={20} style={{ color: "#5C341B" }} />
               </button>
             </div>
           </div>
@@ -550,7 +550,13 @@ export default function Header() {
 
       {/* MOBILE NAVIGATION DRAWER */}
       {mobileMenuOpen && (
-        <div style={{ position: "fixed", inset: 0, zIndex: 100000, display: "flex" }}>
+        <div
+          id="mobile-navigation-drawer"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Mobile Navigation Menu"
+          style={{ position: "fixed", inset: 0, zIndex: 100000, display: "flex" }}
+        >
           <div
             style={{
               position: "absolute",
@@ -559,6 +565,7 @@ export default function Header() {
               backdropFilter: "blur(4px)",
             }}
             onClick={() => setMobileMenuOpen(false)}
+            aria-hidden="true"
           />
           <div
             style={{
@@ -568,7 +575,7 @@ export default function Header() {
               backgroundColor: "#2C170A",
               color: "#fff",
               height: "100%",
-              padding: "26px 22px",
+              padding: "max(env(safe-area-inset-top, 0px), 24px) 20px max(env(safe-area-inset-bottom, 0px), 24px)",
               display: "flex",
               flexDirection: "column",
               justifyContent: "space-between",
@@ -585,13 +592,13 @@ export default function Header() {
                   display: "flex",
                   justifyContent: "space-between",
                   alignItems: "center",
-                  marginBottom: "24px",
+                  marginBottom: "20px",
                   borderBottom: "1px solid rgba(255, 255, 255, 0.1)",
-                  paddingBottom: "16px",
+                  paddingBottom: "14px",
                 }}
               >
                 <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                  <img src="/images/logo/logo-light.png" alt="Pradeep Trading" style={{ maxHeight: "58px" }} />
+                  <img src="/images/logo/logo-light.png" alt="Pradeep Trading" style={{ maxHeight: "48px", width: "auto" }} />
                   <div>
                     <div style={{ fontSize: "14px", fontWeight: 800, color: "#ffffff" }}>PRADEEP TRADING</div>
                     <div
@@ -684,15 +691,24 @@ export default function Header() {
                         textDecoration: "none",
                         display: "flex",
                         alignItems: "center",
-                        gap: "10px",
-                        padding: "5px 0",
-                        transition: "color 0.2s",
+                        gap: "12px",
+                        minHeight: "44px",
+                        padding: "8px 12px",
+                        borderRadius: "10px",
+                        backgroundColor: "rgba(255, 255, 255, 0.04)",
+                        transition: "all 0.2s",
                       }}
-                      onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "#E5A83B")}
-                      onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "#ffffff")}
+                      onMouseEnter={(e) => {
+                        (e.currentTarget as HTMLElement).style.color = "#E5A83B";
+                        (e.currentTarget as HTMLElement).style.backgroundColor = "rgba(229, 168, 59, 0.12)";
+                      }}
+                      onMouseLeave={(e) => {
+                        (e.currentTarget as HTMLElement).style.color = "#ffffff";
+                        (e.currentTarget as HTMLElement).style.backgroundColor = "rgba(255, 255, 255, 0.04)";
+                      }}
                     >
-                      <item.icon size={17} style={{ color: "#E5A83B" }} />
-                      <span>{item.label}</span>
+                      <item.icon size={18} style={{ color: "#E5A83B", flexShrink: 0 }} />
+                      <span style={{ fontSize: "15px", fontWeight: 700 }}>{item.label}</span>
                     </Link>
                   </li>
                 ))}
@@ -704,19 +720,24 @@ export default function Header() {
                       handleOpenBrochure();
                     }}
                     style={{
-                      background: "none",
-                      border: "none",
+                      background: "rgba(229, 168, 59, 0.1)",
+                      border: "1px solid rgba(229, 168, 59, 0.3)",
                       color: "#E5A83B",
-                      fontSize: "15px",
+                      fontSize: "14.5px",
                       fontWeight: 700,
                       cursor: "pointer",
-                      padding: "4px 0",
+                      minHeight: "44px",
+                      padding: "8px 12px",
+                      borderRadius: "10px",
                       display: "flex",
                       alignItems: "center",
-                      gap: "8px",
+                      gap: "10px",
+                      width: "100%",
+                      textAlign: "left",
+                      transition: "background 0.2s",
                     }}
                   >
-                    <Download size={16} />
+                    <Download size={17} style={{ flexShrink: 0 }} />
                     <span>Download Brochure</span>
                   </button>
                 </li>
